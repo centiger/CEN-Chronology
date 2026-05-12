@@ -1,10 +1,10 @@
 {
-  "name": "CEN Bible Chronology",
+  "name": "CEN Bible 성경연대기",
   "short_name": "성경연대기",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f7f0e6",
-  "theme_color": "#5b3a20",
+  "background_color": "#f3e6d2",
+  "theme_color": "#4a3324",
   "icons": [
     {
       "src": "icons/icon-192.png",
