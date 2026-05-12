@@ -91,9 +91,10 @@ function selectEvent(eventId){
     `;
   }
 }
+
 function renderDetail(eventId){
   const data = EVENTS[eventId];
-  currentTab = "summary";
+  currentTab = "flow";
   if(!data){
     const title = getEventTitle(eventId);
     $("#detailRoot").innerHTML = `
@@ -103,12 +104,18 @@ function renderDetail(eventId){
       </section>
       <section class="card">
         <p>${getEventSummary(eventId)}</p>
-        <p class="notice">이 사건은 인포그래픽이 추가되면 개요·인물·사건·의미·연결·지도 탭으로 자동 확장할 수 있습니다.</p>
+        <p class="notice">이 사건은 인포그래픽이 추가되면 핵심사건 흐름·관련성경·지도/시각자료 중심으로 확장합니다.</p>
       </section>
     `;
     go("detail");
     return;
   }
+
+  const enrich = EVENT_ENRICH[eventId] || {};
+  const flow = enrich.flow || data.core.map((x,i)=>[String(i+1), x, ""]);
+  const scriptureRefs = enrich.scriptureRefs || [[data.scripture, data.summary]];
+  const visualItems = enrich.visualItems || [data.visual];
+
   $("#detailRoot").innerHTML = `
     <section class="detail-hero">
       <h2>${data.title}</h2>
@@ -117,40 +124,86 @@ function renderDetail(eventId){
         <span class="pill light">${data.year}</span>
         <span class="pill light">${data.scripture}</span>
       </div>
+      <p class="detail-summary">${data.summary}</p>
     </section>
+
+    <section class="card priority-card">
+      <div class="priority-title">인포그래픽 핵심축</div>
+      <div class="priority-grid">
+        <button class="priority-btn" data-tab="flow">6. 핵심사건 흐름</button>
+        <button class="priority-btn" data-tab="scripture">7. 관련성경</button>
+        <button class="priority-btn" data-tab="visual">9. 지도·시각자료</button>
+      </div>
+    </section>
+
     <section class="card">
       <div class="tabs">
-        <button class="tabbtn active" data-tab="summary">개요</button>
-        <button class="tabbtn" data-tab="people">인물</button>
-        <button class="tabbtn" data-tab="core">사건</button>
-        <button class="tabbtn" data-tab="meaning">의미</button>
-        <button class="tabbtn" data-tab="connect">연결</button>
+        <button class="tabbtn active" data-tab="flow">흐름</button>
+        <button class="tabbtn" data-tab="scripture">성경</button>
         <button class="tabbtn" data-tab="visual">시각</button>
+        <button class="tabbtn" data-tab="meaning">의미</button>
+        <button class="tabbtn" data-tab="people">인물</button>
+        <button class="tabbtn" data-tab="connect">연결</button>
       </div>
-      <div class="panel active" id="panel-summary">
-        <div class="infobox">
-          <b>사건요약</b><br>${data.summary}
-          <div style="margin-top:10px"><b>장소:</b> ${data.place}</div>
-          <div><b>관련성경:</b> ${data.scripture}</div>
+
+      <div class="panel active" id="panel-flow">
+        <h3 class="panel-title">${enrich.flowTitle || "핵심사건 흐름"}</h3>
+        <div class="flow-list">
+          ${flow.map(x=>`
+            <div class="flow-item">
+              <div class="flow-badge">${x[0]}</div>
+              <div class="flow-body">
+                <div class="flow-text">${x[1]}</div>
+                ${x[2] ? `<div class="flow-visual">시각자료: ${x[2]}</div>` : ""}
+              </div>
+            </div>
+          `).join("")}
         </div>
       </div>
-      <div class="panel" id="panel-people">
-        <div class="keyword-grid">${data.people.map(x=>`<span class="keyword">${x}</span>`).join("")}</div>
+
+      <div class="panel" id="panel-scripture">
+        <h3 class="panel-title">관련성경</h3>
+        <div class="scripture-list">
+          ${scriptureRefs.map(x=>`
+            <div class="scripture-card">
+              <div class="scripture-ref">${x[0]}</div>
+              <div class="scripture-text">${x[1]}</div>
+            </div>
+          `).join("")}
+        </div>
+        <div class="btn-row">
+          <button class="cen-btn secondary" data-toast="bible">본문에서 보기</button>
+        </div>
       </div>
-      <div class="panel" id="panel-core">
-        <ul class="info-list">${data.core.map(x=>`<li>${x}</li>`).join("")}</ul>
-      </div>
-      <div class="panel" id="panel-meaning">
-        <ul class="info-list">${data.meaning.map(x=>`<li>${x}</li>`).join("")}</ul>
-      </div>
-      <div class="panel" id="panel-connect">
-        <div class="keyword-grid">${data.connect.map(x=>`<button class="keyword">↔ ${x}</button>`).join("")}</div>
-        <p class="notice">연결탐험은 이후 성막·절기·십자가·성찬·새창조 메뉴와 이어질 수 있습니다.</p>
-      </div>
+
       <div class="panel" id="panel-visual">
-        <div class="infobox"><b>지도 / 시각자료</b><br>${data.visual}</div>
+        <h3 class="panel-title">지도 / 시각자료</h3>
+        <div class="visual-grid">
+          ${visualItems.map(x=>`<div class="visual-chip">${x}</div>`).join("")}
+        </div>
+        <div class="visual-map">
+          <div class="map-title">${data.place}</div>
+          <div class="map-note">${data.visual}</div>
+        </div>
         <img class="thumb" src="${data.image}" alt="${data.title} 원본 인포그래픽">
       </div>
+
+      <div class="panel" id="panel-meaning">
+        <h3 class="panel-title">핵심 의미</h3>
+        <ul class="info-list">${data.meaning.map(x=>`<li>${x}</li>`).join("")}</ul>
+      </div>
+
+      <div class="panel" id="panel-people">
+        <h3 class="panel-title">핵심 인물</h3>
+        <div class="keyword-grid">${data.people.map(x=>`<span class="keyword">${x}</span>`).join("")}</div>
+      </div>
+
+      <div class="panel" id="panel-connect">
+        <h3 class="panel-title">연결 탐험</h3>
+        <div class="keyword-grid">${data.connect.map(x=>`<button class="keyword">↔ ${x}</button>`).join("")}</div>
+        <p class="notice">연결탐험은 반복 설명이 아니라, 다른 메뉴로 이동하는 통로입니다. 이후 성막·절기·십자가·성찬·새창조와 연결합니다.</p>
+      </div>
+
       <div class="btn-row">
         <button class="cen-btn full" data-open-original="${eventId}">원본 인포그래픽 보기</button>
         <button class="cen-btn secondary full" data-toast="bible">관련 본문 이동 준비중</button>
