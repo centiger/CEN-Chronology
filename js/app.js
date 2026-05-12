@@ -92,19 +92,19 @@ function selectEvent(eventId){
   }
 }
 
+
 function renderDetail(eventId){
   const data = EVENTS[eventId];
-  currentTab = "flow";
   if(!data){
     const title = getEventTitle(eventId);
     $("#detailRoot").innerHTML = `
       <section class="detail-hero">
         <h2>${title}</h2>
-        <div class="detail-meta"><span class="pill light">상세 탭카드 준비중</span></div>
+        <div class="detail-meta"><span class="pill light">상세 준비중</span></div>
       </section>
-      <section class="card">
-        <p>${getEventSummary(eventId)}</p>
-        <p class="notice">이 사건은 인포그래픽이 추가되면 핵심사건 흐름·관련성경·지도/시각자료 중심으로 확장합니다.</p>
+      <section class="scroll-section">
+        <div class="section-title">사건 요약</div>
+        <div class="section-card">${getEventSummary(eventId)}</div>
       </section>
     `;
     go("detail");
@@ -117,96 +117,112 @@ function renderDetail(eventId){
   const visualItems = enrich.visualItems || [data.visual];
 
   $("#detailRoot").innerHTML = `
-    <section class="detail-hero">
+    <section class="detail-hero detail-scroll-hero">
+      <div class="hero-mini">${data.era}</div>
       <h2>${data.title}</h2>
       <div class="detail-meta">
-        <span class="pill">${data.era}</span>
-        <span class="pill light">${data.year}</span>
+        <span class="pill">${data.year}</span>
         <span class="pill light">${data.scripture}</span>
       </div>
-      <p class="detail-summary">${data.summary}</p>
     </section>
 
-    <section class="card priority-card">
-      <div class="priority-title">인포그래픽 핵심축</div>
-      <div class="priority-grid">
-        <button class="priority-btn" data-tab="flow">6. 핵심사건 흐름</button>
-        <button class="priority-btn" data-tab="scripture">7. 관련성경</button>
-        <button class="priority-btn" data-tab="visual">9. 지도·시각자료</button>
+    <section class="scroll-section">
+      <div class="section-title">1. 사건 요약</div>
+      <div class="section-card">
+        ${data.summary}
       </div>
     </section>
 
-    <section class="card">
-      <div class="tabs">
-        <button class="tabbtn active" data-tab="flow">흐름</button>
-        <button class="tabbtn" data-tab="scripture">성경</button>
-        <button class="tabbtn" data-tab="visual">시각</button>
-        <button class="tabbtn" data-tab="meaning">의미</button>
-        <button class="tabbtn" data-tab="people">인물</button>
-        <button class="tabbtn" data-tab="connect">연결</button>
+    <section class="scroll-section">
+      <div class="section-title">2. 핵심 의미</div>
+      <div class="section-card">
+        <ul class="info-list">
+          ${data.meaning.map(x=>`<li>${x}</li>`).join("")}
+        </ul>
       </div>
+    </section>
 
-      <div class="panel active" id="panel-flow">
-        <h3 class="panel-title">${enrich.flowTitle || "핵심사건 흐름"}</h3>
-        <div class="flow-list">
-          ${flow.map(x=>`
-            <div class="flow-item">
-              <div class="flow-badge">${x[0]}</div>
-              <div class="flow-body">
-                <div class="flow-text">${x[1]}</div>
-                ${x[2] ? `<div class="flow-visual">시각자료: ${x[2]}</div>` : ""}
-              </div>
+    <section class="scroll-section">
+      <div class="section-title">3. 시대 / 연대</div>
+      <div class="section-card">
+        <div class="timeline-year">${data.year}</div>
+        <div class="timeline-era">${data.era}</div>
+        <div class="timeline-scripture">${data.scripture}</div>
+      </div>
+    </section>
+
+    <section class="scroll-section">
+      <div class="section-title">4. 장소</div>
+      <div class="section-card">
+        <div class="map-title">${data.place}</div>
+        <div class="map-note">${data.visual}</div>
+      </div>
+    </section>
+
+    <section class="scroll-section">
+      <div class="section-title">5. 핵심 인물</div>
+      <div class="keyword-grid">
+        ${data.people.map(x=>`<div class="keyword">${x}</div>`).join("")}
+      </div>
+    </section>
+
+    <section class="scroll-section">
+      <div class="section-title">6. 핵심사건 흐름</div>
+      <div class="flow-list">
+        ${flow.map(x=>`
+          <div class="flow-item">
+            <div class="flow-badge">${x[0]}</div>
+            <div class="flow-body">
+              <div class="flow-text">${x[1]}</div>
+              ${x[2] ? `<div class="flow-visual">시각자료: ${x[2]}</div>` : ""}
             </div>
-          `).join("")}
-        </div>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+
+    <section class="scroll-section">
+      <div class="section-title">7. 관련성경</div>
+      <div class="scripture-list">
+        ${scriptureRefs.map(x=>`
+          <div class="scripture-card">
+            <div class="scripture-ref">${x[0]}</div>
+            <div class="scripture-text">${x[1]}</div>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+
+    <section class="scroll-section">
+      <div class="section-title">8. 연결탐험</div>
+      <div class="keyword-grid">
+        ${data.connect.map(x=>`<button class="keyword">↔ ${x}</button>`).join("")}
+      </div>
+      <div class="section-card notice-card">
+        연결탐험은 성막 · 절기 · 십자가 · 성찬 · 새창조 등 다른 메뉴로 이어지는 탐험 허브 역할을 합니다.
+      </div>
+    </section>
+
+    <section class="scroll-section">
+      <div class="section-title">9. 지도 / 시각자료</div>
+      <div class="visual-grid">
+        ${visualItems.map(x=>`<div class="visual-chip">${x}</div>`).join("")}
       </div>
 
-      <div class="panel" id="panel-scripture">
-        <h3 class="panel-title">관련성경</h3>
-        <div class="scripture-list">
-          ${scriptureRefs.map(x=>`
-            <div class="scripture-card">
-              <div class="scripture-ref">${x[0]}</div>
-              <div class="scripture-text">${x[1]}</div>
-            </div>
-          `).join("")}
-        </div>
-        <div class="btn-row">
-          <button class="cen-btn secondary" data-toast="bible">본문에서 보기</button>
-        </div>
+      <div class="visual-map">
+        <div class="map-title">${data.place}</div>
+        <div class="map-note">${data.visual}</div>
       </div>
 
-      <div class="panel" id="panel-visual">
-        <h3 class="panel-title">지도 / 시각자료</h3>
-        <div class="visual-grid">
-          ${visualItems.map(x=>`<div class="visual-chip">${x}</div>`).join("")}
-        </div>
-        <div class="visual-map">
-          <div class="map-title">${data.place}</div>
-          <div class="map-note">${data.visual}</div>
-        </div>
-        <img class="thumb" src="${data.image}" alt="${data.title} 원본 인포그래픽">
-      </div>
+      <img class="thumb large-thumb" src="${data.image}" alt="${data.title}">
+    </section>
 
-      <div class="panel" id="panel-meaning">
-        <h3 class="panel-title">핵심 의미</h3>
-        <ul class="info-list">${data.meaning.map(x=>`<li>${x}</li>`).join("")}</ul>
-      </div>
-
-      <div class="panel" id="panel-people">
-        <h3 class="panel-title">핵심 인물</h3>
-        <div class="keyword-grid">${data.people.map(x=>`<span class="keyword">${x}</span>`).join("")}</div>
-      </div>
-
-      <div class="panel" id="panel-connect">
-        <h3 class="panel-title">연결 탐험</h3>
-        <div class="keyword-grid">${data.connect.map(x=>`<button class="keyword">↔ ${x}</button>`).join("")}</div>
-        <p class="notice">연결탐험은 반복 설명이 아니라, 다른 메뉴로 이동하는 통로입니다. 이후 성막·절기·십자가·성찬·새창조와 연결합니다.</p>
-      </div>
-
+    <section class="scroll-section">
+      <div class="section-title">원본 인포그래픽</div>
       <div class="btn-row">
-        <button class="cen-btn full" data-open-original="${eventId}">원본 인포그래픽 보기</button>
-        <button class="cen-btn secondary full" data-toast="bible">관련 본문 이동 준비중</button>
+        <button class="cen-btn full" data-open-original="${eventId}">
+          원본 인포그래픽 크게 보기
+        </button>
       </div>
     </section>
   `;
