@@ -271,3 +271,28 @@ button{font-family:inherit}
   color:#6b4f39;
   font-size:14px;
 }
+
+
+/* v12: 핵심 흐름·관련성경·지도 박스 밝은 배경 통일 */
+.flow-body,
+.scripture-card,
+.crop-map-card{
+  background:#fff8ee !important;
+  border-color:#d9bea0 !important;
+  box-shadow:0 8px 20px rgba(80,50,20,.06);
+}
+
+.clean-map-only{
+  padding:10px;
+}
+
+.clean-map-only .btn-row{
+  margin-top:10px;
+}
+
+.crop-map-title,
+.visual-grid,
+.visual-map,
+.original-mini-title{
+  display:none !important;
+}

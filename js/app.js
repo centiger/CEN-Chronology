@@ -205,27 +205,16 @@ function renderDetail(eventId){
 
     <section class="scroll-section">
       <div class="section-title">9. 지도 / 시각자료</div>
-      <div class="visual-grid">
-        ${visualItems.map(x=>`<div class="visual-chip">${x}</div>`).join("")}
-      </div>
-
-      <div class="visual-map">
-        <div class="map-title">${data.place}</div>
-        <div class="map-note">${data.visual}</div>
-      </div>
-
       ${EVENT_MAP_CROPS[eventId] ? `
-        <div class="crop-map-card">
-          <div class="crop-map-title">인포그래픽에서 추출한 지도/시각자료</div>
+        <div class="crop-map-card clean-map-only">
           <img class="crop-map-img" src="${EVENT_MAP_CROPS[eventId]}" alt="${data.title} 지도/시각자료">
           <div class="btn-row">
             <button class="cen-btn secondary" data-open-crop="${eventId}">지도 크게 보기</button>
           </div>
         </div>
-      ` : ""}
-
-      <div class="original-mini-title">원본 인포그래픽 일부</div>
-      <img class="thumb large-thumb" src="${data.image}" alt="${data.title}">
+      ` : `
+        <div class="section-card">지도 이미지 준비중</div>
+      `}
     </section>
 
     <section class="scroll-section">
