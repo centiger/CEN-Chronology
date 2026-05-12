@@ -296,3 +296,9 @@ button{font-family:inherit}
 .original-mini-title{
   display:none !important;
 }
+
+
+/* v13 */
+.flow-visual{
+  display:none !important;
+}

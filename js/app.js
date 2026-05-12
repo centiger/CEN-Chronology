@@ -167,14 +167,14 @@ function renderDetail(eventId){
     </section>
 
     <section class="scroll-section">
-      <div class="section-title">6. 핵심사건 흐름</div>
+      <div class="section-title">6. 핵심사건</div>
       <div class="flow-list">
         ${flow.map(x=>`
           <div class="flow-item">
             <div class="flow-badge">${x[0]}</div>
             <div class="flow-body">
               <div class="flow-text">${x[1]}</div>
-              ${x[2] ? `<div class="flow-visual">시각자료: ${x[2]}</div>` : ""}
+              
             </div>
           </div>
         `).join("")}
@@ -217,14 +217,7 @@ function renderDetail(eventId){
       `}
     </section>
 
-    <section class="scroll-section">
-      <div class="section-title">원본 인포그래픽</div>
-      <div class="btn-row">
-        <button class="cen-btn full" data-open-original="${eventId}">
-          원본 인포그래픽 크게 보기
-        </button>
-      </div>
-    </section>
+    
   `;
   go("detail");
 }
