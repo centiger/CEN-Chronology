@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v10-scroll-explorer";
+const CACHE_NAME = "cen-bible-chronology-v11-map-crops";
 const ASSETS = [
   "./",
   "./index.html",
@@ -14,7 +14,13 @@ const ASSETS = [
   "./assets/infographics/03_eden_exile.png",
   "./assets/infographics/04_cain_abel.png",
   "./assets/infographics/05_noah_ark.png",
-  "./assets/infographics/06_babel_tower.png"
+  "./assets/infographics/06_babel_tower.png",
+  "./assets/maps/01_creation_map.png",
+  "./assets/maps/02_adam_eve_map.png",
+  "./assets/maps/03_eden_exile_map.png",
+  "./assets/maps/04_cain_abel_map.png",
+  "./assets/maps/05_noah_ark_map.png",
+  "./assets/maps/06_babel_tower_map.png"
 ];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(ASSETS)).then(()=>self.skipWaiting()));

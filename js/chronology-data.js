@@ -350,3 +350,14 @@ const EVENT_ENRICH = {
     visualItems: ["시날 평지","바벨탑","언어","흩어진 민족","오순절 연결"]
   }
 };
+
+
+// v11 crop 지도/시각자료 이미지
+const EVENT_MAP_CROPS = {
+  "creation": "assets/maps/01_creation_map.png",
+  "adam-eve": "assets/maps/02_adam_eve_map.png",
+  "eden-exile": "assets/maps/03_eden_exile_map.png",
+  "cain-abel": "assets/maps/04_cain_abel_map.png",
+  "noah-ark": "assets/maps/05_noah_ark_map.png",
+  "babel-tower": "assets/maps/06_babel_tower_map.png"
+};

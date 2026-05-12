@@ -214,6 +214,17 @@ function renderDetail(eventId){
         <div class="map-note">${data.visual}</div>
       </div>
 
+      ${EVENT_MAP_CROPS[eventId] ? `
+        <div class="crop-map-card">
+          <div class="crop-map-title">인포그래픽에서 추출한 지도/시각자료</div>
+          <img class="crop-map-img" src="${EVENT_MAP_CROPS[eventId]}" alt="${data.title} 지도/시각자료">
+          <div class="btn-row">
+            <button class="cen-btn secondary" data-open-crop="${eventId}">지도 크게 보기</button>
+          </div>
+        </div>
+      ` : ""}
+
+      <div class="original-mini-title">원본 인포그래픽 일부</div>
       <img class="thumb large-thumb" src="${data.image}" alt="${data.title}">
     </section>
 
@@ -237,6 +248,18 @@ function openViewer(eventId){
   $("#viewerImg").style.width = "100%";
   $("#viewer").classList.add("show");
 }
+
+function openCropViewer(eventId){
+  const data = EVENTS[eventId];
+  const crop = EVENT_MAP_CROPS[eventId];
+  if(!data || !crop) return;
+  viewerScale = 1;
+  $("#viewerTitle").textContent = data.title + " 지도/시각자료";
+  $("#viewerImg").src = crop;
+  $("#viewerImg").style.width = "100%";
+  $("#viewer").classList.add("show");
+}
+
 function closeViewer(){
   $("#viewer").classList.remove("show");
 }
@@ -305,6 +328,9 @@ function init(){
 
     const original = e.target.closest("[data-open-original]");
     if(original) openViewer(original.dataset.openOriginal);
+
+    const crop = e.target.closest("[data-open-crop]");
+    if(crop) openCropViewer(crop.dataset.openCrop);
 
     const toast = e.target.closest("[data-toast]");
     if(toast) alert("이 기능은 다음 단계에서 CEN Bible 본문·지도·성막 메뉴와 연결됩니다.");
