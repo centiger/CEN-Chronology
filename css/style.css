@@ -485,3 +485,58 @@ button{font-family:inherit}
   margin:0 3px;
   flex:0 0 auto;
 }
+
+
+/* v21 CEN Bible 2.0 tone sync */
+:root{
+  --cen-bg:#f7f1e7;
+  --cen-card:#fff9f2;
+  --cen-border:#dcc7aa;
+  --cen-pill:#fff3e2;
+  --cen-accent:#9a6a3a;
+  --cen-text:#4f3929;
+  --cen-muted:#7a624d;
+}
+
+body,
+.app,
+main{
+  background:var(--cen-bg) !important;
+  color:var(--cen-text) !important;
+}
+
+.scroll-section,
+.section-card,
+.flow-body,
+.scripture-card,
+.crop-map-card,
+.compact-explore-box{
+  background:var(--cen-card) !important;
+  border-color:var(--cen-border) !important;
+}
+
+.section-title,
+.map-title,
+.flow-title,
+.scripture-title{
+  color:var(--cen-accent) !important;
+}
+
+.compact-pill,
+.connected-pill,
+.keyword,
+button{
+  background:var(--cen-pill) !important;
+  border-color:var(--cen-border) !important;
+  color:var(--cen-text) !important;
+}
+
+.connect-line{
+  background:var(--cen-accent) !important;
+}
+
+.explore-ref,
+.map-note,
+.compact-explore-descs{
+  color:var(--cen-muted) !important;
+}
