@@ -200,9 +200,12 @@ function renderDetail(eventId){
           <div class="compact-explore-wrap connected-wrap">
             ${EVENT_EXPLORE[eventId].items.map((x, idx, arr)=>`
               <div class="connected-item">
-                <button class="compact-pill connected-pill" data-explore="${x.title}">
-                  ${x.title}${x.desc ? `<br><span class="pill-desc">(${x.desc})</span>` : ``}
-                </button>
+                <div class="connected-node">
+                  <button class="compact-pill connected-pill" data-explore="${x.title}">
+                    ${x.title}
+                  </button>
+                  ${x.desc ? `<div class="outside-pill-desc">(${x.desc})</div>` : ``}
+                </div>
                 ${idx < arr.length - 1 ? `<span class="connect-line"></span>` : ``}
               </div>
             `).join("")}

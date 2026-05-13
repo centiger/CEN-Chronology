@@ -677,3 +677,87 @@ button[data-detail]:hover{
   margin:0 5px !important;
   box-shadow:0 1px 3px rgba(80,50,20,.08);
 }
+
+
+/* v24: 핵심사건 상세 텍스트 스타일을 사건요약 박스 기준으로 통일 */
+.flow-body,
+.flow-text,
+.scripture-card,
+.scripture-text,
+.section-card,
+.info-list,
+.info-list li,
+.map-note,
+.visual-map,
+.crop-map-card,
+.keyword,
+.keyword-grid,
+.timeline-era,
+.timeline-scripture{
+  font-size:15px !important;
+  font-weight:400 !important;
+  line-height:1.75 !important;
+  color:#4f3929 !important;
+  letter-spacing:0 !important;
+}
+
+/* 핵심사건 번호 배지는 유지하되 텍스트 박스만 통일 */
+.flow-badge{
+  font-size:13px !important;
+  font-weight:800 !important;
+}
+
+/* v24: 연결탐험 버튼에는 제목만, 설명은 버튼 아래로 */
+.connected-item{
+  display:flex !important;
+  align-items:center !important;
+  flex:0 0 auto !important;
+}
+
+.connected-node{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  flex:0 0 auto !important;
+  max-width:104px !important;
+}
+
+.connected-pill{
+  min-height:auto !important;
+  height:auto !important;
+  padding:5px 10px !important;
+  font-size:11px !important;
+  line-height:1.15 !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:999px !important;
+}
+
+.outside-pill-desc{
+  margin-top:4px !important;
+  font-size:10px !important;
+  line-height:1.25 !important;
+  color:#6b4f39 !important;
+  text-align:center !important;
+  word-break:keep-all !important;
+  max-width:104px !important;
+}
+
+.pill-desc{
+  display:none !important;
+}
+
+/* 연결선은 버튼 중심선에 가깝게 배치 */
+.connect-line{
+  align-self:flex-start !important;
+  margin-top:12px !important;
+  width:18px !important;
+  height:3px !important;
+  background:#a8743b !important;
+  border-radius:999px !important;
+  flex:0 0 auto !important;
+}

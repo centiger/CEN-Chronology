@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v23-clean-align";
+const CACHE_NAME = "cen-bible-chronology-v24-pills-outside-desc";
 const ASSETS = [
   "./",
   "./index.html",
