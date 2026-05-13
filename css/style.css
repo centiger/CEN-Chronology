@@ -1409,3 +1409,20 @@ button[data-detail]:hover{
   border-color:#c79a63 !important;
   color:#4a3424 !important;
 }
+
+
+/* v33: 핵심사건 번호 제거 후 제목형 버튼 */
+.flow-badge{
+  padding:7px 6px !important;
+  font-size:11.5px !important;
+  line-height:1.2 !important;
+  letter-spacing:-0.1px !important;
+}
+
+
+/* v34 숫자 제거 최종 정리 */
+.flow-badge{
+  justify-content:center !important;
+  align-items:center !important;
+  text-align:center !important;
+}
