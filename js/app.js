@@ -197,11 +197,14 @@ function renderDetail(eventId){
       <div class="section-title">8. 연결탐험</div>
       ${EVENT_EXPLORE[eventId] ? `
         <div class="compact-explore-box">
-          <div class="compact-explore-wrap">
-            ${EVENT_EXPLORE[eventId].items.map((x)=>`
-              <button class="compact-pill wide-pill" data-explore="${x.title}">
-                ${x.title}${x.desc ? ` · ${x.desc}` : ``}
-              </button>
+          <div class="compact-explore-wrap connected-wrap">
+            ${EVENT_EXPLORE[eventId].items.map((x, idx, arr)=>`
+              <div class="connected-item">
+                <button class="compact-pill connected-pill" data-explore="${x.title}">
+                  ${x.title}${x.desc ? `(${x.desc})` : ``}
+                </button>
+                ${idx < arr.length - 1 ? `<span class="connect-line"></span>` : ``}
+              </div>
             `).join("")}
           </div>
         </div>

@@ -447,3 +447,41 @@ button{font-family:inherit}
   padding:6px 9px;
   border-radius:999px;
 }
+
+
+/* v20 연결선 캡슐 구조 */
+.connected-wrap{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:6px 2px !important;
+  align-items:center !important;
+}
+
+.connected-item{
+  display:flex;
+  align-items:center;
+  flex:0 0 auto;
+  max-width:100%;
+}
+
+.connected-pill{
+  white-space:normal !important;
+  line-height:1.25 !important;
+  font-size:11px !important;
+  padding:6px 10px !important;
+  border-radius:999px !important;
+  background:#fff2df !important;
+  border:1px solid #d99a43 !important;
+  color:#4a3324 !important;
+  font-weight:900 !important;
+  box-shadow:0 2px 6px rgba(80,50,20,.05);
+}
+
+.connect-line{
+  width:16px;
+  height:3px;
+  background:#b47a36;
+  border-radius:999px;
+  margin:0 3px;
+  flex:0 0 auto;
+}
