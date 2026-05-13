@@ -422,3 +422,28 @@ button{font-family:inherit}
   color:#6b4f39;
   word-break:keep-all;
 }
+
+
+/* v19 연결탐험: 캡슐 버튼만 표시, 박스 안 자동 줄바꿈 */
+.compact-explore-wrap{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  align-items:flex-start;
+}
+
+.compact-explore-line,
+.compact-arrow,
+.compact-explore-descs{
+  display:none !important;
+}
+
+.wide-pill{
+  white-space:normal;
+  text-align:left;
+  line-height:1.28;
+  max-width:100%;
+  font-size:11px;
+  padding:6px 9px;
+  border-radius:999px;
+}
