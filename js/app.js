@@ -201,7 +201,7 @@ function renderDetail(eventId){
             ${EVENT_EXPLORE[eventId].items.map((x, idx, arr)=>`
               <div class="connected-item">
                 <button class="compact-pill connected-pill" data-explore="${x.title}">
-                  ${x.title}${x.desc ? `(${x.desc})` : ``}
+                  ${x.title}${x.desc ? `<br><span class="pill-desc">(${x.desc})</span>` : ``}
                 </button>
                 ${idx < arr.length - 1 ? `<span class="connect-line"></span>` : ``}
               </div>

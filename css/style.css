@@ -618,3 +618,62 @@ button[data-detail]:hover{
   color:#4f3929 !important;
   border:1px solid #dcc7aa !important;
 }
+
+
+/* v23 핵심사건 + 연결탐험 정리 */
+
+/* 핵심사건 텍스트 색상 통일 */
+.flow-body,
+.flow-body *,
+.scripture-card,
+.scripture-card *{
+  color:#4f3929 !important;
+}
+
+/* 연결탐험 버튼 구조 개선 */
+.connected-wrap{
+  gap:10px 2px !important;
+  align-items:center !important;
+}
+
+.connected-item{
+  display:flex;
+  align-items:center;
+  flex:0 0 auto;
+}
+
+.connected-pill{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  min-height:52px !important;
+  padding:7px 12px !important;
+  line-height:1.2 !important;
+}
+
+/* 괄호 안 텍스트를 버튼 아래줄로 */
+.connected-pill{
+  white-space:normal !important;
+}
+
+.connected-pill br{
+  display:block;
+}
+
+/* 버튼 내부 전체 가운데 정렬 */
+.connected-pill,
+.connected-pill *{
+  text-align:center !important;
+}
+
+/* 연결선 조금 더 규모감 있게 */
+.connect-line{
+  width:22px !important;
+  height:4px !important;
+  border-radius:999px !important;
+  background:#a8743b !important;
+  margin:0 5px !important;
+  box-shadow:0 1px 3px rgba(80,50,20,.08);
+}
