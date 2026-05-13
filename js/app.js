@@ -196,18 +196,19 @@ function renderDetail(eventId){
     <section class="scroll-section">
       <div class="section-title">8. 연결탐험</div>
       ${EVENT_EXPLORE[eventId] ? `
-        <div class="explore-title">${EVENT_EXPLORE[eventId].title}</div>
-        <div class="exact-explore-flow">
-          ${EVENT_EXPLORE[eventId].items.map((x, idx, arr)=>`
-            <div class="exact-explore-node">
-              <button class="exact-explore-circle" data-explore="${x.title}">
-                <span>${x.title}</span>
-              </button>
-              ${x.desc ? `<div class="exact-explore-desc">${x.desc}</div>` : ""}
-              ${x.ref ? `<div class="exact-explore-ref">(${x.ref})</div>` : ""}
-            </div>
-            ${idx < arr.length - 1 ? `<div class="exact-explore-arrow">→</div>` : ""}
-          `).join("")}
+        <div class="compact-explore-box">
+          <div class="compact-explore-line">
+            ${EVENT_EXPLORE[eventId].items.map((x, idx, arr)=>`
+              <button class="compact-pill" data-explore="${x.title}">${x.title}</button>
+              ${idx < arr.length - 1 ? `<span class="compact-arrow">→</span>` : ``}
+            `).join("")}
+          </div>
+
+          <div class="compact-explore-descs">
+            ${EVENT_EXPLORE[eventId].items.map(x=>`
+              ${x.desc ? `<span>${x.desc}</span>` : ``}
+            `).join(" · ")}
+          </div>
         </div>
       ` : `
         <div class="section-card">연결탐험 데이터 준비중</div>

@@ -377,3 +377,48 @@ button{font-family:inherit}
   font-size:22px;
   font-weight:900;
 }
+
+
+/* v18 compact 연결탐험 */
+.compact-explore-box{
+  background:#fff8ee;
+  border:1px solid #d9bea0;
+  border-radius:18px;
+  padding:12px 10px;
+  box-shadow:0 8px 20px rgba(80,50,20,.06);
+}
+
+.compact-explore-line{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  overflow-x:auto;
+  white-space:nowrap;
+  padding-bottom:6px;
+}
+
+.compact-pill{
+  border:none;
+  background:#fff2df;
+  border:1px solid #d99a43;
+  border-radius:999px;
+  padding:5px 10px;
+  font-size:11px;
+  font-weight:900;
+  color:#4a3324;
+  flex:0 0 auto;
+}
+
+.compact-arrow{
+  color:#9b6a2d;
+  font-size:12px;
+  font-weight:900;
+  flex:0 0 auto;
+}
+
+.compact-explore-descs{
+  font-size:11px;
+  line-height:1.45;
+  color:#6b4f39;
+  word-break:keep-all;
+}
