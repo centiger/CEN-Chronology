@@ -195,11 +195,15 @@ function renderDetail(eventId){
 
     <section class="scroll-section">
       <div class="section-title">8. 연결탐험</div>
-      <div class="keyword-grid">
-        ${data.connect.map(x=>`<button class="keyword">↔ ${x}</button>`).join("")}
-      </div>
-      <div class="section-card notice-card">
-        연결탐험은 성막 · 절기 · 십자가 · 성찬 · 새창조 등 다른 메뉴로 이어지는 탐험 허브 역할을 합니다.
+      <div class="explore-flow">
+        ${(EVENT_EXPLORE[eventId] || data.connect.map(x=>[x,"",""])).map((x, idx, arr)=>`
+          <div class="explore-node">
+            <button class="explore-circle" data-explore="${x[0]}">${x[0]}</button>
+            ${x[1] ? `<div class="explore-desc">${x[1]}</div>` : ""}
+            ${x[2] ? `<div class="explore-ref">${x[2]}</div>` : ""}
+          </div>
+          ${idx < arr.length - 1 ? `<div class="explore-arrow">→</div>` : ""}
+        `).join("")}
       </div>
     </section>
 
@@ -313,6 +317,9 @@ function init(){
 
     const crop = e.target.closest("[data-open-crop]");
     if(crop) openCropViewer(crop.dataset.openCrop);
+
+    const explore = e.target.closest("[data-explore]");
+    if(explore) alert(`'${explore.dataset.explore}' 연결탐험 페이지는 이후 핵심사건 태그 허브로 연결됩니다.`);
 
     const toast = e.target.closest("[data-toast]");
     if(toast) alert("이 기능은 다음 단계에서 CEN Bible 본문·지도·성막 메뉴와 연결됩니다.");
