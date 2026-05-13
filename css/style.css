@@ -761,3 +761,86 @@ button[data-detail]:hover{
   border-radius:999px !important;
   flex:0 0 auto !important;
 }
+
+
+/* v25 연결탐험: 긴 연결선 위에 버튼이 놓인 구조 */
+
+.compact-explore-box{
+  padding:8px 6px !important;
+}
+
+.connected-wrap{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  align-items:flex-start !important;
+  gap:10px 0 !important;
+  position:relative !important;
+}
+
+/* 개별 개체 */
+.connected-item{
+  display:flex !important;
+  align-items:flex-start !important;
+  margin:0 !important;
+  padding:0 !important;
+  position:relative !important;
+}
+
+/* 버튼 아래 설명 */
+.connected-node{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  margin:0 !important;
+  padding:0 !important;
+  position:relative !important;
+  z-index:2 !important;
+}
+
+/* 버튼 */
+.connected-pill{
+  position:relative !important;
+  z-index:3 !important;
+  padding:4px 8px !important;
+  min-height:auto !important;
+  font-size:10.5px !important;
+  line-height:1.08 !important;
+  border-radius:999px !important;
+  background:#fff3e2 !important;
+  border:1px solid #cfab79 !important;
+  margin:0 !important;
+  box-shadow:0 1px 3px rgba(80,50,20,.04) !important;
+}
+
+/* 설명 */
+.outside-pill-desc{
+  margin-top:2px !important;
+  font-size:9.5px !important;
+  line-height:1.12 !important;
+  color:#6b4f39 !important;
+  text-align:center !important;
+  max-width:92px !important;
+}
+
+/* 핵심: 버튼과 버튼 사이 선 완전 연결 */
+.connect-line{
+  width:18px !important;
+  height:2.5px !important;
+  background:#a8743b !important;
+  border-radius:999px !important;
+  margin:10px 0 0 0 !important;
+  position:relative !important;
+  left:-1px !important;
+  flex:0 0 auto !important;
+}
+
+/* 선과 버튼 사이 빈틈 제거 */
+.connected-item + .connected-item{
+  margin-left:-1px !important;
+}
+
+/* 줄바꿈 시 안정감 */
+.connected-wrap br{
+  display:none !important;
+}
