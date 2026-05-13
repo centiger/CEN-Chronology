@@ -944,3 +944,332 @@ button[data-detail]:hover{
     row-gap:12px !important;
   }
 }
+
+
+/* v27 연결탐험: 전철 노선도형 단일 레일 구조 */
+
+/* 박스는 최대한 compact */
+.compact-explore-box{
+  position:relative !important;
+  padding:10px 8px 8px !important;
+  background:#fff8ee !important;
+  border:1px solid #d9bea0 !important;
+  border-radius:18px !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  -webkit-overflow-scrolling:touch !important;
+}
+
+/* 가로 스크롤 노선도: 줄바꿈 금지 */
+.connected-wrap{
+  position:relative !important;
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  align-items:flex-start !important;
+  gap:0 !important;
+  padding:4px 0 4px !important;
+  min-width:max-content !important;
+}
+
+/* 노선 전체를 관통하는 하나의 굵은 선 */
+.connected-wrap::before{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  top:18px !important;
+  height:4px !important;
+  background:#a8743b !important;
+  border-radius:999px !important;
+  z-index:0 !important;
+}
+
+/* 기존 조각 선은 완전히 제거 */
+.connect-line{
+  display:none !important;
+}
+
+/* 각 역 묶음 */
+.connected-item{
+  position:relative !important;
+  z-index:2 !important;
+  display:flex !important;
+  align-items:flex-start !important;
+  margin:0 !important;
+  padding:0 7px !important;
+  flex:0 0 auto !important;
+}
+
+/* 노선 위에 올라가는 역 */
+.connected-node{
+  position:relative !important;
+  z-index:3 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  width:92px !important;
+  max-width:92px !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* 버튼은 역 이름. 선 위에 얹힘 */
+.connected-pill{
+  position:relative !important;
+  z-index:4 !important;
+  background:#fff3e2 !important;
+  border:1px solid #cfa66f !important;
+  color:#4f3929 !important;
+  border-radius:999px !important;
+  padding:4px 8px !important;
+  min-height:24px !important;
+  font-size:10.5px !important;
+  line-height:1.1 !important;
+  font-weight:900 !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+  box-shadow:0 1px 4px rgba(80,50,20,.08) !important;
+}
+
+/* 설명은 역 아래 작은 글씨 */
+.outside-pill-desc{
+  margin-top:4px !important;
+  font-size:9.5px !important;
+  line-height:1.15 !important;
+  color:#6b4f39 !important;
+  text-align:center !important;
+  word-break:keep-all !important;
+  width:92px !important;
+  max-width:92px !important;
+}
+
+/* 첫 번째/마지막 역도 선 위에 안정적으로 보이게 */
+.connected-item:first-child{
+  padding-left:2px !important;
+}
+
+.connected-item:last-child{
+  padding-right:2px !important;
+}
+
+/* 스크롤바 최소화 */
+.compact-explore-box::-webkit-scrollbar{
+  height:4px;
+}
+.compact-explore-box::-webkit-scrollbar-thumb{
+  background:#d2b486;
+  border-radius:999px;
+}
+
+
+/* v28 연결탐험: 2줄 노선도 + 균등 배분 + 버튼/선 중앙 정렬 */
+
+/* 기존 v27 가로 스크롤 노선도 숨김/무력화 */
+.compact-explore-box{
+  overflow:visible !important;
+}
+
+/* 새 전체 박스 */
+.two-row-explore-box{
+  background:#fff8ee;
+  border:1px solid #d9bea0;
+  border-radius:18px;
+  padding:10px 8px 8px;
+  box-shadow:0 8px 20px rgba(80,50,20,.06);
+}
+
+/* 각 줄: 선 하나 깔고, 버튼을 그 위에 균등 배분 */
+.metro-row{
+  position:relative;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:6px;
+  padding:0 4px;
+  margin:0 0 10px;
+}
+
+/* 각 줄의 굵은 노선 */
+.metro-row::before{
+  content:"";
+  position:absolute;
+  left:8px;
+  right:8px;
+  top:13px;            /* 버튼 중앙 높이 */
+  height:4px;
+  background:#a8743b;
+  border-radius:999px;
+  z-index:0;
+}
+
+/* 2개짜리 아래줄은 너무 벌어지지 않도록 살짝 가운데 배치 */
+.metro-row.row-2{
+  justify-content:center;
+  gap:34px;
+}
+
+/* 1개짜리도 중앙 */
+.metro-row.row-1{
+  justify-content:center;
+}
+
+/* 역 하나 */
+.metro-station{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:94px;
+  max-width:94px;
+}
+
+/* 역 버튼: 선과 정확히 중앙 정렬 */
+.metro-pill{
+  position:relative;
+  z-index:3;
+  background:#fff3e2 !important;
+  border:1px solid #cfa66f !important;
+  color:#4f3929 !important;
+  border-radius:999px !important;
+  padding:4px 8px !important;
+  min-height:26px !important;
+  font-size:10.5px !important;
+  line-height:1.1 !important;
+  font-weight:900 !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+  box-shadow:0 1px 4px rgba(80,50,20,.08) !important;
+}
+
+/* 버튼 아래 설명 */
+.metro-desc{
+  margin-top:4px !important;
+  font-size:9.5px !important;
+  line-height:1.15 !important;
+  color:#6b4f39 !important;
+  text-align:center !important;
+  word-break:keep-all !important;
+  max-width:94px !important;
+}
+
+/* 마지막 줄 여백 정리 */
+.two-row-explore-box .metro-row:last-child{
+  margin-bottom:0;
+}
+
+/* 기존 연결선/기존 구조는 새 구조에서 숨김 */
+.connected-wrap,
+.exact-explore-flow,
+.explore-title{
+  display:none !important;
+}
+
+
+/* v29 연결탐험 최종 조정: 전철 노선도 규칙 통일 */
+
+/* 전체 박스 */
+.two-row-explore-box{
+  background:#fff8ee !important;
+  border:1px solid #d9bea0 !important;
+  border-radius:18px !important;
+  padding:10px 10px 8px !important;
+  box-shadow:0 8px 20px rgba(80,50,20,.06) !important;
+}
+
+/* 모든 줄은 같은 길이의 노선 사용 */
+.metro-row{
+  position:relative !important;
+  display:flex !important;
+  align-items:flex-start !important;
+  justify-content:space-between !important;
+  gap:0 !important;
+  padding:0 16px !important;       /* 첫/끝 버튼 기준 여백 */
+  margin:0 0 12px !important;
+  min-height:48px !important;
+}
+
+/* 모든 줄의 선은 왼쪽 바깥부터 오른쪽 끝까지 동일하게 지나감 */
+.metro-row::before{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;               /* 첫 버튼 왼쪽에 선이 삐죽 나오도록 */
+  right:0 !important;              /* 마지막 버튼 오른쪽에도 선이 이어짐 */
+  top:13px !important;             /* 버튼 중앙 높이 */
+  height:4px !important;
+  background:#a8743b !important;
+  border-radius:999px !important;
+  z-index:0 !important;
+}
+
+/* 1개, 2개, 3개, 4개 줄 모두 동일 원칙: 한 줄 전체에 균형 배치 */
+.metro-row.row-1,
+.metro-row.row-2,
+.metro-row.row-3,
+.metro-row.row-4{
+  justify-content:space-between !important;
+}
+
+/* 버튼 하나만 있는 경우는 가운데 배치하되 선은 동일 길이 유지 */
+.metro-row.row-1{
+  justify-content:center !important;
+}
+
+/* 역 하나 */
+.metro-station{
+  position:relative !important;
+  z-index:2 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  width:86px !important;
+  max-width:86px !important;
+  flex:0 0 86px !important;
+}
+
+/* 버튼은 노선 위에 정확히 올라가도록 */
+.metro-pill{
+  position:relative !important;
+  z-index:4 !important;
+  background:#fff3e2 !important;
+  border:1px solid #cfa66f !important;
+  color:#4f3929 !important;
+  border-radius:999px !important;
+  padding:4px 8px !important;
+  min-height:26px !important;
+  font-size:10.5px !important;
+  line-height:1.1 !important;
+  font-weight:900 !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+  box-shadow:0 1px 4px rgba(80,50,20,.08) !important;
+}
+
+/* 버튼 아래 설명 */
+.metro-desc{
+  margin-top:4px !important;
+  font-size:9.4px !important;
+  line-height:1.12 !important;
+  color:#6b4f39 !important;
+  text-align:center !important;
+  word-break:keep-all !important;
+  width:86px !important;
+  max-width:86px !important;
+}
+
+/* 마지막 줄도 같은 규칙 유지 */
+.two-row-explore-box .metro-row:last-child{
+  margin-bottom:0 !important;
+}
+
+/* 이전 방식 잔재 제거 */
+.connected-wrap,
+.connected-item,
+.connected-node,
+.connect-line,
+.exact-explore-flow,
+.explore-title{
+  display:none !important;
+}

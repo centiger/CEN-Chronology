@@ -195,25 +195,7 @@ function renderDetail(eventId){
 
     <section class="scroll-section">
       <div class="section-title">8. 연결탐험</div>
-      ${EVENT_EXPLORE[eventId] ? `
-        <div class="compact-explore-box">
-          <div class="compact-explore-wrap connected-wrap">
-            ${EVENT_EXPLORE[eventId].items.map((x, idx, arr)=>`
-              <div class="connected-item">
-                <div class="connected-node">
-                  <button class="compact-pill connected-pill" data-explore="${x.title}">
-                    ${x.title}
-                  </button>
-                  ${x.desc ? `<div class="outside-pill-desc">(${x.desc})</div>` : ``}
-                </div>
-                ${idx < arr.length - 1 ? `<span class="connect-line"></span>` : ``}
-              </div>
-            `).join("")}
-          </div>
-        </div>
-      ` : `
-        <div class="section-card">연결탐험 데이터 준비중</div>
-      `}
+      ${renderExploreRows(eventId)}
     </section>
 
     <section class="scroll-section">
@@ -234,6 +216,39 @@ function renderDetail(eventId){
   `;
   go("detail");
 }
+
+function chunkExploreItems(items){
+  if(!items || !items.length) return [];
+  if(items.length <= 4) return [items];
+  if(items.length === 5) return [items.slice(0,3), items.slice(3)];
+  if(items.length === 6) return [items.slice(0,3), items.slice(3)];
+  const rows = [];
+  for(let i=0; i<items.length; i+=3) rows.push(items.slice(i,i+3));
+  return rows;
+}
+
+function renderExploreRows(eventId){
+  const data = EVENT_EXPLORE[eventId];
+  if(!data) return `<div class="section-card">연결탐험 데이터 준비중</div>`;
+  const rows = chunkExploreItems(data.items);
+  return `
+    <div class="two-row-explore-box">
+      ${rows.map(row=>`
+        <div class="metro-row row-${row.length}">
+          ${row.map(x=>`
+            <div class="metro-station">
+              <button class="compact-pill metro-pill" data-explore="${x.title}">
+                ${x.title}
+              </button>
+              ${x.desc ? `<div class="outside-pill-desc metro-desc">(${x.desc})</div>` : ``}
+            </div>
+          `).join("")}
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
 function openViewer(eventId){
   const data = EVENTS[eventId];
   if(!data || !data.image) return;
