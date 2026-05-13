@@ -195,16 +195,23 @@ function renderDetail(eventId){
 
     <section class="scroll-section">
       <div class="section-title">8. 연결탐험</div>
-      <div class="explore-flow">
-        ${(EVENT_EXPLORE[eventId] || data.connect.map(x=>[x,"",""])).map((x, idx, arr)=>`
-          <div class="explore-node">
-            <button class="explore-circle" data-explore="${x[0]}">${x[0]}</button>
-            ${x[1] ? `<div class="explore-desc">${x[1]}</div>` : ""}
-            ${x[2] ? `<div class="explore-ref">${x[2]}</div>` : ""}
-          </div>
-          ${idx < arr.length - 1 ? `<div class="explore-arrow">→</div>` : ""}
-        `).join("")}
-      </div>
+      ${EVENT_EXPLORE[eventId] ? `
+        <div class="explore-title">${EVENT_EXPLORE[eventId].title}</div>
+        <div class="exact-explore-flow">
+          ${EVENT_EXPLORE[eventId].items.map((x, idx, arr)=>`
+            <div class="exact-explore-node">
+              <button class="exact-explore-circle" data-explore="${x.title}">
+                <span>${x.title}</span>
+              </button>
+              ${x.desc ? `<div class="exact-explore-desc">${x.desc}</div>` : ""}
+              ${x.ref ? `<div class="exact-explore-ref">(${x.ref})</div>` : ""}
+            </div>
+            ${idx < arr.length - 1 ? `<div class="exact-explore-arrow">→</div>` : ""}
+          `).join("")}
+        </div>
+      ` : `
+        <div class="section-card">연결탐험 데이터 준비중</div>
+      `}
     </section>
 
     <section class="scroll-section">
@@ -319,7 +326,7 @@ function init(){
     if(crop) openCropViewer(crop.dataset.openCrop);
 
     const explore = e.target.closest("[data-explore]");
-    if(explore) alert(`'${explore.dataset.explore}' 연결탐험 페이지는 이후 핵심사건 태그 허브로 연결됩니다.`);
+    if(explore) alert(`'${explore.dataset.explore}' 연결탐험은 이후 관련 핵심사건 모음으로 연결됩니다.`);
 
     const toast = e.target.closest("[data-toast]");
     if(toast) alert("이 기능은 다음 단계에서 CEN Bible 본문·지도·성막 메뉴와 연결됩니다.");
