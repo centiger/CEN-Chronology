@@ -1273,3 +1273,52 @@ button[data-detail]:hover{
 .explore-title{
   display:none !important;
 }
+
+
+/* v30: 연결탐험 좌우 여백 규칙 완전 통일 */
+
+/* 모든 줄 동일 여백 규칙 */
+.metro-row{
+  padding-left:18px !important;
+  padding-right:18px !important;
+  box-sizing:border-box !important;
+}
+
+/* 노선도 선도 동일 길이 */
+.metro-row::before{
+  left:0 !important;
+  right:0 !important;
+}
+
+/* 모든 줄 동일 정렬 규칙 */
+.metro-row.row-1,
+.metro-row.row-2,
+.metro-row.row-3,
+.metro-row.row-4{
+  justify-content:space-between !important;
+}
+
+/* 1개 줄만 가운데 */
+.metro-row.row-1{
+  justify-content:center !important;
+}
+
+/* 첫 버튼/마지막 버튼이 정확히 동일 여백에 놓이도록 */
+.metro-station:first-child{
+  margin-left:0 !important;
+}
+
+.metro-station:last-child{
+  margin-right:0 !important;
+}
+
+/* 아래줄도 위줄과 동일 폭 기준 */
+.two-row-explore-box{
+  width:100% !important;
+  box-sizing:border-box !important;
+}
+
+/* 줄 사이 간격 안정화 */
+.metro-row + .metro-row{
+  margin-top:2px !important;
+}
