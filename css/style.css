@@ -540,3 +540,81 @@ button{
 .compact-explore-descs{
   color:var(--cen-muted) !important;
 }
+
+
+/* v22 tone-down: CEN Bible 2.0 밝은 톤 보정 */
+
+/* 첫 화면 큰 소개 박스: 진한 갈색 → 연한 베이지 브라운 */
+.hero{
+  background:linear-gradient(135deg,#fff7ec,#ead8bd) !important;
+  color:#4f3929 !important;
+  border:1px solid #dcc7aa !important;
+  box-shadow:0 8px 20px rgba(120,80,35,.10) !important;
+}
+
+.hero .eyebrow{
+  color:#9a6a3a !important;
+}
+
+.hero h1{
+  color:#4f3929 !important;
+}
+
+.hero p{
+  color:#6f5843 !important;
+}
+
+/* 하단 네비게이션: 진한 갈색 배경 톤다운 */
+.bottomnav{
+  background:rgba(246,237,224,.97) !important;
+  border-top:1px solid #dcc7aa !important;
+  box-shadow:0 -4px 16px rgba(120,80,35,.08) !important;
+}
+
+.navbtn{
+  color:#6f5843 !important;
+}
+
+.navbtn.active{
+  background:#ead8bd !important;
+  color:#4f3929 !important;
+}
+
+/* 핵심사건 버튼: 진한 갈색 대신 연한 캡슐형 */
+.event-chip{
+  background:#fff3e2 !important;
+  color:#4f3929 !important;
+  border:1px solid #dcc7aa !important;
+  box-shadow:0 2px 6px rgba(120,80,35,.06) !important;
+}
+
+.event-chip.active{
+  background:#ead8bd !important;
+  color:#4f3929 !important;
+  border-color:#c9a878 !important;
+}
+
+/* 상세보기 버튼: 기능 버튼이므로 살짝 다른 녹갈색 계열 */
+.cen-btn.green,
+button[data-detail]{
+  background:#6f8a6a !important;
+  color:#fffaf2 !important;
+  border:1px solid #5f795a !important;
+}
+
+.cen-btn.green:hover,
+button[data-detail]:hover{
+  background:#5f795a !important;
+}
+
+/* 일반 주요 버튼은 너무 진하지 않게 */
+.cen-btn{
+  background:#9a6a3a !important;
+  color:#fffaf2 !important;
+}
+
+.cen-btn.secondary{
+  background:#f0dfc8 !important;
+  color:#4f3929 !important;
+  border:1px solid #dcc7aa !important;
+}

@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v21-tone-sync";
+const CACHE_NAME = "cen-bible-chronology-v22-tone-down";
 const ASSETS = [
   "./",
   "./index.html",
