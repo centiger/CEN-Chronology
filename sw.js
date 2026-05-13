@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v31-flow-align";
+const CACHE_NAME = "cen-bible-chronology-v32-light-badges";
 const ASSETS = [
   "./",
   "./index.html",
