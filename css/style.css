@@ -1907,3 +1907,117 @@ button[data-detail]:hover{
     font-size:8.6px !important;
   }
 }
+
+
+/* ===== v44 실제 연결탐험 구조 ===== */
+
+.v44-connect-box{
+  background:#fff9f1;
+  border:1px solid #d8c1a2;
+  border-radius:26px;
+  padding:20px 18px 16px;
+  overflow:hidden;
+  box-sizing:border-box;
+}
+
+.v44-line-row{
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:34px;
+  min-height:120px;
+}
+
+.v44-line-row:last-child{
+  margin-bottom:0;
+}
+
+.v44-line{
+  position:absolute;
+  left:8px;
+  right:8px;
+  top:42px;
+  height:8px;
+  background:#a36d2e;
+  border-radius:999px;
+  z-index:1;
+}
+
+.v44-node{
+  position:relative;
+  z-index:3;
+  width:31%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.v44-line-row.count-2 .v44-node{
+  width:42%;
+}
+
+.v44-line-row.count-1{
+  justify-content:center;
+}
+
+.v44-line-row.count-1 .v44-node{
+  width:50%;
+}
+
+.v44-pill{
+  background:#fffaf3;
+  border:3px solid #d2b082;
+  border-radius:999px;
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 18px;
+  font-size:16px;
+  font-weight:900;
+  color:#4c3118;
+  text-align:center;
+  white-space:nowrap;
+  box-sizing:border-box;
+}
+
+.v44-desc{
+  margin-top:16px;
+  font-size:13px;
+  color:#6a4d31;
+  text-align:center;
+  line-height:1.25;
+  word-break:keep-all;
+}
+
+@media (max-width:430px){
+
+  .v44-connect-box{
+    padding:16px 12px 14px;
+  }
+
+  .v44-line{
+    left:4px;
+    right:4px;
+    top:38px;
+    height:7px;
+  }
+
+  .v44-line-row{
+    min-height:102px;
+    margin-bottom:24px;
+  }
+
+  .v44-pill{
+    min-height:50px;
+    padding:0 12px;
+    font-size:13px;
+    border-width:2px;
+  }
+
+  .v44-desc{
+    font-size:11px;
+    margin-top:12px;
+  }
+}

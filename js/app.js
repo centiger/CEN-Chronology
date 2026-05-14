@@ -233,37 +233,31 @@ function renderDetail(eventId){
 
 
 
+
 function chunkExploreItems(items){
   if(!items || !items.length) return [];
-  if(items.length <= 4) return [items];
-  if(items.length === 5) return [items.slice(0,3), items.slice(3)];
-  if(items.length === 6) return [items.slice(0,3), items.slice(3)];
-  const rows = [];
-  for(let i=0; i<items.length; i+=3) rows.push(items.slice(i,i+3));
-  return rows;
+  if(items.length <= 3) return [items];
+  return [items.slice(0,3), items.slice(3)];
 }
 
 function renderExploreRows(eventId){
   const data = EVENT_EXPLORE[eventId];
-  if(!data) return `<div class="section-card">연결탐험 데이터 준비중</div>`;
+  if(!data) return "";
 
   const rows = chunkExploreItems(data.items);
 
   return `
-    <div class="explore-timeline-box">
-      ${rows.map((row, rowIndex)=>`
-        <div class="explore-lane lane-count-${row.length}">
-          <div class="explore-lane-line"></div>
-          <div class="explore-lane-stations">
-            ${row.map((x)=>`
-              <div class="explore-station">
-                <button class="explore-station-btn" data-explore="${x.title}">
-                  ${x.title}
-                </button>
-                ${x.desc ? `<div class="explore-station-desc">(${x.desc})</div>` : ``}
-              </div>
-            `).join("")}
-          </div>
+    <div class="v44-connect-box">
+      ${rows.map(row => `
+        <div class="v44-line-row count-${row.length}">
+          <div class="v44-line"></div>
+
+          ${row.map(item => `
+            <div class="v44-node">
+              <div class="v44-pill">${item.title}</div>
+              ${item.desc ? `<div class="v44-desc">(${item.desc})</div>` : ``}
+            </div>
+          `).join("")}
         </div>
       `).join("")}
     </div>
