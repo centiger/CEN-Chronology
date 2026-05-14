@@ -234,6 +234,7 @@ function renderDetail(eventId){
 
 
 
+
 function chunkExploreItems(items){
   if(!items || !items.length) return [];
   if(items.length <= 3) return [items];
@@ -247,15 +248,15 @@ function renderExploreRows(eventId){
   const rows = chunkExploreItems(data.items);
 
   return `
-    <div class="v44-connect-box">
+    <div class="timeline-box-v45">
       ${rows.map(row => `
-        <div class="v44-line-row count-${row.length}">
-          <div class="v44-line"></div>
+        <div class="timeline-row-v45 count-${row.length}">
+          <div class="timeline-track-v45"></div>
 
           ${row.map(item => `
-            <div class="v44-node">
-              <div class="v44-pill">${item.title}</div>
-              ${item.desc ? `<div class="v44-desc">(${item.desc})</div>` : ``}
+            <div class="timeline-node-v45">
+              <div class="timeline-pill-v45">${item.title}</div>
+              ${item.desc ? `<div class="timeline-desc-v45">(${item.desc})</div>` : ``}
             </div>
           `).join("")}
         </div>
