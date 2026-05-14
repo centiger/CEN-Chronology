@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v39-exodus-wilderness";
+const CACHE_NAME = "cen-bible-chronology-v40-original-infographic-fix";
 const ASSETS = [
   "./",
   "./index.html",
