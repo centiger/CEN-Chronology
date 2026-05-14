@@ -1483,26 +1483,3 @@ button[data-detail]:hover{
   font-weight:800 !important;
   box-shadow:0 2px 6px rgba(80,50,20,.08) !important;
 }
-
-/* v40: 출애굽·광야 핵심사건 왼쪽 아이콘을 숫자 대신 사건 제목으로 표시 */
-.flow-item{
-  grid-template-columns:88px 1fr !important;
-}
-.flow-badge{
-  width:88px !important;
-  min-width:88px !important;
-  max-width:88px !important;
-  min-height:48px !important;
-  padding:6px 5px !important;
-  font-size:10.4px !important;
-  line-height:1.18 !important;
-  letter-spacing:-0.35px !important;
-  word-break:keep-all !important;
-  overflow-wrap:normal !important;
-}
-@media (max-width:360px){
-  .flow-item{ grid-template-columns:82px 1fr !important; column-gap:8px !important; }
-  .flow-badge{ width:82px !important; min-width:82px !important; max-width:82px !important; font-size:10px !important; }
-  .flow-body{ padding:10px 11px !important; }
-  .flow-text{ font-size:14px !important; line-height:1.65 !important; }
-}
