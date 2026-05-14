@@ -1483,3 +1483,77 @@ button[data-detail]:hover{
   font-weight:800 !important;
   box-shadow:0 2px 6px rgba(80,50,20,.08) !important;
 }
+
+
+/* v39: 연결탐험 하단 라인 보강 */
+
+/* 두 줄 구조에서 아래쪽 라인의 선도 충분히 길게 유지 */
+.metro-row.row-2::before,
+.metro-row.row-3::before,
+.metro-row.row-4::before{
+  left:-6px !important;
+  right:-6px !important;
+}
+
+/* 아래줄 버튼 개수가 적어도 시간선이 이어져 보이도록 */
+.metro-row.row-2{
+  padding-left:28px !important;
+  padding-right:28px !important;
+}
+
+.metro-row.row-3{
+  padding-left:20px !important;
+  padding-right:20px !important;
+}
+
+/* 버튼 아래줄에서도 선이 아이콘 바깥까지 충분히 연장되도록 */
+.metro-row::before{
+  min-width:calc(100% + 12px) !important;
+}
+
+/* 두 줄 사이 연결감 강화 */
+.metro-row + .metro-row{
+  margin-top:4px !important;
+}
+
+
+
+/* ===== v40 specific line extension fix ===== */
+
+/* 아래쪽 두번째 줄 시간선 자체를 좌우로 더 길게 */
+.metro-row:nth-of-type(2)::before{
+  left:-30px !important;
+  right:-30px !important;
+  width:calc(100% + 60px) !important;
+}
+
+/* 아래줄 첫 아이콘 왼쪽 라인 */
+.metro-row:nth-of-type(2) .metro-station:first-child::before{
+  content:"";
+  position:absolute;
+  top:13px;
+  left:-38px;
+  width:40px;
+  height:4px;
+  background:#a8743b;
+  border-radius:999px;
+  z-index:1;
+}
+
+/* 아래줄 마지막 아이콘 오른쪽 라인 */
+.metro-row:nth-of-type(2) .metro-station:last-child::after{
+  content:"";
+  position:absolute;
+  top:13px;
+  right:-38px;
+  width:40px;
+  height:4px;
+  background:#a8743b;
+  border-radius:999px;
+  z-index:1;
+}
+
+/* 선이 잘리지 않게 */
+.metro-station{
+  overflow:visible !important;
+}
