@@ -705,3 +705,68 @@ Object.assign(EVENT_MAP_CROPS, {
   "joseph-dream":"assets/maps/11_joseph_dream_map.png",
   "joseph-governor":"assets/maps/12_joseph_governor_map.png"
 });
+
+
+// v37: 족장시대 8. 연결탐험 - 인포그래픽 원문 기준 재정리
+Object.assign(EVENT_EXPLORE, {
+  "abraham-call": {
+    title:"8. 연결탐험",
+    items:[
+      {title:"아브라함 언약", desc:"창 12, 15, 17장"},
+      {title:"이스라엘 민족", desc:"언약 백성의 시작"},
+      {title:"시내산 언약", desc:"출 19장"},
+      {title:"성막과 출발", desc:"출 25~40장"},
+      {title:"그리스도 언약", desc:"갈 3:8,16"}
+    ]
+  },
+  "lot-sodom": {
+    title:"8. 연결탐험",
+    items:[
+      {title:"홍수 심판", desc:"노아"},
+      {title:"하나님의 심판", desc:"아브라함"},
+      {title:"아브라함 언약", desc:"창 12장"},
+      {title:"율법 계약", desc:"출 20장"},
+      {title:"예수 그리스도", desc:"십자가"}
+    ]
+  },
+  "jacob-ladder": {
+    title:"8. 연결탐험",
+    items:[
+      {title:"야곱의 사다리", desc:"창 28:12"},
+      {title:"성막", desc:"하늘과 땅을 연결하는 하나님의 임재"},
+      {title:"성전", desc:"하나님의 영광이 임한 곳"},
+      {title:"십자가", desc:"하늘과 땅을 잇는 유일한 길"},
+      {title:"부활과 승천", desc:"하늘 문이 열리고 우리가 하나님께 나아감"}
+    ]
+  },
+  "jabbok-wrestling": {
+    title:"8. 연결탐험",
+    items:[
+      {title:"야곱의 사다리", desc:"창 28장"},
+      {title:"하나님과 씨름", desc:"창 32장"},
+      {title:"이스라엘 민족의 시작", desc:"창 35장"},
+      {title:"언약과 복의 계속", desc:"창 17장"},
+      {title:"그리스도 안의 새 이스라엘", desc:"갈 6:16"}
+    ]
+  },
+  "joseph-dream": {
+    title:"8. 연결탐험",
+    items:[
+      {title:"요셉의 꿈", desc:"창 37장"},
+      {title:"연단과 고난", desc:"창 39~40장"},
+      {title:"높임 받음", desc:"창 41장"},
+      {title:"기근 가운데 구원과 공급", desc:"창 45~50장"},
+      {title:"이스라엘 백성의 보존과 시작", desc:""}
+    ]
+  },
+  "joseph-governor": {
+    title:"8. 연결탐험",
+    items:[
+      {title:"기근의 위기", desc:""},
+      {title:"요셉의 지혜와 하나님의 인도", desc:""},
+      {title:"이스라엘 가족의 보존", desc:""},
+      {title:"애굽과 열방의 구원", desc:""},
+      {title:"그리스도의 구속 사역", desc:""}
+    ]
+  }
+});

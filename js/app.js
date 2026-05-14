@@ -106,8 +106,17 @@ function renderDetail(eventId){
         <div class="section-title">사건 요약</div>
         <div class="section-card">${getEventSummary(eventId)}</div>
       </section>
-    `;
-    go("detail");
+    
+    <section class="scroll-section">
+      <div class="section-title">원본 인포그래픽</div>
+      <div class="original-infographic-wrap">
+        <button class="original-infographic-btn" data-open-original="${eventId}">
+          원본 인포그래픽 보기
+        </button>
+      </div>
+    </section>
+  `;
+  go("detail");
     return;
   }
 
