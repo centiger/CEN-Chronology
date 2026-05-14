@@ -1,20 +1,12 @@
 {
-  "name": "CEN Bible 성경연대기",
-  "short_name": "성경연대기",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#f3e6d2",
-  "theme_color": "#4a3324",
-  "icons": [
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+  "name":"CEN Bible 성경연대기",
+  "short_name":"성경연대기",
+  "start_url":"./index.html",
+  "display":"standalone",
+  "background_color":"#f7efe4",
+  "theme_color":"#4b3324",
+  "icons":[
+    {"src":"icons/icon-192.png","sizes":"192x192","type":"image/png"},
+    {"src":"icons/icon-512.png","sizes":"512x512","type":"image/png"}
   ]
 }
