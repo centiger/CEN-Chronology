@@ -221,7 +221,7 @@ function renderDetail(eventId){
     <section class="scroll-section">
       <div class="section-title">원본 인포그래픽</div>
       <div class="original-infographic-wrap">
-        <button class="original-infographic-btn" data-open-original="${eventId}">
+        <button class="original-infographic-btn" data-open-original-src="${data.image}" data-open-original-title="${data.title}">
           원본 인포그래픽 보기
         </button>
       </div>
@@ -266,10 +266,18 @@ function renderExploreRows(eventId){
 function openViewer(eventId){
   const data = EVENTS[eventId];
   if(!data || !data.image) return;
+  openImageViewer(data.title + " 원본 인포그래픽", data.image);
+}
+
+function openImageViewer(title, src){
+  if(!src) return;
   viewerScale = 1;
-  $("#viewerTitle").textContent = data.title + " 원본 인포그래픽";
-  $("#viewerImg").src = data.image;
-  $("#viewerImg").style.width = "100%";
+  $("#viewerTitle").textContent = title || "원본 인포그래픽";
+  const img = $("#viewerImg");
+  img.src = src;
+  img.alt = title || "원본 인포그래픽";
+  img.style.width = "100%";
+  img.style.transform = "scale(1)";
   $("#viewer").classList.add("show");
 }
 
@@ -277,11 +285,7 @@ function openCropViewer(eventId){
   const data = EVENTS[eventId];
   const crop = EVENT_MAP_CROPS[eventId];
   if(!data || !crop) return;
-  viewerScale = 1;
-  $("#viewerTitle").textContent = data.title + " 지도/시각자료";
-  $("#viewerImg").src = crop;
-  $("#viewerImg").style.width = "100%";
-  $("#viewer").classList.add("show");
+  openImageViewer(data.title + " 지도/시각자료", crop);
 }
 
 function closeViewer(){
@@ -349,6 +353,9 @@ function init(){
       $$(".panel").forEach(p=>p.classList.remove("active"));
       $("#panel-" + tab.dataset.tab).classList.add("active");
     }
+
+    const originalSrc = e.target.closest("[data-open-original-src]");
+    if(originalSrc) openImageViewer((originalSrc.dataset.openOriginalTitle || "") + " 원본 인포그래픽", originalSrc.dataset.openOriginalSrc);
 
     const original = e.target.closest("[data-open-original]");
     if(original) openViewer(original.dataset.openOriginal);
