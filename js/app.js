@@ -232,6 +232,7 @@ function renderDetail(eventId){
 }
 
 
+
 function chunkExploreItems(items){
   if(!items || !items.length) return [];
   if(items.length <= 4) return [items];
@@ -245,19 +246,21 @@ function chunkExploreItems(items){
 function renderExploreRows(eventId){
   const data = EVENT_EXPLORE[eventId];
   if(!data) return `<div class="section-card">연결탐험 데이터 준비중</div>`;
+
   const rows = chunkExploreItems(data.items);
+
   return `
-    <div class="two-row-explore-box v42-box">
-      ${rows.map(row=>`
-        <div class="metro-row-v42 row-${row.length}">
-          <div class="metro-line-v42"></div>
-          <div class="metro-stations-v42">
-            ${row.map(x=>`
-              <div class="metro-station-v42">
-                <button class="compact-pill metro-pill-v42" data-explore="${x.title}">
+    <div class="explore-timeline-box">
+      ${rows.map((row, rowIndex)=>`
+        <div class="explore-lane lane-count-${row.length}">
+          <div class="explore-lane-line"></div>
+          <div class="explore-lane-stations">
+            ${row.map((x)=>`
+              <div class="explore-station">
+                <button class="explore-station-btn" data-explore="${x.title}">
                   ${x.title}
                 </button>
-                ${x.desc ? `<div class="metro-desc-v42">(${x.desc})</div>` : ``}
+                ${x.desc ? `<div class="explore-station-desc">(${x.desc})</div>` : ``}
               </div>
             `).join("")}
           </div>

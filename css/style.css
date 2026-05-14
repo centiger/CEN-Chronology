@@ -1721,3 +1721,189 @@ button[data-detail]:hover{
 .v42-box .metro-row-v42:last-child{
   margin-bottom:0 !important;
 }
+
+
+/* =====================================================
+   v43: 8. 연결탐험 의미 고정
+   - 텍스트박스 안에 시간라인 존재
+   - 시간라인 위에 사건 아이콘 배치
+   - 첫 아이콘 왼쪽 / 마지막 아이콘 오른쪽 라인 표시
+   - 글박스 밖으로 라인 절대 이탈 금지
+   ===================================================== */
+
+/* 기존 연결탐험 관련 스타일 완전 무력화 */
+.two-row-explore-box,
+.v42-box,
+.metro-row,
+.metro-row::before,
+.metro-row-v42,
+.metro-row-v42::before,
+.metro-line-v42,
+.metro-stations-v42,
+.metro-station,
+.metro-station-v42,
+.metro-pill,
+.metro-pill-v42,
+.metro-desc,
+.metro-desc-v42,
+.connected-wrap,
+.connected-item,
+.connected-node,
+.connect-line,
+.exact-explore-flow,
+.explore-title{
+  all:unset !important;
+}
+
+/* 연결탐험 전체 글박스 */
+.explore-timeline-box{
+  position:relative !important;
+  background:#fff8ee !important;
+  border:1px solid #d9bea0 !important;
+  border-radius:18px !important;
+  padding:12px 12px 10px !important;
+  box-shadow:0 8px 20px rgba(80,50,20,.06) !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+  width:100% !important;
+}
+
+/* 각 줄 = 시간의 흐름이 들어가는 lane */
+.explore-lane{
+  position:relative !important;
+  width:100% !important;
+  min-height:58px !important;
+  margin:0 0 14px !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+}
+
+/* 마지막 줄 여백 제거 */
+.explore-timeline-box .explore-lane:last-child{
+  margin-bottom:0 !important;
+}
+
+/* 글박스 안에 존재하는 긴 시간라인 */
+.explore-lane-line{
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  top:14px !important;
+  height:4px !important;
+  background:#a8743b !important;
+  border-radius:999px !important;
+  z-index:1 !important;
+  pointer-events:none !important;
+}
+
+/* 사건 아이콘 배치 영역 */
+.explore-lane-stations{
+  position:relative !important;
+  z-index:2 !important;
+  display:grid !important;
+  width:100% !important;
+  box-sizing:border-box !important;
+  align-items:start !important;
+  justify-items:center !important;
+  padding:0 20px !important; /* 첫/끝 아이콘 바깥으로 라인이 보이게 하는 내부 여백 */
+}
+
+/* 개수별 균등 배분 */
+.explore-lane.lane-count-1 .explore-lane-stations{ grid-template-columns:1fr !important; }
+.explore-lane.lane-count-2 .explore-lane-stations{ grid-template-columns:1fr 1fr !important; }
+.explore-lane.lane-count-3 .explore-lane-stations{ grid-template-columns:1fr 1fr 1fr !important; }
+.explore-lane.lane-count-4 .explore-lane-stations{ grid-template-columns:1fr 1fr 1fr 1fr !important; }
+
+/* 사건 하나 */
+.explore-station{
+  position:relative !important;
+  z-index:3 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  width:82px !important;
+  max-width:82px !important;
+  box-sizing:border-box !important;
+}
+
+/* 시간라인 위에 놓이는 사건 아이콘 */
+.explore-station-btn{
+  position:relative !important;
+  z-index:4 !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#fff3e2 !important;
+  border:1px solid #cfa66f !important;
+  color:#4f3929 !important;
+  border-radius:999px !important;
+  padding:4px 8px !important;
+  min-height:26px !important;
+  max-width:82px !important;
+  font-size:10.5px !important;
+  line-height:1.1 !important;
+  font-weight:900 !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+  box-shadow:0 1px 4px rgba(80,50,20,.10) !important;
+  box-sizing:border-box !important;
+}
+
+/* 사건 설명 */
+.explore-station-desc{
+  margin-top:4px !important;
+  width:82px !important;
+  max-width:82px !important;
+  font-size:9.3px !important;
+  line-height:1.12 !important;
+  color:#6b4f39 !important;
+  text-align:center !important;
+  word-break:keep-all !important;
+  box-sizing:border-box !important;
+}
+
+/* 작은 화면에서 4개짜리도 박스 안에 들어오도록 */
+@media (max-width:380px){
+  .explore-timeline-box{
+    padding-left:8px !important;
+    padding-right:8px !important;
+  }
+  .explore-lane-stations{
+    padding:0 14px !important;
+  }
+  .explore-station{
+    width:74px !important;
+    max-width:74px !important;
+  }
+  .explore-station-btn{
+    max-width:74px !important;
+    font-size:10px !important;
+    padding:4px 6px !important;
+  }
+  .explore-station-desc{
+    width:74px !important;
+    max-width:74px !important;
+    font-size:9px !important;
+  }
+}
+
+@media (max-width:340px){
+  .explore-lane-stations{
+    padding:0 10px !important;
+  }
+  .explore-station{
+    width:68px !important;
+    max-width:68px !important;
+  }
+  .explore-station-btn{
+    max-width:68px !important;
+    font-size:9.5px !important;
+    padding:4px 5px !important;
+  }
+  .explore-station-desc{
+    width:68px !important;
+    max-width:68px !important;
+    font-size:8.6px !important;
+  }
+}

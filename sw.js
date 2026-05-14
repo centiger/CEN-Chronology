@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v42-real-line-inside";
+const CACHE_NAME = "cen-bible-chronology-v43-timeline-explore";
 const ASSETS = [
   "./",
   "./index.html",
