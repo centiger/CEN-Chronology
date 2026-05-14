@@ -231,6 +231,7 @@ function renderDetail(eventId){
   go("detail");
 }
 
+
 function chunkExploreItems(items){
   if(!items || !items.length) return [];
   if(items.length <= 4) return [items];
@@ -246,20 +247,23 @@ function renderExploreRows(eventId){
   if(!data) return `<div class="section-card">연결탐험 데이터 준비중</div>`;
   const rows = chunkExploreItems(data.items);
   return `
-    <div class="two-row-explore-box">
+    <div class="two-row-explore-box v42-box">
       ${rows.map(row=>`
-        <div class="metro-row row-${row.length}">
-          ${row.map(x=>`
-            <div class="metro-station">
-              <button class="compact-pill metro-pill" data-explore="${x.title}">
-                ${x.title}
-              </button>
-              ${x.desc ? `<div class="outside-pill-desc metro-desc">(${x.desc})</div>` : ``}
-            </div>
-          `).join("")}
+        <div class="metro-row-v42 row-${row.length}">
+          <div class="metro-line-v42"></div>
+          <div class="metro-stations-v42">
+            ${row.map(x=>`
+              <div class="metro-station-v42">
+                <button class="compact-pill metro-pill-v42" data-explore="${x.title}">
+                  ${x.title}
+                </button>
+                ${x.desc ? `<div class="metro-desc-v42">(${x.desc})</div>` : ``}
+              </div>
+            `).join("")}
+          </div>
         </div>
       `).join("")}
-</div>
+    </div>
   `;
 }
 
