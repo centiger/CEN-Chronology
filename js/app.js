@@ -109,12 +109,7 @@ function renderDetail(eventId){
     
     <section class="scroll-section">
       <div class="section-title">원본 인포그래픽</div>
-      <div class="original-infographic-wrap">
-        <button class="original-infographic-btn" data-open-original="${eventId}">
-          원본 인포그래픽 보기
-        </button>
-      </div>
-    </section>
+</section>
   `;
   go("detail");
     return;
@@ -222,6 +217,16 @@ function renderDetail(eventId){
     </section>
 
     
+
+    <section class="scroll-section">
+      <div class="section-title">원본 인포그래픽</div>
+      <div class="original-infographic-wrap">
+        <button class="original-infographic-btn" data-open-original="${eventId}">
+          원본 인포그래픽 보기
+        </button>
+      </div>
+    </section>
+
   `;
   go("detail");
 }
@@ -254,13 +259,6 @@ function renderExploreRows(eventId){
           `).join("")}
         </div>
       `).join("")}
-    
-      <div class="original-infographic-wrap">
-        <button class="original-infographic-btn" onclick="window.open(EVENTS[eventId].image,'_blank')">
-          원본 인포그래픽 보기
-        </button>
-      </div>
-
 </div>
   `;
 }

@@ -1464,3 +1464,22 @@ button[data-detail]:hover{
   font-weight:800 !important;
   box-shadow:0 2px 6px rgba(80,50,20,.08) !important;
 }
+
+
+/* v38: 원본 인포그래픽 버튼은 상세화면 맨 하단 공통 버튼 */
+.original-infographic-wrap{
+  margin-top:8px !important;
+  display:flex !important;
+  justify-content:center !important;
+}
+
+.original-infographic-btn{
+  background:#ead8bd !important;
+  border:1px solid #cfb08a !important;
+  color:#4f3929 !important;
+  border-radius:999px !important;
+  padding:10px 20px !important;
+  font-size:13px !important;
+  font-weight:800 !important;
+  box-shadow:0 2px 6px rgba(80,50,20,.08) !important;
+}
