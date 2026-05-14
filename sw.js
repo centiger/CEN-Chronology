@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v35-patriarch";
+const CACHE_NAME = "cen-bible-chronology-v36-original-button";
 const ASSETS = [
   "./",
   "./index.html",

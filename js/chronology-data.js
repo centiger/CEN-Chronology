@@ -412,7 +412,7 @@ const EVENT_EXPLORE = {
       { title:"죄의 시작", desc:"가인의 살인", ref:"" },
       { title:"피 흘림의 필요성", desc:"", ref:"" },
       { title:"희생 제사", desc:"제도의 시작", ref:"" },
-      { title:"예수 그리스도의 보혈", desc:"십자가", ref:"" },
+      { title:"예수 그리스도의 보혈", desc:"최후 심판과 구원", ref:"" },
       { title:"용서와 화해의 길 열림", desc:"", ref:"" }
     ]
   },
@@ -652,25 +652,25 @@ Object.assign(EVENT_ENRICH, {
 
 const PATRIARCH_EXPLORE = {
   "abraham-call": [
-    {title:"아브라함 언약", desc:"창 12, 15, 17장"},
-    {title:"이스라엘 민족", desc:"탄생의 기초"},
-    {title:"시내산 언약", desc:"출 19장"},
-    {title:"성막과 출발", desc:"출 25~40장"},
-    {title:"그리스도 언약", desc:"갈 3:8, 16"}
+    {title:"아브라함 언약", desc:"믿음과 언약의 시작"},
+    {title:"이스라엘 민족", desc:"언약 백성의 뿌리"},
+    {title:"시내산 언약", desc:"언약 공동체"},
+    {title:"성막과 출발", desc:"하나님의 임재"},
+    {title:"그리스도 언약", desc:"모든 민족의 복"}
   ],
   "lot-sodom": [
-    {title:"홍수 심판", desc:"노아"},
+    {title:"홍수 심판", desc:"심판과 구원"},
     {title:"하나님의 심판과 구원의 계속", desc:""},
     {title:"아브라함 언약", desc:"창 12장"},
     {title:"율법과 거룩한 삶", desc:"출 20장"},
-    {title:"예수 그리스도의 심판과 구원", desc:"십자가"}
+    {title:"예수 그리스도의 심판과 구원", desc:"최후 심판과 구원"}
   ],
   "jacob-ladder": [
-    {title:"야곱의 사다리", desc:"창 28:12"},
-    {title:"성막", desc:"하늘과 땅을 연결하는 하나님의 임재"},
-    {title:"성전", desc:"하나님의 영광이 임한 곳"},
-    {title:"십자가", desc:"하늘과 땅을 잇는 유일한 길"},
-    {title:"부활과 승천", desc:"하늘 문이 열리고 우리가 하나님께 나아감"}
+    {title:"야곱의 사다리", desc:"하늘과 땅의 연결"},
+    {title:"성막", desc:"하나님의 임재"},
+    {title:"성전", desc:"거룩한 처소"},
+    {title:"십자가", desc:"구속의 통로"},
+    {title:"부활과 승천", desc:"영원한 연결"}
   ],
   "jabbok-wrestling": [
     {title:"야곱의 사다리", desc:"창 28장"},

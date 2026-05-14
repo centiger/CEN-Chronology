@@ -245,7 +245,14 @@ function renderExploreRows(eventId){
           `).join("")}
         </div>
       `).join("")}
-    </div>
+    
+      <div class="original-infographic-wrap">
+        <button class="original-infographic-btn" onclick="window.open(EVENTS[eventId].image,'_blank')">
+          원본 인포그래픽 보기
+        </button>
+      </div>
+
+</div>
   `;
 }
 

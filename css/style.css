@@ -1426,3 +1426,22 @@ button[data-detail]:hover{
   align-items:center !important;
   text-align:center !important;
 }
+
+
+/* v36 원본 인포그래픽 버튼 */
+.original-infographic-wrap{
+  margin-top:14px;
+  display:flex;
+  justify-content:center;
+}
+
+.original-infographic-btn{
+  background:#ead8bd;
+  border:1px solid #cfb08a;
+  color:#4f3929;
+  border-radius:999px;
+  padding:9px 18px;
+  font-size:13px;
+  font-weight:700;
+  box-shadow:0 2px 6px rgba(80,50,20,.08);
+}
