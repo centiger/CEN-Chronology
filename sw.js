@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v38-origin-number-original-fix";
+const CACHE_NAME = "cen-bible-chronology-v39-exodus-wilderness";
 const ASSETS = [
   "./",
   "./index.html",
@@ -32,7 +32,29 @@ const ASSETS = [
   "./assets/infographics/11_joseph_dream.png",
   "./assets/maps/11_joseph_dream_map.png",
   "./assets/infographics/12_joseph_governor.png",
-  "./assets/maps/12_joseph_governor_map.png"
+  "./assets/maps/12_joseph_governor_map.png",
+  "./assets/infographics/13_moses_birth.png",
+  "./assets/maps/13_moses_birth_map.png",
+  "./assets/infographics/14_burning_bush.png",
+  "./assets/maps/14_burning_bush_map.png",
+  "./assets/infographics/15_ten_plagues.png",
+  "./assets/maps/15_ten_plagues_map.png",
+  "./assets/infographics/16_passover.png",
+  "./assets/maps/16_passover_map.png",
+  "./assets/infographics/17_red_sea.png",
+  "./assets/maps/17_red_sea_map.png",
+  "./assets/infographics/18_manna_quail.png",
+  "./assets/maps/18_manna_quail_map.png",
+  "./assets/infographics/19_sinai_commandments.png",
+  "./assets/maps/19_sinai_commandments_map.png",
+  "./assets/infographics/20_golden_calf.png",
+  "./assets/maps/20_golden_calf_map.png",
+  "./assets/infographics/21_tabernacle.png",
+  "./assets/maps/21_tabernacle_map.png",
+  "./assets/infographics/21_wilderness_40.png",
+  "./assets/maps/21_wilderness_40_map.png",
+  "./assets/infographics/22_bronze_serpent.png",
+  "./assets/maps/22_bronze_serpent_map.png"
 ];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(ASSETS)).then(()=>self.skipWaiting()));
