@@ -174,8 +174,9 @@ function renderDetail(eventId){
       <div class="section-title">6. 핵심사건</div>
       <div class="flow-list">
         ${flow.map((x,i)=>{
-          const step = Array.isArray(x) ? (x[0] || String(i+1)) : (x && typeof x === "object" ? (x.no || x.num || x.step || String(i+1)) : String(i+1));
+          const rawStep = Array.isArray(x) ? (x[0] || "") : (x && typeof x === "object" ? (x.no || x.num || x.step || "") : "");
           const title = Array.isArray(x) ? (x[1] || "") : (x && typeof x === "object" ? (x.title || x.text || x.label || "") : x);
+          const step = rawStep || title || String(i+1);
           const desc = Array.isArray(x) ? (x[2] || "") : (x && typeof x === "object" ? (x.desc || x.summary || "") : "");
           return `
           <div class="flow-item">
