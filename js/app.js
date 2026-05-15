@@ -227,7 +227,7 @@ function renderDetail(eventId){
     <section class="scroll-section">
       <div class="section-title">원본 인포그래픽</div>
       <div class="original-infographic-wrap">
-        <button class="original-infographic-btn" data-open-original-src="${data.image}" data-open-original-title="${data.title}">
+        <button class="original-infographic-btn" data-open-original="${eventId}">
           원본 인포그래픽 보기
         </button>
       </div>
@@ -272,7 +272,12 @@ function renderExploreRows(eventId){
 function openViewer(eventId){
   const data = EVENTS[eventId];
   if(!data || !data.image) return;
-  openImageViewer(data.title + " 원본 인포그래픽", data.image);
+  const src = data.image;
+  if(!src.includes("assets/infographics/")){
+    alert("원본 인포그래픽 연결 경로를 확인해야 합니다.");
+    return;
+  }
+  openImageViewer(data.title + " 원본 인포그래픽", src);
 }
 
 function openImageViewer(title, src){
@@ -360,11 +365,17 @@ function init(){
       $("#panel-" + tab.dataset.tab).classList.add("active");
     }
 
-    const originalSrc = e.target.closest("[data-open-original-src]");
-    if(originalSrc) openImageViewer((originalSrc.dataset.openOriginalTitle || "") + " 원본 인포그래픽", originalSrc.dataset.openOriginalSrc);
-
     const original = e.target.closest("[data-open-original]");
-    if(original) openViewer(original.dataset.openOriginal);
+    if(original){
+      openViewer(original.dataset.openOriginal);
+      return;
+    }
+
+    const originalSrc = e.target.closest("[data-open-original-src]");
+    if(originalSrc){
+      openImageViewer((originalSrc.dataset.openOriginalTitle || "") + " 원본 인포그래픽", originalSrc.dataset.openOriginalSrc);
+      return;
+    }
 
     const crop = e.target.closest("[data-open-crop]");
     if(crop) openCropViewer(crop.dataset.openCrop);
