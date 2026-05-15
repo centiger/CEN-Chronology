@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v51-early-church-detail";
+const CHRONOLOGY_VERSION = "v52-early-church-detail";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -1814,7 +1814,7 @@ Object.assign(EVENT_MAP_CROPS, {
 });
 
 
-// v51 초대교회 핵심사건 데이터
+// v52 초대교회 핵심사건 데이터
 Object.assign(EVENTS, {
   "pentecost": {
     title:"오순절 성령강림", era:"초대교회", year:"AD 30년경", scripture:"사도행전 2장",
