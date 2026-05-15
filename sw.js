@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v48-return-detail";
+const CACHE_NAME = "cen-bible-chronology-v49-intertestamental-detail";
 const ASSETS = [
   "./",
   "./index.html",
@@ -133,6 +133,16 @@ const ASSETS = [
   "./assets/maps/60_temple_rebuild_map.png",
   "./assets/maps/61_ezra_reform_map.png",
   "./assets/maps/62_nehemiah_wall_map.png",
+  "./assets/infographics/63_hellenism.png",
+  "./assets/infographics/64_alexander.png",
+  "./assets/infographics/65_maccabees.png",
+  "./assets/infographics/66_hanukkah.png",
+  "./assets/infographics/67_rome.png",
+  "./assets/maps/63_hellenism_map.png",
+  "./assets/maps/64_alexander_map.png",
+  "./assets/maps/65_maccabees_map.png",
+  "./assets/maps/66_hanukkah_map.png",
+  "./assets/maps/67_rome_map.png",
 ];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(ASSETS)).then(()=>self.skipWaiting()));
