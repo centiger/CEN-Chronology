@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v50-jesus-detail";
+const CHRONOLOGY_VERSION = "v51-early-church-detail";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -1811,5 +1811,133 @@ Object.assign(EVENT_MAP_CROPS, {
   "resurrection":"assets/maps/83_resurrection_map.png",
   "pentecost-promise":"assets/maps/84_pentecost_promise_map.png",
   "ascension":"assets/maps/85_ascension_map.png"
+});
+
+
+// v51 초대교회 핵심사건 데이터
+Object.assign(EVENTS, {
+  "pentecost": {
+    title:"오순절 성령강림", era:"초대교회", year:"AD 30년경", scripture:"사도행전 2장",
+    place:"예루살렘",
+    people:["성령","베드로","사도들","각국에서 온 유대인들","초대교회 성도들"],
+    summary:"예수님의 승천 후 약속하신 성령이 오순절에 임하여 제자들이 담대히 복음을 전하고 교회가 공식적으로 시작된 사건입니다.",
+    core:["성령 강림","방언으로 복음 선포","베드로의 설교","삼천 명 회심","교회 공동체의 시작"],
+    meaning:["교회의 탄생과 성령 사역의 시작","복음이 여러 민족과 언어로 확장됨","예수님의 약속이 성취됨","성령이 교회의 능력과 증거의 근원이 되심"],
+    connect:["성령","오순절","베드로 설교","교회 탄생","땅끝 증인"],
+    visual:"예루살렘 오순절 성령강림 장면과 지도",
+    image:"assets/infographics/86_pentecost.png"
+  },
+  "stephen": {
+    title:"스데반 순교", era:"초대교회", year:"AD 30년대", scripture:"사도행전 6~7장",
+    place:"예루살렘",
+    people:["스데반","공회","사울","초대교회 성도들"],
+    summary:"초대교회 일곱 집사 중 한 사람인 스데반이 예수 그리스도를 증언하다가 돌에 맞아 순교한 사건입니다.",
+    core:["일곱 집사 세움","스데반의 지혜로운 증언","공회 앞 설교","하늘 보좌 환상","첫 순교"],
+    meaning:["교회의 첫 순교 사건","복음 증언에는 고난이 따름","박해가 오히려 복음 확산의 계기가 됨","사울 회심의 배경이 마련됨"],
+    connect:["순교","증언","박해","사울","복음 확산"],
+    visual:"예루살렘 순교 장소와 초대교회 박해 흐름",
+    image:"assets/infographics/87_stephen.png"
+  },
+  "paul-conversion": {
+    title:"바울 회심", era:"초대교회", year:"AD 30년대 중후반", scripture:"사도행전 9장",
+    place:"다메섹으로 가는 길",
+    people:["사울","예수님","아나니아","다메섹 제자들"],
+    summary:"교회를 박해하던 사울이 다메섹 길에서 부활하신 예수님을 만나 회심하고 복음의 사도로 부름받은 사건입니다.",
+    core:["사울의 박해","다메섹 길의 빛","예수님의 음성","아나니아의 안수","바울의 사명 시작"],
+    meaning:["박해자가 사도로 변화됨","은혜의 부르심과 회심의 대표 사건","이방 선교의 핵심 인물이 세워짐","복음은 사람을 근본적으로 변화시킴"],
+    connect:["회심","다메섹","아나니아","이방인의 사도","은혜"],
+    visual:"예루살렘에서 다메섹으로 향하는 경로",
+    image:"assets/infographics/88_paul_conversion.png"
+  },
+  "paul-1st": {
+    title:"1차 선교여행", era:"초대교회", year:"AD 46~48년경", scripture:"사도행전 13~14장",
+    place:"안디옥, 구브로, 소아시아 남부",
+    people:["바울","바나바","마가 요한","엘루마","루스드라 사람들"],
+    summary:"안디옥 교회의 파송을 받은 바울과 바나바가 구브로와 소아시아 지역에 복음을 전하며 이방 선교를 본격화한 사건입니다.",
+    core:["안디옥 교회의 파송","구브로 선교","비시디아 안디옥 설교","이고니온·루스드라 사역","교회 세움과 귀환"],
+    meaning:["교회가 선교 공동체로 확장됨","이방인에게 복음의 문이 열림","고난 속에서도 복음 전파가 지속됨","지역 교회 설립의 모델이 제시됨"],
+    connect:["안디옥","바나바","구브로","이방 선교","지역 교회"],
+    visual:"1차 선교여행 경로 지도",
+    image:"assets/infographics/89_paul_1st.png"
+  },
+  "jerusalem-council": {
+    title:"예루살렘 공의회", era:"초대교회", year:"AD 49년경", scripture:"사도행전 15장",
+    place:"예루살렘",
+    people:["베드로","야고보","바울","바나바","예루살렘 교회 지도자들"],
+    summary:"이방인 신자에게 율법과 할례를 요구할 것인지 논의하고, 구원이 은혜로 말미암음을 확인한 초대교회의 중요한 회의입니다.",
+    core:["할례 논쟁 발생","바울과 바나바의 예루살렘 방문","베드로의 증언","야고보의 정리","이방 교회에 결정 전달"],
+    meaning:["복음의 본질을 지킨 사건","구원은 율법이 아니라 은혜로 받음","유대인과 이방인 교회의 연합 기준 마련","교회 의사결정의 중요한 모델"],
+    connect:["은혜","할례 논쟁","야고보","이방인 성도","교회 일치"],
+    visual:"예루살렘 공의회와 안디옥 교회 연결",
+    image:"assets/infographics/90_jerusalem_council.png"
+  },
+  "paul-2nd": {
+    title:"2차 선교여행", era:"초대교회", year:"AD 49~52년경", scripture:"사도행전 16~18장",
+    place:"소아시아, 마게도냐, 아가야",
+    people:["바울","실라","디모데","루디아","브리스길라와 아굴라"],
+    summary:"바울이 실라와 함께 떠나 마게도냐 환상을 따라 유럽 지역까지 복음을 전하고 여러 교회를 세운 사건입니다.",
+    core:["바울과 실라의 출발","디모데 합류","마게도냐 환상","빌립보·데살로니가·베뢰아 사역","아덴과 고린도 사역"],
+    meaning:["복음이 유럽으로 확장됨","성령의 인도에 따른 선교","고난 속에서도 찬양과 증거가 이어짐","도시 중심 선교 전략이 나타남"],
+    connect:["마게도냐 환상","빌립보","고린도","디모데","유럽 선교"],
+    visual:"2차 선교여행 경로 지도",
+    image:"assets/infographics/91_paul_2nd.png"
+  },
+  "paul-3rd": {
+    title:"3차 선교여행", era:"초대교회", year:"AD 53~57년경", scripture:"사도행전 18~21장",
+    place:"에베소, 마게도냐, 헬라",
+    people:["바울","에베소 제자들","두란노 서원 사람들","에베소 장인들","밀레도 장로들"],
+    summary:"바울이 에베소를 중심으로 장기간 말씀을 가르치고 여러 교회를 굳게 세운 뒤 예루살렘으로 향한 사건입니다.",
+    core:["에베소 장기 사역","두란노 서원 강론","우상 산업과 충돌","마게도냐와 헬라 방문","밀레도 고별 설교"],
+    meaning:["말씀 교육을 통한 교회 강화","도시 문화와 복음의 충돌","목회적 권면과 교회 지도력의 중요성","고난을 향해 나아가는 사도의 순종"],
+    connect:["에베소","두란노 서원","교회 세움","밀레도 고별","예루살렘 행"],
+    visual:"3차 선교여행 경로 지도",
+    image:"assets/infographics/92_paul_3rd.png"
+  },
+  "rome-transfer": {
+    title:"로마 압송", era:"초대교회", year:"AD 59~60년경", scripture:"사도행전 21~28장",
+    place:"예루살렘, 가이사랴, 로마",
+    people:["바울","베스도","아그립바","율리오","로마 성도들"],
+    summary:"바울이 예루살렘에서 체포된 뒤 가이사랴 재판과 항해를 거쳐 로마로 압송되어 복음을 증언한 사건입니다.",
+    core:["예루살렘 체포","가이사랴 재판","가이사에게 상소","폭풍과 난파","로마 도착과 복음 증언"],
+    meaning:["복음이 제국의 중심 로마까지 전해짐","고난과 재판도 복음 증언의 통로가 됨","하나님의 섭리가 선교의 길을 여심","사도행전의 땅끝 선교가 완성 방향으로 나아감"],
+    connect:["로마","재판","항해","난파","땅끝 증인"],
+    visual:"바울의 로마 압송 항해 경로",
+    image:"assets/infographics/93_rome_transfer.png"
+  },
+  "john-patmos": {
+    title:"밧모섬의 요한", era:"초대교회", year:"AD 90년대", scripture:"요한계시록 1장",
+    place:"밧모섬",
+    people:["사도 요한","부활하신 그리스도","일곱 교회"],
+    summary:"사도 요한이 밧모섬에서 부활하신 그리스도의 계시를 받고 일곱 교회와 종말의 소망을 전한 사건입니다.",
+    core:["요한의 밧모섬 유배","주의 날에 계시를 받음","부활하신 그리스도의 나타나심","일곱 교회에 편지","새 창조 소망 제시"],
+    meaning:["박해 속에서도 교회는 소망을 붙듦","그리스도는 교회의 주인이심","역사의 끝은 하나님의 승리와 새 창조임","성경 역사가 종말의 완성으로 이어짐"],
+    connect:["요한계시록","일곱 교회","밧모섬","재림","새 하늘과 새 땅"],
+    visual:"밧모섬과 소아시아 일곱 교회 지도",
+    image:"assets/infographics/94_john_patmos.png"
+  }
+});
+
+Object.assign(EVENT_EXPLORE, {
+  "pentecost": {title:"8. 연결탐험", items:[{"title": "성령", "desc": "연결 주제"}, {"title": "오순절", "desc": "연결 주제"}, {"title": "베드로 설교", "desc": "연결 주제"}, {"title": "교회 탄생", "desc": "연결 주제"}, {"title": "땅끝 증인", "desc": "연결 주제"}]},
+  "stephen": {title:"8. 연결탐험", items:[{"title": "순교", "desc": "연결 주제"}, {"title": "증언", "desc": "연결 주제"}, {"title": "박해", "desc": "연결 주제"}, {"title": "사울", "desc": "연결 주제"}, {"title": "복음 확산", "desc": "연결 주제"}]},
+  "paul-conversion": {title:"8. 연결탐험", items:[{"title": "회심", "desc": "연결 주제"}, {"title": "다메섹", "desc": "연결 주제"}, {"title": "아나니아", "desc": "연결 주제"}, {"title": "이방인의 사도", "desc": "연결 주제"}, {"title": "은혜", "desc": "연결 주제"}]},
+  "paul-1st": {title:"8. 연결탐험", items:[{"title": "안디옥", "desc": "연결 주제"}, {"title": "바나바", "desc": "연결 주제"}, {"title": "구브로", "desc": "연결 주제"}, {"title": "이방 선교", "desc": "연결 주제"}, {"title": "지역 교회", "desc": "연결 주제"}]},
+  "jerusalem-council": {title:"8. 연결탐험", items:[{"title": "은혜", "desc": "연결 주제"}, {"title": "할례 논쟁", "desc": "연결 주제"}, {"title": "야고보", "desc": "연결 주제"}, {"title": "이방인 성도", "desc": "연결 주제"}, {"title": "교회 일치", "desc": "연결 주제"}]},
+  "paul-2nd": {title:"8. 연결탐험", items:[{"title": "마게도냐 환상", "desc": "연결 주제"}, {"title": "빌립보", "desc": "연결 주제"}, {"title": "고린도", "desc": "연결 주제"}, {"title": "디모데", "desc": "연결 주제"}, {"title": "유럽 선교", "desc": "연결 주제"}]},
+  "paul-3rd": {title:"8. 연결탐험", items:[{"title": "에베소", "desc": "연결 주제"}, {"title": "두란노 서원", "desc": "연결 주제"}, {"title": "교회 세움", "desc": "연결 주제"}, {"title": "밀레도 고별", "desc": "연결 주제"}, {"title": "예루살렘 행", "desc": "연결 주제"}]},
+  "rome-transfer": {title:"8. 연결탐험", items:[{"title": "로마", "desc": "연결 주제"}, {"title": "재판", "desc": "연결 주제"}, {"title": "항해", "desc": "연결 주제"}, {"title": "난파", "desc": "연결 주제"}, {"title": "땅끝 증인", "desc": "연결 주제"}]},
+  "john-patmos": {title:"8. 연결탐험", items:[{"title": "요한계시록", "desc": "연결 주제"}, {"title": "일곱 교회", "desc": "연결 주제"}, {"title": "밧모섬", "desc": "연결 주제"}, {"title": "재림", "desc": "연결 주제"}, {"title": "새 하늘과 새 땅", "desc": "연결 주제"}]}
+});
+
+Object.assign(EVENT_MAP_CROPS, {
+  "pentecost":"assets/maps/86_pentecost_map.png",
+  "stephen":"assets/maps/87_stephen_map.png",
+  "paul-conversion":"assets/maps/88_paul_conversion_map.png",
+  "paul-1st":"assets/maps/89_paul_1st_map.png",
+  "jerusalem-council":"assets/maps/90_jerusalem_council_map.png",
+  "paul-2nd":"assets/maps/91_paul_2nd_map.png",
+  "paul-3rd":"assets/maps/92_paul_3rd_map.png",
+  "rome-transfer":"assets/maps/93_rome_transfer_map.png",
+  "john-patmos":"assets/maps/94_john_patmos_map.png"
 });
 
