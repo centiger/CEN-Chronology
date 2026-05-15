@@ -173,15 +173,20 @@ function renderDetail(eventId){
     <section class="scroll-section">
       <div class="section-title">6. 핵심사건</div>
       <div class="flow-list">
-        ${flow.map(x=>`
+        ${flow.map((x,i)=>{
+          const step = Array.isArray(x) ? (x[0] || String(i+1)) : (x && typeof x === "object" ? (x.no || x.num || x.step || String(i+1)) : String(i+1));
+          const title = Array.isArray(x) ? (x[1] || "") : (x && typeof x === "object" ? (x.title || x.text || x.label || "") : x);
+          const desc = Array.isArray(x) ? (x[2] || "") : (x && typeof x === "object" ? (x.desc || x.summary || "") : "");
+          return `
           <div class="flow-item">
-            <div class="flow-badge">${x[0]}</div>
+            <div class="flow-badge">${step}</div>
             <div class="flow-body">
-              <div class="flow-text">${x[1]}</div>
-              
+              <div class="flow-text">${title || ""}</div>
+              ${desc ? `<div class="flow-desc">${desc}</div>` : ""}
             </div>
           </div>
-        `).join("")}
+        `;
+        }).join("")}
       </div>
     </section>
 
