@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v49-intertestamental-detail";
+const CACHE_NAME = "cen-bible-chronology-v50-jesus-detail";
 const ASSETS = [
   "./",
   "./index.html",
@@ -143,6 +143,43 @@ const ASSETS = [
   "./assets/maps/65_maccabees_map.png",
   "./assets/maps/66_hanukkah_map.png",
   "./assets/maps/67_rome_map.png",
+
+  "./assets/infographics/68_jesus_birth.png",
+  "./assets/infographics/69_magi.png",
+  "./assets/infographics/70_john_baptist.png",
+  "./assets/infographics/71_jesus_baptism.png",
+  "./assets/infographics/72_temptation.png",
+  "./assets/infographics/73_calling_disciples.png",
+  "./assets/infographics/74_sermon_mount.png",
+  "./assets/infographics/75_five_loaves.png",
+  "./assets/infographics/76_walk_water.png",
+  "./assets/infographics/77_transfiguration.png",
+  "./assets/infographics/78_lazarus.png",
+  "./assets/infographics/79_triumphal_entry.png",
+  "./assets/infographics/80_last_supper.png",
+  "./assets/infographics/81_gethsemane.png",
+  "./assets/infographics/82_cross.png",
+  "./assets/infographics/83_resurrection.png",
+  "./assets/infographics/84_pentecost_promise.png",
+  "./assets/infographics/85_ascension.png",
+  "./assets/maps/68_jesus_birth_map.png",
+  "./assets/maps/69_magi_map.png",
+  "./assets/maps/70_john_baptist_map.png",
+  "./assets/maps/71_jesus_baptism_map.png",
+  "./assets/maps/72_temptation_map.png",
+  "./assets/maps/73_calling_disciples_map.png",
+  "./assets/maps/74_sermon_mount_map.png",
+  "./assets/maps/75_five_loaves_map.png",
+  "./assets/maps/76_walk_water_map.png",
+  "./assets/maps/77_transfiguration_map.png",
+  "./assets/maps/78_lazarus_map.png",
+  "./assets/maps/79_triumphal_entry_map.png",
+  "./assets/maps/80_last_supper_map.png",
+  "./assets/maps/81_gethsemane_map.png",
+  "./assets/maps/82_cross_map.png",
+  "./assets/maps/83_resurrection_map.png",
+  "./assets/maps/84_pentecost_promise_map.png",
+  "./assets/maps/85_ascension_map.png",
 ];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(ASSETS)).then(()=>self.skipWaiting()));
