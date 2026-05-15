@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v50-jesus-detail";
+const CACHE_NAME = "cen-bible-chronology-v51-early-church-detail";
 const ASSETS = [
   "./",
   "./index.html",
@@ -180,6 +180,25 @@ const ASSETS = [
   "./assets/maps/83_resurrection_map.png",
   "./assets/maps/84_pentecost_promise_map.png",
   "./assets/maps/85_ascension_map.png",
+
+  "./assets/infographics/86_pentecost.png",
+  "./assets/infographics/87_stephen.png",
+  "./assets/infographics/88_paul_conversion.png",
+  "./assets/infographics/89_paul_1st.png",
+  "./assets/infographics/90_jerusalem_council.png",
+  "./assets/infographics/91_paul_2nd.png",
+  "./assets/infographics/92_paul_3rd.png",
+  "./assets/infographics/93_rome_transfer.png",
+  "./assets/infographics/94_john_patmos.png",
+  "./assets/maps/86_pentecost_map.png",
+  "./assets/maps/87_stephen_map.png",
+  "./assets/maps/88_paul_conversion_map.png",
+  "./assets/maps/89_paul_1st_map.png",
+  "./assets/maps/90_jerusalem_council_map.png",
+  "./assets/maps/91_paul_2nd_map.png",
+  "./assets/maps/92_paul_3rd_map.png",
+  "./assets/maps/93_rome_transfer_map.png",
+  "./assets/maps/94_john_patmos_map.png",
 ];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(ASSETS)).then(()=>self.skipWaiting()));
