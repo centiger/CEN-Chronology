@@ -1,0 +1,102 @@
+원본 인포그래픽 연결 점검표 v57
+
+001. [창조와 원역사] 창조 (creation) -> assets/infographics/01_creation.png
+002. [창조와 원역사] 아담과 하와 (adam-eve) -> assets/infographics/02_adam_eve.png
+003. [창조와 원역사] 에덴동산 추방 (eden-exile) -> assets/infographics/03_eden_exile.png
+004. [창조와 원역사] 가인과 아벨 (cain-abel) -> assets/infographics/04_cain_abel.png
+005. [창조와 원역사] 노아의 방주 (noah-ark) -> assets/infographics/05_noah_ark.png
+006. [창조와 원역사] 바벨탑 (babel-tower) -> assets/infographics/06_babel_tower.png
+007. [족장 시대] 아브라함을 부르심 (abraham-call) -> assets/infographics/07_abraham_call.png
+008. [족장 시대] 롯과 소돔 (lot-sodom) -> assets/infographics/08_lot_sodom.png
+009. [족장 시대] 야곱의 사다리 (jacob-ladder) -> assets/infographics/09_jacob_ladder.png
+010. [족장 시대] 야곱의 얍복강 씨름 (jabbok-wrestling) -> assets/infographics/10_jabbok_wrestling.png
+011. [족장 시대] 요셉의 꿈 (joseph-dream) -> assets/infographics/11_joseph_dream.png
+012. [족장 시대] 요셉의 애굽 총리 등극 (joseph-governor) -> assets/infographics/12_joseph_governor.png
+013. [출애굽과 광야] 모세의 탄생 (moses-birth) -> assets/infographics/13_moses_birth.png
+014. [출애굽과 광야] 떨기나무 소명 (burning-bush) -> assets/infographics/14_burning_bush.png
+015. [출애굽과 광야] 애굽의 10가지 재앙 (ten-plagues) -> assets/infographics/15_ten_plagues.png
+016. [출애굽과 광야] 유월절 (passover) -> assets/infographics/16_passover.png
+017. [출애굽과 광야] 홍해의 기적 (red-sea) -> assets/infographics/17_red_sea.png
+018. [출애굽과 광야] 만나와 메추라기 (manna-quail) -> assets/infographics/18_manna_quail.png
+019. [출애굽과 광야] 시내산 십계명 (sinai-commandments) -> assets/infographics/19_sinai_commandments.png
+020. [출애굽과 광야] 금송아지 사건 (golden-calf) -> assets/infographics/20_golden_calf.png
+021. [출애굽과 광야] 성막 건축 (tabernacle) -> assets/infographics/21_tabernacle.png
+022. [출애굽과 광야] 광야 40년 (wilderness-40) -> assets/infographics/21_wilderness_40.png
+023. [출애굽과 광야] 놋뱀 사건 (bronze-serpent) -> assets/infographics/22_bronze_serpent.png
+024. [가나안 정복] 요단강의 기적 (jordan-crossing) -> assets/infographics/23_jordan_crossing.png
+025. [가나안 정복] 여리고 함락 (jericho) -> assets/infographics/24_jericho.png
+026. [가나안 정복] 아이성 전투 (ai-battle) -> assets/infographics/25_ai_battle.png
+027. [가나안 정복] 해와 달이 멈춤 (sun-moon) -> assets/infographics/26_sun_moon.png
+028. [가나안 정복] 가나안 땅 분배 (land-allotment) -> assets/infographics/27_land_allotment.png
+029. [사사 시대] 드보라와 바락 (deborah-barak) -> assets/infographics/28_deborah_barak.png
+030. [사사 시대] 기드온과 300용사 (gideon-300) -> assets/infographics/29_gideon_300.png
+031. [사사 시대] 삼손 (samson) -> assets/infographics/30_samson.png
+032. [사사 시대] 룻과 보아스 (ruth-boaz) -> assets/infographics/31_ruth_boaz.png
+033. [통일왕국] 사울 왕 즉위 (saul-king) -> assets/infographics/32_saul_king.png
+034. [통일왕국] 다윗과 골리앗 (david-goliath) -> assets/infographics/33_david_goliath.png
+035. [통일왕국] 언약궤 이동 (ark-move) -> assets/infographics/34_ark_move.png
+036. [통일왕국] 다윗 왕국 (david-kingdom) -> assets/infographics/35_david_kingdom.png
+037. [통일왕국] 밧세바 사건 (bathsheba) -> assets/infographics/36_bathsheba.png
+038. [통일왕국] 솔로몬의 지혜 (solomon-wisdom) -> assets/infographics/37_solomon_wisdom.png
+039. [통일왕국] 성전 건축 (temple-build) -> assets/infographics/38_temple_build.png
+040. [통일왕국] 성전 봉헌 (temple-dedication) -> assets/infographics/39_temple_dedication.png
+041. [분열왕국] 왕국 분열 (kingdom-divide) -> assets/infographics/40_kingdom_divide.png
+042. [분열왕국] 금송아지 우상 사건 (golden-calves) -> assets/infographics/41_golden_calves.png
+043. [분열왕국] 엘리야 갈멜산 대결 (carmel) -> assets/infographics/42_carmel.png
+044. [분열왕국] 나봇의 포도원 (naboth) -> assets/infographics/43_naboth.png
+045. [분열왕국] 엘리사의 기적 (elisha-miracles) -> assets/infographics/44_elisha_miracles.png
+046. [분열왕국] 요나와 니느웨 (jonah-nineveh) -> assets/infographics/45_jonah_nineveh.png
+047. [분열왕국] 북이스라엘 멸망 (north-fall) -> assets/infographics/46_north_fall.png
+048. [분열왕국] 히스기야 개혁 (hezekiah-reform) -> assets/infographics/47_hezekiah_reform.png
+049. [분열왕국] 앗수르 침공 (assyria-invasion) -> assets/infographics/48_assyria_invasion.png
+050. [분열왕국] 요시야 개혁 (josiah-reform) -> assets/infographics/49_josiah_reform.png
+051. [분열왕국] 예레미야의 눈물 (jeremiah-tears) -> assets/infographics/50_jeremiah_tears.png
+052. [분열왕국] 남유다 멸망 (judah-fall) -> assets/infographics/51_judah_fall.png
+053. [유다 멸망과 포로] 다니엘과 세 친구 (daniel-friends) -> assets/infographics/52_daniel_friends.png
+054. [유다 멸망과 포로] 풀무불 사건 (furnace) -> assets/infographics/54_furnace.png
+055. [유다 멸망과 포로] 느부갓네살의 꿈 (nebuchadnezzar-dream) -> assets/infographics/55_nebuchadnezzar_dream.png
+056. [유다 멸망과 포로] 사자굴 사건 (lion-den) -> assets/infographics/56_lion_den.png
+057. [유다 멸망과 포로] 에스겔 환상 (ezekiel-vision) -> assets/infographics/57_ezekiel_vision.png
+058. [유다 멸망과 포로] 에스더와 부림절 (esther-purim) -> assets/infographics/58_esther_purim.png
+059. [포로귀환] 스룹바벨 귀환 (zerubbabel-return) -> assets/infographics/59_zerubbabel_return.png
+060. [포로귀환] 성전 재건 (temple-rebuild) -> assets/infographics/60_temple_rebuild.png
+061. [포로귀환] 에스라 율법개혁 (ezra-reform) -> assets/infographics/61_ezra_reform.png
+062. [포로귀환] 느헤미야 성벽 재건 (nehemiah-wall) -> assets/infographics/62_nehemiah_wall.png
+063. [신구약 중간기] 헬라제국 등장 (hellenism) -> assets/infographics/63_hellenism.png
+064. [신구약 중간기] 알렉산더 대왕 (alexander) -> assets/infographics/64_alexander.png
+065. [신구약 중간기] 마카비 혁명 (maccabees) -> assets/infographics/65_maccabees.png
+066. [신구약 중간기] 하누카 절기 (hanukkah) -> assets/infographics/66_hanukkah.png
+067. [신구약 중간기] 로마제국 등장 (rome) -> assets/infographics/67_rome.png
+068. [예수 시대] 예수 탄생 (jesus-birth) -> assets/infographics/68_jesus_birth.png
+069. [예수 시대] 동방박사 (magi) -> assets/infographics/69_magi.png
+070. [예수 시대] 세례요한 (john-baptist) -> assets/infographics/70_john_baptist.png
+071. [예수 시대] 예수 세례 (jesus-baptism) -> assets/infographics/71_jesus_baptism.png
+072. [예수 시대] 광야 시험 (temptation) -> assets/infographics/72_temptation.png
+073. [예수 시대] 제자 부르심 (calling-disciples) -> assets/infographics/73_calling_disciples.png
+074. [예수 시대] 산상수훈 (sermon-mount) -> assets/infographics/74_sermon_mount.png
+075. [예수 시대] 오병이어 (five-loaves) -> assets/infographics/75_five_loaves.png
+076. [예수 시대] 물 위를 걸으심 (walk-water) -> assets/infographics/76_walk_water.png
+077. [예수 시대] 변화산 사건 (transfiguration) -> assets/infographics/77_transfiguration.png
+078. [예수 시대] 나사로 부활 (lazarus) -> assets/infographics/78_lazarus.png
+079. [예수 시대] 예루살렘 입성 (triumphal-entry) -> assets/infographics/79_triumphal_entry.png
+080. [예수 시대] 최후의 만찬 (last-supper) -> assets/infographics/80_last_supper.png
+081. [예수 시대] 겟세마네 기도 (gethsemane) -> assets/infographics/81_gethsemane.png
+082. [예수 시대] 십자가 (cross) -> assets/infographics/82_cross.png
+083. [예수 시대] 부활 (resurrection) -> assets/infographics/83_resurrection.png
+084. [예수 시대] 오순절 약속 (pentecost-promise) -> assets/infographics/84_pentecost_promise.png
+085. [예수 시대] 승천 (ascension) -> assets/infographics/85_ascension.png
+086. [초대교회] 오순절 성령강림 (pentecost) -> assets/infographics/86_pentecost.png
+087. [초대교회] 스데반 순교 (stephen) -> assets/infographics/87_stephen.png
+088. [초대교회] 바울 회심 (paul-conversion) -> assets/infographics/88_paul_conversion.png
+089. [초대교회] 1차 선교여행 (paul-1st) -> assets/infographics/89_paul_1st.png
+090. [초대교회] 예루살렘 공의회 (jerusalem-council) -> assets/infographics/90_jerusalem_council.png
+091. [초대교회] 2차 선교여행 (paul-2nd) -> assets/infographics/91_paul_2nd.png
+092. [초대교회] 3차 선교여행 (paul-3rd) -> assets/infographics/92_paul_3rd.png
+093. [초대교회] 로마 압송 (rome-transfer) -> assets/infographics/93_rome_transfer.png
+094. [초대교회] 밧모섬의 요한 (john-patmos) -> assets/infographics/94_john_patmos.png
+095. [종말과 새창조] 일곱 교회 (seven-churches) -> assets/infographics/95_seven_churches.png
+096. [종말과 새창조] 일곱 인 (seven-seals) -> assets/infographics/96_seven_seals.png
+097. [종말과 새창조] 짐승과 환난 (beast-tribulation) -> assets/infographics/97_beast_tribulation.png
+098. [종말과 새창조] 아마겟돈 (armageddon) -> assets/infographics/98_armageddon.png
+099. [종말과 새창조] 새예루살렘 (new-jerusalem) -> assets/infographics/99_new_jerusalem.png
+100. [종말과 새창조] 새 하늘과 새 땅 (new-heaven-earth) -> assets/infographics/100_new_heaven_earth.png
