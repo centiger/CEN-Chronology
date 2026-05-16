@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v57-original-infographic-link-audit";
+const CHRONOLOGY_VERSION = "v59-master-original-infographics";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -377,7 +377,9 @@ const EVENT_MAP_CROPS = {
 // v17: 인포그래픽 8. 연결탐험 원문 기반 데이터
 // 원칙: 앱의 8. 연결탐험은 인포그래픽 8번 영역에 있는 항목만 사용한다.
 
-// v57 원본 인포그래픽 전용 연결표: 원본 보기 버튼은 이 표만 사용한다.
+
+
+// v59 원본 인포그래픽 마스터 연결표: 각 시대 원본 ZIP의 실제 PNG 기준
 const ORIGINAL_INFOGRAPHICS = {
   "creation": "assets/infographics/01_creation.png",
   "adam-eve": "assets/infographics/02_adam_eve.png",
