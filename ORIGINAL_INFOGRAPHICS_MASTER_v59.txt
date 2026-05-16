@@ -1,0 +1,402 @@
+CEN Bible 성경연대기 v59 원본 인포그래픽 마스터 매핑표
+기준: 각 시대별 원본 ZIP의 실제 PNG를 표준 파일명으로 복원
+
+001. [창조와 원역사] 창조 (creation)
+     원본: 족상시대까지_cen-bible-chronology.zip / 01_creation.png
+     앱파일: assets/infographics/01_creation.png
+
+002. [창조와 원역사] 아담과 하와 (adam-eve)
+     원본: 족상시대까지_cen-bible-chronology.zip / 02_adam_eve.png
+     앱파일: assets/infographics/02_adam_eve.png
+
+003. [창조와 원역사] 에덴동산 추방 (eden-exile)
+     원본: 족상시대까지_cen-bible-chronology.zip / 03_eden_exile.png
+     앱파일: assets/infographics/03_eden_exile.png
+
+004. [창조와 원역사] 가인과 아벨 (cain-abel)
+     원본: 족상시대까지_cen-bible-chronology.zip / 04_cain_abel.png
+     앱파일: assets/infographics/04_cain_abel.png
+
+005. [창조와 원역사] 노아의 방주 (noah-ark)
+     원본: 족상시대까지_cen-bible-chronology.zip / 05_noah_ark.png
+     앱파일: assets/infographics/05_noah_ark.png
+
+006. [창조와 원역사] 바벨탑 (babel-tower)
+     원본: 족상시대까지_cen-bible-chronology.zip / 06_babel_tower.png
+     앱파일: assets/infographics/06_babel_tower.png
+
+007. [족장 시대] 아브라함을 부르심 (abraham-call)
+     원본: 족상시대까지_cen-bible-chronology.zip / 07_abraham_call.png
+     앱파일: assets/infographics/07_abraham_call.png
+
+008. [족장 시대] 롯과 소돔 (lot-sodom)
+     원본: 족상시대까지_cen-bible-chronology.zip / 08_lot_sodom.png
+     앱파일: assets/infographics/08_lot_sodom.png
+
+009. [족장 시대] 야곱의 사다리 (jacob-ladder)
+     원본: 족상시대까지_cen-bible-chronology.zip / 09_jacob_ladder.png
+     앱파일: assets/infographics/09_jacob_ladder.png
+
+010. [족장 시대] 야곱의 얍복강 씨름 (jabbok-wrestling)
+     원본: 족상시대까지_cen-bible-chronology.zip / 10_jabbok_wrestling.png
+     앱파일: assets/infographics/10_jabbok_wrestling.png
+
+011. [족장 시대] 요셉의 꿈 (joseph-dream)
+     원본: 족상시대까지_cen-bible-chronology.zip / 11_joseph_dream.png
+     앱파일: assets/infographics/11_joseph_dream.png
+
+012. [족장 시대] 요셉의 애굽 총리 등극 (joseph-governor)
+     원본: 족상시대까지_cen-bible-chronology.zip / 12_joseph_governor.png
+     앱파일: assets/infographics/12_joseph_governor.png
+
+013. [출애굽과 광야] 모세의 탄생 (moses-birth)
+     원본: 출애굽과 광야.zip / 13. 모세의 탄생.png
+     앱파일: assets/infographics/13_moses_birth.png
+
+014. [출애굽과 광야] 떨기나무 소명 (burning-bush)
+     원본: 출애굽과 광야.zip / 14. 떨기나무 소명.png
+     앱파일: assets/infographics/14_burning_bush.png
+
+015. [출애굽과 광야] 애굽의 10가지 재앙 (ten-plagues)
+     원본: 출애굽과 광야.zip / 15. 애굽의 10가지 재앙.png
+     앱파일: assets/infographics/15_ten_plagues.png
+
+016. [출애굽과 광야] 유월절 (passover)
+     원본: 출애굽과 광야.zip / 16. 유월절.png
+     앱파일: assets/infographics/16_passover.png
+
+017. [출애굽과 광야] 홍해의 기적 (red-sea)
+     원본: 출애굽과 광야.zip / 17. 홍해의 기적.png
+     앱파일: assets/infographics/17_red_sea.png
+
+018. [출애굽과 광야] 만나와 메추라기 (manna-quail)
+     원본: 출애굽과 광야.zip / 18. 만나와 메추라기.png
+     앱파일: assets/infographics/18_manna_quail.png
+
+019. [출애굽과 광야] 시내산 십계명 (sinai-commandments)
+     원본: 출애굽과 광야.zip / 19. 시내산 십계명.png
+     앱파일: assets/infographics/19_sinai_commandments.png
+
+020. [출애굽과 광야] 금송아지 사건 (golden-calf)
+     원본: 출애굽과 광야.zip / 20. 금송아지 사건.png
+     앱파일: assets/infographics/20_golden_calf.png
+
+021. [출애굽과 광야] 성막 건축 (tabernacle)
+     원본: 출애굽과 광야.zip / 21. 성막 건축.png
+     앱파일: assets/infographics/21_tabernacle.png
+
+022. [출애굽과 광야] 광야 40년 (wilderness-40)
+     원본: 출애굽과 광야.zip / 21. 광야 40면.png
+     앱파일: assets/infographics/21_wilderness_40.png
+
+023. [출애굽과 광야] 놋뱀 사건 (bronze-serpent)
+     원본: 출애굽과 광야.zip / 22. 놋뱀 사건.png
+     앱파일: assets/infographics/22_bronze_serpent.png
+
+024. [가나안 정복] 요단강의 기적 (jordan-crossing)
+     원본: 가나안정복.zip / 23. 요단강의 기적.png
+     앱파일: assets/infographics/23_jordan_crossing.png
+
+025. [가나안 정복] 여리고 함락 (jericho)
+     원본: 가나안정복.zip / 24. 여리고 함락.png
+     앱파일: assets/infographics/24_jericho.png
+
+026. [가나안 정복] 아이성 전투 (ai-battle)
+     원본: 가나안정복.zip / 25. 아이성 전투.png
+     앱파일: assets/infographics/25_ai_battle.png
+
+027. [가나안 정복] 해와 달이 멈춤 (sun-moon)
+     원본: 가나안정복.zip / 26. 해와 달이 멈춤.png
+     앱파일: assets/infographics/26_sun_moon.png
+
+028. [가나안 정복] 가나안 땅 분배 (land-allotment)
+     원본: 가나안정복.zip / 27. 가나안 땅 분배.png
+     앱파일: assets/infographics/27_land_allotment.png
+
+029. [사사 시대] 드보라와 바락 (deborah-barak)
+     원본: 사사시대.zip / 28. 드보라와 바락.png
+     앱파일: assets/infographics/28_deborah_barak.png
+
+030. [사사 시대] 기드온과 300용사 (gideon-300)
+     원본: 사사시대.zip / 29. 기드온과 300용사.png
+     앱파일: assets/infographics/29_gideon_300.png
+
+031. [사사 시대] 삼손 (samson)
+     원본: 사사시대.zip / 30. 삼손.png
+     앱파일: assets/infographics/30_samson.png
+
+032. [사사 시대] 룻과 보아스 (ruth-boaz)
+     원본: 사사시대.zip / 31. 룻과 보아스.png
+     앱파일: assets/infographics/31_ruth_boaz.png
+
+033. [통일왕국] 사울 왕 즉위 (saul-king)
+     원본: 통일왕국.zip / 32. 사울왕 즉위.png
+     앱파일: assets/infographics/32_saul_king.png
+
+034. [통일왕국] 다윗과 골리앗 (david-goliath)
+     원본: 통일왕국.zip / 33. 다윗과 골리앗.png
+     앱파일: assets/infographics/33_david_goliath.png
+
+035. [통일왕국] 언약궤 이동 (ark-move)
+     원본: 통일왕국.zip / 34. 언야궤 이동.png
+     앱파일: assets/infographics/34_ark_move.png
+
+036. [통일왕국] 다윗 왕국 (david-kingdom)
+     원본: 통일왕국.zip / 35. 다윗왕국.png
+     앱파일: assets/infographics/35_david_kingdom.png
+
+037. [통일왕국] 밧세바 사건 (bathsheba)
+     원본: 통일왕국.zip / 36. 밧세바 사건.png
+     앱파일: assets/infographics/36_bathsheba.png
+
+038. [통일왕국] 솔로몬의 지혜 (solomon-wisdom)
+     원본: 통일왕국.zip / 37. 솔로몬의 지혜.png
+     앱파일: assets/infographics/37_solomon_wisdom.png
+
+039. [통일왕국] 성전 건축 (temple-build)
+     원본: 통일왕국.zip / 38. 성전건축.png
+     앱파일: assets/infographics/38_temple_build.png
+
+040. [통일왕국] 성전 봉헌 (temple-dedication)
+     원본: 통일왕국.zip / 39. 성전봉헌.png
+     앱파일: assets/infographics/39_temple_dedication.png
+
+041. [분열왕국] 왕국 분열 (kingdom-divide)
+     원본: 분열왕국.zip / 40. 왕국 분열.png
+     앱파일: assets/infographics/40_kingdom_divide.png
+
+042. [분열왕국] 금송아지 우상 사건 (golden-calves)
+     원본: 분열왕국.zip / 41. 금송아지 우상 사건.png
+     앱파일: assets/infographics/41_golden_calves.png
+
+043. [분열왕국] 엘리야 갈멜산 대결 (carmel)
+     원본: 분열왕국.zip / 42. 엘리야 갈멜산 대결.png
+     앱파일: assets/infographics/42_carmel.png
+
+044. [분열왕국] 나봇의 포도원 (naboth)
+     원본: 분열왕국.zip / 43. 나봇의 포도원.png
+     앱파일: assets/infographics/43_naboth.png
+
+045. [분열왕국] 엘리사의 기적 (elisha-miracles)
+     원본: 분열왕국.zip / 44. 엘리사의 기적.png
+     앱파일: assets/infographics/44_elisha_miracles.png
+
+046. [분열왕국] 요나와 니느웨 (jonah-nineveh)
+     원본: 분열왕국.zip / 45. 요나와 니느웨.png
+     앱파일: assets/infographics/45_jonah_nineveh.png
+
+047. [분열왕국] 북이스라엘 멸망 (north-fall)
+     원본: 분열왕국.zip / 46. 북이스라엘 멸망.png
+     앱파일: assets/infographics/46_north_fall.png
+
+048. [분열왕국] 히스기야 개혁 (hezekiah-reform)
+     원본: 분열왕국.zip / 47. 히스기야 개혁.png
+     앱파일: assets/infographics/47_hezekiah_reform.png
+
+049. [분열왕국] 앗수르 침공 (assyria-invasion)
+     원본: 분열왕국.zip / 48. 앗수르 침공.png
+     앱파일: assets/infographics/48_assyria_invasion.png
+
+050. [분열왕국] 요시야 개혁 (josiah-reform)
+     원본: 분열왕국.zip / 49. 요시야 개혁.png
+     앱파일: assets/infographics/49_josiah_reform.png
+
+051. [분열왕국] 예레미야의 눈물 (jeremiah-tears)
+     원본: 분열왕국.zip / 50. 예레미야의 눈물.png
+     앱파일: assets/infographics/50_jeremiah_tears.png
+
+052. [분열왕국] 남유다 멸망 (judah-fall)
+     원본: 분열왕국.zip / 51. 남유다 멸망.png
+     앱파일: assets/infographics/51_judah_fall.png
+
+053. [유다 멸망과 포로] 다니엘과 세 친구 (daniel-friends)
+     원본: 유다멸망과 포로.zip / 52. 다니엘과 세 친구.png
+     앱파일: assets/infographics/52_daniel_friends.png
+
+054. [유다 멸망과 포로] 풀무불 사건 (furnace)
+     원본: 유다멸망과 포로.zip / 54. 풀무불 사건.png
+     앱파일: assets/infographics/54_furnace.png
+
+055. [유다 멸망과 포로] 느부갓네살의 꿈 (nebuchadnezzar-dream)
+     원본: 유다멸망과 포로.zip / 55. 느부갓네살의 꿈.png
+     앱파일: assets/infographics/55_nebuchadnezzar_dream.png
+
+056. [유다 멸망과 포로] 사자굴 사건 (lion-den)
+     원본: 유다멸망과 포로.zip / 56. 사자굴 사건.png
+     앱파일: assets/infographics/56_lion_den.png
+
+057. [유다 멸망과 포로] 에스겔 환상 (ezekiel-vision)
+     원본: 유다멸망과 포로.zip / 57. 에스겔 환상.png
+     앱파일: assets/infographics/57_ezekiel_vision.png
+
+058. [유다 멸망과 포로] 에스더와 부림절 (esther-purim)
+     원본: 유다멸망과 포로.zip / 58. 에스더와 부림절.png
+     앱파일: assets/infographics/58_esther_purim.png
+
+059. [포로귀환] 스룹바벨 귀환 (zerubbabel-return)
+     원본: 포로귀환.zip / 59. 스룹바벨 귀환.png
+     앱파일: assets/infographics/59_zerubbabel_return.png
+
+060. [포로귀환] 성전 재건 (temple-rebuild)
+     원본: 포로귀환.zip / 60. 성전 재건.png
+     앱파일: assets/infographics/60_temple_rebuild.png
+
+061. [포로귀환] 에스라 율법개혁 (ezra-reform)
+     원본: 포로귀환.zip / 61. 에스라 율법개혁.png
+     앱파일: assets/infographics/61_ezra_reform.png
+
+062. [포로귀환] 느헤미야 성벽 재건 (nehemiah-wall)
+     원본: 포로귀환.zip / 62. 느헤미야 성벽 재건.png
+     앱파일: assets/infographics/62_nehemiah_wall.png
+
+063. [신구약 중간기] 헬라제국 등장 (hellenism)
+     원본: 신구약 중간기.zip / 63. 헬라제국 등장.png
+     앱파일: assets/infographics/63_hellenism.png
+
+064. [신구약 중간기] 알렉산더 대왕 (alexander)
+     원본: 신구약 중간기.zip / 64. 알렉산더 대왕.png
+     앱파일: assets/infographics/64_alexander.png
+
+065. [신구약 중간기] 마카비 혁명 (maccabees)
+     원본: 신구약 중간기.zip / 65. 마카비 혁명.png
+     앱파일: assets/infographics/65_maccabees.png
+
+066. [신구약 중간기] 하누카 절기 (hanukkah)
+     원본: 신구약 중간기.zip / 66. 하누카 절기.png
+     앱파일: assets/infographics/66_hanukkah.png
+
+067. [신구약 중간기] 로마제국 등장 (rome)
+     원본: 신구약 중간기.zip / 67. 로마제국 등장.png
+     앱파일: assets/infographics/67_rome.png
+
+068. [예수 시대] 예수 탄생 (jesus-birth)
+     원본: 예수 시대.zip / 68. 예수님 탄생.png
+     앱파일: assets/infographics/68_jesus_birth.png
+
+069. [예수 시대] 동방박사 (magi)
+     원본: 예수 시대.zip / 69. 동방박사.png
+     앱파일: assets/infographics/69_magi.png
+
+070. [예수 시대] 세례요한 (john-baptist)
+     원본: 예수 시대.zip / 70. 세례 요한.png
+     앱파일: assets/infographics/70_john_baptist.png
+
+071. [예수 시대] 예수 세례 (jesus-baptism)
+     원본: 예수 시대.zip / 71. 예수 세례.png
+     앱파일: assets/infographics/71_jesus_baptism.png
+
+072. [예수 시대] 광야 시험 (temptation)
+     원본: 예수 시대.zip / 72. 광야 시험.png
+     앱파일: assets/infographics/72_temptation.png
+
+073. [예수 시대] 제자 부르심 (calling-disciples)
+     원본: 예수 시대.zip / 73. 제자 부르심.png
+     앱파일: assets/infographics/73_calling_disciples.png
+
+074. [예수 시대] 산상수훈 (sermon-mount)
+     원본: 예수 시대.zip / 74. 산상수훈.png
+     앱파일: assets/infographics/74_sermon_mount.png
+
+075. [예수 시대] 오병이어 (five-loaves)
+     원본: 예수 시대.zip / 75. 오병이어.png
+     앱파일: assets/infographics/75_five_loaves.png
+
+076. [예수 시대] 물 위를 걸으심 (walk-water)
+     원본: 예수 시대.zip / 76. 물 위를 걸으심.png
+     앱파일: assets/infographics/76_walk_water.png
+
+077. [예수 시대] 변화산 사건 (transfiguration)
+     원본: 예수 시대.zip / 77. 변화산 사건.png
+     앱파일: assets/infographics/77_transfiguration.png
+
+078. [예수 시대] 나사로 부활 (lazarus)
+     원본: 예수 시대.zip / 78. 나사로 부활.png
+     앱파일: assets/infographics/78_lazarus.png
+
+079. [예수 시대] 예루살렘 입성 (triumphal-entry)
+     원본: 예수 시대.zip / 79. 예루살렘 입성.png
+     앱파일: assets/infographics/79_triumphal_entry.png
+
+080. [예수 시대] 최후의 만찬 (last-supper)
+     원본: 예수 시대.zip / 80. 최후의 만찬.png
+     앱파일: assets/infographics/80_last_supper.png
+
+081. [예수 시대] 겟세마네 기도 (gethsemane)
+     원본: 예수 시대.zip / 81. 겟세마네 기도.png
+     앱파일: assets/infographics/81_gethsemane.png
+
+082. [예수 시대] 십자가 (cross)
+     원본: 예수 시대.zip / 82. 십자가.png
+     앱파일: assets/infographics/82_cross.png
+
+083. [예수 시대] 부활 (resurrection)
+     원본: 예수 시대.zip / 83. 부활.png
+     앱파일: assets/infographics/83_resurrection.png
+
+084. [예수 시대] 오순절 약속 (pentecost-promise)
+     원본: 예수 시대.zip / 84. 오순절 약속.png
+     앱파일: assets/infographics/84_pentecost_promise.png
+
+085. [예수 시대] 승천 (ascension)
+     원본: 예수 시대.zip / 85. 승천.png
+     앱파일: assets/infographics/85_ascension.png
+
+086. [초대교회] 오순절 성령강림 (pentecost)
+     원본: 초대교회.zip / 86. 오순절 성령강림.png
+     앱파일: assets/infographics/86_pentecost.png
+
+087. [초대교회] 스데반 순교 (stephen)
+     원본: 초대교회.zip / 87. 스데반 순교.png
+     앱파일: assets/infographics/87_stephen.png
+
+088. [초대교회] 바울 회심 (paul-conversion)
+     원본: 초대교회.zip / 88. 바울 회심.png
+     앱파일: assets/infographics/88_paul_conversion.png
+
+089. [초대교회] 1차 선교여행 (paul-1st)
+     원본: 초대교회.zip / 89. 1차 선교여행.png
+     앱파일: assets/infographics/89_paul_1st.png
+
+090. [초대교회] 예루살렘 공의회 (jerusalem-council)
+     원본: 초대교회.zip / 90. 예루살렘 공의회.png
+     앱파일: assets/infographics/90_jerusalem_council.png
+
+091. [초대교회] 2차 선교여행 (paul-2nd)
+     원본: 초대교회.zip / 91. 2차 선교여행.png
+     앱파일: assets/infographics/91_paul_2nd.png
+
+092. [초대교회] 3차 선교여행 (paul-3rd)
+     원본: 초대교회.zip / 92. 3차 선교여행.png
+     앱파일: assets/infographics/92_paul_3rd.png
+
+093. [초대교회] 로마 압송 (rome-transfer)
+     원본: 초대교회.zip / 93. 로마 압송.png
+     앱파일: assets/infographics/93_rome_transfer.png
+
+094. [초대교회] 밧모섬의 요한 (john-patmos)
+     원본: 초대교회.zip / 94. 밧모섬의 요한.png
+     앱파일: assets/infographics/94_john_patmos.png
+
+095. [종말과 새창조] 일곱 교회 (seven-churches)
+     원본: 종말과 새창조.zip / 95. 일곱 교회.png
+     앱파일: assets/infographics/95_seven_churches.png
+
+096. [종말과 새창조] 일곱 인 (seven-seals)
+     원본: 종말과 새창조.zip / 96. 일곱 인.png
+     앱파일: assets/infographics/96_seven_seals.png
+
+097. [종말과 새창조] 짐승과 환난 (beast-tribulation)
+     원본: 종말과 새창조.zip / 97. 짐승과 환난.png
+     앱파일: assets/infographics/97_beast_tribulation.png
+
+098. [종말과 새창조] 아마겟돈 (armageddon)
+     원본: 종말과 새창조.zip / 98. 아마겟돈.png
+     앱파일: assets/infographics/98_armageddon.png
+
+099. [종말과 새창조] 새예루살렘 (new-jerusalem)
+     원본: 종말과 새창조.zip / 99. 새예루살렘.png
+     앱파일: assets/infographics/99_new_jerusalem.png
+
+100. [종말과 새창조] 새 하늘과 새 땅 (new-heaven-earth)
+     원본: 종말과 새창조.zip / 100. 새 하늘과 새 땅.png
+     앱파일: assets/infographics/100_new_heaven_earth.png
