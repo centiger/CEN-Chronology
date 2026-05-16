@@ -271,8 +271,8 @@ function renderExploreRows(eventId){
 
 function openViewer(eventId){
   const data = EVENTS[eventId];
-  if(!data || !data.image) return;
-  const src = data.image;
+  const src = (typeof ORIGINAL_INFOGRAPHICS !== "undefined" && ORIGINAL_INFOGRAPHICS[eventId]) || (data && data.image);
+  if(!data || !src) return;
   if(!src.includes("assets/infographics/")){
     alert("원본 인포그래픽 연결 경로를 확인해야 합니다.");
     return;
@@ -285,10 +285,12 @@ function openImageViewer(title, src){
   viewerScale = 1;
   $("#viewerTitle").textContent = title || "원본 인포그래픽";
   const img = $("#viewerImg");
-  img.src = src;
+  img.removeAttribute("src");
   img.alt = title || "원본 인포그래픽";
   img.style.width = "100%";
   img.style.transform = "scale(1)";
+  const finalSrc = src.startsWith("assets/") ? `${src}?v=57` : src;
+  img.src = finalSrc;
   $("#viewer").classList.add("show");
 }
 
