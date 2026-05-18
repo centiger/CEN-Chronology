@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v69-united-kingdom-additions";
+const CHRONOLOGY_VERSION = "v70-divided-kingdom-additions";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -80,7 +80,7 @@ const ERAS = [
     summary:"북이스라엘과 남유다로 나뉘고, 왕들과 선지자들이 복잡하게 얽힌 시대입니다.",
     people:"엘리야, 엘리사, 이사야, 예레미야, 히스기야, 요시야",
     tone:"divided",
-    eventIds:["kingdom-divide","golden-calves","carmel","naboth","elisha-miracles","jonah-nineveh","north-fall","hezekiah-reform","assyria-invasion","josiah-reform","jeremiah-tears","judah-fall"]
+    eventIds:["kingdom-divide","golden-calves","ahab-jezebel-idolatry","carmel","naboth","elisha-miracles","naaman-healing","jonah-nineveh","north-fall","hezekiah-reform","assyria-invasion","josiah-reform","jeremiah-tears","judah-fall"]
   },
   {
     id:"era-exile",
@@ -2844,6 +2844,99 @@ Object.assign(EVENT_EXPLORE, {
       {title:"반역", desc:"왕권을 빼앗으려는 욕망", ref:"삼하 15장"},
       {title:"왕의 눈물", desc:"심판 속 자비의 마음", ref:"삼하 18:33"},
       {title:"참된 왕", desc:"자기 백성을 위해 우시는 그리스도", ref:"눅 19:41"}
+    ]
+  }
+});
+
+
+// v70 분열왕국 시대 추가 핵심사건
+Object.assign(EVENTS, {
+  "ahab-jezebel-idolatry":{
+    title:"아합왕과 이세벨의 우상숭배",
+    era:"분열왕국",
+    year:"BC 874~853경",
+    scripture:"열왕기상 16~18장, 21장",
+    place:"북이스라엘 사마리아, 이스르엘, 갈멜산",
+    people:["아합","이세벨","엘리야","바알 선지자들","나봇"],
+    summary:"북이스라엘 아합 왕과 이세벨이 바알 숭배를 국가적으로 확산시키며 이스라엘의 영적 타락을 심화시킨 사건입니다.",
+    core:["아합이 이세벨과 결혼하고 바알 숭배를 도입함","사마리아에 바알 제단과 아세라를 세움","이세벨이 여호와의 선지자들을 박해함","엘리야가 가뭄 심판을 선포함","갈멜산 대결로 여호와만 참 하나님이심이 드러남","나봇의 포도원 사건으로 왕권의 탐욕과 불의가 드러남"],
+    meaning:["우상숭배는 개인 문제가 아니라 공동체 전체를 무너뜨림","하나님은 타락한 권력과 거짓 예배를 심판하심","참된 예배와 말씀의 회복이 필요함"],
+    connect:["우상숭배","바알","엘리야","갈멜산","참된 예배"],
+    visual:"사마리아·이스르엘·갈멜산 위치 지도",
+    image:"assets/infographics/121_ahab_jezebel_idolatry.png"
+  },
+  "naaman-healing":{
+    title:"나아만 장군의 문둥병 치유",
+    era:"분열왕국",
+    year:"BC 850경",
+    scripture:"열왕기하 5장",
+    place:"아람, 사마리아, 요단강",
+    people:["나아만","엘리사","이스라엘 소녀","게하시","아람 왕"],
+    summary:"아람의 군대 장관 나아만이 엘리사의 말에 순종하여 요단강에 일곱 번 몸을 씻고 나병을 치유받은 사건입니다.",
+    core:["나아만이 나병에 걸림","이스라엘 소녀가 엘리사를 소개함","나아만이 사마리아로 감","엘리사가 요단강에 일곱 번 씻으라 명함","나아만이 분노했으나 종들의 권면을 듣고 순종함","나아만이 치유받고 여호와만 참 하나님이심을 고백함"],
+    meaning:["구원과 치유는 인간의 자격이 아니라 하나님의 은혜로 주어짐","겸손한 순종이 믿음의 길임","이방인에게도 하나님의 은혜가 열려 있음을 보여줌"],
+    connect:["요단강","순종","치유","이방인 구원","은혜"],
+    visual:"아람에서 사마리아와 요단강까지 이동 지도",
+    image:"assets/infographics/122_naaman_healing.png"
+  }
+});
+
+Object.assign(EVENT_ENRICH, {
+  "ahab-jezebel-idolatry":{
+    flowTitle:"아합과 이세벨의 우상숭배 흐름",
+    flow:[
+      ["바알 도입","아합이 이세벨과 결혼하고 바알 숭배를 북이스라엘에 들임",""],
+      ["국가적 타락","사마리아에 바알 제단과 아세라가 세워짐",""],
+      ["선지자 박해","이세벨이 여호와의 선지자들을 박해함",""],
+      ["가뭄 심판","엘리야가 하나님의 심판으로 가뭄을 선포함",""],
+      ["갈멜산 대결","여호와만 참 하나님이심이 드러남",""],
+      ["불의의 왕권","나봇의 포도원 사건으로 탐욕과 불의가 폭로됨",""]
+    ],
+    scriptureRefs:[["열왕기상 16:29~34","아합이 바알 숭배를 도입하고 여호와 보시기에 악을 행함"],["열왕기상 18장","엘리야와 바알 선지자들의 갈멜산 대결"],["열왕기상 21장","나봇의 포도원 사건과 아합 집안에 대한 심판 선포"]],
+    visualItems:["사마리아","이스르엘","갈멜산","바알 숭배"]
+  },
+  "naaman-healing":{
+    flowTitle:"나아만 치유 흐름",
+    flow:[
+      ["고통","아람의 장군 나아만이 나병에 걸림",""],
+      ["증언","이스라엘 소녀가 엘리사를 소개함",""],
+      ["방문","나아만이 사마리아로 가서 엘리사를 찾음",""],
+      ["말씀","엘리사가 요단강에 일곱 번 씻으라 명함",""],
+      ["순종","나아만이 낮아져 요단강에 몸을 씻음",""],
+      ["치유와 고백","나아만이 깨끗해지고 여호와만 참 하나님이심을 고백함",""]
+    ],
+    scriptureRefs:[["열왕기하 5장","나아만이 엘리사의 말씀에 순종하여 요단강에서 치유받음"],["누가복음 4:27","예수께서 나아만 사건을 언급하시며 하나님의 은혜가 이방인에게도 임함을 보여주심"]],
+    visualItems:["아람","사마리아","요단강","일곱 번 씻음"]
+  }
+});
+
+Object.assign(EVENT_MAP_CROPS, {
+  "ahab-jezebel-idolatry":"assets/maps/121_ahab_jezebel_idolatry_map.png",
+  "naaman-healing":"assets/maps/122_naaman_healing_map.png"
+});
+
+Object.assign(ORIGINAL_INFOGRAPHICS, {
+  "ahab-jezebel-idolatry":"assets/infographics/121_ahab_jezebel_idolatry.png",
+  "naaman-healing":"assets/infographics/122_naaman_healing.png"
+});
+
+Object.assign(EVENT_EXPLORE, {
+  "ahab-jezebel-idolatry":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"바알 숭배", desc:"하나님을 대체한 거짓 예배", ref:"왕상 16장"},
+      {title:"갈멜산", desc:"참 하나님이 드러난 대결", ref:"왕상 18장"},
+      {title:"탐욕의 권력", desc:"나봇의 포도원 사건", ref:"왕상 21장"},
+      {title:"참된 예배", desc:"하나님께 돌아가는 길", ref:"요 4:24"}
+    ]
+  },
+  "naaman-healing":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"요단강", desc:"겸손한 순종의 자리", ref:"왕하 5장"},
+      {title:"이방인 은혜", desc:"하나님의 구원은 국경을 넘음", ref:"눅 4:27"},
+      {title:"말씀 순종", desc:"단순한 말씀에 순종함", ref:"왕하 5:10"},
+      {title:"치유와 고백", desc:"여호와만 참 하나님", ref:"왕하 5:15"}
     ]
   }
 });
