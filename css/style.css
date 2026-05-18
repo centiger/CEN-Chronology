@@ -1511,3 +1511,33 @@ button[data-detail]:hover{
   font-size:12px !important;
 }
 .flow-item{align-items:stretch !important;}
+
+
+.refined-flow-item{
+ display:flex !important;
+ flex-direction:column !important;
+ gap:8px !important;
+ margin-bottom:18px !important;
+}
+
+.refined-flow-item .flow-badge{
+ display:inline-flex !important;
+ width:auto !important;
+ min-width:120px !important;
+ height:auto !important;
+ justify-content:flex-start !important;
+ text-align:left !important;
+ padding:10px 14px !important;
+ border-radius:14px !important;
+}
+
+.refined-flow-item .flow-body{
+ margin-left:10px !important;
+ border-radius:18px !important;
+ padding:15px !important;
+}
+
+.refined-flow-item .flow-text{
+ line-height:1.7 !important;
+ white-space:pre-line !important;
+}
