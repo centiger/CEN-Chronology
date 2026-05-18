@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v68-core-event-row-ui-fix";
+const CHRONOLOGY_VERSION = "v69-united-kingdom-additions";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -70,7 +70,7 @@ const ERAS = [
     summary:"사울, 다윗, 솔로몬으로 이어지는 이스라엘 왕국의 전성기입니다.",
     people:"사울, 다윗, 솔로몬",
     tone:"kingdom",
-    eventIds:["saul-king","david-goliath","ark-move","david-kingdom","bathsheba","solomon-wisdom","temple-build","temple-dedication"]
+    eventIds:["saul-king","saul-disobedience","david-goliath","david-fugitive-life","ark-move","david-kingdom","bathsheba","absalom-rebellion","solomon-wisdom","temple-build","temple-dedication"]
   },
   {
     id:"era-divided",
@@ -2709,4 +2709,141 @@ Object.assign(EVENT_MAP_CROPS, {
   "jephthah":"assets/infographics/115_jephthah.png",
   "judges-cycle":"assets/infographics/113_judges_cycle.png",
   "micah-idol-levite":"assets/infographics/114_micah_idol_levite.png"
+});
+
+
+// v69 통일왕국 시대 추가 핵심사건
+Object.assign(EVENTS, {
+  "saul-disobedience":{
+    title:"사울왕의 불순종과 버림받음",
+    era:"통일왕국",
+    year:"BC 1050경 이후",
+    scripture:"사무엘상 13장, 15장",
+    place:"길갈, 아말렉 전쟁 지역",
+    people:["사울","사무엘","아말렉","이스라엘 백성"],
+    summary:"사울 왕이 하나님의 명령을 온전히 순종하지 않고 자기 판단과 체면을 앞세우다가 왕위가 하나님께 버림받는 사건입니다.",
+    core:["사울이 길갈에서 제사장 권한을 침범함","사무엘이 사울의 불순종을 책망함","아말렉을 진멸하라는 명령을 일부만 순종함","사울이 좋은 짐승과 아각 왕을 남김","사무엘이 순종이 제사보다 낫다고 선포함","하나님께서 사울을 왕으로 세우신 것을 후회하심"],
+    meaning:["불완전한 순종은 불순종임","왕도 하나님의 말씀 아래 있어야 함","참된 왕은 말씀에 온전히 순종하는 분이어야 함"],
+    connect:["순종","제사","왕권","다윗 선택","그리스도의 순종"],
+    visual:"길갈과 아말렉 전쟁 개념도",
+    image:"assets/infographics/118_saul_disobedience.png"
+  },
+  "david-fugitive-life":{
+    title:"다윗의 도피생활",
+    era:"통일왕국",
+    year:"BC 1020경",
+    scripture:"사무엘상 18~31장",
+    place:"놉, 아둘람, 엔게디, 십 광야, 블레셋 지역",
+    people:["다윗","사울","요나단","아비아달","아비가일"],
+    summary:"다윗이 사울의 추격을 피해 광야와 여러 지역을 떠돌며 하나님의 때를 기다린 사건입니다.",
+    core:["사울이 다윗을 시기하고 죽이려 함","요나단이 다윗을 돕고 언약을 맺음","다윗이 놉과 아둘람 굴로 피신함","다윗이 사울을 죽일 기회를 얻었지만 해치지 않음","광야 도피 중 공동체가 형성됨","사울의 죽음 이후 다윗 왕국의 길이 열림"],
+    meaning:["하나님의 약속은 고난 속에서 준비됨","다윗은 보복보다 하나님의 때를 기다림","고난의 왕 다윗은 그리스도의 낮아지심을 예표함"],
+    connect:["기름부음","광야","고난","하나님의 때","그리스도 왕권"],
+    visual:"다윗 도피 경로 지도",
+    image:"assets/infographics/119_david_fugitive_life.png"
+  },
+  "absalom-rebellion":{
+    title:"압살롬의 반역",
+    era:"통일왕국",
+    year:"BC 980경",
+    scripture:"사무엘하 13~19장",
+    place:"예루살렘, 헤브론, 마하나임, 에브라임 수풀",
+    people:["다윗","압살롬","요압","후새","아히도벨"],
+    summary:"다윗의 아들 압살롬이 백성의 마음을 훔쳐 반역을 일으키고, 다윗이 예루살렘을 떠나 피신한 사건입니다.",
+    core:["다윗 집안의 죄와 갈등이 깊어짐","압살롬이 백성의 마음을 얻음","압살롬이 헤브론에서 왕을 자처함","다윗이 예루살렘을 떠나 피신함","후새의 계략으로 아히도벨의 모략이 무너짐","압살롬이 전쟁 중 죽고 다윗은 슬퍼함"],
+    meaning:["죄의 결과가 가정과 나라에 영향을 미침","권력욕은 공동체를 분열시킴","다윗의 슬픔은 심판 속에서도 자비를 갈망하는 마음을 보여줌"],
+    connect:["다윗 언약","죄의 결과","반역","왕의 눈물","그리스도의 자비"],
+    visual:"예루살렘-헤브론-마하나임 이동 지도",
+    image:"assets/infographics/120_absalom_rebellion.png"
+  }
+});
+
+Object.assign(EVENT_ENRICH, {
+  "saul-disobedience":{
+    flowTitle:"사울의 불순종 흐름",
+    flow:[
+      ["권한 침범","길갈에서 사울이 직접 제사를 드림",""],
+      ["명령 일부 순종","아말렉 진멸 명령을 온전히 따르지 않음",""],
+      ["변명","사울이 백성과 제사를 이유로 변명함",""],
+      ["책망","사무엘이 순종이 제사보다 낫다고 선포함",""],
+      ["버림받음","하나님께서 사울의 왕권을 거두심",""]
+    ],
+    scriptureRefs:[
+      ["사무엘상 13장","사울이 길갈에서 기다리지 못하고 제사를 드림"],
+      ["사무엘상 15장","사울의 아말렉 불순종과 사무엘의 책망"]
+    ],
+    visualItems:["길갈","아말렉 전쟁", "사울의 불순종"]
+  },
+  "david-fugitive-life":{
+    flowTitle:"다윗의 도피생활 흐름",
+    flow:[
+      ["사울의 시기","사울이 다윗을 죽이려 함",""],
+      ["요나단의 도움","요나단이 다윗을 보호하고 언약을 맺음",""],
+      ["광야 도피","다윗이 놉·아둘람·엔게디 등으로 피신함",""],
+      ["보복 거절","다윗이 사울을 죽일 기회를 얻었지만 해치지 않음",""],
+      ["왕국 준비","고난 속에서 다윗의 리더십이 준비됨",""]
+    ],
+    scriptureRefs:[
+      ["사무엘상 18~31장","다윗이 사울의 추격을 피해 도피한 시기"],
+      ["사무엘상 24장, 26장","다윗이 사울을 살려 줌"]
+    ],
+    visualItems:["놉","아둘람","엔게디","십 광야","블레셋"]
+  },
+  "absalom-rebellion":{
+    flowTitle:"압살롬 반역 흐름",
+    flow:[
+      ["가정의 균열","다윗 집안의 죄와 갈등이 깊어짐",""],
+      ["민심 장악","압살롬이 백성의 마음을 훔침",""],
+      ["반역 선포","압살롬이 헤브론에서 왕을 자처함",""],
+      ["다윗 피신","다윗이 예루살렘을 떠나 마하나임으로 피함",""],
+      ["반역 진압","압살롬이 죽고 반역이 끝남",""]
+    ],
+    scriptureRefs:[
+      ["사무엘하 13~19장","압살롬의 반역과 다윗의 피난, 압살롬의 죽음"],
+      ["사무엘하 18:33","다윗이 압살롬의 죽음을 슬퍼함"]
+    ],
+    visualItems:["예루살렘","헤브론","마하나임","에브라임 수풀"]
+  }
+});
+
+Object.assign(EVENT_MAP_CROPS, {
+  "saul-disobedience":"assets/maps/118_saul_disobedience_map.png",
+  "david-fugitive-life":"assets/maps/119_david_fugitive_life_map.png",
+  "absalom-rebellion":"assets/maps/120_absalom_rebellion_map.png"
+});
+
+Object.assign(ORIGINAL_INFOGRAPHICS, {
+  "saul-disobedience":"assets/infographics/118_saul_disobedience.png",
+  "david-fugitive-life":"assets/infographics/119_david_fugitive_life.png",
+  "absalom-rebellion":"assets/infographics/120_absalom_rebellion.png"
+});
+
+Object.assign(EVENT_EXPLORE, {
+  "saul-disobedience":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"순종", desc:"하나님 말씀에 대한 온전한 반응", ref:"삼상 15:22"},
+      {title:"제사", desc:"형식보다 순종이 우선", ref:"삼상 15:22"},
+      {title:"왕권", desc:"왕도 말씀 아래 있음", ref:"삼상 15:26"},
+      {title:"다윗 선택", desc:"사울 이후 새 왕을 준비하심", ref:"삼상 16장"}
+    ]
+  },
+  "david-fugitive-life":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"광야", desc:"약속의 사람을 준비하는 장소", ref:"삼상 22장"},
+      {title:"요나단", desc:"언약적 우정과 보호", ref:"삼상 20장"},
+      {title:"보복 거절", desc:"하나님의 때를 기다림", ref:"삼상 24장"},
+      {title:"그리스도 왕권", desc:"고난받는 왕의 예표", ref:"눅 24:26"}
+    ]
+  },
+  "absalom-rebellion":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"죄의 결과", desc:"다윗 집안에 남은 상처", ref:"삼하 12장"},
+      {title:"반역", desc:"왕권을 빼앗으려는 욕망", ref:"삼하 15장"},
+      {title:"왕의 눈물", desc:"심판 속 자비의 마음", ref:"삼하 18:33"},
+      {title:"참된 왕", desc:"자기 백성을 위해 우시는 그리스도", ref:"눅 19:41"}
+    ]
+  }
 });
