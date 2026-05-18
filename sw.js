@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v74-cyrus-detail-button-fix";
+const CACHE_NAME = "cen-bible-chronology-v75-malachi-return-era-added";
 const ASSETS = [
   "./",
   "./index.html",
