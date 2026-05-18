@@ -174,16 +174,12 @@ function renderDetail(eventId){
       <div class="section-title">6. 핵심사건</div>
       <div class="flow-list">
         ${flow.map((x,i)=>{
-          const rawStep = Array.isArray(x) ? (x[0] || "") : (x && typeof x === "object" ? (x.no || x.num || x.step || "") : "");
-          const title = Array.isArray(x) ? (x[1] || "") : (x && typeof x === "object" ? (x.title || x.text || x.label || "") : x);
-          const step = rawStep || title || String(i+1);
-          const desc = Array.isArray(x) ? (x[2] || "") : (x && typeof x === "object" ? (x.desc || x.summary || "") : "");
+          const item = normalizeFlowItem(x, i);
           return `
           <div class="flow-item">
-            <div class="flow-badge">${step}</div>
+            <div class="flow-badge flow-badge-text">${item.title}</div>
             <div class="flow-body">
-              <div class="flow-text">${title || ""}</div>
-              ${desc ? `<div class="flow-desc">${desc}</div>` : ""}
+              <div class="flow-text">${item.desc}</div>
             </div>
           </div>
         `;
@@ -210,9 +206,9 @@ function renderDetail(eventId){
 
     <section class="scroll-section">
       <div class="section-title">9. 지도 / 시각자료</div>
-      ${EVENT_MAP_CROPS[eventId] ? `
+      ${getMapImageSrc(eventId) ? `
         <div class="crop-map-card clean-map-only">
-          <img class="crop-map-img" src="${EVENT_MAP_CROPS[eventId]}" alt="${data.title} 지도/시각자료">
+          <img class="crop-map-img" src="${getMapImageSrc(eventId)}" alt="${data.title} 지도/시각자료" onerror="this.closest('.crop-map-card').innerHTML='<div class=\'section-card\'>지도/시각자료 이미지 경로를 확인해 주세요.</div>'">
           <div class="btn-row">
             <button class="cen-btn secondary" data-open-crop="${eventId}">지도 크게 보기</button>
           </div>
@@ -269,12 +265,62 @@ function renderExploreRows(eventId){
   `;
 }
 
+
+
+
+
+function isStepLabelOnly(v){
+  const s = (v || "").toString().trim();
+  return /^(\d+|\d+\s*일째|\d+\.\s*|[①②③④⑤⑥⑦⑧⑨⑩])$/.test(s);
+}
+function normalizeFlowItem(x, i){
+  if(Array.isArray(x)){
+    const a = (x[0] || "").toString().trim();
+    const b = (x[1] || "").toString().trim();
+    const c = (x[2] || "").toString().trim();
+    if(isStepLabelOnly(a) && b){
+      return {title:b, desc:c || b};
+    }
+    if(a && b && !c){
+      return {title:a, desc:b};
+    }
+    return {title:a || b || `핵심 ${i+1}`, desc:c || b || a || `핵심 ${i+1}`};
+  }
+  if(x && typeof x === "object"){
+    const title = (x.title || x.label || x.step || x.text || `핵심 ${i+1}`).toString();
+    const desc = (x.desc || x.summary || x.text || title).toString();
+    return {title, desc};
+  }
+  const s = (x || `핵심 ${i+1}`).toString();
+  return {title:s, desc:s};
+}
+function getOriginalImageSrc(eventId){
+  const data = EVENTS[eventId] || {};
+  return (
+    (typeof ORIGINAL_INFOGRAPHICS !== "undefined" && ORIGINAL_INFOGRAPHICS[eventId]) ||
+    data.image ||
+    data.originalImage ||
+    ""
+  );
+}
+function getMapImageSrc(eventId){
+  const original = getOriginalImageSrc(eventId);
+  return (
+    (typeof EVENT_MAP_CROPS !== "undefined" && EVENT_MAP_CROPS[eventId]) ||
+    original ||
+    ""
+  );
+}
+
 function openViewer(eventId){
   const data = EVENTS[eventId];
-  const src = (typeof ORIGINAL_INFOGRAPHICS !== "undefined" && ORIGINAL_INFOGRAPHICS[eventId]) || (data && data.image);
-  if(!data || !src) return;
-  if(!src.includes("assets/infographics/")){
-    alert("원본 인포그래픽 연결 경로를 확인해야 합니다.");
+  if(!data){
+    alert("사건 데이터를 찾을 수 없습니다.");
+    return;
+  }
+  const src = getOriginalImageSrc(eventId);
+  if(!src){
+    alert("원본 인포그래픽 연결 경로가 없습니다.");
     return;
   }
   openImageViewer(data.title + " 원본 인포그래픽", src);
@@ -283,20 +329,27 @@ function openViewer(eventId){
 function openImageViewer(title, src){
   if(!src) return;
   viewerScale = 1;
-  $("#viewerTitle").textContent = title || "원본 인포그래픽";
+  const viewerTitle = $("#viewerTitle");
+  if(viewerTitle) viewerTitle.textContent = title || "원본 인포그래픽";
   const img = $("#viewerImg");
+  if(!img) return;
   img.removeAttribute("src");
   img.alt = title || "원본 인포그래픽";
   img.style.width = "100%";
   img.style.transform = "scale(1)";
-  const finalSrc = src.startsWith("assets/") ? `${src}?v=61` : src;
+  const version = (typeof CHRONOLOGY_VERSION !== "undefined" ? CHRONOLOGY_VERSION : "v64");
+  const finalSrc = src.includes("?") ? src : `${src}?v=${encodeURIComponent(version)}`;
+  img.onerror = () => {
+    img.onerror = null;
+    alert("원본 인포그래픽 파일을 찾지 못했습니다. GitHub에 해당 이미지 파일이 업로드되어 있는지 확인해 주세요: " + src);
+  };
   img.src = finalSrc;
   $("#viewer").classList.add("show");
 }
 
 function openCropViewer(eventId){
   const data = EVENTS[eventId];
-  const crop = EVENT_MAP_CROPS[eventId];
+  const crop = getMapImageSrc(eventId);
   if(!data || !crop) return;
   openImageViewer(data.title + " 지도/시각자료", crop);
 }
