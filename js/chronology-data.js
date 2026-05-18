@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v60-patriarch-additions-detail-fix";
+const CHRONOLOGY_VERSION = "v61-patriarch-exodus-additions";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -40,7 +40,7 @@ const ERAS = [
     summary:"이스라엘이 애굽에서 해방되어 언약 백성으로 세워지고 광야에서 훈련받은 시대입니다.",
     people:"모세, 아론, 여호수아",
     tone:"exodus",
-    eventIds:["moses-birth","burning-bush","ten-plagues","passover","red-sea","manna-quail","sinai-commandments","golden-calf","tabernacle","wilderness-40","bronze-serpent"]
+    eventIds:["moses-birth","moses-midian","burning-bush","ten-plagues","passover","red-sea","manna-quail","aaron-hur-prayer","sinai-commandments","golden-calf","tabernacle","kadesh-spies","wilderness-40","korah-rebellion","bronze-serpent","balaam-donkey","moses-farewell-death"]
   },
   {
     id:"era-conquest",
@@ -210,6 +210,60 @@ const EVENTS = {
     connect:["노아의 방주","아브라함의 부르심","오순절","열방","복음"],
     visual:"시날 평지, 탑, 흩어진 사람들, 언어",
     image:"assets/infographics/06_babel_tower.png"
+  },
+"moses-midian": {
+    title:"모세의 미디안 광야 도피", era:"출애굽과 광야", year:"출애굽 이전, BC 1486년경", scripture:"출애굽기 2:11~25",
+    place:"애굽 왕궁 → 미디안 광야", people:["모세","이스라엘 동족","미디안 제사장 이드로","십보라","바로"],
+    summary:"모세가 애굽 사람을 친 뒤 바로의 위협을 피해 미디안 광야로 도피하고, 그곳에서 긴 준비의 시간을 보내게 된 사건입니다.",
+    core:["동족의 고통을 봄","애굽 사람을 침","바로의 위협","미디안으로 도피","이드로의 집에 머묾","십보라와 결혼","광야에서 지도자로 준비됨"],
+    meaning:["하나님의 사람은 실패와 광야의 시간을 통해 준비됨","인간적 열심만으로는 구원을 이룰 수 없음","광야는 도피처이면서 동시에 소명의 준비 장소임","하나님은 보이지 않는 시간에도 구원의 계획을 진행하심"],
+    connect:["모세의 탄생","떨기나무 소명","출애굽","광야 훈련","하나님의 준비"],
+    visual:"애굽에서 미디안으로 이동한 도피 경로, 미디안 광야", image:"assets/infographics/105_moses_midian.png"
+  },
+  "aaron-hur-prayer": {
+    title:"시내산 앞 아론과 훌의 기도", era:"출애굽과 광야", year:"BC 1446년경", scripture:"출애굽기 17:8~16",
+    place:"르비딤, 아말렉과의 전투 현장", people:["모세","아론","훌","여호수아","아말렉"],
+    summary:"아말렉과의 전투에서 모세가 손을 들면 이스라엘이 이기고 손을 내리면 밀리자, 아론과 훌이 모세의 손을 붙들어 승리하게 한 사건입니다.",
+    core:["아말렉의 공격","여호수아의 전투 지휘","모세가 산 위에서 손을 듦","아론과 훌이 손을 붙듦","이스라엘의 승리","여호와 닛시 고백"],
+    meaning:["승리는 군사력보다 하나님의 도우심에 달려 있음","지도자는 공동체의 협력과 중보가 필요함","기도와 순종은 전쟁의 보이지 않는 중심임","하나님은 자기 백성을 위해 싸우시는 분임"],
+    connect:["홍해의 기적","광야 훈련","여호수아의 등장","기도","여호와 닛시"],
+    visual:"르비딤 위치, 모세·아론·훌의 산 위 장면", image:"assets/infographics/107_aaron_hur_prayer.png"
+  },
+  "kadesh-spies": {
+    title:"가데스 바네아의 정탐꾼", era:"출애굽과 광야", year:"출애굽 후 2년째, BC 1445년경", scripture:"민수기 13~14장",
+    place:"가데스 바네아, 가나안 남부", people:["모세","여호수아","갈렙","열 정탐꾼","이스라엘 백성"],
+    summary:"가나안을 정탐한 열두 명 중 열 명은 두려움의 보고를 하고, 여호수아와 갈렙은 믿음의 보고를 했으나 백성이 불신앙으로 반응하여 광야 40년이 확정된 사건입니다.",
+    core:["12정탐꾼 파송","가나안 정탐","풍성한 땅 확인","열 명의 부정적 보고","여호수아와 갈렙의 믿음","백성의 원망","광야 40년 심판"],
+    meaning:["믿음은 현실을 부정하는 것이 아니라 하나님의 약속을 더 크게 보는 것임","불신앙은 공동체 전체의 방향을 무너뜨릴 수 있음","약속의 땅은 순종과 믿음으로 들어감","광야 40년은 심판이면서 새 세대 훈련의 시간이 됨"],
+    connect:["출애굽","광야 40년","여호수아와 갈렙","요단강 도하","가나안 정복"],
+    visual:"가데스 바네아 위치, 정탐 경로, 가나안 포도송이", image:"assets/infographics/109_kadesh_spies.png"
+  },
+  "korah-rebellion": {
+    title:"고라 자손의 반역", era:"출애굽과 광야", year:"광야 생활 중, BC 1440년경", scripture:"민수기 16장",
+    place:"광야 진영, 성막 주변", people:["고라","다단","아비람","모세","아론"],
+    summary:"고라와 동조자들이 모세와 아론의 권위에 도전하자 하나님께서 그 반역을 심판하시고, 하나님이 세우신 질서와 거룩을 드러내신 사건입니다.",
+    core:["고라 무리의 반역","모세와 아론 권위 도전","향로 시험","땅이 갈라짐","반역자 심판","아론의 제사장 직분 확인"],
+    meaning:["하나님이 세우신 영적 질서를 인간의 욕망으로 흔들 수 없음","거룩한 직분은 권력 쟁취의 대상이 아님","공동체의 불평과 교만은 심판을 부름","참된 중보자는 하나님의 뜻 앞에 엎드림"],
+    connect:["성막","제사장 직분","중보","광야의 원망","그리스도의 참 제사장직"],
+    visual:"성막 주변 진영, 고라 반역 심판 장면", image:"assets/infographics/106_korah_rebellion.png"
+  },
+  "balaam-donkey": {
+    title:"발람 선지자와 말하는 나귀", era:"출애굽과 광야", year:"가나안 입성 직전, BC 1407년경", scripture:"민수기 22~24장",
+    place:"모압 평지, 아르논과 여리고 맞은편 지역", people:["발람","발락","말하는 나귀","여호와의 사자","이스라엘"],
+    summary:"모압 왕 발락이 발람을 불러 이스라엘을 저주하게 하려 했지만, 하나님께서 나귀와 천사를 통해 발람을 막으시고 오히려 이스라엘을 축복하게 하신 사건입니다.",
+    core:["발락의 초청","발람의 길","나귀가 천사를 봄","나귀가 말함","발람의 눈이 열림","저주 대신 축복","야곱의 별 예언"],
+    meaning:["하나님은 자기 백성을 향한 저주를 축복으로 바꾸심","영적 눈이 어두워지면 나귀보다 못 볼 수 있음","하나님의 말씀은 인간의 욕심보다 강함","메시아를 향한 예언의 빛이 광야에서도 드러남"],
+    connect:["아브라함 언약","광야 보호","메시아 예언","동방박사","그리스도의 왕권"],
+    visual:"모압 평지, 발람의 길, 말하는 나귀 장면", image:"assets/infographics/108_balaam_donkey.png"
+  },
+  "moses-farewell-death": {
+    title:"모세의 고별설교와 죽음", era:"출애굽과 광야", year:"BC 1406년경", scripture:"신명기 1~34장",
+    place:"모압 평지, 느보산", people:["모세","여호수아","이스라엘 백성","하나님","갈렙"],
+    summary:"모세가 가나안 입성을 앞둔 새 세대에게 율법과 언약을 다시 선포하고, 여호수아에게 리더십을 넘긴 뒤 느보산에서 죽은 사건입니다.",
+    core:["광야 여정 회고","율법 재선포","축복과 저주 제시","여호수아 임명","느보산에서 가나안을 봄","모세의 죽음","여호수아 시대 준비"],
+    meaning:["신앙 공동체는 다음 세대에게 말씀을 전수해야 함","지도자의 사명은 하나님의 뜻 안에서 완성됨","약속의 땅은 말씀과 순종으로 살아갈 자리임","모세의 죽음은 여호수아를 통한 새 단계의 시작임"],
+    connect:["출애굽","신명기 언약","여호수아","요단강 도하","가나안 정복"],
+    visual:"모압 평지, 느보산, 가나안 조망 지도", image:"assets/infographics/110_moses_farewell_death.png"
   }
 };
 
@@ -226,7 +280,7 @@ const EVENT_SUMMARIES = {
 // 상세 탭카드는 인포그래픽이 확보되는 순서대로 EVENTS에 추가하면 된다.
 const ALL_EVENT_TITLES = {
   "abraham-call":"아브라함의 부르심","isaac-birth":"이삭의 출생","isaac-rebekah":"이삭과 리브가의 결혼","birthright-stew":"야곱과 에서의 팥죽 장자권","lot-sodom":"롯과 소돔","isaac-offering":"이삭 번제","jacob-ladder":"야곱의 사닥다리","jabbok-wrestling":"얍복강 씨름","joseph-dream":"요셉의 꿈","joseph-governor":"요셉의 애굽 총리 등극","jacob-egypt":"야곱 가족의 애굽 이주",
-  "moses-birth":"모세의 탄생","burning-bush":"떨기나무 소명","ten-plagues":"10재앙","passover":"유월절","red-sea":"홍해 도하","manna-quail":"만나와 메추라기","sinai-commandments":"시내산 십계명","golden-calf":"금송아지 사건","tabernacle":"성막 건축","wilderness-40":"광야 40년","bronze-serpent":"놋뱀 사건",
+  "moses-birth":"모세의 탄생","moses-midian":"모세의 미디안 광야 도피","burning-bush":"떨기나무 소명","ten-plagues":"10재앙","passover":"유월절","red-sea":"홍해 도하","manna-quail":"만나와 메추라기","aaron-hur-prayer":"시내산 앞 아론과 훌의 기도","sinai-commandments":"시내산 십계명","golden-calf":"금송아지 사건","tabernacle":"성막 건축","kadesh-spies":"가데스 바네아의 정탐꾼","wilderness-40":"광야 40년","korah-rebellion":"고라 자손의 반역","bronze-serpent":"놋뱀 사건","balaam-donkey":"발람 선지자와 말하는 나귀","moses-farewell-death":"모세의 고별설교와 죽음",
   "jordan-crossing":"요단강 도하","jericho":"여리고 함락","ai-battle":"아이성 전투","sun-moon":"해와 달이 멈춤","land-allotment":"가나안 땅 분배",
   "deborah-barak":"드보라와 바락","gideon-300":"기드온 300용사","samson":"삼손","ruth-boaz":"룻과 보아스",
   "saul-king":"사울 왕 즉위","david-goliath":"다윗과 골리앗","ark-move":"언약궤 이동","david-kingdom":"다윗 왕국","bathsheba":"밧세바 사건","solomon-wisdom":"솔로몬의 지혜","temple-build":"성전 건축","temple-dedication":"성전 봉헌",
@@ -360,6 +414,42 @@ const EVENT_ENRICH = {
       ["사도행전 2:1-11", "성령 강림으로 언어가 통함"]
     ],
     visualItems: ["바벨탑 위치 지도", "바벨탑 모습 상상도"]
+  },
+"moses-midian": {
+    flowTitle:"애굽 왕궁에서 미디안 광야로",
+    flow:[["1","동족의 고통을 본 모세",""],["2","애굽 사람을 치고 도망자가 됨", ""],["3","미디안 광야로 피신", ""],["4","이드로의 가족과 연결", ""],["5","광야에서 긴 준비의 시간을 보냄", ""]],
+    scriptureRefs:[["출애굽기 2:11~15","모세가 동족을 돕다가 애굽 사람을 치고 미디안으로 도망함"],["출애굽기 2:16~22","미디안에서 이드로의 집에 머물며 십보라와 결혼함"]],
+    visualItems:["애굽","미디안 광야","도피 경로","이드로의 집"]
+  },
+  "aaron-hur-prayer": {
+    flowTitle:"손을 들 때 승리한 전투",
+    flow:[["1","아말렉이 이스라엘을 공격", ""],["2","여호수아가 전투를 지휘", ""],["3","모세가 산 위에서 손을 듦", ""],["4","아론과 훌이 모세의 손을 붙듦", ""],["5","이스라엘이 승리하고 여호와 닛시를 고백", ""]],
+    scriptureRefs:[["출애굽기 17:8~16","모세의 손이 올라가면 이스라엘이 이기고 내려가면 아말렉이 이김"]],
+    visualItems:["르비딤","아말렉 전투","모세의 손","여호와 닛시"]
+  },
+  "kadesh-spies": {
+    flowTitle:"믿음의 보고와 불신앙의 보고",
+    flow:[["1","가나안 정탐꾼 12명 파송", ""],["2","가나안 땅의 풍성함 확인", ""],["3","열 정탐꾼의 두려움 보고", ""],["4","여호수아와 갈렙의 믿음 보고", ""],["5","백성의 원망과 불신앙", ""],["6","광야 40년 심판 확정", ""]],
+    scriptureRefs:[["민수기 13~14장","가데스 바네아 정탐과 불신앙으로 광야 40년이 확정됨"],["민수기 14:6~9","여호수아와 갈렙이 여호와를 거역하지 말라고 권면함"]],
+    visualItems:["가데스 바네아","가나안 정탐 경로","포도송이","여호수아와 갈렙"]
+  },
+  "korah-rebellion": {
+    flowTitle:"권위 도전과 하나님의 심판",
+    flow:[["1","고라 무리가 모세와 아론에게 반역", ""],["2","향로를 들고 하나님 앞에 섬", ""],["3","하나님께서 거룩한 직분을 판정", ""],["4","땅이 갈라져 반역자들을 삼킴", ""],["5","아론의 제사장 직분이 확인됨", ""]],
+    scriptureRefs:[["민수기 16장","고라와 동조자들이 반역하고 하나님의 심판을 받음"]],
+    visualItems:["광야 진영","성막","향로","고라의 반역"]
+  },
+  "balaam-donkey": {
+    flowTitle:"저주를 축복으로 바꾸신 하나님",
+    flow:[["1","발락이 발람을 초청", ""],["2","발람이 나귀를 타고 감", ""],["3","나귀가 여호와의 사자를 봄", ""],["4","나귀가 말하고 발람의 눈이 열림", ""],["5","발람이 이스라엘을 저주하지 못하고 축복", ""],["6","야곱의 별 예언", ""]],
+    scriptureRefs:[["민수기 22~24장","발람이 저주 대신 축복을 선포함"],["민수기 24:17","한 별이 야곱에게서 나오며 한 규가 이스라엘에게서 일어남"]],
+    visualItems:["모압 평지","발락","발람","말하는 나귀","야곱의 별"]
+  },
+  "moses-farewell-death": {
+    flowTitle:"모세의 마지막 설교와 리더십 이양",
+    flow:[["1","광야 여정을 회고", ""],["2","율법과 언약을 다시 선포", ""],["3","축복과 저주의 길을 제시", ""],["4","여호수아를 후계자로 세움", ""],["5","느보산에서 가나안을 바라봄", ""],["6","모세의 죽음과 여호수아 시대 준비", ""]],
+    scriptureRefs:[["신명기 1~34장","모세의 고별설교와 죽음"],["신명기 34장","모세가 느보산에서 죽고 여호수아가 뒤를 이음"]],
+    visualItems:["모압 평지","느보산","가나안 조망","여호수아"]
   }
 };
 
@@ -370,7 +460,13 @@ const EVENT_MAP_CROPS = {
   "eden-exile": "assets/maps/03_eden_exile_map.png",
   "cain-abel": "assets/maps/04_cain_abel_map.png",
   "noah-ark": "assets/maps/05_noah_ark_map.png",
-  "babel-tower": "assets/maps/06_babel_tower_map.png"
+  "babel-tower": "assets/maps/06_babel_tower_map.png",
+"moses-midian": "assets/maps/105_moses_midian_map.png",
+  "korah-rebellion": "assets/maps/106_korah_rebellion_map.png",
+  "aaron-hur-prayer": "assets/maps/107_aaron_hur_prayer_map.png",
+  "balaam-donkey": "assets/maps/108_balaam_donkey_map.png",
+  "kadesh-spies": "assets/maps/109_kadesh_spies_map.png",
+  "moses-farewell-death": "assets/maps/110_moses_farewell_death_map.png"
 };
 
 
@@ -480,7 +576,13 @@ const ORIGINAL_INFOGRAPHICS = {
   "beast-tribulation": "assets/infographics/97_beast_tribulation.png",
   "armageddon": "assets/infographics/98_armageddon.png",
   "new-jerusalem": "assets/infographics/99_new_jerusalem.png",
-  "new-heaven-earth": "assets/infographics/100_new_heaven_earth.png"
+  "new-heaven-earth": "assets/infographics/100_new_heaven_earth.png",
+"moses-midian": "assets/infographics/105_moses_midian.png",
+  "korah-rebellion": "assets/infographics/106_korah_rebellion.png",
+  "aaron-hur-prayer": "assets/infographics/107_aaron_hur_prayer.png",
+  "balaam-donkey": "assets/infographics/108_balaam_donkey.png",
+  "kadesh-spies": "assets/infographics/109_kadesh_spies.png",
+  "moses-farewell-death": "assets/infographics/110_moses_farewell_death.png"
 };
 
 const EVENT_EXPLORE = {
@@ -543,7 +645,25 @@ const EVENT_EXPLORE = {
       { title:"예수 그리스도", desc:"십자가로 하나되게 하심", ref:"" },
       { title:"성령으로 하나된 교회", desc:"모든 언어의 사람들", ref:"" }
     ]
-  }
+  },
+"moses-midian": { title:"8. 연결탐험", items:[
+    {title:"광야", desc:"준비의 장소", ref:"출 2장"}, {title:"소명", desc:"떨기나무로 이어짐", ref:"출 3장"}, {title:"출애굽", desc:"지도자 준비", ref:"출 12장"}, {title:"하나님의 섭리", desc:"실패 속 준비", ref:"롬 8:28"}
+  ]},
+  "aaron-hur-prayer": { title:"8. 연결탐험", items:[
+    {title:"기도", desc:"보이지 않는 전투", ref:"출 17장"}, {title:"동역", desc:"아론과 훌", ref:"출 17장"}, {title:"여호와 닛시", desc:"승리의 깃발", ref:"출 17:15"}, {title:"중보", desc:"공동체를 세움", ref:"히 7:25"}
+  ]},
+  "kadesh-spies": { title:"8. 연결탐험", items:[
+    {title:"믿음", desc:"여호수아와 갈렙", ref:"민 14장"}, {title:"불신앙", desc:"광야 40년", ref:"민 14장"}, {title:"가나안", desc:"약속의 땅", ref:"수 1장"}, {title:"요단강 도하", desc:"새 세대의 입성", ref:"수 3장"}
+  ]},
+  "korah-rebellion": { title:"8. 연결탐험", items:[
+    {title:"성막", desc:"거룩한 질서", ref:"출 25~40장"}, {title:"제사장", desc:"아론의 직분", ref:"민 16장"}, {title:"반역", desc:"교만과 불평", ref:"유 1:11"}, {title:"참 제사장", desc:"그리스도", ref:"히 4:14"}
+  ]},
+  "balaam-donkey": { title:"8. 연결탐험", items:[
+    {title:"축복", desc:"저주를 바꿈", ref:"민 23장"}, {title:"야곱의 별", desc:"메시아 예언", ref:"민 24:17"}, {title:"동방박사", desc:"별을 보고 옴", ref:"마 2장"}, {title:"하나님의 보호", desc:"언약 백성", ref:"창 12:3"}
+  ]},
+  "moses-farewell-death": { title:"8. 연결탐험", items:[
+    {title:"신명기", desc:"말씀 재선포", ref:"신 1~34장"}, {title:"여호수아", desc:"리더십 이양", ref:"신 31장"}, {title:"요단강", desc:"새 시대 시작", ref:"수 3장"}, {title:"언약", desc:"순종의 길", ref:"신 30장"}
+  ]}
 };
 
 

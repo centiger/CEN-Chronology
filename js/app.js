@@ -289,7 +289,7 @@ function openImageViewer(title, src){
   img.alt = title || "원본 인포그래픽";
   img.style.width = "100%";
   img.style.transform = "scale(1)";
-  const finalSrc = src.startsWith("assets/") ? `${src}?v=59` : src;
+  const finalSrc = src.startsWith("assets/") ? `${src}?v=61` : src;
   img.src = finalSrc;
   $("#viewer").classList.add("show");
 }

@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v60-patriarch-detail-fix";
+const CACHE_NAME = "cen-bible-chronology-v61-exodus-additions";
 const ASSETS = [
   "./",
   "./index.html",
@@ -15,6 +15,18 @@ const ASSETS = [
   "./assets/maps/102_isaac_rebekah_map.png",
   "./assets/maps/103_birthright_stew_map.png",
   "./assets/maps/104_jacob_egypt_map.png",
+  "./assets/infographics/105_moses_midian.png",
+  "./assets/infographics/106_korah_rebellion.png",
+  "./assets/infographics/107_aaron_hur_prayer.png",
+  "./assets/infographics/108_balaam_donkey.png",
+  "./assets/infographics/109_kadesh_spies.png",
+  "./assets/infographics/110_moses_farewell_death.png",
+  "./assets/maps/105_moses_midian_map.png",
+  "./assets/maps/106_korah_rebellion_map.png",
+  "./assets/maps/107_aaron_hur_prayer_map.png",
+  "./assets/maps/108_balaam_donkey_map.png",
+  "./assets/maps/109_kadesh_spies_map.png",
+  "./assets/maps/110_moses_farewell_death_map.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./assets/infographics/01_creation.png",
