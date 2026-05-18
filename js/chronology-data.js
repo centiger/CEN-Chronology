@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v61-patriarch-exodus-additions";
+const CHRONOLOGY_VERSION = "v62-patriarch-exodus-canaan-additions";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -50,7 +50,7 @@ const ERAS = [
     summary:"이스라엘이 요단강을 건너 약속의 땅에 들어가고 가나안 땅을 분배받은 시대입니다.",
     people:"여호수아, 갈렙",
     tone:"conquest",
-    eventIds:["jordan-crossing","jericho","ai-battle","sun-moon","land-allotment"]
+    eventIds:["jordan-crossing","circumcision-gilgal-passover","jericho","ai-battle","sun-moon","land-allotment","joshua-shechem-covenant"]
   },
   {
     id:"era-judges",
@@ -2463,4 +2463,47 @@ Object.assign(EVENT_EXPLORE, {
   "isaac-rebekah":{items:[{title:"하나님의 인도",desc:"기도와 응답"},{title:"언약 계승",desc:"가문 보존"},{title:"신부 이미지",desc:"교회 예표"},{title:"야곱과 에서",desc:"다음 세대"}]},
   "birthright-stew":{items:[{title:"장자권",desc:"언약의 가치"},{title:"영적 우선순위",desc:"무엇을 귀하게 보는가"},{title:"야곱",desc:"언약 계승자"},{title:"에서",desc:"경솔한 선택"}]},
   "jacob-egypt":{items:[{title:"요셉의 섭리",desc:"고난이 구원으로"},{title:"고센 땅",desc:"민족 보존"},{title:"출애굽",desc:"다음 큰 사건"},{title:"언약 성취",desc:"큰 민족 준비"}]}
+});
+
+
+// v62 가나안 정복 시대 추가 핵심사건: 할례와 길갈의 유월절, 여호수아의 유언과 세겜 언약
+Object.assign(ALL_EVENT_TITLES, {
+  "circumcision-gilgal-passover":"할례와 길갈의 유월절",
+  "joshua-shechem-covenant":"여호수아의 유언과 세겜 언약"
+});
+
+Object.assign(EVENTS, {
+  "circumcision-gilgal-passover": {
+    title:"할례와 길갈의 유월절", era:"가나안 정복", year:"BC 1406년경", scripture:"여호수아 5장",
+    place:"길갈, 여리고 동쪽", people:["하나님","여호수아","이스라엘 백성","새 세대","제사장들"],
+    summary:"요단강을 건넌 새 세대가 길갈에서 할례를 받고 유월절을 지키며 언약 백성의 정체성을 회복한 사건입니다.",
+    core:["요단강 도하 후 길갈에 진을 침","광야 세대 이후 새 세대가 할례를 받음","하나님이 애굽의 수치를 굴러가게 하심","가나안 땅에서 유월절을 지킴","그 땅의 소산을 먹기 시작함","만나가 그침","여리고 정복을 앞두고 언약 백성으로 재정비됨"],
+    meaning:["가나안 정복은 전쟁 이전에 언약 회복으로 시작됨","할례는 하나님 백성의 정체성을 다시 확인하는 표징임","유월절은 출애굽 구원을 기억하며 새 땅에서 새 출발하는 예배임","만나가 그치고 땅의 소산을 먹은 것은 광야 훈련에서 약속의 땅 생활로 넘어감을 뜻함"],
+    connect:["요단강 도하","할례","유월절","만나의 그침","여리고 함락"],
+    visual:"길갈 위치, 여리고 동쪽, 요단강 도하 후 진영, 유월절 식탁", image:"assets/infographics/111_circumcision_gilgal_passover.png"
+  },
+  "joshua-shechem-covenant": {
+    title:"여호수아의 유언과 세겜 언약", era:"가나안 정복", year:"BC 1375년경 전후", scripture:"여호수아 23~24장",
+    place:"세겜", people:["하나님","여호수아","이스라엘 장로들","이스라엘 백성","요셉 지파"],
+    summary:"여호수아가 말년에 이스라엘을 모아 하나님의 구원 역사를 회고하고, 세겜에서 오직 여호와만 섬기겠다는 언약을 새롭게 한 사건입니다.",
+    core:["여호수아가 이스라엘 지도자들을 부름","하나님이 행하신 정복과 구원을 회고함","다른 신들을 버리라고 명령함","백성에게 섬길 자를 선택하라고 촉구함","백성이 여호와를 섬기겠다고 응답함","세겜에서 언약을 세우고 큰 돌을 증거로 삼음","여호수아가 죽고 한 시대가 마무리됨"],
+    meaning:["가나안 정복의 결론은 땅의 소유가 아니라 하나님만 섬기는 언약적 충성임","신앙은 다음 세대에게 선택과 책임으로 전수되어야 함","세겜 언약은 족장 언약과 출애굽 구원을 가나안 생활 속에서 재확인한 사건임","여호수아의 유언은 사사시대의 타락을 대비시키는 기준점이 됨"],
+    connect:["아브라함 언약","가나안 땅 분배","세겜","언약 갱신","사사기의 악순환"],
+    visual:"세겜 위치, 에발산과 그리심산, 언약의 돌, 지파 대표 모임", image:"assets/infographics/112_joshua_shechem_covenant.png"
+  }
+});
+
+Object.assign(EVENT_ENRICH, {
+  "circumcision-gilgal-passover": {flowTitle:"핵심사건", flow:[["길갈 진영","요단강을 건넌 이스라엘이 길갈에 진을 침", ""],["할례 시행","광야에서 태어난 새 세대가 할례를 받음", ""],["수치 제거","하나님이 애굽의 수치를 굴러가게 하심", ""],["유월절 준수","가나안 땅에서 유월절을 지킴", ""],["땅의 소산","그 땅의 곡식을 먹기 시작함", ""],["만나 그침","광야의 만나 공급이 마무리됨", ""],["정복 준비","언약 백성으로 여리고 정복을 준비함", ""]], scriptureRefs:[["여호수아 5장","길갈 할례와 유월절"],["출애굽기 12장","첫 유월절"],["창세기 17장","할례 언약"],["고린도전서 5:7","그리스도 우리의 유월절 양"]], visualItems:["길갈", "요단강", "여리고 동쪽", "유월절"]},
+  "joshua-shechem-covenant": {flowTitle:"핵심사건", flow:[["지도자 소집","여호수아가 장로와 지도자들을 부름", ""],["구원 역사 회고","아브라함부터 출애굽과 가나안 정복까지 회고함", ""],["우상 제거 촉구","이방 신들을 버리고 여호와만 섬기라 명함", ""],["선택 요청","오늘 너희가 섬길 자를 택하라 말함", ""],["백성의 응답","백성이 여호와만 섬기겠다고 고백함", ""],["언약 갱신","세겜에서 언약을 세우고 율례와 법도를 기록함", ""],["증거의 돌","큰 돌을 세워 언약의 증거로 삼음", ""]], scriptureRefs:[["여호수아 23장","여호수아의 고별 권면"],["여호수아 24장","세겜 언약"],["신명기 30장","생명과 복의 선택"],["사사기 2장","다음 세대의 타락과 대비"]], visualItems:["세겜", "에발산", "그리심산", "언약의 돌"]}
+});
+
+Object.assign(EVENT_EXPLORE, {
+  "circumcision-gilgal-passover": {title:"8. 연결탐험", items:[{title:"요단강 도하", desc:"약속의 땅 입성"},{title:"할례", desc:"언약 백성의 표"},{title:"유월절", desc:"출애굽 구원 기억"},{title:"만나의 그침", desc:"광야에서 가나안으로"},{title:"여리고 함락", desc:"정복의 시작"}]},
+  "joshua-shechem-covenant": {title:"8. 연결탐험", items:[{title:"세겜", desc:"언약의 장소"},{title:"아브라함 언약", desc:"약속의 땅"},{title:"가나안 분배", desc:"약속의 성취"},{title:"오직 여호와", desc:"신앙의 선택"},{title:"사사기", desc:"언약 망각의 결과"}]}
+});
+
+Object.assign(EVENT_MAP_CROPS, {
+  "circumcision-gilgal-passover":"assets/maps/111_circumcision_gilgal_passover_map.png",
+  "joshua-shechem-covenant":"assets/maps/112_joshua_shechem_covenant_map.png"
 });
