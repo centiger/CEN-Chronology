@@ -176,10 +176,10 @@ function renderDetail(eventId){
         ${flow.map((x,i)=>{
           const item = normalizeFlowItem(x, i);
           return `
-          <div class="flow-item refined-flow-item">
-            <div class="flow-badge flow-badge-text">${item.title}</div>
-            <div class="flow-body">
-              <div class="flow-text">${item.desc}</div>
+          <div class="flow-item core-flow-row">
+            <div class="flow-badge flow-badge-text core-flow-title">${item.title}</div>
+            <div class="flow-body core-flow-body">
+              <div class="flow-text core-flow-desc">${item.desc}</div>
             </div>
           </div>
         `;
@@ -278,12 +278,8 @@ function normalizeFlowItem(x, i){
     const a = (x[0] || "").toString().trim();
     const b = (x[1] || "").toString().trim();
     const c = (x[2] || "").toString().trim();
-    if(isStepLabelOnly(a) && b){
-      return {title:b, desc:c || b};
-    }
-    if(a && b && !c){
-      return {title:a, desc:b};
-    }
+    if(isStepLabelOnly(a) && b) return {title:b, desc:c || b};
+    if(a && b && !c) return {title:a, desc:b};
     return {title:a || b || `핵심 ${i+1}`, desc:c || b || a || `핵심 ${i+1}`};
   }
   if(x && typeof x === "object"){
