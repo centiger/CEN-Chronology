@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v73-cyrus-exile-only-detail-fix";
+const CHRONOLOGY_VERSION = "v74-cyrus-detail-button-fix";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -2974,3 +2974,23 @@ Object.assign(EVENT_MAP_CROPS,{
 Object.assign(ORIGINAL_INFOGRAPHICS,{
   "cyrus-decree":"assets/infographics/123_cyrus_decree.png"
 });
+
+// v74 고레스 상세 데이터 강제 보강
+Object.assign(EVENTS,{
+  "cyrus-decree":{
+    title:"고레스 왕의 조서",
+    era:"유다멸망과 포로",
+    year:"BC 539년경",
+    scripture:"에스라 1장 / 역대하 36:22-23",
+    place:"바벨론 → 예루살렘",
+    people:["고레스 왕","여호와 하나님","유다 백성","스룹바벨","선지자들"],
+    summary:"바사 왕 고레스가 포로 된 유다 백성에게 예루살렘 귀환과 성전 재건을 허락한 사건입니다.",
+    core:["바벨론 제국이 무너지고 바사 제국이 등장함","고레스 왕이 여호와 하나님의 주권을 선포함","유다 백성에게 예루살렘 귀환을 허락함","성전 재건을 명령하고 성전 기물을 돌려보냄","귀환 공동체가 예루살렘으로 돌아갈 준비를 함","포로 이후 회복과 성전 재건의 길이 열림"],
+    meaning:["하나님은 이방 왕도 사용하심","예언된 회복이 시작됨","성전 재건과 예배 회복의 길이 열림"],
+    connect:["하나님의 주권","예언 성취","귀환","성전 재건","회복"],
+    visual:"바사 제국과 예루살렘 귀환 경로",
+    image:"assets/infographics/123_cyrus_decree.png"
+  }
+});
+Object.assign(EVENT_MAP_CROPS,{"cyrus-decree":"assets/maps/123_cyrus_decree_map.png"});
+Object.assign(ORIGINAL_INFOGRAPHICS,{"cyrus-decree":"assets/infographics/123_cyrus_decree.png"});

@@ -478,3 +478,19 @@ init();
 
 
 window.__forceCyrusDetailFix = true;
+
+
+// v74 고레스 상세보기 버튼 연결 보강
+document.addEventListener("click", function(e){
+  const el = e.target.closest("[data-event], [data-open-event], [data-detail], [data-event-id]");
+  if(!el) return;
+  const id = el.dataset.event || el.dataset.openEvent || el.dataset.detail || el.dataset.eventId;
+  if(!id) return;
+  if(id === "cyrus-decree"){
+    e.preventDefault();
+    if(typeof showDetail === "function") return showDetail(id);
+    if(typeof openDetail === "function") return openDetail(id);
+    if(typeof renderDetail === "function") return renderDetail(id);
+    if(typeof renderEventDetail === "function") return renderEventDetail(id);
+  }
+}, true);
