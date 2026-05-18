@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v70-divided-kingdom-additions";
+const CHRONOLOGY_VERSION = "v70-exile-return-added";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -2939,4 +2939,38 @@ Object.assign(EVENT_EXPLORE, {
       {title:"치유와 고백", desc:"여호와만 참 하나님", ref:"왕하 5:15"}
     ]
   }
+});
+
+
+Object.assign(EVENTS,{
+  "cyrus-decree":{
+    title:"고레스 왕의 조서",
+    era:"유다멸망과 포로",
+    year:"BC 539년경",
+    scripture:"에스라 1장",
+    place:"바벨론 → 예루살렘",
+    people:["고레스 왕","스룹바벨","유다 백성"],
+    summary:"바사 왕 고레스가 유다 백성의 귀환과 성전 재건을 허락한 사건입니다.",
+    image:"assets/infographics/123_cyrus_decree.png"
+  }
+});
+
+Object.assign(EVENT_ENRICH,{
+  "cyrus-decree":{
+    flowTitle:"고레스 왕의 조서 흐름",
+    flow:[
+      ["바벨론 멸망","바사가 바벨론을 정복함",""],
+      ["조서 발표","고레스 왕이 귀환을 허락함",""],
+      ["귀환 준비","백성들이 예루살렘 귀환을 준비함",""],
+      ["성전 재건","귀환 후 성전 재건이 시작됨",""]
+    ]
+  }
+});
+
+Object.assign(EVENT_MAP_CROPS,{
+  "cyrus-decree":"assets/maps/123_cyrus_decree_map.png"
+});
+
+Object.assign(ORIGINAL_INFOGRAPHICS,{
+  "cyrus-decree":"assets/infographics/123_cyrus_decree.png"
 });
