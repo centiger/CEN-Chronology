@@ -176,7 +176,7 @@ function renderDetail(eventId){
         ${flow.map((x,i)=>{
           const item = normalizeFlowItem(x, i);
           return `
-          <div class="flow-item">
+          <div class="flow-item refined-flow-item">
             <div class="flow-badge flow-badge-text">${item.title}</div>
             <div class="flow-body">
               <div class="flow-text">${item.desc}</div>
