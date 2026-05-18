@@ -1483,3 +1483,31 @@ button[data-detail]:hover{
   font-weight:800 !important;
   box-shadow:0 2px 6px rgba(80,50,20,.08) !important;
 }
+
+/* v64 detail fix: 핵심사건 단계 배지에 숫자 대신 제목 텍스트 표시 */
+.flow-badge-text{
+  min-width: 86px;
+  max-width: 132px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1.25;
+  font-weight: 800;
+  text-align: center;
+  white-space: normal;
+  word-break: keep-all;
+}
+
+/* v66 상세화면 핵심사건 좌측 제목 가독성 보강 */
+.flow-badge.flow-badge-text{
+  min-width:96px !important;
+  width:96px !important;
+  height:auto !important;
+  min-height:44px !important;
+  padding:8px 7px !important;
+  line-height:1.18 !important;
+  word-break:keep-all !important;
+  white-space:normal !important;
+  font-size:12px !important;
+}
+.flow-item{align-items:stretch !important;}
