@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v72-cyrus-detail-link-fix";
+const CHRONOLOGY_VERSION = "v73-cyrus-exile-only-detail-fix";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -100,7 +100,7 @@ const ERAS = [
     summary:"포로에서 돌아온 유다 공동체가 성전, 율법, 성벽을 다시 세운 재건의 시대입니다.",
     people:"스룹바벨, 에스라, 느헤미야",
     tone:"return",
-    eventIds:["zerubbabel-return","temple-rebuild","ezra-reform","nehemiah-wall","cyrus-decree"]
+    eventIds:["zerubbabel-return","temple-rebuild","ezra-reform","nehemiah-wall"]
   },
   {
     id:"era-intertestamental",
