@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v66-full-detail-audit-fix";
+const CACHE_NAME = "cen-bible-chronology-v68-core-event-row-ui-fix";
 const ASSETS = [
   "./",
   "./index.html",
