@@ -475,3 +475,6 @@ function init(){
   }
 }
 init();
+
+
+window.__forceCyrusDetailFix = true;
