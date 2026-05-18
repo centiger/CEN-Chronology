@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v70-exile-return-added";
+const CHRONOLOGY_VERSION = "v71-cyrus-era-fix";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -90,7 +90,7 @@ const ERAS = [
     summary:"예루살렘과 성전이 무너지고, 포로지에서 하나님 신앙이 새롭게 붙들린 시대입니다.",
     people:"다니엘, 세 친구, 에스겔, 에스더",
     tone:"exile",
-    eventIds:["daniel-friends","furnace","nebuchadnezzar-dream","lion-den","ezekiel-vision","esther-purim"]
+    eventIds:["daniel-friends","furnace","nebuchadnezzar-dream","lion-den","ezekiel-vision","esther-purim","cyrus-decree"]
   },
   {
     id:"era-return",
