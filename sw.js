@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v61-exodus-additions";
+const CACHE_NAME = "cen-bible-chronology-v65-detail-flow-map-original-fix";
 const ASSETS = [
   "./",
   "./index.html",
@@ -221,7 +221,11 @@ const ASSETS = [
   "./assets/maps/94_john_patmos_map.png",
 ];
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(ASSETS)).then(()=>self.skipWaiting()));
+  e.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(c => Promise.all(ASSETS.map(a => c.add(a).catch(() => null))))
+      .then(()=>self.skipWaiting())
+  );
 });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));
