@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v70-divided-kingdom-additions";
+const CACHE_NAME = "cen-bible-chronology-v73-cyrus-exile-only-detail-fix";
 const ASSETS = [
   "./",
   "./index.html",
