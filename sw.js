@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v59-early-church-detail";
+const CACHE_NAME = "cen-bible-chronology-v60-patriarch-detail-fix";
 const ASSETS = [
   "./",
   "./index.html",
@@ -7,6 +7,14 @@ const ASSETS = [
   "./css/style.css",
   "./js/chronology-data.js",
   "./js/app.js",
+  "./assets/infographics/101_isaac_birth.png",
+  "./assets/infographics/102_isaac_rebekah.png",
+  "./assets/infographics/103_birthright_stew.png",
+  "./assets/infographics/104_jacob_egypt.png",
+  "./assets/maps/101_isaac_birth_map.png",
+  "./assets/maps/102_isaac_rebekah_map.png",
+  "./assets/maps/103_birthright_stew_map.png",
+  "./assets/maps/104_jacob_egypt_map.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./assets/infographics/01_creation.png",
