@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v76-return-haggai-zechariah-malachi-added";
+const CHRONOLOGY_VERSION = "v77-intertestamental-additions";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -110,7 +110,7 @@ const ERAS = [
     summary:"기록 선지자의 활동은 멈췄지만, 헬라 문화와 로마 지배 속에서 신약의 무대가 준비된 400년 침묵기입니다.",
     people:"알렉산더 대왕, 마카비 가문, 헤롯 가문",
     tone:"silent",
-    eventIds:["hellenism","alexander","maccabees","hanukkah","rome"]
+    eventIds:["hellenism","alexander","septuagint-translation","maccabees","hanukkah","rome","herodian-rule-start"]
   },
   {
     id:"era-jesus",
@@ -3129,6 +3129,127 @@ Object.assign(EVENT_EXPLORE,{
       {title:"여호수아",desc:"대제사장과 정결 회복",ref:"슥 3장"},
       {title:"메시아 소망",desc:"장차 오실 왕과 회복의 약속",ref:"슥 9:9"},
       {title:"예배 회복",desc:"하나님 중심 공동체로 재정렬",ref:"학 2:9"}
+    ]
+  }
+});
+
+
+// v77 신구약 중간기 추가 핵심사건
+Object.assign(EVENTS,{
+  "septuagint-translation":{
+    title:"70인역 성경번역",
+    era:"신구약 중간기",
+    year:"BC 3세기경",
+    scripture:"구약성경의 헬라어 번역 전통",
+    place:"이집트 알렉산드리아",
+    people:["유대 학자들","헬라어권 유대인","프톨레마이오스 왕조"],
+    summary:"히브리어 성경이 헬라어로 번역되어 디아스포라 유대인과 헬라어권 세계에 하나님의 말씀이 널리 전해질 수 있게 된 사건입니다.",
+    core:[
+      "유대인들이 헬라 문화권에 흩어져 살게 됨",
+      "히브리어보다 헬라어를 사용하는 유대인이 많아짐",
+      "알렉산드리아에서 구약성경 번역이 추진됨",
+      "율법서와 여러 성경이 헬라어로 번역됨",
+      "헬라어권 유대인들이 성경을 읽을 수 있게 됨",
+      "초대교회 복음 전파의 언어적 기반이 준비됨"
+    ],
+    meaning:[
+      "하나님의 말씀이 민족과 언어의 경계를 넘어 확장됨",
+      "신약 시대 복음 전파를 위한 언어적 토대가 마련됨",
+      "구약과 신약을 잇는 중요한 말씀 전달 사건임"
+    ],
+    connect:["헬라어","디아스포라","말씀 번역","복음 전파","신약 성경"],
+    visual:"알렉산드리아와 지중해 헬라어권 세계 지도",
+    image:"assets/infographics/126_septuagint_translation.png"
+  },
+  "herodian-rule-start":{
+    title:"헤롯 왕가의 유대 통치 시작",
+    era:"신구약 중간기",
+    year:"BC 37년경",
+    scripture:"신약 배경사",
+    place:"유대, 예루살렘",
+    people:["헤롯 대왕","로마 제국","유대 백성","하스몬 왕가"],
+    summary:"로마의 후원을 받은 헤롯 왕가가 유대를 통치하기 시작하면서 신약 시대의 정치적 배경이 형성된 사건입니다.",
+    core:[
+      "로마가 동방 지중해 지역의 영향력을 확대함",
+      "유대 지역이 로마의 정치 질서 안에 들어감",
+      "헤롯이 로마의 지원을 받아 유대 왕권을 장악함",
+      "헤롯 왕가의 통치가 시작됨",
+      "예루살렘 성전 증축과 정치적 긴장이 함께 진행됨",
+      "예수님 탄생 시대의 정치적 배경이 준비됨"
+    ],
+    meaning:[
+      "신약 시대 유대 사회의 정치적 배경을 형성함",
+      "로마 제국과 헤롯 왕가 아래에서 메시아 대망이 깊어짐",
+      "예수 탄생 당시의 역사적 상황을 이해하는 핵심 배경임"
+    ],
+    connect:["로마 제국","헤롯 왕가","유대 통치","메시아 대망","예수 탄생"],
+    visual:"로마 제국과 헤롯 왕가의 유대 통치 지도",
+    image:"assets/infographics/127_herodian_rule_start.png"
+  }
+});
+
+Object.assign(EVENT_ENRICH,{
+  "septuagint-translation":{
+    flowTitle:"70인역 성경번역 흐름",
+    flow:[
+      ["헬라어 확산","알렉산더 이후 헬라어가 지중해 세계의 공용어로 확산됨",""],
+      ["디아스포라 유대인","흩어진 유대인들이 헬라어권 문화 속에서 살아감",""],
+      ["번역 필요","히브리어를 모르는 유대인들을 위해 성경 번역이 필요해짐",""],
+      ["알렉산드리아 번역","이집트 알렉산드리아에서 헬라어 번역이 진행됨",""],
+      ["말씀 확장","헬라어 성경을 통해 하나님의 말씀이 널리 전해짐",""],
+      ["복음 준비","신약 시대 복음 전파의 언어적 길이 준비됨",""]
+    ],
+    scriptureRefs:[
+      ["신구약 중간기 배경","70인역은 헬라어권 유대인과 초대교회 성경 사용에 큰 영향을 줌"],
+      ["사도행전 8장","헬라어권 세계로 복음이 확장되는 배경"]
+    ],
+    visualItems:["알렉산드리아","헬라어권 세계","성경 번역"]
+  },
+  "herodian-rule-start":{
+    flowTitle:"헤롯 왕가의 유대 통치 흐름",
+    flow:[
+      ["로마 영향 확대","로마가 유대 지역에 정치적 영향력을 행사함",""],
+      ["하스몬 왕가 약화","유대 내부 권력 갈등 속에서 로마 개입이 커짐",""],
+      ["헤롯 등극","헤롯이 로마의 후원을 받아 유대 왕이 됨",""],
+      ["통치 시작","헤롯 왕가의 유대 통치가 본격화됨",""],
+      ["성전 증축","헤롯이 예루살렘 성전을 크게 확장함",""],
+      ["신약 배경 형성","예수님 탄생 당시의 정치·사회적 배경이 마련됨",""]
+    ],
+    scriptureRefs:[
+      ["마태복음 2장","예수 탄생 당시 헤롯 왕이 등장함"],
+      ["누가복음 1장","헤롯 왕 때의 신약 배경"]
+    ],
+    visualItems:["로마 제국","예루살렘","헤롯 왕가"]
+  }
+});
+
+Object.assign(EVENT_MAP_CROPS,{
+  "septuagint-translation":"assets/maps/126_septuagint_translation_map.png",
+  "herodian-rule-start":"assets/maps/127_herodian_rule_start_map.png"
+});
+
+Object.assign(ORIGINAL_INFOGRAPHICS,{
+  "septuagint-translation":"assets/infographics/126_septuagint_translation.png",
+  "herodian-rule-start":"assets/infographics/127_herodian_rule_start.png"
+});
+
+Object.assign(EVENT_EXPLORE,{
+  "septuagint-translation":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"헬라어",desc:"신약 시대 공용어",ref:"중간기 배경"},
+      {title:"말씀 번역",desc:"언어를 넘어 전해진 성경",ref:"70인역"},
+      {title:"디아스포라",desc:"흩어진 유대인 공동체",ref:"행 2장"},
+      {title:"복음 전파",desc:"헬라어권 세계로 확장",ref:"행 8장"}
+    ]
+  },
+  "herodian-rule-start":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"로마 제국",desc:"신약 시대 정치 배경",ref:"눅 2:1"},
+      {title:"헤롯 왕가",desc:"유대를 통치한 왕가",ref:"마 2장"},
+      {title:"성전 증축",desc:"예루살렘 성전 확대",ref:"요 2:20"},
+      {title:"메시아 대망",desc:"억압 속에서 깊어진 소망",ref:"눅 1장"}
     ]
   }
 });
