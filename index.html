@@ -1,2 +1,103 @@
-<!-- 기존 index.html 유지 -->
-<!-- chronology-data.js는 기존 파일 유지 후 아래 내용 병합 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,user-scalable=yes">
+  <meta name="theme-color" content="#4a3324">
+  <title>CEN Bible 성경연대기</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <div class="header-row">
+      <button class="iconbtn" id="backBtn">‹</button>
+      <div class="titlebox">
+        <div class="title" id="headerTitle">성경연대기</div>
+        <div class="subtitle" id="headerSub">창조부터 새창조까지 흐름으로 탐험 · 족장·출애굽·가나안·사사·통일왕국·분열왕국 추가 반영</div>
+      </div>
+      <button class="iconbtn" data-page="settings">⚙</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="page active" id="home">
+      <div class="hero">
+        <div class="eyebrow">CEN BIBLE TIMELINE</div>
+        <h1>성경연대기</h1>
+        <p>연대기는 지도입니다. 사건칩을 눌러 요약을 보고, 상세 탭카드와 원본 인포그래픽으로 들어갑니다.</p>
+      </div>
+
+      <section class="card">
+        <h2>현재 프로토타입</h2>
+        <p><b>분열왕국까지</b> 추가 핵심사건을 연대기 화면과 상세화면에 반영했습니다.</p>
+        <div class="btn-row">
+          <button class="cen-btn green" data-page="eras">시대별 연대기 보기</button>
+          <button class="cen-btn secondary" data-detail="creation">창조 상세 바로가기</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>구성 현황</h2>
+        <div class="settings-grid">
+          <div class="infobox"><b id="eraCount">13</b><br>시대</div>
+          <div class="infobox"><b id="eventCount">0</b><br>핵심사건</div>
+          <div class="infobox"><b id="readyCount">0</b><br>상세완성</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>시대 바로가기</h2>
+        <div class="quick" id="quickEra"></div>
+      </section>
+    </section>
+
+    <section class="page" id="eras">
+      <input class="search" id="searchInput" placeholder="사건·시대 검색 예: 창조, 노아, 바벨탑">
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section class="page" id="detail">
+      <div id="detailRoot"></div>
+    </section>
+
+    <section class="page" id="settings">
+      <section class="card">
+        <h2>화면설정</h2>
+        <div class="btn-row">
+          <button class="cen-btn secondary" id="fontDown">글자 작게</button>
+          <button class="cen-btn secondary" id="fontUp">글자 크게</button>
+          <button class="cen-btn" id="cacheReset">캐시 정리</button>
+        </div>
+        <p class="notice">이 PWA는 CEN Bible 2.0 통합을 고려해 시대 데이터, 사건 데이터, 화면 코드를 분리했습니다.</p>
+      </section>
+    </section>
+  </main>
+
+  <nav class="bottomnav">
+    <button class="navbtn active" data-page="home"><span>⌂</span>홈</button>
+    <button class="navbtn" data-page="eras"><span>⌛</span>연대기</button>
+    <button class="navbtn" data-detail="creation"><span>✦</span>창조</button>
+    <button class="navbtn" data-page="settings"><span>⚙</span>설정</button>
+  </nav>
+</div>
+
+<div class="viewer" id="viewer">
+  <div class="viewerbar">
+    <button id="viewerClose">닫기</button>
+    <div id="viewerTitle">원본 인포그래픽</div>
+    <div>
+      <button id="zoomOut">－</button>
+      <button id="zoomIn">＋</button>
+    </div>
+  </div>
+  <div class="viewerbody">
+    <img id="viewerImg" src="" alt="원본 인포그래픽">
+  </div>
+</div>
+
+<script src="js/chronology-data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
