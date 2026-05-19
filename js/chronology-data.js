@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v77-intertestamental-additions";
+const CHRONOLOGY_VERSION = "v78-jesus-era-added";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -120,7 +120,7 @@ const ERAS = [
     summary:"예수 그리스도의 탄생, 공생애, 십자가, 부활을 통해 구약의 약속이 성취된 시대입니다.",
     people:"예수님, 세례요한, 제자들",
     tone:"jesus",
-    eventIds:["jesus-birth","magi","john-baptist","jesus-baptism","temptation","calling-disciples","sermon-mount","five-loaves","walk-water","transfiguration","lazarus","triumphal-entry","last-supper","gethsemane","cross","resurrection","pentecost-promise","ascension"]
+    eventIds:["jesus-birth","magi","john-baptist","jesus-baptism","temptation","calling-disciples","sermon-mount","five-loaves","walk-water","transfiguration","lazarus","triumphal-entry","last-supper","gethsemane","cross","resurrection","pentecost-promise","ascension","jesus-1","jesus-2","jesus-3","jesus-4","jesus-5"]
   },
   {
     id:"era-church",
@@ -3253,3 +3253,159 @@ Object.assign(EVENT_EXPLORE,{
     ]
   }
 });
+
+Object.assign(EVENTS,{
+"jesus-1":{
+ title:"가나 혼인잔치",
+ era:"예수 시대",
+ scripture:"복음서",
+ place:"이스라엘",
+ people:["예수님"],
+ summary:"가나 혼인잔치 사건",
+ core:["사건 진행","예수님의 가르침","믿음과 회복","하나님 나라 선포"],
+ meaning:["예수님의 사역을 보여줌","믿음과 구원의 의미를 드러냄"],
+ connect:["복음","믿음","구원"],
+ visual:"예수 시대 지도",
+ image:"assets/infographics/jesus-1.png"
+},
+"jesus-2":{
+ title:"니고데모와의 대화",
+ era:"예수 시대",
+ scripture:"복음서",
+ place:"이스라엘",
+ people:["예수님"],
+ summary:"니고데모와의 대화 사건",
+ core:["사건 진행","예수님의 가르침","믿음과 회복","하나님 나라 선포"],
+ meaning:["예수님의 사역을 보여줌","믿음과 구원의 의미를 드러냄"],
+ connect:["복음","믿음","구원"],
+ visual:"예수 시대 지도",
+ image:"assets/infographics/jesus-2.png"
+},
+"jesus-3":{
+ title:"사마리아 여인과의 대화",
+ era:"예수 시대",
+ scripture:"복음서",
+ place:"이스라엘",
+ people:["예수님"],
+ summary:"사마리아 여인과의 대화 사건",
+ core:["사건 진행","예수님의 가르침","믿음과 회복","하나님 나라 선포"],
+ meaning:["예수님의 사역을 보여줌","믿음과 구원의 의미를 드러냄"],
+ connect:["복음","믿음","구원"],
+ visual:"예수 시대 지도",
+ image:"assets/infographics/jesus-3.png"
+},
+"jesus-4":{
+ title:"예수님의 이적과 비유들",
+ era:"예수 시대",
+ scripture:"복음서",
+ place:"이스라엘",
+ people:["예수님"],
+ summary:"예수님의 이적과 비유들 사건",
+ core:["사건 진행","예수님의 가르침","믿음과 회복","하나님 나라 선포"],
+ meaning:["예수님의 사역을 보여줌","믿음과 구원의 의미를 드러냄"],
+ connect:["복음","믿음","구원"],
+ visual:"예수 시대 지도",
+ image:"assets/infographics/jesus-4.png"
+},
+"jesus-5":{
+ title:"성전 청결 사건",
+ era:"예수 시대",
+ scripture:"복음서",
+ place:"이스라엘",
+ people:["예수님"],
+ summary:"성전 청결 사건 사건",
+ core:["사건 진행","예수님의 가르침","믿음과 회복","하나님 나라 선포"],
+ meaning:["예수님의 사역을 보여줌","믿음과 구원의 의미를 드러냄"],
+ connect:["복음","믿음","구원"],
+ visual:"예수 시대 지도",
+ image:"assets/infographics/jesus-5.png"
+}});
+Object.assign(EVENT_ENRICH,{
+"jesus-1":{
+ flowTitle:"가나 혼인잔치 흐름",
+ flow:[
+  ["사건 시작","가나 혼인잔치 사건이 시작됨",""],
+  ["가르침","예수님께서 진리를 선포하심",""],
+  ["반응","사람들이 놀라고 반응함",""],
+  ["의미","하나님 나라의 의미를 드러냄",""]
+ ]
+},
+"jesus-2":{
+ flowTitle:"니고데모와의 대화 흐름",
+ flow:[
+  ["사건 시작","니고데모와의 대화 사건이 시작됨",""],
+  ["가르침","예수님께서 진리를 선포하심",""],
+  ["반응","사람들이 놀라고 반응함",""],
+  ["의미","하나님 나라의 의미를 드러냄",""]
+ ]
+},
+"jesus-3":{
+ flowTitle:"사마리아 여인과의 대화 흐름",
+ flow:[
+  ["사건 시작","사마리아 여인과의 대화 사건이 시작됨",""],
+  ["가르침","예수님께서 진리를 선포하심",""],
+  ["반응","사람들이 놀라고 반응함",""],
+  ["의미","하나님 나라의 의미를 드러냄",""]
+ ]
+},
+"jesus-4":{
+ flowTitle:"예수님의 이적과 비유들 흐름",
+ flow:[
+  ["사건 시작","예수님의 이적과 비유들 사건이 시작됨",""],
+  ["가르침","예수님께서 진리를 선포하심",""],
+  ["반응","사람들이 놀라고 반응함",""],
+  ["의미","하나님 나라의 의미를 드러냄",""]
+ ]
+},
+"jesus-5":{
+ flowTitle:"성전 청결 사건 흐름",
+ flow:[
+  ["사건 시작","성전 청결 사건 사건이 시작됨",""],
+  ["가르침","예수님께서 진리를 선포하심",""],
+  ["반응","사람들이 놀라고 반응함",""],
+  ["의미","하나님 나라의 의미를 드러냄",""]
+ ]
+}});
+Object.assign(EVENT_MAP_CROPS,{"jesus-1":"assets/maps/jesus-1_map.png","jesus-2":"assets/maps/jesus-2_map.png","jesus-3":"assets/maps/jesus-3_map.png","jesus-4":"assets/maps/jesus-4_map.png","jesus-5":"assets/maps/jesus-5_map.png"});
+Object.assign(ORIGINAL_INFOGRAPHICS,{"jesus-1":"assets/infographics/jesus-1.png","jesus-2":"assets/infographics/jesus-2.png","jesus-3":"assets/infographics/jesus-3.png","jesus-4":"assets/infographics/jesus-4.png","jesus-5":"assets/infographics/jesus-5.png"});
+Object.assign(EVENT_EXPLORE,{
+"jesus-1":{
+ title:"8. 연결탐험",
+ items:[
+  {title:"복음",desc:"예수님의 복음 사역",ref:"복음서"},
+  {title:"믿음",desc:"믿음으로 반응함",ref:"복음서"},
+  {title:"하나님 나라",desc:"하나님 나라 선포",ref:"복음서"}
+ ]
+},
+"jesus-2":{
+ title:"8. 연결탐험",
+ items:[
+  {title:"복음",desc:"예수님의 복음 사역",ref:"복음서"},
+  {title:"믿음",desc:"믿음으로 반응함",ref:"복음서"},
+  {title:"하나님 나라",desc:"하나님 나라 선포",ref:"복음서"}
+ ]
+},
+"jesus-3":{
+ title:"8. 연결탐험",
+ items:[
+  {title:"복음",desc:"예수님의 복음 사역",ref:"복음서"},
+  {title:"믿음",desc:"믿음으로 반응함",ref:"복음서"},
+  {title:"하나님 나라",desc:"하나님 나라 선포",ref:"복음서"}
+ ]
+},
+"jesus-4":{
+ title:"8. 연결탐험",
+ items:[
+  {title:"복음",desc:"예수님의 복음 사역",ref:"복음서"},
+  {title:"믿음",desc:"믿음으로 반응함",ref:"복음서"},
+  {title:"하나님 나라",desc:"하나님 나라 선포",ref:"복음서"}
+ ]
+},
+"jesus-5":{
+ title:"8. 연결탐험",
+ items:[
+  {title:"복음",desc:"예수님의 복음 사역",ref:"복음서"},
+  {title:"믿음",desc:"믿음으로 반응함",ref:"복음서"},
+  {title:"하나님 나라",desc:"하나님 나라 선포",ref:"복음서"}
+ ]
+}});
