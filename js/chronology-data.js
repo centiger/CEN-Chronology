@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v74-cyrus-detail-button-fix";
+const CHRONOLOGY_VERSION = "v76-return-haggai-zechariah-malachi-added";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -100,7 +100,7 @@ const ERAS = [
     summary:"포로에서 돌아온 유다 공동체가 성전, 율법, 성벽을 다시 세운 재건의 시대입니다.",
     people:"스룹바벨, 에스라, 느헤미야",
     tone:"return",
-    eventIds:["zerubbabel-return","temple-rebuild","ezra-reform","nehemiah-wall"]
+    eventIds:["zerubbabel-return","haggai-zechariah-encouragement","temple-rebuild","ezra-reform","nehemiah-wall","malachi-warning"]
   },
   {
     id:"era-intertestamental",
@@ -2994,3 +2994,141 @@ Object.assign(EVENTS,{
 });
 Object.assign(EVENT_MAP_CROPS,{"cyrus-decree":"assets/maps/123_cyrus_decree_map.png"});
 Object.assign(ORIGINAL_INFOGRAPHICS,{"cyrus-decree":"assets/infographics/123_cyrus_decree.png"});
+
+
+// v75 포로귀환 시대 추가 핵심사건: 말라기 선지자의 경고
+Object.assign(EVENTS,{
+  "malachi-warning":{
+    title:"말라기 선지자의 경고",
+    era:"포로귀환",
+    year:"BC 5세기 중반경",
+    scripture:"말라기 1~4장",
+    place:"예루살렘과 유다",
+    people:["말라기","제사장들","백성들","레위 자손들","엘리야"],
+    summary:"포로귀환 이후 성전은 재건되었지만 백성들의 신앙이 형식화되자, 말라기 선지자가 제사장과 백성의 타락을 책망하고 회개와 메시아 소망을 선포한 사건입니다.",
+    core:["제사장과 백성의 타락을 책망함","제사장들이 온전하지 않은 제사를 드림","언약 불순종과 이혼 문제를 지적함","십일조와 제물 문제를 책망함","의인과 악인의 구별을 선포함","여호와의 사자와 의의 해를 예언함","엘리야의 사명을 예언함"],
+    meaning:["형식적 신앙의 위험을 경고함","언약 백성의 마음 회복과 순종을 촉구함","심판과 함께 회복과 축복의 약속을 선포함","장차 오실 메시아와 엘리야의 사역을 예언함"],
+    connect:["언약","회개","예배 회복","십일조","의의 해","메시아","엘리야"],
+    visual:"페르시아 제국 지도와 예루살렘 위치",
+    image:"assets/infographics/125_malachi_warning.png"
+  }
+});
+
+Object.assign(EVENT_ENRICH,{
+  "malachi-warning":{
+    flowTitle:"말라기 선지자의 경고 흐름",
+    flow:[
+      ["제사 타락 책망","백성들이 더러운 제물과 병든 제물을 드리며 하나님을 경홀히 여김",""],
+      ["제사장들의 죄 책망","제사장들이 율법을 지키지 않고 백성을 실족하게 함",""],
+      ["언약 불순종 지적","백성들이 하나님과의 언약을 멸시하고 이혼 문제로 책망받음",""],
+      ["십일조와 제물 경고","십일조와 제물을 소홀히 하여 하나님을 도둑질함",""],
+      ["의인과 악인의 구별","하나님은 의인을 기억하시고 악인을 심판하실 날이 다가옴을 선포함",""],
+      ["여호와의 사자와 의의 해 예언","장차 오실 여호와의 사자와 의의 해가 임할 것을 예언함",""],
+      ["엘리야의 사명 예언","엘리야가 와서 아버지와 자녀의 마음을 돌이키게 할 것을 예언함",""]
+    ],
+    scriptureRefs:[
+      ["말라기 1:6-2:9","제사장과 백성의 죄 책망"],
+      ["말라기 2:10-16","언약 파괴와 이혼 문제"],
+      ["말라기 3:6-12","십일조와 제물의 중요성"],
+      ["말라기 3:13-18","의인과 악인의 구별"],
+      ["말라기 3:19-4:6","여호와의 사자와 엘리야 예언"]
+    ],
+    visualItems:["페르시아 제국 지도","예루살렘 위치 지도","회개와 메시아 소망"]
+  }
+});
+
+Object.assign(EVENT_MAP_CROPS,{
+  "malachi-warning":"assets/maps/125_malachi_warning_map.png"
+});
+
+Object.assign(ORIGINAL_INFOGRAPHICS,{
+  "malachi-warning":"assets/infographics/125_malachi_warning.png"
+});
+
+Object.assign(EVENT_EXPLORE,{
+  "malachi-warning":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"언약",desc:"하나님과 백성의 관계 회복",ref:"말 2:10"},
+      {title:"회개",desc:"형식적 신앙에서 돌이킴",ref:"말 3:7"},
+      {title:"예배 회복",desc:"온전한 제사와 마음의 예배",ref:"말 1:11"},
+      {title:"십일조",desc:"하나님께 드리는 신뢰와 순종",ref:"말 3:10"},
+      {title:"메시아",desc:"의의 해와 여호와의 사자 예언",ref:"말 4:2"},
+      {title:"엘리야",desc:"세례요한으로 이어지는 예비 사역",ref:"말 4:5-6"}
+    ]
+  }
+});
+
+
+// v76 포로귀환 시대 추가 핵심사건: 학개와 스가랴 선지자의 독려
+Object.assign(EVENTS,{
+  "haggai-zechariah-encouragement":{
+    title:"학개와 스가랴 선지자의 독려",
+    era:"포로귀환",
+    year:"BC 520년경",
+    scripture:"학개 1~2장 / 스가랴 1~8장 / 에스라 5~6장",
+    place:"예루살렘 성전 재건 현장",
+    people:["학개","스가랴","스룹바벨","여호수아","유다 백성"],
+    summary:"포로귀환 후 성전 재건이 중단되고 백성들이 자기 집과 생활에만 집중하자, 하나님께서 학개와 스가랴를 보내 성전 재건을 다시 독려하신 사건입니다.",
+    core:[
+      "성전 재건이 중단되고 백성이 자기 집에만 관심을 둠",
+      "학개가 하나님의 전을 먼저 세우라고 책망함",
+      "백성과 지도자들이 말씀을 듣고 성전 공사를 다시 시작함",
+      "스가랴가 환상과 말씀으로 회복의 소망을 선포함",
+      "스룹바벨과 여호수아가 성전 재건을 이끌어 감",
+      "성전 재건이 다시 진행되어 완공의 길이 열림"
+    ],
+    meaning:[
+      "하나님의 일보다 자기 안락을 앞세우는 신앙을 책망함",
+      "말씀을 통한 회개와 순종이 공동체 회복의 출발점임",
+      "성전 재건은 예배 회복과 메시아 소망으로 이어짐"
+    ],
+    connect:["성전 재건","말씀의 독려","스룹바벨","여호수아","메시아 소망","예배 회복"],
+    visual:"예루살렘 성전 재건 현장과 귀환 공동체",
+    image:"assets/infographics/124_haggai_zechariah_encouragement.png"
+  }
+});
+
+Object.assign(EVENT_ENRICH,{
+  "haggai-zechariah-encouragement":{
+    flowTitle:"학개와 스가랴의 독려 흐름",
+    flow:[
+      ["성전 공사 중단","귀환 공동체가 방해와 현실 문제로 성전 재건을 멈춤",""],
+      ["학개의 책망","학개가 자기 집보다 하나님의 전을 먼저 세우라고 선포함",""],
+      ["백성의 순종","스룹바벨과 여호수아와 백성이 말씀을 듣고 다시 공사를 시작함",""],
+      ["스가랴의 격려","스가랴가 환상과 말씀으로 회복과 메시아 소망을 전함",""],
+      ["성전 재건 재개","성전 공사가 다시 진행되고 완공의 길이 열림",""]
+    ],
+    scriptureRefs:[
+      ["학개 1장","성전 재건을 중단한 백성을 향한 책망과 순종"],
+      ["학개 2장","성전의 장래 영광과 하나님의 함께하심"],
+      ["스가랴 1~8장","회복과 성전 재건을 격려하는 환상과 말씀"],
+      ["에스라 5~6장","학개와 스가랴의 예언으로 성전 재건이 재개되고 완공됨"]
+    ],
+    visualItems:["예루살렘","성전 재건 현장","스룹바벨","여호수아","귀환 공동체"]
+  }
+});
+
+Object.assign(EVENT_MAP_CROPS,{
+  "haggai-zechariah-encouragement":"assets/maps/124_haggai_zechariah_encouragement_map.png",
+  "malachi-warning":"assets/maps/125_malachi_warning_map.png"
+});
+
+Object.assign(ORIGINAL_INFOGRAPHICS,{
+  "haggai-zechariah-encouragement":"assets/infographics/124_haggai_zechariah_encouragement.png",
+  "malachi-warning":"assets/infographics/125_malachi_warning.png"
+});
+
+Object.assign(EVENT_EXPLORE,{
+  "haggai-zechariah-encouragement":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"성전 재건",desc:"예배 회복의 중심",ref:"학 1장"},
+      {title:"말씀의 독려",desc:"선지자의 말씀으로 다시 일어남",ref:"스 5:1-2"},
+      {title:"스룹바벨",desc:"귀환 공동체의 지도자",ref:"학 2:23"},
+      {title:"여호수아",desc:"대제사장과 정결 회복",ref:"슥 3장"},
+      {title:"메시아 소망",desc:"장차 오실 왕과 회복의 약속",ref:"슥 9:9"},
+      {title:"예배 회복",desc:"하나님 중심 공동체로 재정렬",ref:"학 2:9"}
+    ]
+  }
+});
