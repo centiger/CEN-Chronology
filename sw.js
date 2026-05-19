@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v84-jacob-birthright-direct-fix";
+const CACHE_NAME = "cen-bible-chronology-v85-jacob-egypt-direct-fix";
 const ASSETS = [
   "./",
   "./index.html",
