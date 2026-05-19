@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v76-return-haggai-zechariah-malachi-added";
+const CACHE_NAME = "cen-bible-chronology-v77-intertestamental-additions";
 const ASSETS = [
   "./",
   "./index.html",
