@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v82-coreflow-requested-list-fix";
+const CACHE_NAME = "cen-bible-chronology-v83-coreflow-patch";
 const ASSETS = [
   "./",
   "./index.html",
