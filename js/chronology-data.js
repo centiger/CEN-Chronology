@@ -140,7 +140,7 @@ const ERAS = [
     summary:"하나님의 최종 심판과 새 하늘과 새 땅의 완성을 바라보는 성경의 결말입니다.",
     people:"요한",
     tone:"newcreation",
-    eventIds:["seven-churches","seven-seals","beast-tribulation","armageddon","new-jerusalem","new-heaven-earth"]
+    eventIds:["seven-churches","seven-seals","beast-tribulation","armageddon","new-jerusalem","new-heaven-earth","white-throne-judgment"]
   }
 ];
 
@@ -4017,6 +4017,68 @@ Object.assign(EVENT_EXPLORE,{
       {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
       {title:"교회",desc:"말씀과 섬김으로 세워지는 공동체",ref:"사도행전"},
       {title:"증언",desc:"고난 속에서도 계속되는 믿음의 증언",ref:"사도행전"}
+    ]
+  }
+});
+
+
+// v93 종말과 새창조 추가 핵심사건: 백보좌의 심판
+Object.assign(EVENTS,{
+  "white-throne-judgment":{
+    title:"백보좌의 심판",
+    era:"종말과 새창조",
+    year:"천년왕국 이후, 최종 심판 시기",
+    scripture:"요한계시록 20:11-15",
+    place:"새 하늘과 새 땅의 흰 보좌 앞",
+    people:["예수 그리스도","사탄","죽은 자들","천사","생명책에 기록된 자들"],
+    summary:"천년왕국 이후 모든 죽은 자가 하나님 앞에 서고, 생명책과 행위책에 따라 최종 심판을 받는 사건입니다.",
+    core:["천 년 후 사탄 잠시 풀려남","사탄의 최후","죽은 자들의 부활","흰 보좌와 심판주","책들이 펼쳐짐","행위책 따라 심판","불못에 던져짐"],
+    meaning:["하나님의 공의와 거룩하심이 최종적으로 드러남","모든 사람은 하나님의 공의로운 심판 앞에 서게 됨","생명책에 기록된 자만 영원한 생명을 얻음"],
+    connect:["최종 심판","생명책","행위책","불못","새 하늘과 새 땅"],
+    visual:"새 하늘과 새 땅, 최종 심판의 자리 개념도",
+    image:"assets/infographics/141_white_throne_judgment.png"
+  }
+});
+
+Object.assign(EVENT_ENRICH,{
+  "white-throne-judgment":{
+    flowTitle:"6. 핵심사건 흐름",
+    flow:[
+      ["천 년 후 사탄 잠시 풀려남","사탄이 풀려나 땅 끝의 민족들을 미혹하여 전쟁을 일으킴",""],
+      ["사탄의 최후","사탄이 붙잡혀 불과 유황의 못, 곧 영원한 형벌의 못에 던져짐",""],
+      ["죽은 자들의 부활","의인과 악인 모두 부활하여 하나님 앞에 섬",""],
+      ["흰 보좌와 심판주","크고 흰 보좌에 앉으신 하나님이 모든 사람을 심판하심",""],
+      ["책들이 펼쳐짐","생명책과 행위책이 펼쳐짐",""],
+      ["행위책 따라 심판","각 사람의 행위를 따라 심판이 이루어짐",""],
+      ["불못에 던져짐","생명책에 기록되지 않은 자는 불못에 던져져 영원히 형벌받음",""]
+    ],
+    scriptureRefs:[
+      ["요한계시록 20:11-15","백보좌 심판의 본문"],
+      ["요한복음 5:28-29","부활과 심판"],
+      ["마태복음 25:31-46","양과 염소의 비유"],
+      ["히브리서 9:27","사람은 한 번 죽은 후 심판이 있음"]
+    ],
+    visualItems:["새 하늘과 새 땅","최종 심판의 자리","생명책","행위책","불못"]
+  }
+});
+
+Object.assign(EVENT_MAP_CROPS,{
+  "white-throne-judgment":"assets/maps/141_white_throne_judgment_map.png"
+});
+
+Object.assign(ORIGINAL_INFOGRAPHICS,{
+  "white-throne-judgment":"assets/infographics/141_white_throne_judgment.png"
+});
+
+Object.assign(EVENT_EXPLORE,{
+  "white-throne-judgment":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"창조",desc:"하나님이 세상을 창조하심",ref:"창 1장"},
+      {title:"타락",desc:"죄로 인해 심판의 문제가 시작됨",ref:"창 3장"},
+      {title:"십자가",desc:"예수 그리스도 안에 생명의 길이 열림",ref:"요 3:16"},
+      {title:"재림",desc:"그리스도의 다시 오심과 최종 심판",ref:"계 20장"},
+      {title:"새창조",desc:"새 하늘과 새 땅의 완성",ref:"계 21장"}
     ]
   }
 });
