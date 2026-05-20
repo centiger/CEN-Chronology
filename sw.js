@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v90-restore-site-and-balaam-fix";
+const CACHE_NAME = "cen-bible-chronology-v92-earlychurch-complete-added";
 const ASSETS = [
   "./",
   "./index.html",
