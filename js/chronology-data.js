@@ -30,7 +30,7 @@ const ERAS = [
     summary:"하나님께서 아브라함과 그의 후손을 부르시고 언약 백성의 뿌리를 세우신 시대입니다.",
     people:"아브라함, 사라, 이삭, 리브가, 야곱, 요셉",
     tone:"patriarch",
-    eventIds:["abraham-call","isaac-birth","isaac-rebekah","birthright-stew","lot-sodom","jacob-ladder","jabbok-wrestling","joseph-dream","joseph-governor","jacob-egypt"]
+    eventIds:["abraham-call","isaac-birth","isaac-sacrifice","isaac-rebekah","birthright-stew","lot-sodom","jacob-ladder","jabbok-wrestling","joseph-dream","joseph-governor","jacob-egypt"]
   },
   {
     id:"era-exodus",
@@ -4079,6 +4079,69 @@ Object.assign(EVENT_EXPLORE,{
       {title:"십자가",desc:"예수 그리스도 안에 생명의 길이 열림",ref:"요 3:16"},
       {title:"재림",desc:"그리스도의 다시 오심과 최종 심판",ref:"계 20장"},
       {title:"새창조",desc:"새 하늘과 새 땅의 완성",ref:"계 21장"}
+    ]
+  }
+});
+
+
+// v94 족장시대 추가 핵심사건: 이삭 번제
+Object.assign(EVENTS,{
+  "isaac-sacrifice":{
+    title:"이삭 번제",
+    era:"족장 시대",
+    year:"기원전 약 2000년경",
+    scripture:"창세기 22장",
+    place:"모리아 산",
+    people:["아브라함","이삭","하나님의 천사","하나님","숫양"],
+    summary:"하나님께서 아브라함에게 독자 이삭을 번제로 드리라 명하시고, 마지막 순간 숫양을 준비하셔서 아브라함의 순종과 하나님의 공급을 드러내신 사건입니다.",
+    core:["하나님의 명령","이삭과 함께 출발 준비","제단을 쌓고 이삭을 묶음","아브라함의 순종","천사의 중지와 숫양의 준비","하나님의 축복 약속"],
+    meaning:["하나님은 우리의 신뢰와 순종을 원하심","하나님은 마지막 순간에 필요한 것을 준비하심","이 사건은 예수 그리스도의 십자가 희생을 예표함","믿음으로 순종하는 자에게 하나님의 약속이 성취됨"],
+    connect:["하나님의 시험","하나님의 공급","성전과 제사","예수 그리스도","성찬의 의미","믿음의 축복"],
+    visual:"모리아 산, 중동 지역 지도, 사건 장면",
+    image:"assets/infographics/142_isaac_sacrifice.png"
+  }
+});
+
+Object.assign(EVENT_ENRICH,{
+  "isaac-sacrifice":{
+    flowTitle:"6. 핵심사건 흐름",
+    flow:[
+      ["하나님의 명령","하나님께서 아브라함에게 사랑하는 독자 이삭을 번제로 드리라고 명령하심",""],
+      ["이삭과 함께 출발 준비","아브라함이 아침 일찍 일어나 나귀에 안장을 지우고 이삭과 함께 모리아 땅으로 출발함",""],
+      ["제단을 쌓고 이삭을 묶음","아브라함이 하나님이 지시하신 곳에 이르러 제단을 쌓고 나무를 벌여 놓은 뒤 이삭을 묶어 제단 위에 놓음",""],
+      ["아브라함의 순종","아브라함이 손을 내밀어 칼을 잡고 아들을 잡으려 함",""],
+      ["천사의 중지와 숫양의 준비","여호와의 사자가 아브라함을 막고 수풀에 걸린 숫양을 번제로 드리게 하심",""],
+      ["하나님의 축복 약속","하나님께서 아브라함의 순종을 보시고 큰 복과 언약의 성취를 약속하심",""]
+    ],
+    scriptureRefs:[
+      ["창세기 22장","이삭 번제 사건"],
+      ["창세기 22:2","네 아들 네 독자 이삭을 데리고 모리아 땅으로 가라"],
+      ["창세기 22:8","하나님이 친히 자기를 위하여 어린 양을 준비하시리라"],
+      ["히브리서 11:17-19","아브라함의 믿음과 순종"],
+      ["야고보서 2:21-23","행함으로 온전하게 된 믿음"]
+    ],
+    visualItems:["중동 지역 지도","모리아 산","이삭과 아브라함의 함께 출발","아브라함의 순종","하나님이 준비하신 숫양"]
+  }
+});
+
+Object.assign(EVENT_MAP_CROPS,{
+  "isaac-sacrifice":"assets/maps/142_isaac_sacrifice_map.png"
+});
+
+Object.assign(ORIGINAL_INFOGRAPHICS,{
+  "isaac-sacrifice":"assets/infographics/142_isaac_sacrifice.png"
+});
+
+Object.assign(EVENT_EXPLORE,{
+  "isaac-sacrifice":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"하나님의 시험",desc:"하나님은 믿음을 연단하심",ref:"창 22:1"},
+      {title:"하나님의 공급",desc:"하나님이 숫양을 준비하심",ref:"창 22:13-14"},
+      {title:"성전과 제사",desc:"모리아 산과 성전의 예표",ref:"대하 3:1"},
+      {title:"예수 그리스도",desc:"하나님의 독생자를 드리심",ref:"요 3:16"},
+      {title:"성찬의 의미",desc:"그리스도의 희생을 기념하고 선포함",ref:"고전 11:26"},
+      {title:"믿음의 축복",desc:"모든 민족이 복을 받는 언약 성취",ref:"창 22:17-18"}
     ]
   }
 });
