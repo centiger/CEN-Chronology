@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v90-restore-site-and-balaam-fix";
+const CHRONOLOGY_VERSION = "v92-earlychurch-complete-added"
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -130,7 +130,7 @@ const ERAS = [
     summary:"성령강림 이후 복음이 예루살렘에서 로마까지 확장된 시대입니다.",
     people:"베드로, 스데반, 바울, 요한",
     tone:"church",
-    eventIds:["pentecost","stephen","paul-conversion","paul-1st","jerusalem-council","paul-2nd","paul-3rd","rome-transfer","john-patmos"]
+    eventIds:["pentecost","stephen","paul-conversion","paul-1st","jerusalem-council","paul-2nd","paul-3rd","rome-transfer","john-patmos","ananias-sapphira","cornelius-household","philip-ethiopian-eunuch","seven-deacons","areopagus-sermon","antioch-church","tyrannus-ministry","nero-persecution-martyrdom"]
   },
   {
     id:"era-newcreation",
@@ -3709,4 +3709,314 @@ Object.assign(EVENTS,{
     title:"발람 선지자와 말하는 나귀",
     core:["발락의 초청","나귀의 멈춤","나귀의 말","눈이 열림","저주가 축복으로","야곱의 별 예언"]
   })
+});
+
+
+// v92 초대교회 추가 핵심사건 전체 반영
+Object.assign(EVENTS,{
+
+  "ananias-sapphira":{
+    title:"아나니아와 삽비라",
+    era:"초대교회",
+    year:"AD 30~100년경",
+    scripture:"사도행전 5장",
+    place:"예루살렘",
+    people:["아나니아", "삽비라", "베드로", "초대교회 성도들"],
+    summary:"아나니아와 삽비라 핵심사건입니다.",
+    core:["소유를 팖","일부를 감춤","베드로의 책망","아나니아의 죽음","삽비라의 거짓말","교회의 두려움"],
+    meaning:["복음이 교회와 열방으로 확장되는 과정을 보여줌","성령의 인도와 말씀의 능력이 초대교회를 세움"],
+    connect:["성령","복음 전파","교회","선교","증언"],
+    visual:"초대교회 복음 확장 지도",
+    image:"assets/infographics/133_ananias_sapphira.png"
+  },
+  "cornelius-household":{
+    title:"고넬료 가정의 회심",
+    era:"초대교회",
+    year:"AD 30~100년경",
+    scripture:"사도행전 10장",
+    place:"가이사랴, 욥바",
+    people:["고넬료", "베드로", "천사", "고넬료의 가족"],
+    summary:"고넬료 가정의 회심 핵심사건입니다.",
+    core:["고넬료의 기도","천사의 지시","베드로의 환상","가이사랴 방문","성령 강림","세례와 수용"],
+    meaning:["복음이 교회와 열방으로 확장되는 과정을 보여줌","성령의 인도와 말씀의 능력이 초대교회를 세움"],
+    connect:["성령","복음 전파","교회","선교","증언"],
+    visual:"초대교회 복음 확장 지도",
+    image:"assets/infographics/134_cornelius_household.png"
+  },
+  "philip-ethiopian-eunuch":{
+    title:"빌립과 에티오피아 내시의 만남",
+    era:"초대교회",
+    year:"AD 30~100년경",
+    scripture:"사도행전 8장",
+    place:"예루살렘에서 가사로 내려가는 광야 길",
+    people:["빌립", "에티오피아 내시", "성령"],
+    summary:"빌립과 에티오피아 내시의 만남 핵심사건입니다.",
+    core:["광야 길 지시","내시와 만남","성경 해석","복음 전파","세례","기쁨의 길"],
+    meaning:["복음이 교회와 열방으로 확장되는 과정을 보여줌","성령의 인도와 말씀의 능력이 초대교회를 세움"],
+    connect:["성령","복음 전파","교회","선교","증언"],
+    visual:"초대교회 복음 확장 지도",
+    image:"assets/infographics/135_philip_ethiopian_eunuch.png"
+  },
+  "seven-deacons":{
+    title:"일곱 집사 선출",
+    era:"초대교회",
+    year:"AD 30~100년경",
+    scripture:"사도행전 6장",
+    place:"예루살렘 교회",
+    people:["사도들", "스데반", "빌립", "일곱 집사", "예루살렘 교회"],
+    summary:"일곱 집사 선출 핵심사건입니다.",
+    core:["구제 문제 발생","사도들의 제안","자격 제시","일곱 사람 선택","안수","말씀 확장"],
+    meaning:["복음이 교회와 열방으로 확장되는 과정을 보여줌","성령의 인도와 말씀의 능력이 초대교회를 세움"],
+    connect:["성령","복음 전파","교회","선교","증언"],
+    visual:"초대교회 복음 확장 지도",
+    image:"assets/infographics/136_seven_deacons.png"
+  },
+  "areopagus-sermon":{
+    title:"바울의 아레오바고 설교",
+    era:"초대교회",
+    year:"AD 30~100년경",
+    scripture:"사도행전 17장",
+    place:"아테네 아레오바고",
+    people:["바울", "아테네 사람들", "에피쿠로스 철학자들", "스토아 철학자들"],
+    summary:"바울의 아레오바고 설교 핵심사건입니다.",
+    core:["아테네 도착","시장과 회당 변론","아레오바고 초청","알지 못하는 신","창조주 하나님 선포","부활 증거"],
+    meaning:["복음이 교회와 열방으로 확장되는 과정을 보여줌","성령의 인도와 말씀의 능력이 초대교회를 세움"],
+    connect:["성령","복음 전파","교회","선교","증언"],
+    visual:"초대교회 복음 확장 지도",
+    image:"assets/infographics/137_areopagus_sermon.png"
+  },
+  "antioch-church":{
+    title:"안디옥 교회의 설립",
+    era:"초대교회",
+    year:"AD 30~100년경",
+    scripture:"사도행전 11장",
+    place:"수리아 안디옥",
+    people:["바나바", "사울", "안디옥 성도들", "예루살렘 교회"],
+    summary:"안디옥 교회의 설립 핵심사건입니다.",
+    core:["흩어진 성도들","안디옥 복음 전파","큰 무리 회심","바나바 파송","바울 합류","그리스도인 칭호"],
+    meaning:["복음이 교회와 열방으로 확장되는 과정을 보여줌","성령의 인도와 말씀의 능력이 초대교회를 세움"],
+    connect:["성령","복음 전파","교회","선교","증언"],
+    visual:"초대교회 복음 확장 지도",
+    image:"assets/infographics/138_antioch_church.png"
+  },
+  "tyrannus-ministry":{
+    title:"에베소 두란노 서원 사역",
+    era:"초대교회",
+    year:"AD 30~100년경",
+    scripture:"사도행전 19장",
+    place:"에베소 두란노 서원",
+    people:["바울", "두란노", "에베소 제자들", "아시아 사람들"],
+    summary:"에베소 두란노 서원 사역 핵심사건입니다.",
+    core:["에베소 도착","회당 변론","두란노 서원 이동","날마다 강론","아시아 복음 확산","말씀의 성장"],
+    meaning:["복음이 교회와 열방으로 확장되는 과정을 보여줌","성령의 인도와 말씀의 능력이 초대교회를 세움"],
+    connect:["성령","복음 전파","교회","선교","증언"],
+    visual:"초대교회 복음 확장 지도",
+    image:"assets/infographics/139_tyrannus_ministry.png"
+  },
+  "nero-persecution-martyrdom":{
+    title:"네로황제의 박해와 사도들의 순교",
+    era:"초대교회",
+    year:"AD 30~100년경",
+    scripture:"디모데후서 4장 / 초대교회 박해 배경",
+    place:"로마",
+    people:["네로", "바울", "베드로", "초대교회 성도들"],
+    summary:"네로황제의 박해와 사도들의 순교 핵심사건입니다.",
+    core:["로마 대화재","박해 시작","신앙 증언","사도들의 순교","교회의 인내","복음의 확산"],
+    meaning:["복음이 교회와 열방으로 확장되는 과정을 보여줌","성령의 인도와 말씀의 능력이 초대교회를 세움"],
+    connect:["성령","복음 전파","교회","선교","증언"],
+    visual:"초대교회 복음 확장 지도",
+    image:"assets/infographics/140_nero_persecution_martyrdom.png"
+  }
+});
+
+Object.assign(EVENT_ENRICH,{
+
+  "ananias-sapphira":{
+    flowTitle:"6. 핵심사건 흐름",
+    flow:[
+      ["소유를 팖","아나니아와 삽비라가 소유를 팔아 헌금하기로 함",""],
+      ["일부를 감춤","그 값에서 일부를 감추고 전부인 것처럼 가져옴",""],
+      ["베드로의 책망","베드로가 성령을 속이고 하나님께 거짓말한 죄를 지적함",""],
+      ["아나니아의 죽음","아나니아가 베드로의 말을 듣고 엎드러져 죽음",""],
+      ["삽비라의 거짓말","삽비라도 같은 거짓말을 하다가 심판을 받음",""],
+      ["교회의 두려움","온 교회와 듣는 사람들이 크게 두려워함",""]
+    ],
+    scriptureRefs:[[ "사도행전 5장", "아나니아와 삽비라" ]],
+    visualItems:["지도/시각자료","원본 인포그래픽","핵심사건 흐름"]
+  },
+  "cornelius-household":{
+    flowTitle:"6. 핵심사건 흐름",
+    flow:[
+      ["고넬료의 기도","가이사랴의 고넬료가 하나님을 경외하며 기도와 구제를 힘씀",""],
+      ["천사의 지시","천사가 고넬료에게 베드로를 청하라고 지시함",""],
+      ["베드로의 환상","베드로가 부정한 것과 정한 것에 대한 환상을 봄",""],
+      ["가이사랴 방문","베드로가 고넬료의 집에 가서 복음을 전함",""],
+      ["성령 강림","말씀을 듣던 이방인들에게 성령이 임함",""],
+      ["세례와 수용","고넬료 가정이 세례를 받고 이방인도 복음 안에 들어옴",""]
+    ],
+    scriptureRefs:[[ "사도행전 10장", "고넬료 가정의 회심" ]],
+    visualItems:["지도/시각자료","원본 인포그래픽","핵심사건 흐름"]
+  },
+  "philip-ethiopian-eunuch":{
+    flowTitle:"6. 핵심사건 흐름",
+    flow:[
+      ["광야 길 지시","주의 사자가 빌립에게 예루살렘에서 가사로 내려가는 광야 길로 가라고 함",""],
+      ["내시와 만남","빌립이 병거에서 이사야서를 읽는 에티오피아 내시를 만남",""],
+      ["성경 해석","빌립이 이사야의 고난받는 종 본문을 예수님 중심으로 설명함",""],
+      ["복음 전파","빌립이 예수의 복음을 내시에게 전함",""],
+      ["세례","물이 있는 곳에서 내시가 예수 그리스도를 믿고 세례를 받음",""],
+      ["기쁨의 길","내시가 기쁘게 자기 길을 가며 복음이 먼 지역으로 확장됨",""]
+    ],
+    scriptureRefs:[[ "사도행전 8장", "빌립과 에티오피아 내시의 만남" ]],
+    visualItems:["지도/시각자료","원본 인포그래픽","핵심사건 흐름"]
+  },
+  "seven-deacons":{
+    flowTitle:"6. 핵심사건 흐름",
+    flow:[
+      ["구제 문제 발생","헬라파 과부들이 매일 구제에서 빠지는 문제로 원망이 생김",""],
+      ["사도들의 제안","사도들이 말씀과 기도에 전념하기 위해 일곱 사람을 세우자고 제안함",""],
+      ["자격 제시","성령과 지혜가 충만하고 칭찬받는 사람을 선택하게 함",""],
+      ["일곱 사람 선택","스데반과 빌립 등 일곱 사람이 공동체 앞에서 선택됨",""],
+      ["안수","사도들이 기도하고 그들에게 안수함",""],
+      ["말씀 확장","하나님의 말씀이 점점 왕성하고 제자의 수가 많아짐",""]
+    ],
+    scriptureRefs:[[ "사도행전 6장", "일곱 집사 선출" ]],
+    visualItems:["지도/시각자료","원본 인포그래픽","핵심사건 흐름"]
+  },
+  "areopagus-sermon":{
+    flowTitle:"6. 핵심사건 흐름",
+    flow:[
+      ["아테네 도착","바울이 우상으로 가득한 아테네를 보고 마음에 격분함",""],
+      ["시장과 회당 변론","바울이 회당과 시장에서 사람들과 토론함",""],
+      ["아레오바고 초청","철학자들이 바울을 아레오바고로 데려감",""],
+      ["알지 못하는 신","바울이 알지 못하는 신에게 드린 제단을 인용함",""],
+      ["창조주 하나님 선포","천지의 주재이신 하나님과 회개를 선포함",""],
+      ["부활 증거","예수님의 부활을 전하자 사람들의 반응이 나뉨",""]
+    ],
+    scriptureRefs:[[ "사도행전 17장", "바울의 아레오바고 설교" ]],
+    visualItems:["지도/시각자료","원본 인포그래픽","핵심사건 흐름"]
+  },
+  "antioch-church":{
+    flowTitle:"6. 핵심사건 흐름",
+    flow:[
+      ["흩어진 성도들","스데반의 환난 이후 성도들이 여러 지역으로 흩어짐",""],
+      ["안디옥 복음 전파","구브로와 구레네 사람들이 안디옥에서도 복음을 전함",""],
+      ["큰 무리 회심","수많은 사람들이 주께 돌아오는 역사가 일어남",""],
+      ["바나바 파송","예루살렘 교회가 바나바를 안디옥으로 보냄",""],
+      ["바울 합류","바나바가 다소에 있는 사울을 데려와 함께 가르침",""],
+      ["그리스도인 칭호","제자들이 안디옥에서 처음으로 그리스도인이라 불림",""]
+    ],
+    scriptureRefs:[[ "사도행전 11장", "안디옥 교회의 설립" ]],
+    visualItems:["지도/시각자료","원본 인포그래픽","핵심사건 흐름"]
+  },
+  "tyrannus-ministry":{
+    flowTitle:"6. 핵심사건 흐름",
+    flow:[
+      ["에베소 도착","바울이 제3차 전도여행 중 에베소에 도착함",""],
+      ["회당 변론","바울이 회당에서 하나님 나라를 강론함",""],
+      ["두란노 서원 이동","반대가 심해지자 두란노 서원에서 따로 가르침",""],
+      ["날마다 강론","바울이 날마다 말씀을 강론하며 제자들을 세움",""],
+      ["아시아 복음 확산","아시아에 사는 사람들이 주의 말씀을 듣게 됨",""],
+      ["말씀의 성장","주의 말씀이 힘 있게 흥왕하여 세력을 얻음",""]
+    ],
+    scriptureRefs:[[ "사도행전 19장", "에베소 두란노 서원 사역" ]],
+    visualItems:["지도/시각자료","원본 인포그래픽","핵심사건 흐름"]
+  },
+  "nero-persecution-martyrdom":{
+    flowTitle:"6. 핵심사건 흐름",
+    flow:[
+      ["로마 대화재","로마 대화재 이후 네로가 그리스도인들에게 책임을 돌림",""],
+      ["박해 시작","그리스도인들이 로마에서 잔혹한 박해를 받기 시작함",""],
+      ["신앙 증언","성도들이 고난 속에서도 예수 그리스도에 대한 믿음을 지킴",""],
+      ["사도들의 순교","전승상 베드로와 바울 등 사도들이 순교의 길을 감",""],
+      ["교회의 인내","박해 속에서도 교회가 믿음과 소망으로 견딤",""],
+      ["복음의 확산","순교의 피가 교회의 증언이 되어 복음이 계속 확장됨",""]
+    ],
+    scriptureRefs:[[ "디모데후서 4장 / 초대교회 박해 배경", "네로황제의 박해와 사도들의 순교" ]],
+    visualItems:["지도/시각자료","원본 인포그래픽","핵심사건 흐름"]
+  }
+});
+
+Object.assign(EVENT_MAP_CROPS,{
+  "ananias-sapphira":"assets/maps/133_ananias_sapphira_map.png",  "cornelius-household":"assets/maps/134_cornelius_household_map.png",  "philip-ethiopian-eunuch":"assets/maps/135_philip_ethiopian_eunuch_map.png",  "seven-deacons":"assets/maps/136_seven_deacons_map.png",  "areopagus-sermon":"assets/maps/137_areopagus_sermon_map.png",  "antioch-church":"assets/maps/138_antioch_church_map.png",  "tyrannus-ministry":"assets/maps/139_tyrannus_ministry_map.png",  "nero-persecution-martyrdom":"assets/maps/140_nero_persecution_martyrdom_map.png"
+});
+
+Object.assign(ORIGINAL_INFOGRAPHICS,{
+  "ananias-sapphira":"assets/infographics/133_ananias_sapphira.png",  "cornelius-household":"assets/infographics/134_cornelius_household.png",  "philip-ethiopian-eunuch":"assets/infographics/135_philip_ethiopian_eunuch.png",  "seven-deacons":"assets/infographics/136_seven_deacons.png",  "areopagus-sermon":"assets/infographics/137_areopagus_sermon.png",  "antioch-church":"assets/infographics/138_antioch_church.png",  "tyrannus-ministry":"assets/infographics/139_tyrannus_ministry.png",  "nero-persecution-martyrdom":"assets/infographics/140_nero_persecution_martyrdom.png"
+});
+
+Object.assign(EVENT_EXPLORE,{
+
+  "ananias-sapphira":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 5장"},
+      {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
+      {title:"교회",desc:"말씀과 섬김으로 세워지는 공동체",ref:"사도행전"},
+      {title:"증언",desc:"고난 속에서도 계속되는 믿음의 증언",ref:"사도행전"}
+    ]
+  },
+  "cornelius-household":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 10장"},
+      {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
+      {title:"교회",desc:"말씀과 섬김으로 세워지는 공동체",ref:"사도행전"},
+      {title:"증언",desc:"고난 속에서도 계속되는 믿음의 증언",ref:"사도행전"}
+    ]
+  },
+  "philip-ethiopian-eunuch":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 8장"},
+      {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
+      {title:"교회",desc:"말씀과 섬김으로 세워지는 공동체",ref:"사도행전"},
+      {title:"증언",desc:"고난 속에서도 계속되는 믿음의 증언",ref:"사도행전"}
+    ]
+  },
+  "seven-deacons":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 6장"},
+      {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
+      {title:"교회",desc:"말씀과 섬김으로 세워지는 공동체",ref:"사도행전"},
+      {title:"증언",desc:"고난 속에서도 계속되는 믿음의 증언",ref:"사도행전"}
+    ]
+  },
+  "areopagus-sermon":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 17장"},
+      {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
+      {title:"교회",desc:"말씀과 섬김으로 세워지는 공동체",ref:"사도행전"},
+      {title:"증언",desc:"고난 속에서도 계속되는 믿음의 증언",ref:"사도행전"}
+    ]
+  },
+  "antioch-church":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 11장"},
+      {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
+      {title:"교회",desc:"말씀과 섬김으로 세워지는 공동체",ref:"사도행전"},
+      {title:"증언",desc:"고난 속에서도 계속되는 믿음의 증언",ref:"사도행전"}
+    ]
+  },
+  "tyrannus-ministry":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 19장"},
+      {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
+      {title:"교회",desc:"말씀과 섬김으로 세워지는 공동체",ref:"사도행전"},
+      {title:"증언",desc:"고난 속에서도 계속되는 믿음의 증언",ref:"사도행전"}
+    ]
+  },
+  "nero-persecution-martyrdom":{
+    title:"8. 연결탐험",
+    items:[
+      {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"디모데후서 4장 / 초대교회 박해 배경"},
+      {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
+      {title:"교회",desc:"말씀과 섬김으로 세워지는 공동체",ref:"사도행전"},
+      {title:"증언",desc:"고난 속에서도 계속되는 믿음의 증언",ref:"사도행전"}
+    ]
+  }
 });
