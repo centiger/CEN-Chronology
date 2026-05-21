@@ -86,7 +86,7 @@ function selectEvent(eventId){
       <div class="small" style="margin-top:6px">시대: ${era.title} · ${era.year}</div>
       <div class="btn-row">
         <button class="cen-btn green" data-detail="${eventId}">${ready}</button>
-        <button class="cen-btn secondary" data-toast="related">연결탐험</button>
+        ${(typeof EVENT_HUB_LINKS !== "undefined" && EVENT_HUB_LINKS[eventId] && EVENT_HUB_LINKS[eventId].length) ? `<button class="cen-btn secondary" data-hub="${EVENT_HUB_LINKS[eventId][0]}">연결탐험</button>` : `<button class="cen-btn secondary" data-toast="related">연결탐험</button>`}
       </div>
     `;
   }
@@ -244,15 +244,84 @@ function chunkExploreItems(items){
 }
 
 function renderExploreRows(eventId){
-  const explore = EVENT_EXPLORE[eventId];
-  const hubIds = (typeof EVENT_HUB_LINKS !== "undefined" && EVENT_HUB_LINKS[eventId]) ? EVENT_HUB_LINKS[eventId] : [];
-  const hubCards = hubIds
-    .map(id => (typeof EXPLORE_HUBS !== "undefined" ? EXPLORE_HUBS[id] : null))
-    .filter(Boolean);
+  const data = EVENT_EXPLORE[eventId];
+  if(!data) return `<div class="section-card">연결탐험 데이터 준비중</div>`;
+  const rows = chunkExploreItems(data.items);
+  return `
+    ${renderHubEntryRows(eventId)}
+    <div class="two-row-explore-box">
+      ${rows.map(row=>`
+        <div class="metro-row row-${row.length}">
+          ${row.map(x=>`
+            <div class="metro-station">
+              <button class="compact-pill metro-pill" data-explore="${x.title}">
+                ${x.title}
+              </button>
+              ${x.desc ? `<div class="outside-pill-desc metro-desc">(${x.desc})</div>` : ``}
+            </div>
+          `).join("")}
+        </div>
+      `).join("")}
+</div>
+  `;
+}
 
-  const hubHtml = hubCards.length ? `
+
+
+
+
+function isStepLabelOnly(v){
+  const s = (v || "").toString().trim();
+  return /^(\d+|\d+\s*일째|\d+\.\s*|[①②③④⑤⑥⑦⑧⑨⑩])$/.test(s);
+}
+function normalizeFlowItem(x, i){
+  if(Array.isArray(x)){
+    const a = (x[0] || "").toString().trim();
+    const b = (x[1] || "").toString().trim();
+    const c = (x[2] || "").toString().trim();
+    if(isStepLabelOnly(a) && b) return {title:b, desc:c || b};
+    if(a && b && !c) return {title:a, desc:b};
+    return {title:a || b || `핵심 ${i+1}`, desc:c || b || a || `핵심 ${i+1}`};
+  }
+  if(x && typeof x === "object"){
+    const title = (x.title || x.label || x.step || x.text || `핵심 ${i+1}`).toString();
+    const desc = (x.desc || x.summary || x.text || title).toString();
+    return {title, desc};
+  }
+  const s = (x || `핵심 ${i+1}`).toString();
+  return {title:s, desc:s};
+}
+function getOriginalImageSrc(eventId){
+  const data = EVENTS[eventId] || {};
+  return (
+    (typeof ORIGINAL_INFOGRAPHICS !== "undefined" && ORIGINAL_INFOGRAPHICS[eventId]) ||
+    data.image ||
+    data.originalImage ||
+    ""
+  );
+}
+function getMapImageSrc(eventId){
+  const original = getOriginalImageSrc(eventId);
+  return (
+    (typeof EVENT_MAP_CROPS !== "undefined" && EVENT_MAP_CROPS[eventId]) ||
+    original ||
+    ""
+  );
+}
+
+
+function getHubCardsForEvent(eventId){
+  if(typeof EVENT_HUB_LINKS === "undefined" || typeof EXPLORE_HUBS === "undefined") return [];
+  const ids = EVENT_HUB_LINKS[eventId] || [];
+  return ids.map(id=>EXPLORE_HUBS[id]).filter(Boolean);
+}
+
+function renderHubEntryRows(eventId){
+  const hubs = getHubCardsForEvent(eventId);
+  if(!hubs.length) return "";
+  return `
     <div class="hub-entry-list">
-      ${hubCards.map(hub=>`
+      ${hubs.map(hub=>`
         <button class="hub-entry-card" data-hub="${hub.id}">
           <div class="hub-entry-icon">${hub.icon || "🔎"}</div>
           <div class="hub-entry-body">
@@ -263,34 +332,7 @@ function renderExploreRows(eventId){
         </button>
       `).join("")}
     </div>
-  ` : ``;
-
-  const legacyHtml = explore ? (() => {
-    const rows = chunkExploreItems(explore.items);
-    return `
-      <div class="two-row-explore-box">
-        ${rows.map(row=>`
-          <div class="metro-row row-${row.length}">
-            ${row.map(x=>`
-              <div class="metro-station">
-                <button class="compact-pill metro-pill" data-explore="${x.title}">
-                  ${x.title}
-                </button>
-                ${x.desc ? `<div class="outside-pill-desc metro-desc">(${x.desc})</div>` : ``}
-              </div>
-            `).join("")}
-          </div>
-        `).join("")}
-      </div>
-    `;
-  })() : ``;
-
-  if(!hubHtml && !legacyHtml) return `<div class="section-card">연결탐험 데이터 준비중</div>`;
-
-  return `
-    ${hubHtml}
-    ${hubHtml && legacyHtml ? `<div class="explore-sub-divider">기존 연결 키워드</div>` : ``}
-    ${legacyHtml}
+    <div class="explore-sub-divider">기존 연결 키워드</div>
   `;
 }
 
@@ -304,7 +346,6 @@ function renderHubOverlay(hubId){
     overlay.className = "hub-overlay";
     document.body.appendChild(overlay);
   }
-
   overlay.innerHTML = `
     <div class="hub-panel">
       <div class="hub-panel-head">
@@ -315,7 +356,6 @@ function renderHubOverlay(hubId){
         </div>
         <button class="hub-close" data-hub-close>×</button>
       </div>
-
       <div class="hub-flow">
         ${hub.steps.map((step, idx)=>`
           <div class="hub-step ${step.type || "event"}">
@@ -327,12 +367,8 @@ function renderHubOverlay(hubId){
               </div>
               <div class="hub-step-desc">${step.desc || ""}</div>
               ${step.eventId && EVENTS[step.eventId] ? `
-                <button class="hub-event-btn" data-hub-event="${step.eventId}">
-                  해당 사건 상세보기
-                </button>
-              ` : `
-                <div class="hub-concept-label">허브 전용 연결카드</div>
-              `}
+                <button class="hub-event-btn" data-hub-event="${step.eventId}">해당 사건 상세보기</button>
+              ` : `<div class="hub-concept-label">허브 전용 연결카드</div>`}
             </div>
           </div>
         `).join("")}
@@ -372,7 +408,7 @@ function openImageViewer(title, src){
   img.alt = title || "원본 인포그래픽";
   img.style.width = "100%";
   img.style.transform = "scale(1)";
-  const version = (typeof CHRONOLOGY_VERSION !== "undefined" ? CHRONOLOGY_VERSION : "v65-lamb-hub");
+  const version = (typeof CHRONOLOGY_VERSION !== "undefined" ? CHRONOLOGY_VERSION : "v64");
   const finalSrc = src.includes("?") ? src : `${src}?v=${encodeURIComponent(version)}`;
   img.onerror = () => {
     img.onerror = null;
@@ -543,7 +579,7 @@ init();
 window.__forceCyrusDetailFix = true;
 
 
-// v65-lamb-hub 고레스 상세보기 버튼 연결 보강
+// v74 고레스 상세보기 버튼 연결 보강
 document.addEventListener("click", function(e){
   const el = e.target.closest("[data-event], [data-open-event], [data-detail], [data-event-id]");
   if(!el) return;

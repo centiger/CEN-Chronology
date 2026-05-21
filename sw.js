@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v65-lamb-hub";
+const CACHE_NAME = "cen-bible-chronology-v66-lamb-hub-safe";
 const ASSETS = [
   "./",
   "./index.html",
