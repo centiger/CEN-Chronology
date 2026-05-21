@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v76-covenant-hub-consolidated";
+const CHRONOLOGY_VERSION = "v77-noah-covenant-hub-hardfix";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -4599,6 +4599,16 @@ Object.assign(EXPLORE_HUBS, {
         { title:"무지개", desc:"언약의 표지" }
       ]
     };
+  }
+})();
+
+
+
+// v77 노아의 방주 언약 허브 최종 표시 안전장치
+(function(){
+  if(typeof EVENTS !== "undefined" && EVENTS["noah-ark"] && typeof EVENT_HUB_LINKS !== "undefined"){
+    const prev = EVENT_HUB_LINKS["noah-ark"] || [];
+    EVENT_HUB_LINKS["noah-ark"] = Array.from(new Set([...prev, "covenant"]));
   }
 })();
 

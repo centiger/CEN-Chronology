@@ -256,27 +256,39 @@ function chunkExploreItems(items){
 }
 
 function renderExploreRows(eventId){
-  const data = EVENT_EXPLORE[eventId];
-  if(!data) return `<div class="section-card">연결탐험 데이터 준비중</div>`;
-  const rows = chunkExploreItems(data.items);
-  return `
-    ${renderHubEntryRows(eventId)}
-    <div class="two-row-explore-box">
-      ${rows.map(row=>`
-        <div class="metro-row row-${row.length}">
-          ${row.map(x=>`
-            <div class="metro-station">
-              <button class="compact-pill metro-pill" data-explore="${x.title}">
-                ${x.title}
-              </button>
-              ${x.desc ? `<div class="outside-pill-desc metro-desc">(${x.desc})</div>` : ``}
-            </div>
-          `).join("")}
-        </div>
-      `).join("")}
-</div>
-  `;
+  const legacy = EVENT_EXPLORE[eventId];
+  const hubHtml = renderHubEntryRows(eventId);
+
+  const legacyHtml = legacy ? (() => {
+    const rows = chunkExploreItems(legacy.items || []);
+    return `
+      <div class="two-row-explore-box">
+        ${rows.map(row=>`
+          <div class="metro-row row-${row.length}">
+            ${row.map(x=>`
+              <div class="metro-station">
+                <button class="compact-pill metro-pill" data-explore="${x.title}">
+                  ${x.title}
+                </button>
+                ${x.desc ? `<div class="outside-pill-desc metro-desc">(${x.desc})</div>` : ``}
+              </div>
+            `).join("")}
+          </div>
+        `).join("")}
+      </div>
+    `;
+  })() : "";
+
+  if(hubHtml || legacyHtml){
+    return `
+      ${hubHtml}
+      ${legacyHtml}
+    `;
+  }
+
+  return `<div class="section-card">연결탐험 데이터 준비중</div>`;
 }
+
 
 
 
@@ -390,8 +402,15 @@ function getMapImageSrc(eventId){
 
 
 function getHubCardsForEvent(eventId){
-  if(typeof EVENT_HUB_LINKS === "undefined" || typeof EXPLORE_HUBS === "undefined") return [];
-  const ids = EVENT_HUB_LINKS[eventId] || [];
+  if(typeof EXPLORE_HUBS === "undefined") return [];
+  let ids = [];
+  if(typeof EVENT_HUB_LINKS !== "undefined") ids = EVENT_HUB_LINKS[eventId] || [];
+
+  // v77: 노아의 방주 언약 허브 표시 안전장치
+  if(eventId === "noah-ark" && EXPLORE_HUBS["covenant"] && !ids.includes("covenant")){
+    ids = [...ids, "covenant"];
+  }
+
   return ids.map(id=>EXPLORE_HUBS[id]).filter(Boolean);
 }
 
