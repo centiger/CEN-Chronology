@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v88-font-size-settings-fix";
+const CACHE_NAME = "cen-bible-chronology-v89-newcreation-hub";
 const ASSETS = [
   "./",
   "./index.html",
