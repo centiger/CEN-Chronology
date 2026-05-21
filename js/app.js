@@ -43,22 +43,94 @@ function removeConfigStatusCard(){
 }
 
 function renderHome(){
-  const eraCountEl = $("#eraCount");
-  const eventCountEl = $("#eventCount");
-  const readyCountEl = $("#readyCount");
-  if(eraCountEl) eraCountEl.textContent = ERAS.length;
-  if(eventCountEl) eventCountEl.textContent = ERAS.reduce((a,e)=>a+e.eventIds.length,0);
-  if(readyCountEl) readyCountEl.textContent = Object.keys(EVENTS).length;
-  removeConfigStatusCard();
-  const quick = $("#quickEra");
-  quick.innerHTML = ERAS.map((era,i)=>`<button data-era="${era.id}" class="${i===0?'active':''}">${era.title}</button>`).join("");
-  quick.addEventListener("click", e=>{
-    const b=e.target.closest("button[data-era]");
-    if(!b) return;
-    currentEraId = b.dataset.era;
-    go("eras");
-    setTimeout(()=>scrollToEra(currentEraId),30);
-  }, {once:true});
+  const home = $("#home");
+
+  home.innerHTML = `
+    <section class="card hero-home-card">
+      <div class="hero-home-title">성경 구조 탐험</div>
+      <div class="hero-home-sub">
+        성경을 시간순이 아니라 구조와 흐름으로 탐험합니다.
+      </div>
+    </section>
+
+    <section class="hub-home-section">
+      <div class="hub-home-head">
+        <div class="hub-home-title">📜 성경의 뼈대</div>
+        <div class="hub-home-desc">성경 전체를 관통하는 핵심 구조</div>
+      </div>
+
+      <div class="hub-home-grid">
+        ${renderHomeHubCard("covenant")}
+        ${renderHomeHubCard("kingdom")}
+        ${renderHomeHubCard("newcreation")}
+      </div>
+    </section>
+
+    <section class="hub-home-section">
+      <div class="hub-home-head">
+        <div class="hub-home-title">🩸 구속의 흐름</div>
+        <div class="hub-home-desc">구원과 희생, 중보의 이야기</div>
+      </div>
+
+      <div class="hub-home-grid">
+        ${renderHomeHubCard("lamb")}
+        ${renderHomeHubCard("exodus")}
+        ${renderHomeHubCard("priesthood")}
+      </div>
+    </section>
+
+    <section class="hub-home-section">
+      <div class="hub-home-head">
+        <div class="hub-home-title">👑 왕과 메시야</div>
+        <div class="hub-home-desc">약속된 왕과 메시아의 흐름</div>
+      </div>
+
+      <div class="hub-home-grid">
+        ${renderHomeHubCard("messiah")}
+        ${renderHomeHubCard("kingship")}
+      </div>
+    </section>
+
+    <section class="hub-home-section">
+      <div class="hub-home-head">
+        <div class="hub-home-title">🏛️ 임재와 연단</div>
+        <div class="hub-home-desc">하나님과 동행하며 다듬어지는 흐름</div>
+      </div>
+
+      <div class="hub-home-grid">
+        ${renderHomeHubCard("temple")}
+        ${renderHomeHubCard("wilderness")}
+      </div>
+    </section>
+
+    <section class="card chronology-entry-card">
+      <div class="chronology-entry-title">⌛ 시대별 연대기 탐색</div>
+      <div class="chronology-entry-desc">
+        창조부터 새예루살렘까지 시간의 흐름으로 탐험합니다.
+      </div>
+
+      <button class="cen-btn chronology-entry-btn" data-page="eras">
+        시대별 연대기 보기
+      </button>
+    </section>
+  `;
+}
+
+function renderHomeHubCard(id){
+  if(typeof EXPLORE_HUBS === "undefined") return "";
+
+  const hub = EXPLORE_HUBS[id];
+  if(!hub) return "";
+
+  return `
+    <button class="hub-home-card" data-bottom-hub="${id}">
+      <div class="hub-home-icon">${hub.icon || "🧭"}</div>
+      <div class="hub-home-card-title">${hub.title}</div>
+      <div class="hub-home-card-desc">
+        ${hub.subtitle || ""}
+      </div>
+    </button>
+  `;
 }
 function renderEras(){
   const box = $("#timeline");
@@ -776,6 +848,11 @@ function init(){
 
     const detail = e.target.closest("[data-detail]");
     if(detail) renderDetail(detail.dataset.detail);
+
+    const homeHub = e.target.closest(".hub-home-card[data-bottom-hub]");
+    if(homeHub){
+      renderHubOverlay(homeHub.dataset.bottomHub);
+    }
 
     const tab = e.target.closest("[data-tab]");
     if(tab){
