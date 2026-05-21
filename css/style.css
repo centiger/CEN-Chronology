@@ -1710,3 +1710,76 @@ button[data-detail]:hover{
   font-weight:900 !important;
 }
 
+
+
+/* v85 다중 연결탐험 선택창 */
+.hub-selector-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  padding:20px;
+}
+
+.hub-selector-modal{
+  width:min(92vw,420px);
+  background:#f8f1df;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 12px 40px rgba(0,0,0,.25);
+}
+
+.hub-selector-title{
+  font-size:1.15rem;
+  font-weight:700;
+  margin-bottom:4px;
+  color:#4b3725;
+}
+
+.hub-selector-sub{
+  font-size:.9rem;
+  color:#6a5948;
+  margin-bottom:14px;
+}
+
+.hub-selector-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.hub-selector-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  border:none;
+  background:#fffaf0;
+  border-radius:14px;
+  padding:14px;
+  text-align:left;
+  font-size:1rem;
+}
+
+.hub-selector-icon{
+  font-size:1.25rem;
+}
+
+.hub-selector-text{
+  font-weight:600;
+  color:#3e2f20;
+}
+
+.hub-selector-close{
+  width:100%;
+  margin-top:14px;
+  border:none;
+  border-radius:12px;
+  padding:12px;
+  background:#6d553d;
+  color:#fff;
+  font-weight:700;
+}
