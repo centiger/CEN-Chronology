@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v85-multi-hub-selector";
+const CACHE_NAME = "cen-bible-chronology-v86-multi-hub-selector-fix";
 const ASSETS = [
   "./",
   "./index.html",
