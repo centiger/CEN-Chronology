@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v69-coreflow-ref-layout";
+const CHRONOLOGY_VERSION = "v71-temple-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -4223,4 +4223,83 @@ Object.assign(EVENT_ENRICH, {
     visualItems: ["일곱 인 환상 구조도", "어린양과 두루마리", "심판과 구원의 전개"]
   }
 });
+
+
+
+// v71 연결탐험 허브 2차: 성전과 임재의 흐름
+Object.assign(EXPLORE_HUBS, {
+  "temple": {
+    id: "temple",
+    icon: "🏛️",
+    title: "성전과 임재의 흐름",
+    subtitle: "에덴에서 새예루살렘까지 이어지는 하나님의 임재",
+    description: "성전은 단순한 건물이 아니라 하나님이 자기 백성과 함께하시는 임재의 흐름입니다. 에덴의 동산에서 시작된 임재의 주제는 성막과 성전, 예수님, 교회와 성도를 거쳐 새예루살렘에서 완성됩니다.",
+    steps: [
+      {
+        label: "1",
+        title: "에덴동산",
+        ref: "창세기 2장",
+        desc: "하나님과 사람이 함께 거하던 첫 임재의 공간입니다. 성전의 원형처럼 하나님이 창조 세계 가운데 사람과 교제하십니다.",
+        eventId: "adam-eve",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "성막",
+        ref: "출애굽기 25~40장",
+        desc: "광야 가운데 하나님이 이스라엘 백성과 함께하신 이동식 성소입니다. 거룩하신 하나님이 언약 백성 가운데 거하시는 방식이 드러납니다.",
+        eventId: "tabernacle",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "솔로몬 성전",
+        ref: "열왕기상 8장",
+        desc: "예루살렘에 세워진 고정된 성전입니다. 성전 봉헌 때 여호와의 영광이 성전에 가득하여 하나님의 임재가 선명하게 나타납니다.",
+        eventId: "temple-dedication",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "예수님",
+        ref: "요한복음 2:19~21",
+        desc: "예수님은 성전의 실체로 오신 분입니다. 성전 청결 사건과 ‘이 성전을 헐라’는 말씀은 예수님의 몸이 참 성전임을 드러냅니다.",
+        eventId: "jesus-5",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "교회와 성도",
+        ref: "고린도전서 3:16, 6:19",
+        desc: "성령께서 임하신 교회와 성도는 하나님의 성전으로 불립니다. 하나님의 임재가 건물 중심에서 성령 안의 공동체와 성도에게 확장됩니다.",
+        eventId: "pentecost",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "새예루살렘",
+        ref: "요한계시록 21장",
+        desc: "새예루살렘에는 성전이 따로 필요 없습니다. 하나님과 어린양이 친히 성전이 되시며, 임재의 흐름이 완성됩니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "adam-eve": ["temple"],
+    "tabernacle": ["temple"],
+    "temple-build": ["temple"],
+    "temple-dedication": ["temple"],
+    "jesus-5": ["temple"],
+    "pentecost": ["temple"],
+    "new-jerusalem": ["temple"]
+  };
+  Object.keys(links).forEach(eventId => {
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
 
