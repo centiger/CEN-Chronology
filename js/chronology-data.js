@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v78-exodus-hub";
+const CHRONOLOGY_VERSION = "v79-priesthood-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -4694,6 +4694,96 @@ Object.assign(EXPLORE_HUBS, {
     "sinai-commandments": ["covenant", "exodus"],
     "tabernacle": ["lamb", "temple", "exodus"],
     "wilderness-40": ["exodus"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v79 연결탐험 허브 7차: 제사장직과 중보의 흐름
+Object.assign(EXPLORE_HUBS, {
+  "priesthood": {
+    id: "priesthood",
+    icon: "🕊️",
+    title: "제사장직과 중보의 흐름",
+    subtitle: "제단에서 참 대제사장과 영원한 대면까지",
+    description: "제사장직은 죄인인 인간이 거룩하신 하나님 앞에 나아가도록 세워진 중보와 예배의 흐름입니다. 족장의 제단에서 시작된 예배는 아론과 레위 제도, 변질과 심판, 예수 그리스도의 완전한 중보, 교회와 성도의 제사장적 사명, 새예루살렘의 영원한 대면으로 이어집니다.",
+    steps: [
+      {
+        label: "1",
+        title: "족장의 제단",
+        ref: "창세기 12장, 22장, 28장",
+        desc: "아브라함·이삭·야곱은 제단을 쌓고 하나님께 예배합니다. 아직 제도화된 제사장직 이전에 가정과 족장 중심의 예배가 나타납니다.",
+        eventId: "abraham-call",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "아론과 레위 제사장직",
+        ref: "출애굽기 28~29장, 레위기",
+        desc: "성막과 율법 안에서 아론과 레위 제사장직이 세워집니다. 제사장직은 중보, 속죄, 거룩의 질서를 맡습니다.",
+        eventId: "tabernacle",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "제사장직의 변질과 심판",
+        ref: "사무엘상 2~4장, 말라기 1~2장",
+        desc: "엘리의 아들들과 타락한 제사장들은 거룩을 잃은 예배의 실패를 보여줍니다. 하나님은 변질된 제사장직과 예배를 심판하십니다.",
+        eventId: "eli-samuel-birth",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "예수 그리스도, 참 대제사장",
+        ref: "히브리서 4~10장",
+        desc: "예수님은 멜기세덱의 반차를 따라 오신 영원한 대제사장이십니다. 반복되는 제사를 완성하시고 하나님 앞에 나아가는 새 길을 여십니다.",
+        eventId: "cross",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "왕 같은 제사장인 교회와 성도",
+        ref: "베드로전서 2:9, 고린도전서 6:19",
+        desc: "그리스도 안에서 교회와 성도는 왕 같은 제사장으로 부름받습니다. 예배, 증언, 거룩한 삶을 통해 제사장적 사명을 감당합니다.",
+        eventId: "pentecost",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "영원한 대면과 섬김",
+        ref: "요한계시록 22:3~5",
+        desc: "새예루살렘에서 하나님의 종들은 그분의 얼굴을 뵙고 영원히 섬깁니다. 제사장직의 중보와 예배의 흐름이 완성됩니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "abraham-call": ["covenant", "priesthood"],
+    "isaac-sacrifice": ["lamb", "priesthood"],
+    "jacob-ladder": ["priesthood"],
+    "tabernacle": ["lamb", "temple", "exodus", "priesthood"],
+    "sinai-commandments": ["covenant", "exodus", "priesthood"],
+    "golden-calf": ["priesthood"],
+    "korah-rebellion": ["priesthood"],
+    "eli-samuel-birth": ["priesthood"],
+    "micah-idol-levite": ["priesthood"],
+    "temple-dedication": ["temple", "priesthood"],
+    "malachi-warning": ["covenant", "priesthood"],
+    "last-supper": ["covenant", "priesthood"],
+    "cross": ["lamb", "kingship", "messiah", "covenant", "priesthood"],
+    "resurrection": ["messiah", "priesthood"],
+    "pentecost": ["temple", "priesthood"],
+    "new-jerusalem": ["temple", "kingship", "covenant", "priesthood"]
   };
 
   Object.keys(links).forEach(eventId => {
