@@ -286,27 +286,89 @@ function isStepLabelOnly(v){
   const s = (v || "").toString().trim();
   return /^(\d+|\d+\s*일째|\d+\.\s*|[①②③④⑤⑥⑦⑧⑨⑩])$/.test(s);
 }
+function isBibleRefText(s){
+  const text = (s || "").toString().trim();
+  if(!text) return false;
+  return /^(창|출|레|민|신|수|삿|룻|삼상|삼하|왕상|왕하|대상|대하|스|느|에|욥|시|잠|전|아|사|렘|애|겔|단|호|욜|암|옵|욘|미|나|합|습|학|슥|말|마|막|눅|요|행|롬|고전|고후|갈|엡|빌|골|살전|살후|딤전|딤후|딛|몬|히|약|벧전|벧후|요일|요이|요삼|유|계|창세기|출애굽기|레위기|민수기|신명기|여호수아|사사기|룻기|사무엘상|사무엘하|열왕기상|열왕기하|역대상|역대하|에스라|느헤미야|에스더|욥기|시편|잠언|전도서|아가|이사야|예레미야|예레미야애가|에스겔|다니엘|호세아|요엘|아모스|오바댜|요나|미가|나훔|하박국|스바냐|학개|스가랴|말라기|마태복음|마가복음|누가복음|요한복음|사도행전|로마서|고린도전서|고린도후서|갈라디아서|에베소서|빌립보서|골로새서|데살로니가전서|데살로니가후서|디모데전서|디모데후서|디도서|빌레몬서|히브리서|야고보서|베드로전서|베드로후서|요한일서|요한이서|요한삼서|유다서|요한계시록)\s*\d+[:장]\s*\d*/.test(text);
+}
+
+function splitBibleRefFromText(text){
+  const source = (text || "").toString().trim();
+  if(!source) return {text:"", ref:""};
+
+  // 괄호 끝에 붙은 성경구절: "... 하심 (창 3:15)" 또는 "... (요한복음 3:16)"
+  const paren = source.match(/^(.*?)[\s　]*[\\(（]((?:창|출|레|민|신|수|삿|룻|삼상|삼하|왕상|왕하|대상|대하|스|느|에|욥|시|잠|전|아|사|렘|애|겔|단|호|욜|암|옵|욘|미|나|합|습|학|슥|말|마|막|눅|요|행|롬|고전|고후|갈|엡|빌|골|살전|살후|딤전|딤후|딛|몬|히|약|벧전|벧후|요일|요이|요삼|유|계|창세기|출애굽기|레위기|민수기|신명기|여호수아|사사기|룻기|사무엘상|사무엘하|열왕기상|열왕기하|역대상|역대하|에스라|느헤미야|에스더|욥기|시편|잠언|전도서|아가|이사야|예레미야|예레미야애가|에스겔|다니엘|호세아|요엘|아모스|오바댜|요나|미가|나훔|하박국|스바냐|학개|스가랴|말라기|마태복음|마가복음|누가복음|요한복음|사도행전|로마서|고린도전서|고린도후서|갈라디아서|에베소서|빌립보서|골로새서|데살로니가전서|데살로니가후서|디모데전서|디모데후서|디도서|빌레몬서|히브리서|야고보서|베드로전서|베드로후서|요한일서|요한이서|요한삼서|유다서|요한계시록)\s*\d+[:장][^)）]*)[\\)）]\s*$/);
+  if(paren) return {text:paren[1].trim(), ref:paren[2].trim()};
+
+  // 문장 끝에 바로 붙은 짧은 장절: "... 하심 창 3:15"
+  const tail = source.match(/^(.*?)[\s　]+((?:창|출|레|민|신|수|삿|룻|삼상|삼하|왕상|왕하|대상|대하|스|느|에|욥|시|잠|전|아|사|렘|애|겔|단|호|욜|암|옵|욘|미|나|합|습|학|슥|말|마|막|눅|요|행|롬|고전|고후|갈|엡|빌|골|살전|살후|딤전|딤후|딛|몬|히|약|벧전|벧후|요일|요이|요삼|유|계)\s*\d+[:장][\d\s:,\-~절]*)$/);
+  if(tail && tail[1].trim().length > 0) return {text:tail[1].trim(), ref:tail[2].trim()};
+
+  return {text:source, ref:""};
+}
+
 function normalizeFlowItem(x, i){
   if(Array.isArray(x)){
     const a = (x[0] || "").toString().trim();
     const b = (x[1] || "").toString().trim();
     const c = (x[2] || "").toString().trim();
 
-    // 기본 원칙: [제목, 설명, 장절] 구조에서는 장절을 설명칸에 넣지 않는다.
-    if(a && b && c) return {title:a, desc:b, ref:c};
-    if(isStepLabelOnly(a) && b) return {title:b, desc:b, ref:c};
-    if(a && b) return {title:a, desc:b};
-    return {title:a || b || c || `핵심 ${i+1}`, desc:b || a || c || `핵심 ${i+1}`, ref:""};
-  }
-  if(x && typeof x === "object"){
-    const title = (x.title || x.label || x.step || x.text || `핵심 ${i+1}`).toString();
-    const desc = (x.desc || x.summary || x.text || title).toString();
-    const ref = (x.ref || x.scripture || "").toString();
+    let title = "";
+    let desc = "";
+    let ref = "";
+
+    if(a && b && c){
+      title = a;
+      desc = b;
+      ref = c;
+    } else if(isStepLabelOnly(a) && b){
+      const splitB = splitBibleRefFromText(b);
+      title = splitB.text || b;
+      desc = splitB.text || b;
+      ref = c || splitB.ref;
+    } else if(a && b){
+      title = a;
+      desc = b;
+    } else {
+      title = a || b || c || `핵심 ${i+1}`;
+      desc = b || a || c || `핵심 ${i+1}`;
+    }
+
+    const splitDesc = splitBibleRefFromText(desc);
+    desc = splitDesc.text || desc;
+    ref = ref || splitDesc.ref;
+
+    // 제목 자체가 장절이면 제목 대신 설명을 제목으로 올리고, 장절은 참조로 내린다.
+    if(isBibleRefText(title) && desc && !isBibleRefText(desc)){
+      ref = ref || title;
+      title = desc;
+    }
+
     return {title, desc, ref};
   }
-  const s = (x || `핵심 ${i+1}`).toString();
-  return {title:s, desc:s, ref:""};
+
+  if(x && typeof x === "object"){
+    let title = (x.title || x.label || x.step || x.text || `핵심 ${i+1}`).toString().trim();
+    let desc = (x.desc || x.summary || x.text || title).toString().trim();
+    let ref = (x.ref || x.scripture || "").toString().trim();
+
+    const splitDesc = splitBibleRefFromText(desc);
+    desc = splitDesc.text || desc;
+    ref = ref || splitDesc.ref;
+
+    if(isBibleRefText(title) && desc && !isBibleRefText(desc)){
+      ref = ref || title;
+      title = desc;
+    }
+
+    return {title, desc, ref};
+  }
+
+  const split = splitBibleRefFromText((x || `핵심 ${i+1}`).toString());
+  const s = split.text || (x || `핵심 ${i+1}`).toString();
+  return {title:s, desc:s, ref:split.ref || ""};
 }
+
 
 function getOriginalImageSrc(eventId){
   const data = EVENTS[eventId] || {};
