@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v82-rollback-refresh";
+const CACHE_NAME = "cen-bible-chronology-v84-remove-status-runtime";
 const ASSETS = [
   "./",
   "./index.html",
