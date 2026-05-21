@@ -642,9 +642,66 @@ function searchEvents(q){
     </article>
   `).join("") || `<div class="empty">검색 결과가 없습니다.</div>`;
 }
+
+function openHubMenu(){
+  if(typeof EXPLORE_HUBS === "undefined") return;
+
+  const hubIds = Object.keys(EXPLORE_HUBS);
+
+  const modal = document.createElement("div");
+  modal.className = "hub-selector-overlay";
+
+  modal.innerHTML = `
+    <div class="hub-selector-modal">
+      <div class="hub-selector-title">연결탐험</div>
+      <div class="hub-selector-sub">성경을 관통하는 흐름을 탐험합니다.</div>
+
+      <div class="hub-selector-list">
+        ${hubIds.map(id=>{
+          const hub = EXPLORE_HUBS[id];
+          return `
+            <button class="hub-selector-item" data-bottom-hub="${id}">
+              <span class="hub-selector-icon">${hub.icon || "🧭"}</span>
+              <span class="hub-selector-text">${hub.title}</span>
+            </button>
+          `;
+        }).join("")}
+      </div>
+
+      <button class="hub-selector-close">닫기</button>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  modal.addEventListener("click", e=>{
+    const item = e.target.closest("[data-bottom-hub]");
+    if(item){
+      const hubId = item.dataset.bottomHub;
+      modal.remove();
+      renderHubOverlay(hubId);
+      return;
+    }
+
+    if(
+      e.target.classList.contains("hub-selector-overlay") ||
+      e.target.classList.contains("hub-selector-close")
+    ){
+      modal.remove();
+    }
+  });
+}
+
 function init(){
   renderHome();
   renderEras();
+
+  const bottomHubBtn = document.getElementById("bottomHubBtn");
+  if(bottomHubBtn){
+    bottomHubBtn.addEventListener("click", ()=>{
+      openHubMenu();
+    });
+  }
 
   document.addEventListener("click", e=>{
     const hubSelector = e.target.closest("[data-hub-selector]");
