@@ -84,6 +84,67 @@ function scrollToEra(id){
   const el = document.getElementById(id);
   if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
 }
+
+function getValidHubIds(eventId){
+  if(typeof EVENT_HUB_LINKS === "undefined" || typeof EXPLORE_HUBS === "undefined") return [];
+  return (EVENT_HUB_LINKS[eventId] || []).filter(id => EXPLORE_HUBS[id]);
+}
+
+function openHubSelector(eventId){
+  const hubIds = getValidHubIds(eventId);
+  if(!hubIds.length) return;
+
+  if(hubIds.length === 1){
+    renderHub(hubIds[0]);
+    go("hub");
+    return;
+  }
+
+  const modal = document.createElement("div");
+  modal.className = "hub-selector-overlay";
+
+  modal.innerHTML = `
+    <div class="hub-selector-modal">
+      <div class="hub-selector-title">연결탐험 선택</div>
+      <div class="hub-selector-sub">이 사건에는 ${hubIds.length}개의 흐름이 연결되어 있습니다.</div>
+
+      <div class="hub-selector-list">
+        ${hubIds.map(id=>{
+          const hub = EXPLORE_HUBS[id];
+          return `
+            <button class="hub-selector-item" data-hub-select="${id}">
+              <span class="hub-selector-icon">${hub.icon || "🧭"}</span>
+              <span class="hub-selector-text">${hub.title}</span>
+            </button>
+          `;
+        }).join("")}
+      </div>
+
+      <button class="hub-selector-close">닫기</button>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  modal.addEventListener("click", e=>{
+    const item = e.target.closest("[data-hub-select]");
+    if(item){
+      const hubId = item.dataset.hubSelect;
+      modal.remove();
+      renderHub(hubId);
+      go("hub");
+      return;
+    }
+
+    if(
+      e.target.classList.contains("hub-selector-overlay") ||
+      e.target.classList.contains("hub-selector-close")
+    ){
+      modal.remove();
+    }
+  });
+}
+
 function selectEvent(eventId){
   currentEventId = eventId;
   const era = ERAS.find(e=>e.eventIds.includes(eventId));
@@ -100,7 +161,16 @@ function selectEvent(eventId){
       <div class="small" style="margin-top:6px">시대: ${era.title} · ${era.year}</div>
       <div class="btn-row">
         <button class="cen-btn green" data-detail="${eventId}">${ready}</button>
-        ${(typeof EVENT_HUB_LINKS !== "undefined" && EVENT_HUB_LINKS[eventId] && EVENT_HUB_LINKS[eventId].some(id => typeof EXPLORE_HUBS !== "undefined" && EXPLORE_HUBS[id])) ? `<button class="cen-btn secondary" data-hub="${EVENT_HUB_LINKS[eventId].find(id => EXPLORE_HUBS[id])}">연결탐험</button>` : ``}
+        ${(()=>{
+          const validHubIds = getValidHubIds(eventId);
+          if(!validHubIds.length) return ``;
+
+          const label = validHubIds.length === 1
+            ? `연결탐험`
+            : `연결탐험 ${validHubIds.length}개`;
+
+          return `<button class="cen-btn secondary" data-hub-selector="${eventId}">${label}</button>`;
+        })()}
       </div>
     `;
   }
