@@ -1856,3 +1856,62 @@ h2,
   font-size:var(--font-sm) !important;
 }
 
+
+
+/* v90 연결탐험 메인 구조화 */
+.hub-menu-modal{
+  max-height:88vh;
+  overflow:auto;
+}
+
+.hub-group-list{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.hub-group-section{
+  background:rgba(255,255,255,.38);
+  border:1px solid rgba(95,68,42,.14);
+  border-radius:16px;
+  padding:12px;
+}
+
+.hub-group-head{
+  margin-bottom:10px;
+  padding:0 2px;
+}
+
+.hub-group-title{
+  font-weight:900;
+  color:#3f2e20;
+  font-size:1.02rem;
+}
+
+.hub-group-desc{
+  margin-top:3px;
+  color:#6c5948;
+  font-size:.86rem;
+  line-height:1.35;
+}
+
+.hub-group-item{
+  align-items:flex-start;
+}
+
+.hub-selector-body{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  flex:1;
+  min-width:0;
+}
+
+.hub-selector-desc{
+  display:block;
+  color:#7a6958;
+  font-size:.82rem;
+  line-height:1.35;
+  font-weight:500;
+}
+
