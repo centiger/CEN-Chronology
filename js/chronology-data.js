@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v71-temple-hub";
+const CHRONOLOGY_VERSION = "v72-kingship-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -4296,6 +4296,87 @@ Object.assign(EXPLORE_HUBS, {
     "jesus-5": ["temple"],
     "pentecost": ["temple"],
     "new-jerusalem": ["temple"]
+  };
+  Object.keys(links).forEach(eventId => {
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v72 연결탐험 허브 3차: 왕권과 하나님 나라의 흐름
+Object.assign(EXPLORE_HUBS, {
+  "kingship": {
+    id: "kingship",
+    icon: "👑",
+    title: "왕권과 하나님 나라의 흐름",
+    subtitle: "대리 통치에서 영원한 왕 노릇까지",
+    description: "성경의 왕권은 단순한 정치 권력이 아니라 하나님의 통치를 드러내는 흐름입니다. 인간은 하나님의 형상으로 대리 통치자로 지음받았지만 실패했고, 다윗 왕조와 예언을 거쳐 십자가의 왕이신 예수님과 새예루살렘의 영원한 왕 노릇으로 완성됩니다.",
+    steps: [
+      {
+        label: "1",
+        title: "대리 왕으로 지음받은 인간",
+        ref: "창세기 1:26~28",
+        desc: "사람은 하나님의 형상으로 창조되어 땅을 다스리는 대리 통치자로 세워집니다. 왕권의 출발점은 인간 권력이 아니라 하나님의 창조 질서입니다.",
+        eventId: "creation",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "왕이 없던 혼란",
+        ref: "사사기 21:25",
+        desc: "사사 시대는 왕이 없으므로 각기 자기 소견에 옳은 대로 행하던 혼란의 시대입니다. 하나님의 통치를 거스른 인간 사회의 무질서가 드러납니다.",
+        eventId: "judges-cycle",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "다윗 왕조",
+        ref: "사무엘하 7장",
+        desc: "하나님은 다윗의 집을 통해 왕권의 약속을 주십니다. 다윗 왕조는 장차 오실 메시아 왕을 예표하는 중요한 흐름이 됩니다.",
+        eventId: "david-kingdom",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "왕권의 실패와 예언",
+        ref: "열왕기상 11~12장, 예레미야 23:5~6",
+        desc: "솔로몬 이후 왕국은 분열되고 왕권은 실패합니다. 그러나 선지자들은 의로운 왕과 회복될 통치를 예고합니다.",
+        eventId: "kingdom-divide",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "십자가의 왕",
+        ref: "요한복음 19:19",
+        desc: "예수님은 힘으로 군림하는 왕이 아니라 십자가를 통해 다스리시는 참 왕으로 나타나십니다. 십자가 위의 왕권은 하나님 나라의 역설적 성취입니다.",
+        eventId: "cross",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "영원한 왕 노릇",
+        ref: "요한계시록 22:5",
+        desc: "새예루살렘에서 하나님의 백성은 하나님과 어린양 앞에서 영원히 왕 노릇합니다. 왕권의 흐름은 하나님 나라의 완성으로 마무리됩니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "creation": ["kingship"],
+    "judges-cycle": ["kingship"],
+    "saul-king": ["kingship"],
+    "david-kingdom": ["kingship"],
+    "kingdom-divide": ["kingship"],
+    "judah-fall": ["kingship"],
+    "triumphal-entry": ["kingship"],
+    "cross": ["kingship"],
+    "new-jerusalem": ["kingship"]
   };
   Object.keys(links).forEach(eventId => {
     const prev = EVENT_HUB_LINKS[eventId] || [];
