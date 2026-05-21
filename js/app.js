@@ -208,7 +208,8 @@ function openHubSelector(eventId){
 
     if(
       e.target.classList.contains("hub-selector-overlay") ||
-      e.target.classList.contains("hub-selector-close")
+      e.target.classList.contains("hub-selector-close") ||
+      e.target.classList.contains("hub-selector-x")
     ){
       modal.remove();
     }
@@ -763,6 +764,7 @@ function openHubMenu(){
 
   modal.innerHTML = `
     <div class="hub-selector-modal hub-menu-modal">
+      <button class="hub-selector-x" type="button" aria-label="닫기">×</button>
       <div class="hub-selector-title">연결탐험</div>
       <div class="hub-selector-sub">성경을 관통하는 흐름을 구조별로 탐험합니다.</div>
 
@@ -809,7 +811,8 @@ function openHubMenu(){
 
     if(
       e.target.classList.contains("hub-selector-overlay") ||
-      e.target.classList.contains("hub-selector-close")
+      e.target.classList.contains("hub-selector-close") ||
+      e.target.classList.contains("hub-selector-x")
     ){
       modal.remove();
     }
