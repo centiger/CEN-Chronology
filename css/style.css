@@ -1797,3 +1797,62 @@ button[data-detail]:hover{
 #bottomHubBtn{
   font-weight:700;
 }
+
+
+/* v88 설정: 글자 크기 조절 실효 적용 */
+:root{
+  --font-sm:14px;
+  --font-lg:20px;
+}
+
+body{
+  font-size:var(--font) !important;
+}
+
+button,
+input,
+.cen-btn,
+.navbtn,
+.event-chip,
+.quick button,
+.tabbtn,
+.compact-pill,
+.hub-selector-item{
+  font-size:var(--font-sm) !important;
+}
+
+.card p,
+.notice,
+.preview-text,
+.section-card,
+.flow-text,
+.core-flow-desc,
+.detail-meta,
+.panel,
+.outside-pill-desc,
+.metro-desc,
+.hub-entry-desc,
+.hub-step-desc{
+  font-size:var(--font) !important;
+}
+
+h1,
+.detail-hero h2{
+  font-size:calc(var(--font-lg) + 4px) !important;
+}
+
+h2,
+.section-title,
+.preview-title,
+.hub-entry-title,
+.hub-step-title{
+  font-size:var(--font-lg) !important;
+}
+
+.small,
+.flow-ref,
+.core-flow-ref,
+.hub-step-ref{
+  font-size:var(--font-sm) !important;
+}
+
