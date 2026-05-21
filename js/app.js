@@ -95,8 +95,7 @@ function openHubSelector(eventId){
   if(!hubIds.length) return;
 
   if(hubIds.length === 1){
-    renderHub(hubIds[0]);
-    go("hub");
+    renderHubOverlay(hubIds[0]);
     return;
   }
 
@@ -131,8 +130,7 @@ function openHubSelector(eventId){
     if(item){
       const hubId = item.dataset.hubSelect;
       modal.remove();
-      renderHub(hubId);
-      go("hub");
+      renderHubOverlay(hubId);
       return;
     }
 
@@ -649,6 +647,12 @@ function init(){
   renderEras();
 
   document.addEventListener("click", e=>{
+    const hubSelector = e.target.closest("[data-hub-selector]");
+    if(hubSelector){
+      openHubSelector(hubSelector.dataset.hubSelector);
+      return;
+    }
+
     const nav = e.target.closest("[data-page]");
     if(nav) go(nav.dataset.page);
 
