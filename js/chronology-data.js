@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v77-noah-covenant-hub-hardfix";
+const CHRONOLOGY_VERSION = "v78-exodus-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -4610,5 +4610,96 @@ Object.assign(EXPLORE_HUBS, {
     const prev = EVENT_HUB_LINKS["noah-ark"] || [];
     EVENT_HUB_LINKS["noah-ark"] = Array.from(new Set([...prev, "covenant"]));
   }
+})();
+
+
+
+// v78 연결탐험 허브 6차: 출애굽과 구원의 흐름
+Object.assign(EXPLORE_HUBS, {
+  "exodus": {
+    id: "exodus",
+    icon: "🌊",
+    title: "출애굽과 구원의 흐름",
+    subtitle: "압제에서 구원받아 하나님의 임재 앞에 서는 백성",
+    description: "출애굽은 단순한 탈출이 아니라 압제와 속박에서 구원받아 언약 백성으로 세워지고, 하나님의 임재와 예배 앞에 서게 되는 구원의 흐름입니다.",
+    steps: [
+      {
+        label: "1",
+        title: "압제와 부르짖음",
+        ref: "출애굽기 1~2장",
+        desc: "이스라엘은 애굽의 압제 아래 고통받고 하나님께 부르짖습니다. 이는 죄와 속박 아래 놓인 인간의 상태를 보여줍니다.",
+        eventId: "moses-birth",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "모세의 소명",
+        ref: "출애굽기 3~4장",
+        desc: "하나님은 떨기나무 가운데 모세를 부르시고 백성을 인도할 중보자로 세우십니다.",
+        eventId: "burning-bush",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "열 재앙",
+        ref: "출애굽기 7~12장",
+        desc: "하나님은 애굽과 바로의 완고함 위에 심판을 내리시며 거짓 신들과 억압 권세를 무너뜨리십니다.",
+        eventId: "ten-plagues",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "유월절",
+        ref: "출애굽기 12장",
+        desc: "어린양의 피로 죽음의 심판을 넘어갑니다. 유월절은 대속과 구원의 표지로 제시됩니다.",
+        eventId: "passover",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "홍해 통과",
+        ref: "출애굽기 13~15장",
+        desc: "이스라엘은 물을 지나 애굽의 권세에서 완전히 해방됩니다. 홍해 통과는 구원의 완성과 세례의 예표로 이해됩니다.",
+        eventId: "red-sea",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "광야의 훈련과 공급",
+        ref: "출애굽기 16장, 민수기 11장",
+        desc: "하나님은 만나와 메추라기, 물과 인도하심으로 백성을 먹이시고 훈련하십니다. 구원받은 백성은 광야에서 믿음을 배웁니다.",
+        eventId: "manna-quail",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "시내산 언약과 성막",
+        ref: "출애굽기 19~40장",
+        desc: "하나님은 율법과 성막을 통해 이스라엘을 거룩한 언약 백성으로 세우시고 그들 가운데 임재하십니다.",
+        eventId: "tabernacle",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "moses-birth": ["exodus"],
+    "burning-bush": ["exodus"],
+    "ten-plagues": ["exodus"],
+    "passover": ["lamb", "exodus"],
+    "red-sea": ["exodus"],
+    "manna-quail": ["exodus"],
+    "sinai-commandments": ["covenant", "exodus"],
+    "tabernacle": ["lamb", "temple", "exodus"],
+    "wilderness-40": ["exodus"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
 })();
 
