@@ -86,7 +86,7 @@ function selectEvent(eventId){
       <div class="small" style="margin-top:6px">시대: ${era.title} · ${era.year}</div>
       <div class="btn-row">
         <button class="cen-btn green" data-detail="${eventId}">${ready}</button>
-        ${(typeof EVENT_HUB_LINKS !== "undefined" && EVENT_HUB_LINKS[eventId] && EVENT_HUB_LINKS[eventId].length) ? `<button class="cen-btn secondary" data-hub="${EVENT_HUB_LINKS[eventId][0]}">연결탐험</button>` : `<button class="cen-btn secondary" data-toast="related">연결탐험</button>`}
+        ${(typeof EVENT_HUB_LINKS !== "undefined" && EVENT_HUB_LINKS[eventId] && EVENT_HUB_LINKS[eventId].some(id => typeof EXPLORE_HUBS !== "undefined" && EXPLORE_HUBS[id])) ? `<button class="cen-btn secondary" data-hub="${EVENT_HUB_LINKS[eventId].find(id => EXPLORE_HUBS[id])}">연결탐험</button>` : ``}
       </div>
     `;
   }
