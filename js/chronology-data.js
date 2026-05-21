@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v73-hub-audit-messiah";
+const CHRONOLOGY_VERSION = "v76-covenant-hub-consolidated";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -4488,5 +4488,117 @@ Object.assign(EXPLORE_HUBS, {
     const prev = EVENT_HUB_LINKS[eventId] || [];
     EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...verifiedLinks[eventId]]));
   });
+})();
+
+
+
+// v74 연결탐험 허브 5차: 언약의 흐름
+Object.assign(EXPLORE_HUBS, {
+  "covenant": {
+    id: "covenant",
+    icon: "📜",
+    title: "언약의 흐름",
+    subtitle: "창조 질서에서 새 언약과 완성까지",
+    description: "성경의 언약은 하나님이 자기 백성과 관계를 맺고 약속을 이루어 가시는 큰 흐름입니다. 창조 질서와 인간의 실패, 보존의 약속, 자손과 땅의 약속, 율법과 거룩, 왕권의 약속, 십자가의 새 언약을 거쳐 새예루살렘에서 완성됩니다.",
+    steps: [
+      {
+        label: "1",
+        title: "아담: 창조 질서와 실패",
+        ref: "창세기 2~3장",
+        desc: "하나님은 사람을 창조 세계 안에서 책임 있는 존재로 세우셨지만, 인간은 불순종으로 실패합니다. 언약의 흐름은 창조 질서와 타락의 현실에서 시작됩니다.",
+        eventId: "adam-eve",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "노아: 보존의 언약",
+        ref: "창세기 9장",
+        desc: "홍수 이후 하나님은 다시는 물로 온 땅을 멸하지 않겠다고 약속하시며 창조 세계를 보존하십니다. 무지개는 보존의 언약 표지가 됩니다.",
+        eventId: "noah-ark",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "아브라함: 자손과 땅의 언약",
+        ref: "창세기 12장, 15장, 17장",
+        desc: "하나님은 아브라함에게 자손, 땅, 복의 통로가 될 약속을 주십니다. 이 언약은 이스라엘 역사와 구속사의 중요한 출발점입니다.",
+        eventId: "abraham-call",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "모세: 율법과 거룩의 언약",
+        ref: "출애굽기 19~20장",
+        desc: "시내산에서 하나님은 이스라엘을 언약 백성으로 세우시고 율법을 주십니다. 언약 백성은 거룩한 삶으로 부름받습니다.",
+        eventId: "sinai-commandments",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "다윗: 영원한 왕위의 언약",
+        ref: "사무엘하 7장",
+        desc: "하나님은 다윗의 집과 왕위를 견고하게 하겠다고 약속하십니다. 이 언약은 장차 오실 메시아 왕의 약속으로 이어집니다.",
+        eventId: "david-kingdom",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "예수 그리스도: 십자가의 새 언약",
+        ref: "누가복음 22:20 / 예레미야 31:31~34",
+        desc: "예수님은 십자가의 피로 새 언약을 세우십니다. 죄 사함과 새 마음, 하나님과의 회복된 관계가 그리스도 안에서 성취됩니다.",
+        eventId: "last-supper",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "새예루살렘: 언약의 완성",
+        ref: "요한계시록 21장",
+        desc: "새예루살렘에서 하나님은 자기 백성과 영원히 함께하십니다. ‘나는 그들의 하나님이 되고 그들은 내 백성이 되리라’는 언약의 약속이 완성됩니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "adam-eve": ["temple", "covenant"],
+    "eden-exile": ["messiah", "covenant"],
+    "noah-ark": ["covenant"],
+    "abraham-call": ["covenant"],
+    "sinai-commandments": ["covenant"],
+    "david-kingdom": ["kingship", "messiah", "covenant"],
+    "last-supper": ["covenant"],
+    "cross": ["lamb", "kingship", "messiah", "covenant"],
+    "new-jerusalem": ["temple", "kingship", "covenant"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v75 노아의 방주 언약 허브 표시 강제 보정
+(function(){
+  if(typeof EVENT_HUB_LINKS !== "undefined" && typeof EVENTS !== "undefined" && EVENTS["noah-ark"]){
+    const prev = EVENT_HUB_LINKS["noah-ark"] || [];
+    EVENT_HUB_LINKS["noah-ark"] = Array.from(new Set([...prev, "covenant"]));
+  }
+
+  if(typeof EVENT_EXPLORE !== "undefined" && typeof EVENT_EXPLORE["noah-ark"] === "undefined"){
+    EVENT_EXPLORE["noah-ark"] = {
+      title: "8. 연결탐험",
+      items: [
+        { title:"언약의 흐름", desc:"노아 언약은 창조 세계 보존의 약속" },
+        { title:"보존", desc:"심판 이후에도 생명을 보존하심" },
+        { title:"무지개", desc:"언약의 표지" }
+      ]
+    };
+  }
 })();
 
