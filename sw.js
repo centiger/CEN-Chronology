@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "cen-bible-chronology-v83-remove-status-box";
+const CACHE_NAME = "cen-bible-chronology-v82-hide-empty-explore-buttons";
 const ASSETS = [
   "./",
   "./index.html",
