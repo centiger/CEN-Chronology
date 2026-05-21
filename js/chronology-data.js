@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v88-font-size-settings-fix";
+const CHRONOLOGY_VERSION = "v89-newcreation-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -4970,6 +4970,95 @@ Object.assign(EXPLORE_HUBS, {
     "armageddon": ["kingship", "messiah", "kingdom"],
     "new-jerusalem": ["temple", "kingship", "covenant", "priesthood", "kingdom"],
     "new-heaven-earth": ["messiah", "kingdom"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v89 연결탐험 허브 10차: 새창조의 흐름
+Object.assign(EXPLORE_HUBS, {
+  "newcreation": {
+    id: "newcreation",
+    icon: "🌱",
+    title: "새창조의 흐름",
+    subtitle: "타락한 세상을 새롭게 하시는 하나님의 회복",
+    description: "성경은 단순히 잃어버린 낙원을 회상하는 이야기가 아니라 하나님이 타락한 창조세계를 새롭게 회복하시는 이야기입니다. 창조와 타락, 심판 속 보존, 선지자들의 회복 약속, 예수님의 부활, 새 하늘과 새 땅, 새예루살렘의 완성으로 이어집니다.",
+    steps: [
+      {
+        label: "1",
+        title: "창조",
+        ref: "창세기 1~2장",
+        desc: "하나님은 선하고 아름다운 창조세계를 만드셨습니다. 새창조의 출발점은 최초의 창조입니다.",
+        eventId: "creation",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "타락과 저주",
+        ref: "창세기 3장",
+        desc: "죄로 인해 죽음과 저주가 세상에 들어왔습니다. 새창조는 이 깨어진 세상을 회복하는 이야기입니다.",
+        eventId: "adam-eve",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "노아 이후의 보존",
+        ref: "창세기 6~9장",
+        desc: "홍수 심판 가운데서도 하나님은 창조세계를 완전히 버리지 않으시고 보존하십니다.",
+        eventId: "noah-flood",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "선지자들의 회복 약속",
+        ref: "에스겔·이사야",
+        desc: "선지자들은 새 마음과 새 영, 회복된 창조세계와 평화의 나라를 예언합니다.",
+        eventId: "ezekiel-vision",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "예수님의 부활",
+        ref: "복음서",
+        desc: "예수님의 부활은 새창조의 시작입니다. 죽음을 깨뜨리고 새 생명의 시대가 열립니다.",
+        eventId: "resurrection",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "새 하늘과 새 땅",
+        ref: "요한계시록 21장",
+        desc: "하나님은 죄와 죽음이 사라진 새 창조세계를 완성하십니다.",
+        eventId: "new-heaven-earth",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "새예루살렘",
+        ref: "요한계시록 21~22장",
+        desc: "하나님이 자기 백성과 영원히 함께하시며 완전한 회복과 생명이 이루어집니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "creation": ["kingdom", "newcreation"],
+    "adam-eve": ["covenant", "temple", "newcreation"],
+    "noah-flood": ["covenant", "newcreation"],
+    "ezekiel-vision": ["kingdom", "newcreation"],
+    "resurrection": ["messiah", "kingship", "newcreation"],
+    "new-heaven-earth": ["kingdom", "messiah", "newcreation"],
+    "new-jerusalem": ["temple", "kingdom", "newcreation"]
   };
 
   Object.keys(links).forEach(eventId => {
