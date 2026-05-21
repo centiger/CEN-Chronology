@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v80-wilderness-hub";
+const CHRONOLOGY_VERSION = "v81-kingdom-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -4862,6 +4862,114 @@ Object.assign(EXPLORE_HUBS, {
 
 
 
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v81 연결탐험 허브 9차: 하나님 나라의 흐름
+Object.assign(EXPLORE_HUBS, {
+  "kingdom": {
+    id: "kingdom",
+    icon: "👑",
+    title: "하나님 나라의 흐름",
+    subtitle: "에덴의 원형에서 새예루살렘의 완성까지",
+    description: "하나님 나라는 하나님이 다스리시고 자기 백성이 그 통치 안에서 생명과 의와 평화를 누리는 흐름입니다. 에덴의 원형, 족장에게 주신 약속, 광야와 시내산의 언약 공동체, 다윗 왕조의 그림자, 선지자들의 대망, 예수님 안에서 시작된 나라, 교회를 통한 확장, 새예루살렘의 완성으로 이어집니다.",
+    steps: [
+      {
+        label: "1",
+        title: "에덴: 하나님 나라의 원형",
+        ref: "창세기 1~2장",
+        desc: "하나님이 직접 다스리시고 사람은 그 통치 아래 생명과 임재를 누립니다. 에덴은 하나님 나라의 원형입니다.",
+        eventId: "creation",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "족장 시대: 약속된 나라",
+        ref: "창세기 12장",
+        desc: "하나님은 아브라함에게 자손과 땅과 복의 약속을 주십니다. 하나님 나라의 씨앗이 언약 안에서 시작됩니다.",
+        eventId: "abraham-call",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "광야와 시내산: 언약 공동체의 형성",
+        ref: "출애굽기~민수기",
+        desc: "출애굽한 백성은 광야와 시내산에서 하나님 나라 백성으로 훈련받고 율법과 예배의 질서를 받습니다.",
+        eventId: "wilderness-40",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "다윗 왕조: 그림자 왕국",
+        ref: "사무엘하 7장",
+        desc: "다윗 왕조는 장차 오실 완전한 왕과 하나님 나라를 미리 보여주는 그림자입니다.",
+        eventId: "david-kingdom",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "선지자들의 대망",
+        ref: "이사야, 에스겔, 다니엘",
+        desc: "선지자들은 의와 평화가 충만한 회복의 나라와 새 창조의 희망을 선포합니다.",
+        eventId: "ezekiel-vision",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "초림 예수: 시작된 나라",
+        ref: "복음서",
+        desc: "예수님은 하나님 나라가 가까이 왔다고 선포하시고, 말씀과 이적과 비유를 통해 시작된 나라를 드러내십니다.",
+        eventId: "jesus-4",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "교회: 확장되는 나라",
+        ref: "사도행전",
+        desc: "성령강림 이후 복음은 예루살렘에서 땅끝까지 확장됩니다. 교회는 이미 시작되었으나 아직 완성되지 않은 하나님 나라를 증언합니다.",
+        eventId: "pentecost",
+        type: "event"
+      },
+      {
+        label: "8",
+        title: "재림과 새예루살렘: 완성된 나라",
+        ref: "요한계시록 21~22장",
+        desc: "죄와 죽음과 눈물이 사라지고 하나님이 자기 백성과 영원히 함께하십니다. 하나님 나라가 완성됩니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "creation": ["kingship", "kingdom"],
+    "adam-eve": ["temple", "covenant", "kingdom"],
+    "abraham-call": ["covenant", "priesthood", "kingdom"],
+    "wilderness-40": ["exodus", "wilderness", "kingdom"],
+    "sinai-commandments": ["covenant", "exodus", "priesthood", "kingdom"],
+    "david-kingdom": ["kingship", "messiah", "covenant", "kingdom"],
+    "judah-fall": ["kingship", "kingdom"],
+    "ezekiel-vision": ["kingdom"],
+    "john-baptist": ["lamb", "messiah", "kingdom"],
+    "jesus-birth": ["messiah", "kingdom"],
+    "sermon-mount": ["kingdom"],
+    "jesus-4": ["messiah", "kingdom"],
+    "pentecost": ["temple", "priesthood", "kingdom"],
+    "paul-1st": ["kingdom"],
+    "antioch-church": ["kingdom"],
+    "armageddon": ["kingship", "messiah", "kingdom"],
+    "new-jerusalem": ["temple", "kingship", "covenant", "priesthood", "kingdom"],
+    "new-heaven-earth": ["messiah", "kingdom"]
   };
 
   Object.keys(links).forEach(eventId => {
