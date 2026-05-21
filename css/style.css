@@ -1710,10 +1710,3 @@ button[data-detail]:hover{
   font-weight:900 !important;
 }
 
-
-
-/* v83b: 첫 화면 구성 현황 박스 안전 숨김 */
-.config-status-box[data-status-hide="config-status"]{
-  display:none !important;
-}
-
