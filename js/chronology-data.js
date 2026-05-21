@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v72-kingship-hub";
+const CHRONOLOGY_VERSION = "v73-hub-audit-messiah";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -4381,6 +4381,112 @@ Object.assign(EXPLORE_HUBS, {
   Object.keys(links).forEach(eventId => {
     const prev = EVENT_HUB_LINKS[eventId] || [];
     EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v73 허브 연결 재검증 + 약속된 메시야의 흐름 허브 추가
+Object.assign(EXPLORE_HUBS, {
+  "messiah": {
+    id: "messiah",
+    icon: "✨",
+    title: "약속된 메시야의 흐름",
+    subtitle: "여자의 후손 약속에서 만왕의 왕까지",
+    description: "메시야의 흐름은 구약의 약속과 예언이 예수님의 초림 안에서 성취되고, 재림과 하나님 나라의 완성으로 이어지는 약속과 성취의 흐름입니다.",
+    steps: [
+      {
+        label: "1",
+        title: "여자의 후손",
+        ref: "창세기 3:15",
+        desc: "뱀의 머리를 상하게 할 구원자의 약속이 주어집니다. 타락 직후 주어진 이 약속은 메시야 흐름의 출발점입니다.",
+        eventId: "eden-exile",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "유다의 왕권과 모세 같은 선지자",
+        ref: "창세기 49:10 / 신명기 18:15",
+        desc: "유다 지파의 통치권과 모세 같은 선지자 약속은 장차 오실 메시야가 왕이자 참 선지자로 오실 것을 보여줍니다.",
+        type: "concept"
+      },
+      {
+        label: "3",
+        title: "다윗의 자손",
+        ref: "사무엘하 7장",
+        desc: "하나님은 다윗의 집을 통해 영원한 왕권의 약속을 주십니다. 메시야는 다윗의 자손으로 오실 왕입니다.",
+        eventId: "david-kingdom",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "고난과 영광",
+        ref: "이사야 53장 / 다니엘 7장",
+        desc: "예언서에는 고난받는 종과 영광 중에 오실 인자의 모습이 함께 나타납니다. 메시야는 고난과 영광을 함께 지니신 분입니다.",
+        type: "prophecy"
+      },
+      {
+        label: "5",
+        title: "십자가와 부활",
+        ref: "복음서",
+        desc: "예수님은 십자가와 부활을 통해 메시야 약속을 성취하십니다. 고난받는 종이자 생명의 주로 드러나십니다.",
+        eventId: "cross",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "만왕의 왕",
+        ref: "요한계시록 19장",
+        desc: "재림하시는 예수님은 왕 중의 왕, 만주의 주로 나타나십니다. 메시야의 흐름은 완전한 왕권과 심판, 새 창조로 완성됩니다.",
+        eventId: "armageddon",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  // 실제 존재하는 EVENTS id만 연결한다. 이미 연결된 허브는 유지하고 새 허브만 병합한다.
+  const verifiedLinks = {
+    // 어린양 허브 재검증
+    "isaac-sacrifice": ["lamb"],
+    "passover": ["lamb"],
+    "tabernacle": ["lamb", "temple"],
+    "john-baptist": ["lamb", "messiah"],
+    "cross": ["lamb", "kingship", "messiah"],
+    "seven-seals": ["lamb"],
+
+    // 성전 허브 재검증
+    "adam-eve": ["temple"],
+    "temple-build": ["temple"],
+    "temple-dedication": ["temple"],
+    "jesus-5": ["temple"],
+    "pentecost": ["temple"],
+    "new-jerusalem": ["temple", "kingship"],
+
+    // 왕권 허브 재검증
+    "creation": ["kingship"],
+    "judges-cycle": ["kingship"],
+    "saul-king": ["kingship"],
+    "david-kingdom": ["kingship", "messiah"],
+    "kingdom-divide": ["kingship"],
+    "judah-fall": ["kingship"],
+    "triumphal-entry": ["kingship", "messiah"],
+    "armageddon": ["kingship", "messiah"],
+
+    // 메시야 허브
+    "eden-exile": ["messiah"],
+    "moses-farewell-death": ["messiah"],
+    "balaam-donkey": ["messiah"],
+    "jesus-birth": ["messiah"],
+    "resurrection": ["messiah"],
+    "new-heaven-earth": ["messiah"]
+  };
+
+  Object.keys(verifiedLinks).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...verifiedLinks[eventId]]));
   });
 })();
 
