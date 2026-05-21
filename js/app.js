@@ -244,68 +244,107 @@ function chunkExploreItems(items){
 }
 
 function renderExploreRows(eventId){
-  const data = EVENT_EXPLORE[eventId];
-  if(!data) return `<div class="section-card">연결탐험 데이터 준비중</div>`;
-  const rows = chunkExploreItems(data.items);
-  return `
-    <div class="two-row-explore-box">
-      ${rows.map(row=>`
-        <div class="metro-row row-${row.length}">
-          ${row.map(x=>`
-            <div class="metro-station">
-              <button class="compact-pill metro-pill" data-explore="${x.title}">
-                ${x.title}
-              </button>
-              ${x.desc ? `<div class="outside-pill-desc metro-desc">(${x.desc})</div>` : ``}
-            </div>
-          `).join("")}
-        </div>
+  const explore = EVENT_EXPLORE[eventId];
+  const hubIds = (typeof EVENT_HUB_LINKS !== "undefined" && EVENT_HUB_LINKS[eventId]) ? EVENT_HUB_LINKS[eventId] : [];
+  const hubCards = hubIds
+    .map(id => (typeof EXPLORE_HUBS !== "undefined" ? EXPLORE_HUBS[id] : null))
+    .filter(Boolean);
+
+  const hubHtml = hubCards.length ? `
+    <div class="hub-entry-list">
+      ${hubCards.map(hub=>`
+        <button class="hub-entry-card" data-hub="${hub.id}">
+          <div class="hub-entry-icon">${hub.icon || "🔎"}</div>
+          <div class="hub-entry-body">
+            <div class="hub-entry-title">${hub.title}</div>
+            <div class="hub-entry-desc">${hub.subtitle || hub.description || ""}</div>
+          </div>
+          <div class="hub-entry-arrow">›</div>
+        </button>
       `).join("")}
-</div>
+    </div>
+  ` : ``;
+
+  const legacyHtml = explore ? (() => {
+    const rows = chunkExploreItems(explore.items);
+    return `
+      <div class="two-row-explore-box">
+        ${rows.map(row=>`
+          <div class="metro-row row-${row.length}">
+            ${row.map(x=>`
+              <div class="metro-station">
+                <button class="compact-pill metro-pill" data-explore="${x.title}">
+                  ${x.title}
+                </button>
+                ${x.desc ? `<div class="outside-pill-desc metro-desc">(${x.desc})</div>` : ``}
+              </div>
+            `).join("")}
+          </div>
+        `).join("")}
+      </div>
+    `;
+  })() : ``;
+
+  if(!hubHtml && !legacyHtml) return `<div class="section-card">연결탐험 데이터 준비중</div>`;
+
+  return `
+    ${hubHtml}
+    ${hubHtml && legacyHtml ? `<div class="explore-sub-divider">기존 연결 키워드</div>` : ``}
+    ${legacyHtml}
   `;
 }
 
-
-
-
-
-function isStepLabelOnly(v){
-  const s = (v || "").toString().trim();
-  return /^(\d+|\d+\s*일째|\d+\.\s*|[①②③④⑤⑥⑦⑧⑨⑩])$/.test(s);
-}
-function normalizeFlowItem(x, i){
-  if(Array.isArray(x)){
-    const a = (x[0] || "").toString().trim();
-    const b = (x[1] || "").toString().trim();
-    const c = (x[2] || "").toString().trim();
-    if(isStepLabelOnly(a) && b) return {title:b, desc:c || b};
-    if(a && b && !c) return {title:a, desc:b};
-    return {title:a || b || `핵심 ${i+1}`, desc:c || b || a || `핵심 ${i+1}`};
+function renderHubOverlay(hubId){
+  const hub = (typeof EXPLORE_HUBS !== "undefined") ? EXPLORE_HUBS[hubId] : null;
+  if(!hub) return;
+  let overlay = document.getElementById("hubOverlay");
+  if(!overlay){
+    overlay = document.createElement("div");
+    overlay.id = "hubOverlay";
+    overlay.className = "hub-overlay";
+    document.body.appendChild(overlay);
   }
-  if(x && typeof x === "object"){
-    const title = (x.title || x.label || x.step || x.text || `핵심 ${i+1}`).toString();
-    const desc = (x.desc || x.summary || x.text || title).toString();
-    return {title, desc};
-  }
-  const s = (x || `핵심 ${i+1}`).toString();
-  return {title:s, desc:s};
+
+  overlay.innerHTML = `
+    <div class="hub-panel">
+      <div class="hub-panel-head">
+        <div>
+          <div class="hub-kicker">연결탐험 허브</div>
+          <h2>${hub.icon || "🔎"} ${hub.title}</h2>
+          <p>${hub.description || ""}</p>
+        </div>
+        <button class="hub-close" data-hub-close>×</button>
+      </div>
+
+      <div class="hub-flow">
+        ${hub.steps.map((step, idx)=>`
+          <div class="hub-step ${step.type || "event"}">
+            <div class="hub-step-marker">${step.label || idx+1}</div>
+            <div class="hub-step-card">
+              <div class="hub-step-top">
+                <div class="hub-step-title">${step.title}</div>
+                ${step.ref ? `<div class="hub-step-ref">${step.ref}</div>` : ``}
+              </div>
+              <div class="hub-step-desc">${step.desc || ""}</div>
+              ${step.eventId && EVENTS[step.eventId] ? `
+                <button class="hub-event-btn" data-hub-event="${step.eventId}">
+                  해당 사건 상세보기
+                </button>
+              ` : `
+                <div class="hub-concept-label">허브 전용 연결카드</div>
+              `}
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  `;
+  overlay.classList.add("show");
 }
-function getOriginalImageSrc(eventId){
-  const data = EVENTS[eventId] || {};
-  return (
-    (typeof ORIGINAL_INFOGRAPHICS !== "undefined" && ORIGINAL_INFOGRAPHICS[eventId]) ||
-    data.image ||
-    data.originalImage ||
-    ""
-  );
-}
-function getMapImageSrc(eventId){
-  const original = getOriginalImageSrc(eventId);
-  return (
-    (typeof EVENT_MAP_CROPS !== "undefined" && EVENT_MAP_CROPS[eventId]) ||
-    original ||
-    ""
-  );
+
+function closeHubOverlay(){
+  const overlay = document.getElementById("hubOverlay");
+  if(overlay) overlay.classList.remove("show");
 }
 
 function openViewer(eventId){
@@ -333,7 +372,7 @@ function openImageViewer(title, src){
   img.alt = title || "원본 인포그래픽";
   img.style.width = "100%";
   img.style.transform = "scale(1)";
-  const version = (typeof CHRONOLOGY_VERSION !== "undefined" ? CHRONOLOGY_VERSION : "v64");
+  const version = (typeof CHRONOLOGY_VERSION !== "undefined" ? CHRONOLOGY_VERSION : "v65-lamb-hub");
   const finalSrc = src.includes("?") ? src : `${src}?v=${encodeURIComponent(version)}`;
   img.onerror = () => {
     img.onerror = null;
@@ -431,8 +470,32 @@ function init(){
     const crop = e.target.closest("[data-open-crop]");
     if(crop) openCropViewer(crop.dataset.openCrop);
 
+    const hub = e.target.closest("[data-hub]");
+    if(hub){
+      renderHubOverlay(hub.dataset.hub);
+      return;
+    }
+
+    const hubClose = e.target.closest("[data-hub-close]");
+    if(hubClose){
+      closeHubOverlay();
+      return;
+    }
+
+    const hubEvent = e.target.closest("[data-hub-event]");
+    if(hubEvent){
+      closeHubOverlay();
+      renderDetail(hubEvent.dataset.hubEvent);
+      return;
+    }
+
+    if(e.target.id === "hubOverlay"){
+      closeHubOverlay();
+      return;
+    }
+
     const explore = e.target.closest("[data-explore]");
-    if(explore) alert(`'${explore.dataset.explore}' 연결탐험은 이후 관련 핵심사건 모음으로 연결됩니다.`);
+    if(explore) alert(`'${explore.dataset.explore}' 연결탐험은 이후 허브형 흐름으로 단계적으로 전환됩니다.`);
 
     const toast = e.target.closest("[data-toast]");
     if(toast) alert("이 기능은 다음 단계에서 CEN Bible 본문·지도·성막 메뉴와 연결됩니다.");
@@ -480,7 +543,7 @@ init();
 window.__forceCyrusDetailFix = true;
 
 
-// v74 고레스 상세보기 버튼 연결 보강
+// v65-lamb-hub 고레스 상세보기 버튼 연결 보강
 document.addEventListener("click", function(e){
   const el = e.target.closest("[data-event], [data-open-event], [data-detail], [data-event-id]");
   if(!el) return;

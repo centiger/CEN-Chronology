@@ -4145,3 +4145,81 @@ Object.assign(EVENT_EXPLORE,{
     ]
   }
 });
+
+
+// v65 연결탐험 허브 1차: 어린양의 흐름
+const EXPLORE_HUBS = {
+  "lamb": {
+    id: "lamb",
+    icon: "🐑",
+    title: "어린양의 흐름",
+    subtitle: "대신 드려진 희생에서 승리하신 어린양까지",
+    description: "성경에서 어린양은 대신 드려지는 희생, 피를 통한 구원, 완전한 속죄, 그리고 승리하신 그리스도를 보여주는 중요한 흐름입니다.",
+    steps: [
+      {
+        label: "1",
+        title: "이삭 대신 준비된 숫양",
+        ref: "창세기 22장",
+        desc: "하나님께서 이삭 대신 드릴 숫양을 준비하심으로 ‘대신 드려지는 희생’의 흐름이 나타납니다.",
+        eventId: "isaac-sacrifice",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "유월절 어린양",
+        ref: "출애굽기 12장",
+        desc: "어린양의 피가 문설주에 발라지고, 죽음의 심판을 넘어가게 하는 구원의 표지가 됩니다.",
+        eventId: "passover",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "제사 제도의 희생양",
+        ref: "레위기 1~7장, 16장",
+        desc: "반복되는 제사 제도는 죄를 대신 담당하는 희생과 속죄의 필요성을 보여줍니다.",
+        type: "concept"
+      },
+      {
+        label: "4",
+        title: "이사야의 고난받는 종",
+        ref: "이사야 53장",
+        desc: "고난받는 종은 도수장으로 끌려가는 어린양처럼 묘사되며, 많은 사람의 죄를 담당하는 메시아적 희생을 예고합니다.",
+        type: "prophecy"
+      },
+      {
+        label: "5",
+        title: "세례 요한의 선언",
+        ref: "요한복음 1:29",
+        desc: "세례 요한은 예수님을 ‘세상 죄를 지고 가는 하나님의 어린양’으로 선언합니다.",
+        eventId: "john-baptist",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "십자가의 성취",
+        ref: "요한복음 19장",
+        desc: "예수님의 십자가는 어린양 흐름이 완전한 희생과 구속으로 성취되는 절정입니다.",
+        eventId: "cross",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "계시록의 어린양",
+        ref: "요한계시록 5장",
+        desc: "죽임당하셨으나 승리하신 어린양이 두루마리를 받으시며 역사의 완성과 새 창조의 주권자로 나타납니다.",
+        eventId: "seven-seals",
+        type: "event"
+      }
+    ]
+  }
+};
+
+const EVENT_HUB_LINKS = {
+  "isaac-sacrifice": ["lamb"],
+  "passover": ["lamb"],
+  "tabernacle": ["lamb"],
+  "john-baptist": ["lamb"],
+  "cross": ["lamb"],
+  "seven-seals": ["lamb"]
+};
+
