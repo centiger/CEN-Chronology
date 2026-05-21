@@ -646,26 +646,78 @@ function searchEvents(q){
 function openHubMenu(){
   if(typeof EXPLORE_HUBS === "undefined") return;
 
-  const hubIds = Object.keys(EXPLORE_HUBS);
+  const hubGroups = [
+    {
+      title: "성경의 뼈대",
+      desc: "성경 전체를 관통하는 큰 구조",
+      ids: ["covenant", "kingdom", "newcreation"]
+    },
+    {
+      title: "구속의 흐름",
+      desc: "구원, 대속, 중보의 핵심 흐름",
+      ids: ["lamb", "exodus", "priesthood"]
+    },
+    {
+      title: "왕과 메시야",
+      desc: "약속된 왕과 메시아의 성취",
+      ids: ["messiah", "kingship"]
+    },
+    {
+      title: "임재와 연단",
+      desc: "하나님과 동행하며 다듬어지는 흐름",
+      ids: ["temple", "wilderness"]
+    }
+  ];
+
+  const renderHubButton = (id) => {
+    const hub = EXPLORE_HUBS[id];
+    if(!hub) return "";
+    return `
+      <button class="hub-selector-item hub-group-item" data-bottom-hub="${id}">
+        <span class="hub-selector-icon">${hub.icon || "🧭"}</span>
+        <span class="hub-selector-body">
+          <span class="hub-selector-text">${hub.title}</span>
+          <span class="hub-selector-desc">${hub.subtitle || hub.description || ""}</span>
+        </span>
+      </button>
+    `;
+  };
+
+  const renderedKnown = new Set(hubGroups.flatMap(g=>g.ids));
+  const extraIds = Object.keys(EXPLORE_HUBS).filter(id => !renderedKnown.has(id));
 
   const modal = document.createElement("div");
   modal.className = "hub-selector-overlay";
 
   modal.innerHTML = `
-    <div class="hub-selector-modal">
+    <div class="hub-selector-modal hub-menu-modal">
       <div class="hub-selector-title">연결탐험</div>
-      <div class="hub-selector-sub">성경을 관통하는 흐름을 탐험합니다.</div>
+      <div class="hub-selector-sub">성경을 관통하는 흐름을 구조별로 탐험합니다.</div>
 
-      <div class="hub-selector-list">
-        ${hubIds.map(id=>{
-          const hub = EXPLORE_HUBS[id];
-          return `
-            <button class="hub-selector-item" data-bottom-hub="${id}">
-              <span class="hub-selector-icon">${hub.icon || "🧭"}</span>
-              <span class="hub-selector-text">${hub.title}</span>
-            </button>
-          `;
-        }).join("")}
+      <div class="hub-group-list">
+        ${hubGroups.map(group=>`
+          <section class="hub-group-section">
+            <div class="hub-group-head">
+              <div class="hub-group-title">${group.title}</div>
+              <div class="hub-group-desc">${group.desc}</div>
+            </div>
+            <div class="hub-selector-list">
+              ${group.ids.map(renderHubButton).join("")}
+            </div>
+          </section>
+        `).join("")}
+
+        ${extraIds.length ? `
+          <section class="hub-group-section">
+            <div class="hub-group-head">
+              <div class="hub-group-title">기타 흐름</div>
+              <div class="hub-group-desc">추가 탐험 허브</div>
+            </div>
+            <div class="hub-selector-list">
+              ${extraIds.map(renderHubButton).join("")}
+            </div>
+          </section>
+        ` : ``}
       </div>
 
       <button class="hub-selector-close">닫기</button>
@@ -691,7 +743,6 @@ function openHubMenu(){
     }
   });
 }
-
 function init(){
   renderHome();
   renderEras();
