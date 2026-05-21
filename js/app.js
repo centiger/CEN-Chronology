@@ -791,15 +791,27 @@ function init(){
   });
 
   $("#searchInput").addEventListener("input", e=>searchEvents(e.target.value));
+  function getCurrentFontSize(){
+    const raw = getComputedStyle(document.documentElement).getPropertyValue("--font").trim();
+    const parsed = parseInt(raw, 10);
+    return Number.isFinite(parsed) ? parsed : 16;
+  }
+
+  function applyFontSize(v){
+    const size = Math.max(13, Math.min(22, v));
+    document.documentElement.style.setProperty("--font", size + "px");
+    document.documentElement.style.setProperty("--font-sm", Math.max(11, size - 2) + "px");
+    document.documentElement.style.setProperty("--font-lg", Math.min(28, size + 4) + "px");
+    localStorage.setItem("chronologyFont", size);
+    const notice = document.querySelector("#fontSizeNotice");
+    if(notice) notice.textContent = "현재 글자 크기: " + size + "px";
+  }
+
   $("#fontUp").addEventListener("click", ()=>{
-    const v = Math.min(20, parseInt(getComputedStyle(document.documentElement).getPropertyValue("--font")) + 1);
-    document.documentElement.style.setProperty("--font", v+"px");
-    localStorage.setItem("chronologyFont", v);
+    applyFontSize(getCurrentFontSize() + 1);
   });
   $("#fontDown").addEventListener("click", ()=>{
-    const v = Math.max(14, parseInt(getComputedStyle(document.documentElement).getPropertyValue("--font")) - 1);
-    document.documentElement.style.setProperty("--font", v+"px");
-    localStorage.setItem("chronologyFont", v);
+    applyFontSize(getCurrentFontSize() - 1);
   });
   $("#cacheReset").addEventListener("click", async ()=>{
     if("caches" in window){
@@ -810,7 +822,7 @@ function init(){
   });
 
   const savedFont = localStorage.getItem("chronologyFont");
-  if(savedFont) document.documentElement.style.setProperty("--font", savedFont+"px");
+  applyFontSize(savedFont ? parseInt(savedFont, 10) : getCurrentFontSize());
 
   if("serviceWorker" in navigator){
     window.addEventListener("load", ()=>navigator.serviceWorker.register("./sw.js"));
