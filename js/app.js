@@ -180,6 +180,7 @@ function renderDetail(eventId){
             <div class="flow-badge flow-badge-text core-flow-title">${item.title}</div>
             <div class="flow-body core-flow-body">
               <div class="flow-text core-flow-desc">${item.desc}</div>
+              ${item.ref ? `<div class="flow-ref core-flow-ref">${item.ref}</div>` : ``}
             </div>
           </div>
         `;
@@ -279,14 +280,18 @@ function normalizeFlowItem(x, i){
     const a = (x[0] || "").toString().trim();
     const b = (x[1] || "").toString().trim();
     const c = (x[2] || "").toString().trim();
-    if(isStepLabelOnly(a) && b) return {title:b, desc:c || b};
+    const looksLikeBibleRef = /^([가-힣]{1,8}|[1-3]?[A-Za-z]+)\s*\d+[:장]/.test(c) || /^계\s*\d+[:장]/.test(c);
+
+    if(isStepLabelOnly(a) && b) return {title:b, desc:b, ref:c};
     if(a && b && !c) return {title:a, desc:b};
+    if(a && b && c && looksLikeBibleRef) return {title:a, desc:b, ref:c};
     return {title:a || b || `핵심 ${i+1}`, desc:c || b || a || `핵심 ${i+1}`};
   }
   if(x && typeof x === "object"){
     const title = (x.title || x.label || x.step || x.text || `핵심 ${i+1}`).toString();
     const desc = (x.desc || x.summary || x.text || title).toString();
-    return {title, desc};
+    const ref = (x.ref || x.scripture || "").toString();
+    return {title, desc, ref};
   }
   const s = (x || `핵심 ${i+1}`).toString();
   return {title:s, desc:s};
