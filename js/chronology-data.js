@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v79-priesthood-hub";
+const CHRONOLOGY_VERSION = "v80-wilderness-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -4784,6 +4784,84 @@ Object.assign(EXPLORE_HUBS, {
     "resurrection": ["messiah", "priesthood"],
     "pentecost": ["temple", "priesthood"],
     "new-jerusalem": ["temple", "kingship", "covenant", "priesthood"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v80 연결탐험 허브 8차: 광야와 연단의 흐름
+Object.assign(EXPLORE_HUBS, {
+  "wilderness": {
+    id: "wilderness",
+    icon: "🏜️",
+    title: "광야와 연단의 흐름",
+    subtitle: "버려진 장소가 아니라 다듬어지는 장소",
+    description: "성경에서 광야는 단순한 황무지가 아니라 하나님이 사람을 비우고 조율하며 믿음을 연단하시는 장소입니다. 족장의 도피와 방황, 모세와 이스라엘의 훈련, 엘리야의 회복, 예수님의 시험 승리, 종말의 보호까지 광야는 믿음의 사람들을 다듬는 자리로 나타납니다.",
+    steps: [
+      {
+        label: "1",
+        title: "족장의 베델",
+        ref: "창세기 28장",
+        desc: "야곱은 도망자의 자리에서 하나님을 만나고 믿음이 조율되기 시작합니다. 광야는 신앙 정체성이 시작되는 장소가 됩니다.",
+        eventId: "jacob-ladder",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "미디안 40년",
+        ref: "출애굽기 2~3장",
+        desc: "모세는 왕궁의 힘을 내려놓고 광야에서 낮아집니다. 하나님은 광야에서 인간적 힘을 비우시고 사명을 준비시키십니다.",
+        eventId: "burning-bush",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "시내산과 가데스",
+        ref: "출애굽기·민수기",
+        desc: "이스라엘은 광야에서 시험받고 훈련됩니다. 불순종은 징계를 낳고 광야는 언약 백성을 다듬는 훈련장이 됩니다.",
+        eventId: "wilderness-40",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "호렙산의 세미한 음성",
+        ref: "열왕기상 19장",
+        desc: "엘리야는 낙심 속에서 광야로 도망하지만 하나님은 세미한 음성으로 그를 회복시키십니다.",
+        type: "concept"
+      },
+      {
+        label: "5",
+        title: "유대 광야의 시험",
+        ref: "마태복음 4장",
+        desc: "예수님은 광야 시험에서 승리하십니다. 이스라엘이 실패했던 광야를 참 아들로서 통과하십니다.",
+        type: "concept"
+      },
+      {
+        label: "6",
+        title: "교회의 광야 피난처",
+        ref: "요한계시록 12장",
+        desc: "광야는 종말 속에서도 하나님이 자기 백성을 보호하시는 장소가 됩니다. 교회는 광야 같은 세상 속에서도 보호와 인내를 경험합니다.",
+        type: "concept"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "jacob-ladder": ["wilderness", "priesthood"],
+    "burning-bush": ["exodus", "wilderness"],
+    "wilderness-40": ["exodus", "wilderness"],
+    "manna-quail": ["exodus", "wilderness"],
+
+
+
   };
 
   Object.keys(links).forEach(eventId => {
