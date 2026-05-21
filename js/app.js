@@ -32,10 +32,24 @@ function go(page){
   if(page==="settings") setHeader("화면설정", "독립 PWA · 통합 대비 구조");
   window.scrollTo({top:0,behavior:"instant"});
 }
+
+function removeConfigStatusCard(){
+  const cards = Array.from(document.querySelectorAll("#home > section.card"));
+  const target = cards.find(card => {
+    const h2 = card.querySelector("h2");
+    return h2 && h2.textContent.trim() === "구성 현황";
+  });
+  if(target) target.remove();
+}
+
 function renderHome(){
-  $("#eraCount").textContent = ERAS.length;
-  $("#eventCount").textContent = ERAS.reduce((a,e)=>a+e.eventIds.length,0);
-  $("#readyCount").textContent = Object.keys(EVENTS).length;
+  const eraCountEl = $("#eraCount");
+  const eventCountEl = $("#eventCount");
+  const readyCountEl = $("#readyCount");
+  if(eraCountEl) eraCountEl.textContent = ERAS.length;
+  if(eventCountEl) eventCountEl.textContent = ERAS.reduce((a,e)=>a+e.eventIds.length,0);
+  if(readyCountEl) readyCountEl.textContent = Object.keys(EVENTS).length;
+  removeConfigStatusCard();
   const quick = $("#quickEra");
   quick.innerHTML = ERAS.map((era,i)=>`<button data-era="${era.id}" class="${i===0?'active':''}">${era.title}</button>`).join("");
   quick.addEventListener("click", e=>{
