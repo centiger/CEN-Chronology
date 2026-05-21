@@ -116,7 +116,18 @@ function renderDetail(eventId){
   }
 
   const enrich = EVENT_ENRICH[eventId] || {};
-  const flow = enrich.flow || data.core.map((x,i)=>[String(i+1), x, ""]);
+  let flow = enrich.flow || data.core.map((x,i)=>[String(i+1), x, ""]);
+  if(eventId === "seven-seals"){
+    flow = [
+    ["첫째 인: 흰 말", "정복하는 자가 나아가 활과 면류관을 받음", "계 6:1-2"],
+    ["둘째 인: 붉은 말", "큰 전쟁이 일어나 평화가 사라짐", "계 6:3-4"],
+    ["셋째 인: 검은 말", "기근이 있어 한 데나리온에 보리 한 되나 밀 한 되가 됨", "계 6:5-6"],
+    ["넷째 인: 청황색 말", "사망과 음부가 권세를 받음", "계 6:7-8"],
+    ["다섯째 인: 순교자의 호소", "제단 아래 순교한 영혼들이 하나님의 공의로운 심판을 부르짖고 흰 옷을 받음", "계 6:9-11"],
+    ["여섯째 인: 우주적 재앙", "해가 검어지고 달이 피같이 되며 별들이 떨어지고 땅과 하늘이 크게 흔들림", "계 6:12-17"],
+    ["일곱째 인: 하늘의 침묵", "일곱째 인이 열리자 하늘에 약 반 시간 동안 침묵이 있고 일곱 나팔 심판으로 이어짐", "계 8:1"]
+  ];
+  }
   const scriptureRefs = enrich.scriptureRefs || [[data.scripture, data.summary]];
   const visualItems = enrich.visualItems || [data.visual];
 
@@ -280,12 +291,12 @@ function normalizeFlowItem(x, i){
     const a = (x[0] || "").toString().trim();
     const b = (x[1] || "").toString().trim();
     const c = (x[2] || "").toString().trim();
-    const looksLikeBibleRef = /^([가-힣]{1,8}|[1-3]?[A-Za-z]+)\s*\d+[:장]/.test(c) || /^계\s*\d+[:장]/.test(c);
 
+    // 기본 원칙: [제목, 설명, 장절] 구조에서는 장절을 설명칸에 넣지 않는다.
+    if(a && b && c) return {title:a, desc:b, ref:c};
     if(isStepLabelOnly(a) && b) return {title:b, desc:b, ref:c};
-    if(a && b && !c) return {title:a, desc:b};
-    if(a && b && c && looksLikeBibleRef) return {title:a, desc:b, ref:c};
-    return {title:a || b || `핵심 ${i+1}`, desc:c || b || a || `핵심 ${i+1}`};
+    if(a && b) return {title:a, desc:b};
+    return {title:a || b || c || `핵심 ${i+1}`, desc:b || a || c || `핵심 ${i+1}`, ref:""};
   }
   if(x && typeof x === "object"){
     const title = (x.title || x.label || x.step || x.text || `핵심 ${i+1}`).toString();
@@ -294,8 +305,9 @@ function normalizeFlowItem(x, i){
     return {title, desc, ref};
   }
   const s = (x || `핵심 ${i+1}`).toString();
-  return {title:s, desc:s};
+  return {title:s, desc:s, ref:""};
 }
+
 function getOriginalImageSrc(eventId){
   const data = EVENTS[eventId] || {};
   return (
