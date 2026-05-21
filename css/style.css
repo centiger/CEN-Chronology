@@ -1915,3 +1915,102 @@ h2,
   font-weight:500;
 }
 
+
+
+/* v91 홈 구조 재설계 */
+.hero-home-card{
+  background:linear-gradient(180deg,#5c4330 0,#4a3526 100%);
+  color:#fff7ee;
+}
+
+.hero-home-title{
+  font-size:1.35rem;
+  font-weight:900;
+  margin-bottom:6px;
+}
+
+.hero-home-sub{
+  opacity:.92;
+  line-height:1.55;
+}
+
+.hub-home-section{
+  margin:18px 0;
+}
+
+.hub-home-head{
+  padding:0 6px;
+  margin-bottom:10px;
+}
+
+.hub-home-title{
+  font-size:1.05rem;
+  font-weight:900;
+  color:#412f21;
+}
+
+.hub-home-desc{
+  margin-top:3px;
+  font-size:.86rem;
+  color:#756250;
+}
+
+.hub-home-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+
+.hub-home-card{
+  width:100%;
+  border:none;
+  border-radius:18px;
+  background:#fffaf2;
+  border:1px solid rgba(92,67,48,.12);
+  padding:15px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+
+.hub-home-icon{
+  font-size:1.35rem;
+}
+
+.hub-home-card-title{
+  font-size:1rem;
+  font-weight:800;
+  color:#3f2e20;
+}
+
+.hub-home-card-desc{
+  font-size:.84rem;
+  line-height:1.45;
+  color:#72604f;
+}
+
+.chronology-entry-card{
+  margin-top:22px;
+  text-align:center;
+}
+
+.chronology-entry-title{
+  font-size:1.08rem;
+  font-weight:900;
+  color:#422f21;
+  margin-bottom:6px;
+}
+
+.chronology-entry-desc{
+  font-size:.9rem;
+  line-height:1.5;
+  color:#6e5d4c;
+  margin-bottom:14px;
+}
+
+.chronology-entry-btn{
+  width:100%;
+}
+
