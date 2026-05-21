@@ -1783,3 +1783,17 @@ button[data-detail]:hover{
   color:#fff;
   font-weight:700;
 }
+
+
+/* v87 하단 연결탐험 버튼 강조 */
+.bottomnav .navbtn{
+  min-width:0;
+}
+
+.bottomnav .navbtn span{
+  font-size:1.05rem;
+}
+
+#bottomHubBtn{
+  font-weight:700;
+}
