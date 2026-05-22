@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v92-hub-modal-top-close";
+const CHRONOLOGY_VERSION = "v93-cross-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5063,6 +5063,94 @@ Object.assign(EXPLORE_HUBS, {
 
   Object.keys(links).forEach(eventId => {
     if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v93 십자가의 흐름 허브
+Object.assign(EXPLORE_HUBS, {
+  "cross": {
+    id: "cross",
+    icon: "✝️",
+    title: "십자가의 흐름",
+    subtitle: "예표와 예언에서 영원한 어린양까지",
+    description: "십자가는 성경 전체의 중심입니다.",
+    steps: [
+      {
+        label: "1",
+        title: "가죽옷과 대속의 시작",
+        ref: "창세기 3장",
+        desc: "죄를 범한 인간을 위해 하나님은 가죽옷을 입히십니다.",
+        eventId: "adam-eve",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "이삭 대신 준비된 숫양",
+        ref: "창세기 22장",
+        desc: "하나님이 준비하신 숫양이 이삭 대신 죽습니다.",
+        eventId: "abraham-isaac",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "나무에 달린 자의 저주",
+        ref: "신명기 21장",
+        desc: "나무에 달린 자의 저주가 십자가를 예표합니다.",
+        eventId: "moses-law",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "찔림과 담당의 예언",
+        ref: "이사야 53장",
+        desc: "고난받는 종이 우리의 죄악을 담당합니다.",
+        eventId: "isaiah-prophecy",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "다 이루었다",
+        ref: "요한복음 19장",
+        desc: "예수님은 십자가 위에서 구속 사역의 완성을 선언하십니다.",
+        eventId: "crucifixion",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "함께 못 박힘과 연합",
+        ref: "갈라디아서 2장",
+        desc: "성도는 그리스도와 함께 십자가에 못 박힌 존재입니다.",
+        eventId: "early-church",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "죽임당하신 어린양",
+        ref: "요한계시록 5장",
+        desc: "하늘의 중심에는 죽임당하신 어린양이 계십니다.",
+        eventId: "seven-seals",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "adam-eve": ["cross"],
+    "abraham-isaac": ["cross","lamb"],
+    "moses-law": ["cross"],
+    "isaiah-prophecy": ["cross","messiah"],
+    "crucifixion": ["cross","lamb","messiah","kingship","priesthood","kingdom"],
+    "early-church": ["cross"],
+    "seven-seals": ["cross","lamb"]
+  };
+
+  Object.keys(links).forEach(eventId => {
     const prev = EVENT_HUB_LINKS[eventId] || [];
     EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
   });

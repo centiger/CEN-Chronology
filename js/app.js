@@ -728,7 +728,7 @@ function openHubMenu(){
     {
       title: "구속의 흐름",
       desc: "구원, 대속, 중보의 핵심 흐름",
-      ids: ["lamb", "exodus", "priesthood"]
+      ids: ["lamb", "cross", "exodus", "priesthood"]
     },
     {
       title: "왕과 메시야",
