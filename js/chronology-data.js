@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v96-faith-rebuild-after-cross";
+const CHRONOLOGY_VERSION = "v97-church-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5231,6 +5231,95 @@ Object.assign(EXPLORE_HUBS, {
     "pentecost": ["faith", "temple", "priesthood", "kingdom"],
     "early-church": ["faith", "cross", "priesthood"],
     "new-jerusalem": ["faith", "newcreation", "kingdom", "temple"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v97 교회의 흐름 허브
+Object.assign(EXPLORE_HUBS, {
+  "church": {
+    id: "church",
+    icon: "⛪",
+    title: "교회의 흐름",
+    subtitle: "하나님의 백성이 공동체로 세워지는 여정",
+    description: "교회의 흐름은 하나님이 자기 백성을 모으시고 함께 거하시며 완성해 가시는 공동체의 이야기입니다. 에덴의 언약 공동체에서 시작하여 광야의 백성 공동체, 오순절 교회, 모든 민족의 연합을 지나 어린양의 혼인잔치로 완성됩니다.",
+    steps: [
+      {
+        label: "1",
+        title: "에덴의 언약 공동체",
+        ref: "창세기 1~2장",
+        desc: "아담과 하와는 하나님과 함께 거하며 한 몸을 이루는 최초의 언약 공동체였습니다. 교회의 원형이 에덴에서 드러납니다.",
+        eventId: "creation",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "광야의 백성 공동체",
+        ref: "출애굽기, 사도행전 7장",
+        desc: "이스라엘은 광야에서 하나님과 동행하는 백성 공동체로 세워졌습니다. 성경은 이를 '광야 교회'라고 부릅니다.",
+        eventId: "tabernacle",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "반석 위의 약속",
+        ref: "마태복음 16장",
+        desc: "예수님은 반석 위에 자신의 교회를 세우겠다고 선언하십니다.",
+        eventId: "jesus-4",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "오순절 성령 강림",
+        ref: "사도행전 2장",
+        desc: "성령이 임하시며 신약 교회가 탄생합니다. 하나님의 임재가 공동체 가운데 거하기 시작합니다.",
+        eventId: "pentecost",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "이방인의 연합",
+        ref: "사도행전 10장, 에베소서",
+        desc: "교회는 유대인만의 공동체를 넘어 모든 민족이 함께하는 우주적 공동체로 확장됩니다.",
+        eventId: "gentiles",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "그리스도의 몸과 신부",
+        ref: "고린도전서, 에베소서",
+        desc: "교회는 그리스도의 몸이며 하나님의 가족이고 장차 신부로 완성될 공동체입니다.",
+        eventId: "early-church",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "어린양의 혼인잔치",
+        ref: "요한계시록 19장",
+        desc: "교회는 어린양의 신부로 완성되어 영원한 혼인잔치에 참여합니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "creation": ["church", "temple", "kingdom", "newcreation"],
+    "tabernacle": ["church", "temple", "priesthood", "exodus"],
+    "jesus-4": ["church", "messiah", "kingdom"],
+    "pentecost": ["church", "temple", "priesthood", "faith"],
+    "gentiles": ["church", "kingdom"],
+    "early-church": ["church", "faith", "cross", "priesthood"],
+    "new-jerusalem": ["church", "temple", "kingdom", "newcreation"]
   };
 
   Object.keys(links).forEach(eventId => {

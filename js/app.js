@@ -102,6 +102,7 @@ function renderHome(){
         ${renderHomeHubCard("temple")}
         ${renderHomeHubCard("wilderness")}
         ${renderHomeHubCard("faith")}
+        ${renderHomeHubCard("church")}
       </div>
     </section>
 
@@ -740,7 +741,7 @@ function openHubMenu(){
     {
       title: "임재와 연단",
       desc: "하나님과 동행하며 다듬어지는 흐름",
-      ids: ["temple", "wilderness", "faith"]
+      ids: ["temple", "wilderness", "faith", "church"]
     }
   ];
 
