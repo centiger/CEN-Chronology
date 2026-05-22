@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v99-church-fix";
+const CHRONOLOGY_VERSION = "v100-resurrection-rebuild-after-church-fix";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5331,7 +5331,10 @@ Object.assign(EXPLORE_HUBS, {
 
 
 
-// v98 부활과 생명의 흐름 허브
+
+
+
+// v100 부활과 생명의 흐름 허브 재정리
 Object.assign(EXPLORE_HUBS, {
   "resurrection": {
     id: "resurrection",
@@ -5395,11 +5398,12 @@ Object.assign(EXPLORE_HUBS, {
 (function(){
   const links = {
     "elijah": ["resurrection", "faith"],
-    "ezekiel-vision": ["resurrection", "newcreation", "faith"],
-    "resurrection": ["resurrection", "messiah", "cross", "newcreation", "kingdom"],
-    "pentecost": ["resurrection", "church", "faith"],
-    "early-church": ["resurrection", "church", "faith"],
-    "new-heaven-earth": ["resurrection", "newcreation", "kingdom"]
+    "ezekiel-vision": ["resurrection", "newcreation", "faith", "kingdom"],
+    "resurrection": ["resurrection", "messiah", "cross", "newcreation", "kingdom", "faith"],
+    "pentecost": ["resurrection", "church", "faith", "temple", "priesthood"],
+    "early-church": ["resurrection", "church", "faith", "cross", "priesthood"],
+    "new-heaven-earth": ["resurrection", "newcreation", "kingdom"],
+    "new-jerusalem": ["resurrection", "church", "newcreation", "kingdom", "temple"]
   };
 
   Object.keys(links).forEach(eventId => {

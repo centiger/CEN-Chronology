@@ -104,7 +104,7 @@ function renderHome(){
         ${renderHomeHubCard("faith")}
         ${renderHomeHubCard("church")}
         ${renderHomeHubCard("resurrection")}
-      </div>
+        </div>
     </section>
 
     <section class="card chronology-entry-card">
