@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v93-cross-hub";
+const CHRONOLOGY_VERSION = "v95-home-cross-fix";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5148,6 +5148,85 @@ Object.assign(EXPLORE_HUBS, {
     "crucifixion": ["cross","lamb","messiah","kingship","priesthood","kingdom"],
     "early-church": ["cross"],
     "seven-seals": ["cross","lamb"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v94 믿음의 흐름 허브
+Object.assign(EXPLORE_HUBS, {
+  "faith": {
+    id: "faith",
+    icon: "🕊️",
+    title: "믿음의 흐름",
+    subtitle: "하나님을 신뢰하며 살아가는 여정",
+    description: "성경은 하나님을 신뢰하는 믿음의 여정을 보여줍니다.",
+    steps: [
+      {
+        label: "1",
+        title: "창조와 하나님 신뢰",
+        ref: "창세기 1~2장",
+        desc: "인간은 하나님과 동행하며 그분을 신뢰하도록 창조되었습니다.",
+        eventId: "creation",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "약속을 바라봄",
+        ref: "창세기 12장",
+        desc: "아브라함은 보이지 않는 약속을 따라 믿음으로 길을 떠납니다.",
+        eventId: "abraham-call",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "의인은 믿음으로 삶",
+        ref: "하박국 2장",
+        desc: "의인은 믿음으로 살아갑니다.",
+        eventId: "isaiah-prophecy",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "믿음으로 그리스도를 붙듦",
+        ref: "복음서",
+        desc: "사람들은 예수 그리스도를 믿음으로 영접하고 따릅니다.",
+        eventId: "jesus-ministry",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "믿음으로 살아감",
+        ref: "사도행전과 서신서",
+        desc: "성도는 믿음으로 순종하며 살아갑니다.",
+        eventId: "early-church",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "예수를 바라봄",
+        ref: "히브리서 12장",
+        desc: "믿음의 경주를 끝까지 달리며 예수를 바라봅니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "creation": ["faith"],
+    "abraham-call": ["faith","covenant"],
+    "isaiah-prophecy": ["faith","messiah"],
+    "jesus-ministry": ["faith","messiah"],
+    "early-church": ["faith","cross"],
+    "new-jerusalem": ["faith","newcreation","kingdom"]
   };
 
   Object.keys(links).forEach(eventId => {

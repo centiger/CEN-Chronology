@@ -74,6 +74,7 @@ function renderHome(){
 
       <div class="hub-home-grid">
         ${renderHomeHubCard("lamb")}
+        ${renderHomeHubCard("cross")}
         ${renderHomeHubCard("exodus")}
         ${renderHomeHubCard("priesthood")}
       </div>
@@ -738,7 +739,7 @@ function openHubMenu(){
     {
       title: "임재와 연단",
       desc: "하나님과 동행하며 다듬어지는 흐름",
-      ids: ["temple", "wilderness"]
+      ids: ["temple", "wilderness", "faith"]
     }
   ];
 
