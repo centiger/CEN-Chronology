@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v95-home-cross-fix";
+const CHRONOLOGY_VERSION = "v96-faith-rebuild-after-cross";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5158,60 +5158,63 @@ Object.assign(EXPLORE_HUBS, {
 
 
 
-// v94 믿음의 흐름 허브
+
+
+
+// v96 믿음의 흐름 허브 재정리
 Object.assign(EXPLORE_HUBS, {
   "faith": {
     id: "faith",
     icon: "🕊️",
     title: "믿음의 흐름",
-    subtitle: "하나님을 신뢰하며 살아가는 여정",
-    description: "성경은 하나님을 신뢰하는 믿음의 여정을 보여줍니다.",
+    subtitle: "하나님을 신뢰하며 살아가는 응답의 여정",
+    description: "믿음의 흐름은 하나님이 행하신 구속사에 대한 인간의 응답을 보여줍니다. 창조주 하나님을 신뢰하는 자리에서 시작하여, 약속을 바라보고, 의인은 믿음으로 살며, 그리스도를 믿음으로 붙들고, 새 삶의 순종으로 이어져, 끝내 예수를 바라보는 최종 승리로 나아갑니다.",
     steps: [
       {
         label: "1",
         title: "창조와 하나님 신뢰",
         ref: "창세기 1~2장",
-        desc: "인간은 하나님과 동행하며 그분을 신뢰하도록 창조되었습니다.",
+        desc: "인간은 하나님과 동행하며 그분을 신뢰하도록 창조되었습니다. 믿음은 창조주를 신뢰하는 관계에서 출발합니다.",
         eventId: "creation",
         type: "event"
       },
       {
         label: "2",
         title: "약속을 바라봄",
-        ref: "창세기 12장",
-        desc: "아브라함은 보이지 않는 약속을 따라 믿음으로 길을 떠납니다.",
+        ref: "창세기 12장, 히브리서 11장",
+        desc: "아브라함은 보이지 않는 약속을 따라 믿음으로 길을 떠납니다. 믿음은 아직 보이지 않는 하나님의 약속을 붙드는 삶입니다.",
         eventId: "abraham-call",
         type: "event"
       },
       {
         label: "3",
         title: "의인은 믿음으로 삶",
-        ref: "하박국 2장",
-        desc: "의인은 믿음으로 살아갑니다.",
-        eventId: "isaiah-prophecy",
+        ref: "하박국 2:4",
+        desc: "율법과 선지자 안에서 의인은 믿음으로 산다는 핵심 원리가 드러납니다. 믿음은 위기 속에서도 하나님을 붙드는 생명의 방식입니다.",
+        eventId: "ezekiel-vision",
         type: "event"
       },
       {
         label: "4",
         title: "믿음으로 그리스도를 붙듦",
-        ref: "복음서",
-        desc: "사람들은 예수 그리스도를 믿음으로 영접하고 따릅니다.",
-        eventId: "jesus-ministry",
+        ref: "요한복음 1장, 3장",
+        desc: "예수 그리스도를 믿음으로 영접하는 자에게 하나님의 자녀 되는 권세가 주어집니다. 믿음은 그리스도 안에서 성취된 구원을 붙드는 응답입니다.",
+        eventId: "jesus-4",
         type: "event"
       },
       {
         label: "5",
         title: "믿음으로 살아감",
         ref: "사도행전과 서신서",
-        desc: "성도는 믿음으로 순종하며 살아갑니다.",
-        eventId: "early-church",
+        desc: "교회와 성도는 믿음으로 새 삶을 살아갑니다. 순종은 믿음의 조건이 아니라 믿음의 열매입니다.",
+        eventId: "pentecost",
         type: "event"
       },
       {
         label: "6",
         title: "예수를 바라봄",
         ref: "히브리서 12장",
-        desc: "믿음의 경주를 끝까지 달리며 예수를 바라봅니다.",
+        desc: "성도는 믿음의 주요 또 온전하게 하시는 예수를 바라보며 끝까지 믿음의 경주를 달립니다.",
         eventId: "new-jerusalem",
         type: "event"
       }
@@ -5221,15 +5224,17 @@ Object.assign(EXPLORE_HUBS, {
 
 (function(){
   const links = {
-    "creation": ["faith"],
-    "abraham-call": ["faith","covenant"],
-    "isaiah-prophecy": ["faith","messiah"],
-    "jesus-ministry": ["faith","messiah"],
-    "early-church": ["faith","cross"],
-    "new-jerusalem": ["faith","newcreation","kingdom"]
+    "creation": ["faith", "kingdom", "newcreation"],
+    "abraham-call": ["faith", "covenant"],
+    "ezekiel-vision": ["faith", "kingdom", "newcreation"],
+    "jesus-4": ["faith", "messiah", "kingdom"],
+    "pentecost": ["faith", "temple", "priesthood", "kingdom"],
+    "early-church": ["faith", "cross", "priesthood"],
+    "new-jerusalem": ["faith", "newcreation", "kingdom", "temple"]
   };
 
   Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
     const prev = EVENT_HUB_LINKS[eventId] || [];
     EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
   });

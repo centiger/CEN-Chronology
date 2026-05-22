@@ -101,6 +101,7 @@ function renderHome(){
       <div class="hub-home-grid">
         ${renderHomeHubCard("temple")}
         ${renderHomeHubCard("wilderness")}
+        ${renderHomeHubCard("faith")}
       </div>
     </section>
 
