@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v97-church-hub";
+const CHRONOLOGY_VERSION = "v99-church-fix";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5320,6 +5320,86 @@ Object.assign(EXPLORE_HUBS, {
     "gentiles": ["church", "kingdom"],
     "early-church": ["church", "faith", "cross", "priesthood"],
     "new-jerusalem": ["church", "temple", "kingdom", "newcreation"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v98 부활과 생명의 흐름 허브
+Object.assign(EXPLORE_HUBS, {
+  "resurrection": {
+    id: "resurrection",
+    icon: "🌅",
+    title: "부활과 생명의 흐름",
+    subtitle: "죽음을 이기고 새 생명을 완성하시는 하나님",
+    description: "부활과 생명의 흐름은 하나님이 죽음을 이기시고 자기 백성을 새 생명으로 회복하시는 구속사의 흐름입니다. 생명의 예표와 회복의 예언, 예수님의 부활, 교회의 증언, 성도의 소망을 지나 사망이 완전히 멸망하는 새 창조로 이어집니다.",
+    steps: [
+      {
+        label: "1",
+        title: "죽은 자를 살리심",
+        ref: "열왕기상·열왕기하·요한복음",
+        desc: "하나님은 엘리야와 엘리사, 그리고 예수님의 사역을 통해 죽은 자를 살리시는 생명의 권세를 드러내십니다.",
+        eventId: "elijah",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "마른 뼈가 살아남",
+        ref: "에스겔 37장",
+        desc: "마른 뼈 환상은 죽은 백성을 다시 살리시는 하나님의 회복 약속을 보여줍니다.",
+        eventId: "ezekiel-vision",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "잠자는 자들의 첫 열매",
+        ref: "고린도전서 15장",
+        desc: "예수님의 부활은 장차 성도들이 부활할 것을 보증하는 첫 열매입니다.",
+        eventId: "resurrection",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "우리가 이 일의 증인",
+        ref: "사도행전",
+        desc: "초대교회는 예수님의 부활을 핵심 복음으로 담대히 선포합니다.",
+        eventId: "pentecost",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "신령한 몸의 소망",
+        ref: "고린도전서 15장",
+        desc: "성도는 썩지 않을 몸으로 변화될 부활의 소망 가운데 살아갑니다.",
+        eventId: "early-church",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "사망의 영원한 멸망",
+        ref: "요한계시록 21장",
+        desc: "새 하늘과 새 땅에서 사망과 눈물이 완전히 사라지고 영원한 생명이 완성됩니다.",
+        eventId: "new-heaven-earth",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "elijah": ["resurrection", "faith"],
+    "ezekiel-vision": ["resurrection", "newcreation", "faith"],
+    "resurrection": ["resurrection", "messiah", "cross", "newcreation", "kingdom"],
+    "pentecost": ["resurrection", "church", "faith"],
+    "early-church": ["resurrection", "church", "faith"],
+    "new-heaven-earth": ["resurrection", "newcreation", "kingdom"]
   };
 
   Object.keys(links).forEach(eventId => {
