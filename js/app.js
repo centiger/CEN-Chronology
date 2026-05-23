@@ -53,8 +53,9 @@ function renderHome(){
       </div>
     </section>
 
-    <section class="hub-home-section">
-      <div class="hub-home-head">
+    <section class="hub-home-section axis-section axis-bone">
+      <div class="hub-home-head axis-head">
+        <div class="axis-kicker">AXIS 01</div>
         <div class="hub-home-title">📜 성경의 뼈대</div>
         <div class="hub-home-desc">성경 전체를 관통하는 핵심 구조</div>
       </div>
@@ -70,8 +71,9 @@ function renderHome(){
       </div>
     </section>
 
-    <section class="hub-home-section">
-      <div class="hub-home-head">
+    <section class="hub-home-section axis-section axis-redemption">
+      <div class="hub-home-head axis-head">
+        <div class="axis-kicker">AXIS 02</div>
         <div class="hub-home-title">🩸 구속의 흐름</div>
         <div class="hub-home-desc">구원과 희생, 중보의 이야기</div>
       </div>
@@ -85,8 +87,9 @@ function renderHome(){
       </div>
     </section>
 
-    <section class="hub-home-section">
-      <div class="hub-home-head">
+    <section class="hub-home-section axis-section axis-king">
+      <div class="hub-home-head axis-head">
+        <div class="axis-kicker">AXIS 03</div>
         <div class="hub-home-title">👑 왕과 메시야</div>
         <div class="hub-home-desc">약속된 왕과 메시아의 흐름</div>
       </div>
@@ -99,8 +102,9 @@ function renderHome(){
       </div>
     </section>
 
-    <section class="hub-home-section">
-      <div class="hub-home-head">
+    <section class="hub-home-section axis-section axis-presence">
+      <div class="hub-home-head axis-head">
+        <div class="axis-kicker">AXIS 04</div>
         <div class="hub-home-title">🏛️ 임재와 연단</div>
         <div class="hub-home-desc">하나님과 동행하며 다듬어지는 흐름</div>
       </div>
@@ -732,22 +736,22 @@ function openHubMenu(){
 
   const hubGroups = [
     {
-      title: "성경의 뼈대",
+      title: "AXIS 01 · 성경의 뼈대",
       desc: "성경 전체를 관통하는 큰 구조",
       ids: ["covenant", "kingdom", "newcreation"]
     },
     {
-      title: "구속의 흐름",
+      title: "AXIS 02 · 구속의 흐름",
       desc: "구원, 대속, 중보의 핵심 흐름",
       ids: ["lamb", "cross", "exodus", "priesthood", "blood"]
     },
     {
-      title: "왕과 메시야",
+      title: "AXIS 03 · 왕과 메시야",
       desc: "약속된 왕과 메시아의 성취",
       ids: ["messiah", "kingship", "zion", "davidic"]
     },
     {
-      title: "임재와 연단",
+      title: "AXIS 04 · 임재와 연단",
       desc: "하나님과 동행하며 다듬어지는 흐름",
       ids: ["temple", "wilderness", "faith", "church", "resurrection"]
     }
