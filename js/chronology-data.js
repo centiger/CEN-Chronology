@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v103-holyspirit-hub";
+const CHRONOLOGY_VERSION = "v104-presence-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5673,6 +5673,86 @@ Object.assign(EXPLORE_HUBS, {
     "pentecost": ["holyspirit", "church", "temple", "kingdom"],
     "early-church": ["holyspirit", "church", "faith"],
     "new-heaven-earth": ["holyspirit", "newcreation", "resurrection", "church"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v104 임재의 흐름 허브
+Object.assign(EXPLORE_HUBS, {
+  "presence": {
+    id: "presence",
+    icon: "🔥",
+    title: "임재의 흐름",
+    subtitle: "하나님이 자기 백성과 함께 거하시는 이야기",
+    description: "임재의 흐름은 하나님이 어떻게 자기 백성과 함께 거하시며 동행하시는지를 보여줍니다. 에덴의 동행에서 시작하여 광야의 임재, 성막과 성전, 성육신, 교회 안의 임재를 지나 새예루살렘의 완전한 함께하심으로 이어집니다.",
+    steps: [
+      {
+        label: "1",
+        title: "동산에 거하심",
+        ref: "창세기 1~3장",
+        desc: "하나님은 에덴동산에서 인간과 함께 거하시며 막힘없는 교제를 나누셨습니다.",
+        eventId: "creation",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "구름과 불 가운데 임하심",
+        ref: "출애굽기",
+        desc: "하나님은 광야에서 구름기둥과 불기둥으로 자기 백성과 함께 이동하셨습니다.",
+        eventId: "exodus",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "성막과 성전에 충만하심",
+        ref: "출애굽기 40장·열왕기상 8장",
+        desc: "하나님의 영광이 성막과 성전에 충만히 임하며 거룩한 임재가 드러납니다.",
+        eventId: "temple-dedication",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "말씀이 육신이 되심",
+        ref: "요한복음 1장",
+        desc: "예수님 안에서 하나님이 인간 가운데 직접 거하십니다.",
+        eventId: "jesus-4",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "성령으로 함께하심",
+        ref: "사도행전 2장·고린도전서 3장",
+        desc: "성령이 교회와 성도 안에 거하시며 살아있는 성전이 되게 하십니다.",
+        eventId: "pentecost",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "하나님이 친히 함께하심",
+        ref: "요한계시록 21~22장",
+        desc: "새예루살렘에서 하나님이 자기 백성과 영원히 함께 거하십니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "creation": ["presence", "newcreation", "holyspirit"],
+    "exodus": ["presence", "wilderness", "redemption", "holyspirit"],
+    "temple-dedication": ["presence", "temple", "priesthood", "zion"],
+    "jesus-4": ["presence", "messiah", "cross", "holyspirit"],
+    "pentecost": ["presence", "church", "holyspirit", "temple"],
+    "new-jerusalem": ["presence", "newcreation", "church", "resurrection", "zion"]
   };
 
   Object.keys(links).forEach(eventId => {

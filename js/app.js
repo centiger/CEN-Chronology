@@ -64,6 +64,7 @@ function renderHome(){
         ${renderHomeHubCard("kingdom")}
         ${renderHomeHubCard("newcreation")}
         ${renderHomeHubCard("holyspirit")}
+        ${renderHomeHubCard("presence")}
       </div>
     </section>
 
