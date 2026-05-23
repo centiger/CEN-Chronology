@@ -90,6 +90,7 @@ function renderHome(){
         ${renderHomeHubCard("messiah")}
         ${renderHomeHubCard("kingship")}
         ${renderHomeHubCard("zion")}
+        ${renderHomeHubCard("davidic")}
       </div>
     </section>
 
@@ -738,7 +739,7 @@ function openHubMenu(){
     {
       title: "왕과 메시야",
       desc: "약속된 왕과 메시아의 성취",
-      ids: ["messiah", "kingship", "zion"]
+      ids: ["messiah", "kingship", "zion", "davidic"]
     },
     {
       title: "임재와 연단",

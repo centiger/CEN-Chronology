@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v101-zion-jerusalem-hub";
+const CHRONOLOGY_VERSION = "v102-davidic-covenant-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5496,6 +5496,94 @@ Object.assign(EXPLORE_HUBS, {
     "resurrection": ["zion", "resurrection", "messiah", "newcreation", "kingdom"],
     "pentecost": ["zion", "church", "temple", "kingdom"],
     "new-jerusalem": ["zion", "temple", "kingdom", "newcreation", "church", "resurrection"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v102 다윗 언약의 흐름 허브
+Object.assign(EXPLORE_HUBS, {
+  "davidic": {
+    id: "davidic",
+    icon: "👑",
+    title: "다윗 언약의 흐름",
+    subtitle: "끊어지지 않는 왕좌의 약속",
+    description: "다윗 언약의 흐름은 무너진 것처럼 보이는 왕좌가 어떻게 메시야 안에서 영원히 이어지는지를 보여줍니다. 목동 다윗의 선택에서 시작하여 시온 왕국, 영원한 왕위의 약속, 무너진 장막, 다윗의 자손, 만왕의 왕, 영원한 보좌로 이어집니다.",
+    steps: [
+      {
+        label: "1",
+        title: "베들레헴의 목자",
+        ref: "사무엘상 16장",
+        desc: "하나님은 목동 다윗을 택하십니다. 왕권은 인간의 조건이 아니라 하나님의 선택에서 시작됩니다.",
+        eventId: "david-kingdom",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "시온의 언약 왕국",
+        ref: "사무엘하 5장",
+        desc: "다윗은 시온을 중심으로 왕국을 세우고 하나님 나라 왕권의 기초를 확립합니다.",
+        eventId: "david-kingdom",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "영원한 왕위의 약속",
+        ref: "사무엘하 7장",
+        desc: "하나님은 다윗의 왕위가 영원히 견고할 것을 약속하십니다.",
+        eventId: "david-covenant",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "무너진 장막",
+        ref: "열왕기·역대기",
+        desc: "남유다 멸망과 포로 시대를 통해 다윗 왕조는 무너진 것처럼 보입니다.",
+        eventId: "exile",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "다윗의 자손",
+        ref: "이사야·예레미야",
+        desc: "선지자들은 의로운 가지와 다윗의 자손으로 오실 메시야를 기다립니다.",
+        eventId: "isaiah-prophecy",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "만왕의 왕",
+        ref: "복음서",
+        desc: "예수 그리스도는 다윗의 자손으로 오셔서 참된 왕권을 세우십니다.",
+        eventId: "resurrection",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "영원한 보좌",
+        ref: "요한계시록",
+        desc: "새예루살렘에서 어린양이 영원히 통치하십니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "david-kingdom": ["davidic", "kingship", "zion", "kingdom"],
+    "david-covenant": ["davidic", "messiah", "covenant", "kingdom"],
+    "exile": ["davidic", "zion", "kingdom"],
+    "isaiah-prophecy": ["davidic", "messiah", "kingship"],
+    "resurrection": ["davidic", "messiah", "cross", "kingdom", "zion"],
+    "new-jerusalem": ["davidic", "kingdom", "zion", "newcreation"]
   };
 
   Object.keys(links).forEach(eventId => {
