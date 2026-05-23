@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v106-blood-hub";
+const CHRONOLOGY_VERSION = "v107-nations-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5930,6 +5930,95 @@ Object.assign(EXPLORE_HUBS, {
     "cross": ["blood", "redemption", "life", "messiah"],
     "lamb": ["blood", "newcreation", "resurrection"],
     "new-jerusalem": ["blood", "life", "presence", "newcreation"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v107 열방의 흐름 허브
+Object.assign(EXPLORE_HUBS, {
+  "nations": {
+    id: "nations",
+    icon: "🌍",
+    title: "열방의 흐름",
+    subtitle: "흩어진 민족들을 하나로 모으시는 하나님 나라",
+    description: "열방의 흐름은 하나님이 흩어진 민족들을 다시 하나님의 나라 안으로 모으시는 과정을 보여줍니다. 바벨의 흩어짐에서 시작하여 아브라함의 복, 시온의 소망, 열방의 메시야, 이방인의 교회, 세계적 복음 확장, 새창조의 완성으로 이어집니다.",
+    steps: [
+      {
+        label: "1",
+        title: "바벨의 흩어짐",
+        ref: "창세기 11장",
+        desc: "죄로 인해 언어가 혼잡해지고 민족들이 온 땅에 흩어집니다.",
+        eventId: "babel",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "아브라함의 복",
+        ref: "창세기 12장",
+        desc: "하나님은 아브라함을 통해 모든 민족을 축복하시겠다고 약속하십니다.",
+        eventId: "abraham-call",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "열방의 빛",
+        ref: "이사야 2장",
+        desc: "열방이 시온으로 몰려와 하나님의 길을 배우게 될 것이 예언됩니다.",
+        eventId: "zion",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "동방박사의 경배",
+        ref: "마태복음 2장",
+        desc: "이방인들이 메시야께 나아와 경배하며 열방의 왕을 인정합니다.",
+        eventId: "messiah",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "이방인의 교회",
+        ref: "사도행전·에베소서",
+        desc: "유대인과 이방인이 한 몸이 되어 하나의 공동체를 이룹니다.",
+        eventId: "church",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "모든 민족에게 복음",
+        ref: "마태복음 28장",
+        desc: "복음이 땅끝까지 전파되며 하나님 나라가 확장됩니다.",
+        eventId: "great-commission",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "모든 나라와 백성",
+        ref: "요한계시록 7장",
+        desc: "모든 나라와 족속과 백성이 어린양 앞에서 함께 찬양합니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "babel": ["nations", "covenant", "newcreation"],
+    "abraham-call": ["nations", "covenant", "kingdom"],
+    "zion": ["nations", "zion", "messiah", "kingdom"],
+    "messiah": ["nations", "messiah", "kingship"],
+    "church": ["nations", "church", "holyspirit"],
+    "great-commission": ["nations", "kingdom", "church", "holyspirit"],
+    "new-jerusalem": ["nations", "newcreation", "lamb", "kingdom"]
   };
 
   Object.keys(links).forEach(eventId => {
