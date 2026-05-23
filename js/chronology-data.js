@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v104-presence-hub";
+const CHRONOLOGY_VERSION = "v105-life-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5753,6 +5753,94 @@ Object.assign(EXPLORE_HUBS, {
     "jesus-4": ["presence", "messiah", "cross", "holyspirit"],
     "pentecost": ["presence", "church", "holyspirit", "temple"],
     "new-jerusalem": ["presence", "newcreation", "church", "resurrection", "zion"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v105 생명의 흐름 허브
+Object.assign(EXPLORE_HUBS, {
+  "life": {
+    id: "life",
+    icon: "🌱",
+    title: "생명의 흐름",
+    subtitle: "죽음을 넘어 회복되는 하나님의 생명",
+    description: "생명의 흐름은 하나님이 죽음을 넘어 어떻게 생명을 회복하시는지를 보여줍니다. 에덴의 생명나무에서 시작하여 광야의 생명 공급, 마른 뼈의 회복, 예수 안의 생명, 성령 안의 새 생명, 부활의 승리, 새창조의 생명 완성으로 이어집니다.",
+    steps: [
+      {
+        label: "1",
+        title: "생명나무",
+        ref: "창세기 2장",
+        desc: "에덴동산의 생명나무는 하나님 안에 참 생명이 있음을 보여줍니다.",
+        eventId: "creation",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "만나와 반석의 물",
+        ref: "출애굽기·민수기",
+        desc: "하나님은 광야에서 만나와 생수를 공급하시며 자기 백성을 살리십니다.",
+        eventId: "exodus",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "마른 뼈가 살아남",
+        ref: "에스겔 37장",
+        desc: "하나님은 죽은 자에게도 생명을 주실 수 있음을 보여주십니다.",
+        eventId: "ezekiel-vision",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "나는 생명이다",
+        ref: "요한복음 11장",
+        desc: "예수님은 자신이 부활이요 생명이라고 선언하십니다.",
+        eventId: "resurrection",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "성령의 생명",
+        ref: "로마서 8장",
+        desc: "성령 안에서 새로운 생명이 시작되며 성도는 새 사람으로 살아갑니다.",
+        eventId: "pentecost",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "죽음을 삼킨 생명",
+        ref: "고린도전서 15장",
+        desc: "예수 그리스도의 부활로 죽음은 최종 승리를 얻지 못합니다.",
+        eventId: "resurrection",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "생명수 강과 생명나무",
+        ref: "요한계시록 22장",
+        desc: "새예루살렘에서 생명수 강과 생명나무를 통해 영원한 생명이 완성됩니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "creation": ["life", "presence", "newcreation"],
+    "exodus": ["life", "wilderness", "redemption", "presence"],
+    "ezekiel-vision": ["life", "resurrection", "holyspirit", "newcreation"],
+    "resurrection": ["life", "cross", "newcreation", "holyspirit"],
+    "pentecost": ["life", "holyspirit", "church", "presence"],
+    "new-jerusalem": ["life", "newcreation", "presence", "resurrection"]
   };
 
   Object.keys(links).forEach(eventId => {
