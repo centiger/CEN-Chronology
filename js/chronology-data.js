@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v102-davidic-covenant-hub";
+const CHRONOLOGY_VERSION = "v103-holyspirit-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5584,6 +5584,95 @@ Object.assign(EXPLORE_HUBS, {
     "isaiah-prophecy": ["davidic", "messiah", "kingship"],
     "resurrection": ["davidic", "messiah", "cross", "kingdom", "zion"],
     "new-jerusalem": ["davidic", "kingdom", "zion", "newcreation"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v103 성령의 흐름 허브
+Object.assign(EXPLORE_HUBS, {
+  "holyspirit": {
+    id: "holyspirit",
+    icon: "🕊️",
+    title: "성령의 흐름",
+    subtitle: "창조부터 새창조까지 역사하시는 하나님의 영",
+    description: "성령의 흐름은 하나님의 영이 창조부터 새창조까지 어떻게 역사하시는지를 보여줍니다. 혼돈 위를 운행하시는 창조의 영에서 시작하여 기름부음의 영, 새 영의 약속, 메시야 위의 성령, 오순절 교회, 성령 안의 삶, 생명 주시는 영으로 이어집니다.",
+    steps: [
+      {
+        label: "1",
+        title: "수면 위의 운행",
+        ref: "창세기 1장",
+        desc: "하나님의 영이 혼돈 위를 운행하시며 생명과 질서를 시작하십니다.",
+        eventId: "creation",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "기름부음의 영",
+        ref: "사사기·사무엘상",
+        desc: "사사와 왕 위에 임하시는 성령은 하나님 나라 사명을 감당하게 하십니다.",
+        eventId: "david-kingdom",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "새 영의 약속",
+        ref: "에스겔·요엘",
+        desc: "선지자들은 새 영과 새 마음, 만민에게 부어질 영을 예언합니다.",
+        eventId: "ezekiel-vision",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "메시야 위의 성령",
+        ref: "복음서",
+        desc: "예수님은 성령 충만한 참 왕으로 오셔서 사역하십니다.",
+        eventId: "jesus-4",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "오순절 성령강림",
+        ref: "사도행전 2장",
+        desc: "성령이 공동체 가운데 임하시며 교회 시대가 시작됩니다.",
+        eventId: "pentecost",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "성령 안의 삶",
+        ref: "서신서",
+        desc: "성령은 성도 안에 거하시며 거룩함과 열매의 삶으로 인도하십니다.",
+        eventId: "early-church",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "생명 주시는 영",
+        ref: "요한계시록 22장",
+        desc: "성령과 신부가 생명수로 초대하며 새창조를 완성합니다.",
+        eventId: "new-heaven-earth",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "creation": ["holyspirit", "newcreation", "kingdom"],
+    "david-kingdom": ["holyspirit", "kingship", "davidic", "messiah"],
+    "ezekiel-vision": ["holyspirit", "resurrection", "newcreation", "church"],
+    "jesus-4": ["holyspirit", "messiah", "kingship", "cross"],
+    "pentecost": ["holyspirit", "church", "temple", "kingdom"],
+    "early-church": ["holyspirit", "church", "faith"],
+    "new-heaven-earth": ["holyspirit", "newcreation", "resurrection", "church"]
   };
 
   Object.keys(links).forEach(eventId => {
