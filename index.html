@@ -71,5 +71,35 @@
 
 <script src="js/chronology-data.js"></script>
 <script src="js/app.js"></script>
+
+<script>
+(function(){
+  function openRequestedView(){
+    const params = new URLSearchParams(window.location.search);
+    const view = (params.get('view') || params.get('page') || '').toLowerCase();
+
+    if(view === 'timeline' || view === 'eras' || view === 'chronology'){
+      const btn = document.querySelector('.bottomnav .navbtn[data-page="eras"]');
+      if(btn){
+        setTimeout(function(){ btn.click(); }, 200);
+      }
+    }
+
+    if(view === 'explore' || view === 'hub' || view === 'connection'){
+      const btn = document.getElementById('bottomHubBtn');
+      if(btn){
+        setTimeout(function(){ btn.click(); }, 200);
+      }
+    }
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', openRequestedView);
+  }else{
+    openRequestedView();
+  }
+})();
+</script>
+
 </body>
 </html>
