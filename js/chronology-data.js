@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v100-resurrection-rebuild-after-church-fix";
+const CHRONOLOGY_VERSION = "v101-zion-jerusalem-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5404,6 +5404,98 @@ Object.assign(EXPLORE_HUBS, {
     "early-church": ["resurrection", "church", "faith", "cross", "priesthood"],
     "new-heaven-earth": ["resurrection", "newcreation", "kingdom"],
     "new-jerusalem": ["resurrection", "church", "newcreation", "kingdom", "temple"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v101 시온과 예루살렘의 흐름 허브
+Object.assign(EXPLORE_HUBS, {
+  "zion": {
+    id: "zion",
+    icon: "🏔️",
+    title: "시온과 예루살렘의 흐름",
+    subtitle: "하나님의 통치와 임재가 완성되는 도성",
+    description: "시온과 예루살렘의 흐름은 단순한 장소 이동이 아니라 하나님의 통치와 임재가 어떻게 중심을 이루고 완성되는지를 보여줍니다. 에덴의 거처, 살렘의 왕과 제사장, 다윗의 시온성, 솔로몬의 성전산, 선지자들의 예언, 십자가와 부활의 예루살렘, 새예루살렘으로 이어집니다.",
+    steps: [
+      {
+        label: "1",
+        title: "에덴의 동산",
+        ref: "창세기 1~2장",
+        desc: "하나님이 인간과 함께 거하시던 최초의 거룩한 동산입니다. 시온과 새예루살렘의 원형처럼 하나님의 임재와 생명이 드러납니다.",
+        eventId: "creation",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "멜기세덱의 살렘",
+        ref: "창세기 14장",
+        desc: "살렘 왕 멜기세덱은 왕이자 제사장으로 등장합니다. 예루살렘의 초기 그림자와 왕·제사장 통합의 예표가 나타납니다.",
+        eventId: "abraham-call",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "다윗의 시온성",
+        ref: "사무엘하 5장",
+        desc: "다윗이 시온을 점령하며 예루살렘은 왕국의 중심이 됩니다. 하나님 나라 왕권의 중심지가 세워집니다.",
+        eventId: "david-kingdom",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "솔로몬의 성전산",
+        ref: "열왕기상 8장",
+        desc: "성전 봉헌을 통해 예루살렘은 정치적 수도를 넘어 하나님의 임재와 예배의 중심으로 확장됩니다.",
+        eventId: "temple-dedication",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "큰 왕의 도성",
+        ref: "시편·이사야·에스겔",
+        desc: "선지자들과 시편은 시온을 열방이 모여드는 하나님의 나라 중심으로 바라봅니다. 무너진 성읍 너머 회복될 도성을 소망합니다.",
+        eventId: "ezekiel-vision",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "십자가와 부활의 예루살렘",
+        ref: "복음서·사도행전",
+        desc: "예루살렘에서 예수님의 십자가와 부활, 오순절 성령강림이 이루어집니다. 메시야의 성취와 교회의 출발이 한 도성 안에서 드러납니다.",
+        eventId: "resurrection",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "새예루살렘",
+        ref: "요한계시록 21~22장",
+        desc: "새예루살렘은 왕권, 성전, 교회, 새창조가 하나로 완성되는 거룩한 도성입니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "creation": ["zion", "temple", "kingdom", "newcreation"],
+    "abraham-call": ["zion", "covenant", "priesthood", "faith"],
+    "david-kingdom": ["zion", "kingship", "messiah", "covenant", "kingdom"],
+    "temple-dedication": ["zion", "temple", "priesthood", "kingdom"],
+    "ezekiel-vision": ["zion", "kingdom", "newcreation", "resurrection"],
+    "cross": ["zion", "cross", "messiah", "kingdom"],
+    "crucifixion": ["zion", "cross", "messiah", "kingdom"],
+    "resurrection": ["zion", "resurrection", "messiah", "newcreation", "kingdom"],
+    "pentecost": ["zion", "church", "temple", "kingdom"],
+    "new-jerusalem": ["zion", "temple", "kingdom", "newcreation", "church", "resurrection"]
   };
 
   Object.keys(links).forEach(eventId => {
