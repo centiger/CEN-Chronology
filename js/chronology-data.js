@@ -3,7 +3,7 @@
 // 핵심 원칙: 시대(era)와 사건(event)을 분리한다.
 // CEN Bible 2.0 통합 시에는 이 파일을 data/chronology.js 또는 data/chronology.json으로 옮기면 된다.
 
-const CHRONOLOGY_VERSION = "v105-life-hub";
+const CHRONOLOGY_VERSION = "v106-blood-hub";
 
 const ERA_ORDER = [
   "창조와 원역사", "족장 시대", "출애굽과 광야", "가나안 정복", "사사 시대",
@@ -5841,6 +5841,95 @@ Object.assign(EXPLORE_HUBS, {
     "resurrection": ["life", "cross", "newcreation", "holyspirit"],
     "pentecost": ["life", "holyspirit", "church", "presence"],
     "new-jerusalem": ["life", "newcreation", "presence", "resurrection"]
+  };
+
+  Object.keys(links).forEach(eventId => {
+    if(typeof EVENTS !== "undefined" && !EVENTS[eventId]) return;
+    const prev = EVENT_HUB_LINKS[eventId] || [];
+    EVENT_HUB_LINKS[eventId] = Array.from(new Set([...prev, ...links[eventId]]));
+  });
+})();
+
+
+
+// v106 피의 흐름 허브
+Object.assign(EXPLORE_HUBS, {
+  "blood": {
+    id: "blood",
+    icon: "🩸",
+    title: "피의 흐름",
+    subtitle: "죽음을 덮고 생명을 살리는 대속의 피",
+    description: "피의 흐름은 하나님이 희생과 대속을 통해 생명을 회복하시는 과정을 보여줍니다. 가죽옷의 희생에서 시작하여 유월절의 피, 언약의 피, 속죄소의 피, 십자가의 피, 어린양의 승리, 영원한 언약의 완성으로 이어집니다.",
+    steps: [
+      {
+        label: "1",
+        title: "가죽옷",
+        ref: "창세기 3장",
+        desc: "죄를 덮기 위해 희생이 시작되며 대속의 그림자가 나타납니다.",
+        eventId: "creation",
+        type: "event"
+      },
+      {
+        label: "2",
+        title: "유월절의 피",
+        ref: "출애굽기 12장",
+        desc: "어린양의 피가 죽음으로부터 백성을 보호하며 구원의 표가 됩니다.",
+        eventId: "exodus",
+        type: "event"
+      },
+      {
+        label: "3",
+        title: "언약의 피",
+        ref: "출애굽기 24장",
+        desc: "피를 통해 하나님과 백성 사이에 언약 관계가 세워집니다.",
+        eventId: "covenant",
+        type: "event"
+      },
+      {
+        label: "4",
+        title: "속죄소의 피",
+        ref: "레위기 16장",
+        desc: "대속죄일의 피를 통해 죄가 대신 담당되며 속죄가 이루어집니다.",
+        eventId: "priesthood",
+        type: "event"
+      },
+      {
+        label: "5",
+        title: "십자가의 피",
+        ref: "복음서·히브리서",
+        desc: "예수님의 피로 단번의 완전한 속죄가 이루어집니다.",
+        eventId: "cross",
+        type: "event"
+      },
+      {
+        label: "6",
+        title: "어린양의 피",
+        ref: "요한계시록",
+        desc: "어린양의 피로 성도들이 승리하며 흰 옷을 입게 됩니다.",
+        eventId: "lamb",
+        type: "event"
+      },
+      {
+        label: "7",
+        title: "영원한 언약의 피",
+        ref: "히브리서·요한계시록",
+        desc: "피를 통해 영원한 생명과 새언약이 완성됩니다.",
+        eventId: "new-jerusalem",
+        type: "event"
+      }
+    ]
+  }
+});
+
+(function(){
+  const links = {
+    "creation": ["blood", "redemption", "life"],
+    "exodus": ["blood", "lamb", "redemption"],
+    "covenant": ["blood", "covenant", "priesthood"],
+    "priesthood": ["blood", "temple", "cross"],
+    "cross": ["blood", "redemption", "life", "messiah"],
+    "lamb": ["blood", "newcreation", "resurrection"],
+    "new-jerusalem": ["blood", "life", "presence", "newcreation"]
   };
 
   Object.keys(links).forEach(eventId => {

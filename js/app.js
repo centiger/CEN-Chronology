@@ -80,6 +80,7 @@ function renderHome(){
         ${renderHomeHubCard("cross")}
         ${renderHomeHubCard("exodus")}
         ${renderHomeHubCard("priesthood")}
+        ${renderHomeHubCard("blood")}
       </div>
     </section>
 
@@ -737,7 +738,7 @@ function openHubMenu(){
     {
       title: "구속의 흐름",
       desc: "구원, 대속, 중보의 핵심 흐름",
-      ids: ["lamb", "cross", "exodus", "priesthood"]
+      ids: ["lamb", "cross", "exodus", "priesthood", "blood"]
     },
     {
       title: "왕과 메시야",
