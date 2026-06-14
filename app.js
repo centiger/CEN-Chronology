@@ -655,27 +655,22 @@ function init(){
 init();
 
 
-// =========================
-// 외부 링크 직접 진입 지원
-// =========================
 
-(function () {
+
+// 성경연표 직접 진입
+// 기본 접속은 기존 화면 그대로 사용하고,
+// ?view=timeline 으로 들어올 때만 하단 두 번째 '연대기' 화면으로 이동합니다.
+window.addEventListener("load", () => {
   const params = new URLSearchParams(window.location.search);
-  const view = params.get("view");
 
-  if (view === "timeline") {
+  if (params.get("view") === "timeline") {
     setTimeout(() => {
-      go("eras");
+      if (typeof go === "function") {
+        go("eras");
+      }
     }, 200);
   }
-
-  if (view === "topics") {
-    setTimeout(() => {
-      const btn = document.getElementById("bottomHubBtn");
-      if (btn) btn.click();
-    }, 300);
-  }
-})();
+});
 
 
 window.__forceCyrusDetailFix = true;
