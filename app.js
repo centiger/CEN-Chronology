@@ -652,25 +652,31 @@ function init(){
     window.addEventListener("load", ()=>navigator.serviceWorker.register("./sw.js"));
   }
 }
+
 init();
 
-
-
-
 // 성경연표 직접 진입
-// 기본 접속은 기존 화면 그대로 사용하고,
-// ?view=timeline 으로 들어올 때만 하단 두 번째 '연대기' 화면으로 이동합니다.
-window.addEventListener("load", () => {
+// 기본 주소(https://centiger.github.io/CEN-Chronology/)는 기존 메인/주제탐험 화면을 그대로 둡니다.
+// 성경연표 주소(https://centiger.github.io/CEN-Chronology/?view=timeline)만
+// 하단 두 번째 "연대기" 버튼을 누른 화면과 동일하게 go("eras")로 이동합니다.
+(function routeChronologyView(){
   const params = new URLSearchParams(window.location.search);
+  const view = (params.get("view") || "").toLowerCase();
 
-  if (params.get("view") === "timeline") {
-    setTimeout(() => {
+  if (view === "timeline") {
+    const openTimeline = () => {
       if (typeof go === "function") {
         go("eras");
       }
-    }, 200);
+    };
+
+    // app 초기화 직후 즉시 이동 + 혹시 렌더링 지연이 있어도 한 번 더 이동
+    openTimeline();
+    setTimeout(openTimeline, 150);
+    setTimeout(openTimeline, 500);
   }
-});
+})();
+
 
 
 window.__forceCyrusDetailFix = true;
