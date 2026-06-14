@@ -655,6 +655,29 @@ function init(){
 init();
 
 
+// =========================
+// 외부 링크 직접 진입 지원
+// =========================
+
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const view = params.get("view");
+
+  if (view === "timeline") {
+    setTimeout(() => {
+      go("eras");
+    }, 200);
+  }
+
+  if (view === "topics") {
+    setTimeout(() => {
+      const btn = document.getElementById("bottomHubBtn");
+      if (btn) btn.click();
+    }, 300);
+  }
+})();
+
+
 window.__forceCyrusDetailFix = true;
 
 
