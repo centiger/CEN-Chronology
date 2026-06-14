@@ -975,22 +975,24 @@ function init(){
   }
 }
 init();
+
+// 성경연표 직접 진입
+// 기본 주소는 주제탐험/연결탐험 메인으로 유지하고,
+// ?view=timeline 으로 들어온 경우만 하단 두 번째 '연대기' 화면으로 이동합니다.
 (function () {
   const params = new URLSearchParams(window.location.search);
-  const view = (params.get("view") || "").toLowerCase();
 
-  if (view === "timeline") {
-    const openTimeline = () => {
+  if (params.get("view") === "timeline") {
+    setTimeout(() => {
       if (typeof go === "function") {
         go("eras");
       }
-    };
-
-    openTimeline();
-    setTimeout(openTimeline, 150);
-    setTimeout(openTimeline, 500);
+    }, 200);
   }
 })();
+
+
+
 
 window.__forceCyrusDetailFix = true;
 
