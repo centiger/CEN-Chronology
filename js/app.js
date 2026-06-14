@@ -975,7 +975,22 @@ function init(){
   }
 }
 init();
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const view = (params.get("view") || "").toLowerCase();
 
+  if (view === "timeline") {
+    const openTimeline = () => {
+      if (typeof go === "function") {
+        go("eras");
+      }
+    };
+
+    openTimeline();
+    setTimeout(openTimeline, 150);
+    setTimeout(openTimeline, 500);
+  }
+})();
 
 window.__forceCyrusDetailFix = true;
 
