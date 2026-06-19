@@ -26,8 +26,8 @@ function go(page){
   $$(".page").forEach(p=>p.classList.remove("active"));
   $("#" + page).classList.add("active");
   $$(".navbtn").forEach(b=>b.classList.toggle("active", b.dataset.page === page));
-  if(page==="home") setHeader("성경연대기", "창조부터 새창조까지 흐름으로 탐험");
-  if(page==="eras") setHeader("시대별 연대기", "시대 → 사건칩 → 탭카드");
+  if(page==="home") setHeader("성경성경연표", "창조부터 새창조까지 흐름으로 탐험");
+  if(page==="eras") setHeader("성경연표", "시대 → 사건칩 → 탭카드");
   if(page==="detail") setHeader("핵심사건 상세", "탭카드와 원본 인포그래픽");
   if(page==="settings") setHeader("화면설정", "독립 PWA · 통합 대비 구조");
   window.scrollTo({top:0,behavior:"instant"});
@@ -47,9 +47,9 @@ function renderHome(){
 
   home.innerHTML = `
     <section class="card hero-home-card">
-      <div class="hero-home-title">성경 구조 탐험</div>
+      <div class="hero-home-title">주제탐험</div>
       <div class="hero-home-sub">
-        성경을 시간순이 아니라 구조와 흐름으로 탐험합니다.
+        성경을 시간순이 아니라 주제별로 탐험합니다.
       </div>
     </section>
 
@@ -119,13 +119,13 @@ function renderHome(){
     </section>
 
     <section class="card chronology-entry-card">
-      <div class="chronology-entry-title">⌛ 시대별 연대기 탐색</div>
+      <div class="chronology-entry-title">⌛ 성경연표 탐색</div>
       <div class="chronology-entry-desc">
         창조부터 새예루살렘까지 시간의 흐름으로 탐험합니다.
       </div>
 
       <button class="cen-btn chronology-entry-btn" data-page="eras">
-        시대별 연대기 보기
+        시대별 연표 보기
       </button>
     </section>
   `;
@@ -191,7 +191,7 @@ function openHubSelector(eventId){
 
   modal.innerHTML = `
     <div class="hub-selector-modal">
-      <div class="hub-selector-title">연결탐험 선택</div>
+      <div class="hub-selector-title">주제탐험 선택</div>
       <div class="hub-selector-sub">이 사건에는 ${hubIds.length}개의 흐름이 연결되어 있습니다.</div>
 
       <div class="hub-selector-list">
@@ -252,8 +252,8 @@ function selectEvent(eventId){
           if(!validHubIds.length) return ``;
 
           const label = validHubIds.length === 1
-            ? `연결탐험`
-            : `연결탐험 ${validHubIds.length}개`;
+            ? `주제탐험`
+            : `주제탐험 ${validHubIds.length}개`;
 
           return `<button class="cen-btn secondary" data-hub-selector="${eventId}">${label}</button>`;
         })()}
@@ -382,7 +382,7 @@ function renderDetail(eventId){
     </section>
 
     <section class="scroll-section">
-      <div class="section-title">8. 연결탐험</div>
+      <div class="section-title">8. 주제탐험</div>
       ${renderExploreRows(eventId)}
     </section>
 
@@ -456,7 +456,7 @@ function renderExploreRows(eventId){
     `;
   }
 
-  return `<div class="section-card">연결탐험 데이터 준비중</div>`;
+  return `<div class="section-card">주제탐험 데이터 준비중</div>`;
 }
 
 
@@ -618,7 +618,7 @@ function renderHubOverlay(hubId){
     <div class="hub-panel">
       <div class="hub-panel-head">
         <div>
-          <div class="hub-kicker">연결탐험 허브</div>
+          <div class="hub-kicker">주제탐험 허브</div>
           <h2>${hub.icon || "🔎"} ${hub.title}</h2>
           <p>${hub.description || ""}</p>
         </div>
@@ -780,7 +780,7 @@ function openHubMenu(){
   modal.innerHTML = `
     <div class="hub-selector-modal hub-menu-modal">
       <button class="hub-selector-x" type="button" aria-label="닫기">×</button>
-      <div class="hub-selector-title">연결탐험</div>
+      <div class="hub-selector-title">주제탐험</div>
       <div class="hub-selector-sub">성경을 관통하는 흐름을 구조별로 탐험합니다.</div>
 
       <div class="hub-group-list">
@@ -920,7 +920,7 @@ function init(){
     }
 
     const explore = e.target.closest("[data-explore]");
-    if(explore) alert(`'${explore.dataset.explore}' 연결탐험은 이후 허브형 흐름으로 단계적으로 전환됩니다.`);
+    if(explore) alert(`'${explore.dataset.explore}' 주제탐험은 이후 허브형 흐름으로 단계적으로 전환됩니다.`);
 
     const toast = e.target.closest("[data-toast]");
     if(toast) alert("이 기능은 다음 단계에서 CEN Bible 본문·지도·성막 메뉴와 연결됩니다.");
@@ -932,7 +932,7 @@ function init(){
     if(e.target.id === "backBtn"){
       if(currentPage === "detail") go("eras");
       else if(currentPage === "eras" || currentPage === "settings") go("home");
-      else alert("성경연대기를 종료하려면 브라우저 뒤로가기를 한 번 더 누르세요.");
+      else alert("성경성경연표를 종료하려면 브라우저 뒤로가기를 한 번 더 누르세요.");
     }
   });
 
@@ -977,8 +977,8 @@ function init(){
 init();
 
 // 성경연표 직접 진입
-// 기본 주소는 주제탐험/연결탐험 메인으로 유지하고,
-// ?view=timeline 으로 들어온 경우만 하단 두 번째 '연대기' 화면으로 이동합니다.
+// 기본 주소는 주제탐험/주제탐험 메인으로 유지하고,
+// ?view=timeline 으로 들어온 경우만 하단 두 번째 '성경연표' 화면으로 이동합니다.
 (function () {
   const params = new URLSearchParams(window.location.search);
 
