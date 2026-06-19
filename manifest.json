@@ -1,6 +1,6 @@
 {
-  "name": "CEN Bible 성경성경연표",
-  "short_name": "성경성경연표",
+  "name": "CEN Bible 주제탐험",
+  "short_name": "주제탐험",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f3e6d2",
