@@ -527,8 +527,8 @@ const EVENT_MAP_CROPS = {
 };
 
 
-// v17: 인포그래픽 8. 연결탐험 원문 기반 데이터
-// 원칙: 앱의 8. 연결탐험은 인포그래픽 8번 영역에 있는 항목만 사용한다.
+// v17: 인포그래픽 8. 주제탐험 원문 기반 데이터
+// 원칙: 앱의 8. 주제탐험은 인포그래픽 8번 영역에 있는 항목만 사용한다.
 
 
 
@@ -725,7 +725,7 @@ const ORIGINAL_INFOGRAPHICS = {
 
 const EVENT_EXPLORE = {
   "creation": {
-    title: "8. 연결탐험 (구속사적 연결)",
+    title: "8. 주제탐험 (구속사적 연결)",
     items: [
       { title:"유월절", desc:"피 흘린 어린양으로 구원을 예표", ref:"출애굽기 12장" },
       { title:"성막", desc:"하나님의 임재가 함께 하심", ref:"출애굽기 25~40장" },
@@ -734,7 +734,7 @@ const EVENT_EXPLORE = {
     ]
   },
   "adam-eve": {
-    title: "8. 연결탐험 (구속사적 연결)",
+    title: "8. 주제탐험 (구속사적 연결)",
     items: [
       { title:"창조", desc:"아담과 하와", ref:"" },
       { title:"타락", desc:"죄의 시작", ref:"" },
@@ -744,7 +744,7 @@ const EVENT_EXPLORE = {
     ]
   },
   "eden-exile": {
-    title: "8. 연결탐험 (구속사적 연결)",
+    title: "8. 주제탐험 (구속사적 연결)",
     items: [
       { title:"창조", desc:"하나님의 나라", ref:"" },
       { title:"타락", desc:"죄의 시작", ref:"" },
@@ -754,7 +754,7 @@ const EVENT_EXPLORE = {
     ]
   },
   "cain-abel": {
-    title: "8. 연결탐험 (구속사적 연결)",
+    title: "8. 주제탐험 (구속사적 연결)",
     items: [
       { title:"죄의 시작", desc:"가인의 살인", ref:"" },
       { title:"피 흘림의 필요성", desc:"", ref:"" },
@@ -764,7 +764,7 @@ const EVENT_EXPLORE = {
     ]
   },
   "noah-ark": {
-    title: "8. 연결탐험 (구속사적 연결)",
+    title: "8. 주제탐험 (구속사적 연결)",
     items: [
       { title:"노아의 방주", desc:"구원과 보호", ref:"" },
       { title:"무지개 언약", desc:"하나님의 신실하심", ref:"" },
@@ -774,7 +774,7 @@ const EVENT_EXPLORE = {
     ]
   },
   "babel-tower": {
-    title: "8. 연결탐험 (구속사적 연결)",
+    title: "8. 주제탐험 (구속사적 연결)",
     items: [
       { title:"교만과 불순종", desc:"바벨탑", ref:"" },
       { title:"언어 혼란과 분열", desc:"", ref:"" },
@@ -784,27 +784,27 @@ const EVENT_EXPLORE = {
       { title:"성령으로 하나된 교회", desc:"모든 언어의 사람들", ref:"" }
     ]
   },
-"moses-midian": { title:"8. 연결탐험", items:[
+"moses-midian": { title:"8. 주제탐험", items:[
     {title:"광야", desc:"준비의 장소", ref:"출 2장"}, {title:"소명", desc:"떨기나무로 이어짐", ref:"출 3장"}, {title:"출애굽", desc:"지도자 준비", ref:"출 12장"}, {title:"하나님의 섭리", desc:"실패 속 준비", ref:"롬 8:28"}
   ]},
-  "aaron-hur-prayer": { title:"8. 연결탐험", items:[
+  "aaron-hur-prayer": { title:"8. 주제탐험", items:[
     {title:"기도", desc:"보이지 않는 전투", ref:"출 17장"}, {title:"동역", desc:"아론과 훌", ref:"출 17장"}, {title:"여호와 닛시", desc:"승리의 깃발", ref:"출 17:15"}, {title:"중보", desc:"공동체를 세움", ref:"히 7:25"}
   ]},
-  "kadesh-spies": { title:"8. 연결탐험", items:[
+  "kadesh-spies": { title:"8. 주제탐험", items:[
     {title:"믿음", desc:"여호수아와 갈렙", ref:"민 14장"}, {title:"불신앙", desc:"광야 40년", ref:"민 14장"}, {title:"가나안", desc:"약속의 땅", ref:"수 1장"}, {title:"요단강 도하", desc:"새 세대의 입성", ref:"수 3장"}
   ]},
-  "korah-rebellion": { title:"8. 연결탐험", items:[
+  "korah-rebellion": { title:"8. 주제탐험", items:[
     {title:"성막", desc:"거룩한 질서", ref:"출 25~40장"}, {title:"제사장", desc:"아론의 직분", ref:"민 16장"}, {title:"반역", desc:"교만과 불평", ref:"유 1:11"}, {title:"참 제사장", desc:"그리스도", ref:"히 4:14"}
   ]},
-  "balaam-donkey": { title:"8. 연결탐험", items:[
+  "balaam-donkey": { title:"8. 주제탐험", items:[
     {title:"축복", desc:"저주를 바꿈", ref:"민 23장"}, {title:"야곱의 별", desc:"메시아 예언", ref:"민 24:17"}, {title:"동방박사", desc:"별을 보고 옴", ref:"마 2장"}, {title:"하나님의 보호", desc:"언약 백성", ref:"창 12:3"}
   ]},
-  "moses-farewell-death": { title:"8. 연결탐험", items:[
+  "moses-farewell-death": { title:"8. 주제탐험", items:[
     {title:"신명기", desc:"말씀 재선포", ref:"신 1~34장"}, {title:"여호수아", desc:"리더십 이양", ref:"신 31장"}, {title:"요단강", desc:"새 시대 시작", ref:"수 3장"}, {title:"언약", desc:"순종의 길", ref:"신 30장"}
   ]}
 ,
   "judges-cycle": {
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       { title:"왕 없음", desc:"하나님의 통치 거부", ref:"삿 21:25" },
       { title:"죄의 반복", desc:"타락과 압제의 악순환", ref:"삿 2장" },
@@ -813,7 +813,7 @@ const EVENT_EXPLORE = {
     ]
   },
   "jephthah": {
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       { title:"연약한 지도자", desc:"하나님이 사용하시는 사람", ref:"삿 11장" },
       { title:"성급한 서원", desc:"분별 없는 말의 위험", ref:"삿 11:30~40" },
@@ -822,7 +822,7 @@ const EVENT_EXPLORE = {
     ]
   },
   "micah-idol-levite": {
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       { title:"우상숭배", desc:"하나님 대신 만든 종교", ref:"삿 17장" },
       { title:"레위인의 타락", desc:"소명보다 이익을 좇음", ref:"삿 17:10" },
@@ -831,7 +831,7 @@ const EVENT_EXPLORE = {
     ]
   },
   "gibeah-atrocity": {
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       { title:"도덕 붕괴", desc:"죄가 공동체를 무너뜨림", ref:"삿 19장" },
       { title:"내전", desc:"이스라엘 안의 심판", ref:"삿 20장" },
@@ -840,7 +840,7 @@ const EVENT_EXPLORE = {
     ]
   },
   "eli-samuel-birth": {
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       { title:"한나의 기도", desc:"고통 속의 믿음", ref:"삼상 1장" },
       { title:"실로 성소", desc:"말씀과 예배의 중심", ref:"삼상 1:3" },
@@ -1119,10 +1119,10 @@ Object.assign(EVENT_MAP_CROPS, {
 });
 
 
-// v37: 족장시대 8. 연결탐험 - 인포그래픽 원문 기준 재정리
+// v37: 족장시대 8. 주제탐험 - 인포그래픽 원문 기준 재정리
 Object.assign(EVENT_EXPLORE, {
   "abraham-call": {
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"아브라함 언약", desc:"창 12, 15, 17장"},
       {title:"이스라엘 민족", desc:"언약 백성의 시작"},
@@ -1132,7 +1132,7 @@ Object.assign(EVENT_EXPLORE, {
     ]
   },
   "lot-sodom": {
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"홍수 심판", desc:"노아"},
       {title:"하나님의 심판", desc:"아브라함"},
@@ -1142,7 +1142,7 @@ Object.assign(EVENT_EXPLORE, {
     ]
   },
   "jacob-ladder": {
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"야곱의 사다리", desc:"창 28:12"},
       {title:"성막", desc:"하늘과 땅을 연결하는 하나님의 임재"},
@@ -1152,7 +1152,7 @@ Object.assign(EVENT_EXPLORE, {
     ]
   },
   "jabbok-wrestling": {
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"야곱의 사다리", desc:"창 28장"},
       {title:"하나님과 씨름", desc:"창 32장"},
@@ -1162,7 +1162,7 @@ Object.assign(EVENT_EXPLORE, {
     ]
   },
   "joseph-dream": {
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"요셉의 꿈", desc:"창 37장"},
       {title:"연단과 고난", desc:"창 39~40장"},
@@ -1172,7 +1172,7 @@ Object.assign(EVENT_EXPLORE, {
     ]
   },
   "joseph-governor": {
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"기근의 위기", desc:""},
       {title:"요셉의 지혜와 하나님의 인도", desc:""},
@@ -1301,17 +1301,17 @@ Object.assign(EVENT_ENRICH, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "moses-birth": {title:"8. 연결탐험", items:[{title:"모세의 탄생", desc:"구원자의 준비"},{title:"떨기나무 소명", desc:"출 3장"},{title:"출애굽", desc:"하나님의 구원"},{title:"홍해의 기적", desc:"물에서의 구원"},{title:"광야 인도", desc:"언약 백성의 시작"}]},
-  "burning-bush": {title:"8. 연결탐험", items:[{title:"모세의 탄생", desc:"준비된 지도자"},{title:"하나님의 이름", desc:"나는 스스로 있는 자"},{title:"10가지 재앙", desc:"심판과 해방"},{title:"유월절", desc:"구원의 밤"},{title:"시내산 언약", desc:"언약 백성"}]},
-  "ten-plagues": {title:"8. 연결탐험", items:[{title:"떨기나무 소명", desc:"출애굽 사명"},{title:"애굽의 우상 심판", desc:"여호와의 주권"},{title:"유월절", desc:"어린양의 피"},{title:"홍해의 기적", desc:"결정적 구원"},{title:"십자가", desc:"심판과 구원"}]},
-  "passover": {title:"8. 연결탐험", items:[{title:"10가지 재앙", desc:"장자 심판"},{title:"어린양의 피", desc:"구원의 표"},{title:"출애굽", desc:"해방"},{title:"십자가", desc:"유월절 어린양"},{title:"성찬", desc:"새 언약"}]},
-  "red-sea": {title:"8. 연결탐험", items:[{title:"유월절", desc:"피로 구원"},{title:"홍해 도하", desc:"물로 구원"},{title:"광야 훈련", desc:"믿음의 여정"},{title:"세례", desc:"새 생명"},{title:"가나안 입성", desc:"약속의 땅"}]},
-  "manna-quail": {title:"8. 연결탐험", items:[{title:"홍해의 기적", desc:"구원 후 훈련"},{title:"만나", desc:"날마다 공급"},{title:"안식일", desc:"말씀에 순종"},{title:"생명의 떡", desc:"요 6장"},{title:"성찬", desc:"그리스도의 공급"}]},
-  "sinai-commandments": {title:"8. 연결탐험", items:[{title:"출애굽", desc:"구원받은 백성"},{title:"시내산 언약", desc:"말씀의 기준"},{title:"성막", desc:"임재와 예배"},{title:"율법의 완성", desc:"사랑"},{title:"새 언약", desc:"마음에 새긴 말씀"}]},
-  "golden-calf": {title:"8. 연결탐험", items:[{title:"시내산 십계명", desc:"우상 금지"},{title:"금송아지", desc:"언약 파괴"},{title:"모세의 중보", desc:"회복의 길"},{title:"성막", desc:"참된 임재"},{title:"그리스도의 중보", desc:"완전한 회복"}]},
-  "tabernacle": {title:"8. 연결탐험", items:[{title:"시내산 언약", desc:"하나님의 명령"},{title:"성막", desc:"하나님의 임재"},{title:"제사", desc:"속죄의 길"},{title:"성전", desc:"임재의 확장"},{title:"예수 그리스도", desc:"참 성막"}]},
-  "wilderness-40": {title:"8. 연결탐험", items:[{title:"광야 훈련", desc:"믿음의 시험"},{title:"가데스 바네아", desc:"불신앙"},{title:"여호수아와 갈렙", desc:"믿음의 보고"},{title:"새 세대", desc:"약속의 준비"},{title:"가나안 정복", desc:"다음 시대"}]},
-  "bronze-serpent": {title:"8. 연결탐험", items:[{title:"광야 원망", desc:"죄의 결과"},{title:"불뱀 심판", desc:"죽음"},{title:"모세의 중보", desc:"기도"},{title:"놋뱀", desc:"믿음으로 바라봄"},{title:"십자가", desc:"요 3:14~16"}]}
+  "moses-birth": {title:"8. 주제탐험", items:[{title:"모세의 탄생", desc:"구원자의 준비"},{title:"떨기나무 소명", desc:"출 3장"},{title:"출애굽", desc:"하나님의 구원"},{title:"홍해의 기적", desc:"물에서의 구원"},{title:"광야 인도", desc:"언약 백성의 시작"}]},
+  "burning-bush": {title:"8. 주제탐험", items:[{title:"모세의 탄생", desc:"준비된 지도자"},{title:"하나님의 이름", desc:"나는 스스로 있는 자"},{title:"10가지 재앙", desc:"심판과 해방"},{title:"유월절", desc:"구원의 밤"},{title:"시내산 언약", desc:"언약 백성"}]},
+  "ten-plagues": {title:"8. 주제탐험", items:[{title:"떨기나무 소명", desc:"출애굽 사명"},{title:"애굽의 우상 심판", desc:"여호와의 주권"},{title:"유월절", desc:"어린양의 피"},{title:"홍해의 기적", desc:"결정적 구원"},{title:"십자가", desc:"심판과 구원"}]},
+  "passover": {title:"8. 주제탐험", items:[{title:"10가지 재앙", desc:"장자 심판"},{title:"어린양의 피", desc:"구원의 표"},{title:"출애굽", desc:"해방"},{title:"십자가", desc:"유월절 어린양"},{title:"성찬", desc:"새 언약"}]},
+  "red-sea": {title:"8. 주제탐험", items:[{title:"유월절", desc:"피로 구원"},{title:"홍해 도하", desc:"물로 구원"},{title:"광야 훈련", desc:"믿음의 여정"},{title:"세례", desc:"새 생명"},{title:"가나안 입성", desc:"약속의 땅"}]},
+  "manna-quail": {title:"8. 주제탐험", items:[{title:"홍해의 기적", desc:"구원 후 훈련"},{title:"만나", desc:"날마다 공급"},{title:"안식일", desc:"말씀에 순종"},{title:"생명의 떡", desc:"요 6장"},{title:"성찬", desc:"그리스도의 공급"}]},
+  "sinai-commandments": {title:"8. 주제탐험", items:[{title:"출애굽", desc:"구원받은 백성"},{title:"시내산 언약", desc:"말씀의 기준"},{title:"성막", desc:"임재와 예배"},{title:"율법의 완성", desc:"사랑"},{title:"새 언약", desc:"마음에 새긴 말씀"}]},
+  "golden-calf": {title:"8. 주제탐험", items:[{title:"시내산 십계명", desc:"우상 금지"},{title:"금송아지", desc:"언약 파괴"},{title:"모세의 중보", desc:"회복의 길"},{title:"성막", desc:"참된 임재"},{title:"그리스도의 중보", desc:"완전한 회복"}]},
+  "tabernacle": {title:"8. 주제탐험", items:[{title:"시내산 언약", desc:"하나님의 명령"},{title:"성막", desc:"하나님의 임재"},{title:"제사", desc:"속죄의 길"},{title:"성전", desc:"임재의 확장"},{title:"예수 그리스도", desc:"참 성막"}]},
+  "wilderness-40": {title:"8. 주제탐험", items:[{title:"광야 훈련", desc:"믿음의 시험"},{title:"가데스 바네아", desc:"불신앙"},{title:"여호수아와 갈렙", desc:"믿음의 보고"},{title:"새 세대", desc:"약속의 준비"},{title:"가나안 정복", desc:"다음 시대"}]},
+  "bronze-serpent": {title:"8. 주제탐험", items:[{title:"광야 원망", desc:"죄의 결과"},{title:"불뱀 심판", desc:"죽음"},{title:"모세의 중보", desc:"기도"},{title:"놋뱀", desc:"믿음으로 바라봄"},{title:"십자가", desc:"요 3:14~16"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -1388,11 +1388,11 @@ Object.assign(EVENT_ENRICH, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "jordan-crossing": {title:"8. 연결탐험", items:[{title:"홍해 도하", desc:"출애굽 구원"},{title:"요단강", desc:"약속의 땅 입성"},{title:"언약궤", desc:"하나님의 임재"},{title:"길갈", desc:"기념과 새 출발"},{title:"세례", desc:"새 생명으로 들어감"}]},
-  "jericho": {title:"8. 연결탐험", items:[{title:"요단강의 기적", desc:"입성"},{title:"여리고", desc:"첫 승리"},{title:"라합", desc:"믿음의 구원"},{title:"순종", desc:"하나님의 방식"},{title:"십자가", desc:"심판 중 구원"}]},
-  "ai-battle": {title:"8. 연결탐험", items:[{title:"여리고 승리", desc:"첫 승리 후 시험"},{title:"아간", desc:"숨은 죄"},{title:"회개", desc:"정결"},{title:"아이성 승리", desc:"회복"},{title:"언약 갱신", desc:"말씀으로 재정렬"}]},
-  "sun-moon": {title:"8. 연결탐험", items:[{title:"기브온", desc:"화친과 보호"},{title:"아모리 전투", desc:"하나님의 전쟁"},{title:"해와 달", desc:"창조주의 주권"},{title:"여호수아", desc:"담대한 기도"},{title:"최후 승리", desc:"하나님 나라"}]},
-  "land-allotment": {title:"8. 연결탐험", items:[{title:"아브라함 언약", desc:"땅의 약속"},{title:"가나안 정복", desc:"약속 성취"},{title:"실로", desc:"예배 중심"},{title:"도피성", desc:"생명 보호"},{title:"기업", desc:"하나님 나라 상속"}]}
+  "jordan-crossing": {title:"8. 주제탐험", items:[{title:"홍해 도하", desc:"출애굽 구원"},{title:"요단강", desc:"약속의 땅 입성"},{title:"언약궤", desc:"하나님의 임재"},{title:"길갈", desc:"기념과 새 출발"},{title:"세례", desc:"새 생명으로 들어감"}]},
+  "jericho": {title:"8. 주제탐험", items:[{title:"요단강의 기적", desc:"입성"},{title:"여리고", desc:"첫 승리"},{title:"라합", desc:"믿음의 구원"},{title:"순종", desc:"하나님의 방식"},{title:"십자가", desc:"심판 중 구원"}]},
+  "ai-battle": {title:"8. 주제탐험", items:[{title:"여리고 승리", desc:"첫 승리 후 시험"},{title:"아간", desc:"숨은 죄"},{title:"회개", desc:"정결"},{title:"아이성 승리", desc:"회복"},{title:"언약 갱신", desc:"말씀으로 재정렬"}]},
+  "sun-moon": {title:"8. 주제탐험", items:[{title:"기브온", desc:"화친과 보호"},{title:"아모리 전투", desc:"하나님의 전쟁"},{title:"해와 달", desc:"창조주의 주권"},{title:"여호수아", desc:"담대한 기도"},{title:"최후 승리", desc:"하나님 나라"}]},
+  "land-allotment": {title:"8. 주제탐험", items:[{title:"아브라함 언약", desc:"땅의 약속"},{title:"가나안 정복", desc:"약속 성취"},{title:"실로", desc:"예배 중심"},{title:"도피성", desc:"생명 보호"},{title:"기업", desc:"하나님 나라 상속"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -1452,10 +1452,10 @@ Object.assign(EVENT_ENRICH, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "deborah-barak": {title:"8. 연결탐험", items:[{title:"사사 시대", desc:"반복되는 타락과 구원"},{title:"드보라", desc:"믿음의 지도자"},{title:"바락", desc:"순종의 동역자"},{title:"야엘", desc:"연약함을 통한 승리"},{title:"찬양", desc:"하나님께 영광"}]},
-  "gideon-300": {title:"8. 연결탐험", items:[{title:"미디안 압제", desc:"부르짖음"},{title:"기드온", desc:"두려움에서 순종으로"},{title:"300용사", desc:"적은 수의 승리"},{title:"횃불과 나팔", desc:"하나님의 방식"},{title:"겸손", desc:"자랑 금지"}]},
-  "samson": {title:"8. 연결탐험", items:[{title:"나실인", desc:"구별된 사명"},{title:"블레셋", desc:"압제 세력"},{title:"들릴라", desc:"유혹과 몰락"},{title:"마지막 기도", desc:"회복의 부르짖음"},{title:"십자가", desc:"죽음을 통한 승리"}]},
-  "ruth-boaz": {title:"8. 연결탐험", items:[{title:"흉년", desc:"상실의 시작"},{title:"룻", desc:"신실한 사랑"},{title:"보아스", desc:"기업 무를 자"},{title:"베들레헴", desc:"구속사의 장소"},{title:"예수 그리스도", desc:"참 구속자"}]}
+  "deborah-barak": {title:"8. 주제탐험", items:[{title:"사사 시대", desc:"반복되는 타락과 구원"},{title:"드보라", desc:"믿음의 지도자"},{title:"바락", desc:"순종의 동역자"},{title:"야엘", desc:"연약함을 통한 승리"},{title:"찬양", desc:"하나님께 영광"}]},
+  "gideon-300": {title:"8. 주제탐험", items:[{title:"미디안 압제", desc:"부르짖음"},{title:"기드온", desc:"두려움에서 순종으로"},{title:"300용사", desc:"적은 수의 승리"},{title:"횃불과 나팔", desc:"하나님의 방식"},{title:"겸손", desc:"자랑 금지"}]},
+  "samson": {title:"8. 주제탐험", items:[{title:"나실인", desc:"구별된 사명"},{title:"블레셋", desc:"압제 세력"},{title:"들릴라", desc:"유혹과 몰락"},{title:"마지막 기도", desc:"회복의 부르짖음"},{title:"십자가", desc:"죽음을 통한 승리"}]},
+  "ruth-boaz": {title:"8. 주제탐험", items:[{title:"흉년", desc:"상실의 시작"},{title:"룻", desc:"신실한 사랑"},{title:"보아스", desc:"기업 무를 자"},{title:"베들레헴", desc:"구속사의 장소"},{title:"예수 그리스도", desc:"참 구속자"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -1554,14 +1554,14 @@ Object.assign(EVENT_ENRICH, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "saul-king": {title:"8. 연결탐험", items:[{title:"사무엘", desc:"마지막 사사"},{title:"왕정", desc:"인간 왕의 시작"},{title:"사울", desc:"첫 왕"},{title:"다윗", desc:"언약 왕권"},{title:"하나님", desc:"참 왕"}]},
-  "david-goliath": {title:"8. 연결탐험", items:[{title:"엘라 골짜기", desc:"믿음의 전장"},{title:"골리앗", desc:"두려움의 상징"},{title:"다윗", desc:"믿음의 사람"},{title:"하나님의 이름", desc:"승리의 근거"},{title:"십자가", desc:"약함의 승리"}]},
-  "ark-move": {title:"8. 연결탐험", items:[{title:"언약궤", desc:"하나님의 임재"},{title:"웃사", desc:"거룩함의 경고"},{title:"오벧에돔", desc:"임재의 복"},{title:"예루살렘", desc:"예배 중심"},{title:"성전", desc:"임재의 확장"}]},
-  "david-kingdom": {title:"8. 연결탐험", items:[{title:"헤브론", desc:"초기 통치"},{title:"예루살렘", desc:"왕국 중심"},{title:"다윗 언약", desc:"영원한 왕위"},{title:"메시아", desc:"약속의 왕"},{title:"하나님 나라", desc:"왕권의 완성"}]},
-  "bathsheba": {title:"8. 연결탐험", items:[{title:"권력", desc:"죄의 위험"},{title:"우리아", desc:"충성의 대조"},{title:"나단", desc:"말씀의 책망"},{title:"시편 51편", desc:"회개의 기도"},{title:"은혜", desc:"용서와 회복"}]},
-  "solomon-wisdom": {title:"8. 연결탐험", items:[{title:"기브온", desc:"지혜의 기도"},{title:"듣는 마음", desc:"지도자의 태도"},{title:"재판", desc:"공의의 지혜"},{title:"잠언", desc:"지혜 문학"},{title:"그리스도", desc:"참 지혜"}]},
-  "temple-build": {title:"8. 연결탐험", items:[{title:"성막", desc:"임재의 원형"},{title:"모리아 산", desc:"성전의 자리"},{title:"솔로몬", desc:"건축자"},{title:"예수", desc:"참 성전"},{title:"교회", desc:"성령의 성전"}]},
-  "temple-dedication": {title:"8. 연결탐험", items:[{title:"언약궤", desc:"지성소 안치"},{title:"영광", desc:"하나님의 임재"},{title:"기도", desc:"회개의 통로"},{title:"성전", desc:"예배 중심"},{title:"새 예루살렘", desc:"완성된 임재"}]}
+  "saul-king": {title:"8. 주제탐험", items:[{title:"사무엘", desc:"마지막 사사"},{title:"왕정", desc:"인간 왕의 시작"},{title:"사울", desc:"첫 왕"},{title:"다윗", desc:"언약 왕권"},{title:"하나님", desc:"참 왕"}]},
+  "david-goliath": {title:"8. 주제탐험", items:[{title:"엘라 골짜기", desc:"믿음의 전장"},{title:"골리앗", desc:"두려움의 상징"},{title:"다윗", desc:"믿음의 사람"},{title:"하나님의 이름", desc:"승리의 근거"},{title:"십자가", desc:"약함의 승리"}]},
+  "ark-move": {title:"8. 주제탐험", items:[{title:"언약궤", desc:"하나님의 임재"},{title:"웃사", desc:"거룩함의 경고"},{title:"오벧에돔", desc:"임재의 복"},{title:"예루살렘", desc:"예배 중심"},{title:"성전", desc:"임재의 확장"}]},
+  "david-kingdom": {title:"8. 주제탐험", items:[{title:"헤브론", desc:"초기 통치"},{title:"예루살렘", desc:"왕국 중심"},{title:"다윗 언약", desc:"영원한 왕위"},{title:"메시아", desc:"약속의 왕"},{title:"하나님 나라", desc:"왕권의 완성"}]},
+  "bathsheba": {title:"8. 주제탐험", items:[{title:"권력", desc:"죄의 위험"},{title:"우리아", desc:"충성의 대조"},{title:"나단", desc:"말씀의 책망"},{title:"시편 51편", desc:"회개의 기도"},{title:"은혜", desc:"용서와 회복"}]},
+  "solomon-wisdom": {title:"8. 주제탐험", items:[{title:"기브온", desc:"지혜의 기도"},{title:"듣는 마음", desc:"지도자의 태도"},{title:"재판", desc:"공의의 지혜"},{title:"잠언", desc:"지혜 문학"},{title:"그리스도", desc:"참 지혜"}]},
+  "temple-build": {title:"8. 주제탐험", items:[{title:"성막", desc:"임재의 원형"},{title:"모리아 산", desc:"성전의 자리"},{title:"솔로몬", desc:"건축자"},{title:"예수", desc:"참 성전"},{title:"교회", desc:"성령의 성전"}]},
+  "temple-dedication": {title:"8. 주제탐험", items:[{title:"언약궤", desc:"지성소 안치"},{title:"영광", desc:"하나님의 임재"},{title:"기도", desc:"회개의 통로"},{title:"성전", desc:"예배 중심"},{title:"새 예루살렘", desc:"완성된 임재"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -1704,18 +1704,18 @@ Object.assign(EVENT_ENRICH, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "kingdom-divide": {title:"8. 연결탐험", items:[{title:"솔로몬", desc:"분열의 배경"},{title:"르호보암", desc:"어리석은 선택"},{title:"여로보암", desc:"북왕국 시작"},{title:"세겜", desc:"분열의 현장"},{title:"다윗 언약", desc:"남은 약속"}]},
-  "golden-calves": {title:"8. 연결탐험", items:[{title:"벧엘", desc:"거짓 예배 중심"},{title:"단", desc:"북쪽 제단"},{title:"금송아지", desc:"우상숭배"},{title:"예루살렘", desc:"참 예배 중심"},{title:"여로보암의 죄", desc:"반복된 죄"}]},
-  "carmel": {title:"8. 연결탐험", items:[{title:"엘리야", desc:"불의 선지자"},{title:"바알", desc:"거짓 신"},{title:"갈멜산", desc:"결단의 장소"},{title:"제단", desc:"예배 회복"},{title:"기도", desc:"응답의 통로"}]},
-  "naboth": {title:"8. 연결탐험", items:[{title:"나봇", desc:"기업을 지킨 사람"},{title:"아합", desc:"탐욕의 왕"},{title:"이세벨", desc:"불의한 권력"},{title:"포도원", desc:"기업의 상징"},{title:"공의", desc:"하나님의 심판"}]},
-  "elisha-miracles": {title:"8. 연결탐험", items:[{title:"엘리야", desc:"사역의 계승"},{title:"엘리사", desc:"회복의 선지자"},{title:"나아만", desc:"이방인의 치유"},{title:"요단강", desc:"순종과 회복"},{title:"긍휼", desc:"생명의 기적"}]},
-  "jonah-nineveh": {title:"8. 연결탐험", items:[{title:"요나", desc:"도망한 선지자"},{title:"니느웨", desc:"회개한 도시"},{title:"큰 물고기", desc:"구원의 표징"},{title:"회개", desc:"심판을 돌이킴"},{title:"이방 선교", desc:"열방을 향한 긍휼"}]},
-  "north-fall": {title:"8. 연결탐험", items:[{title:"사마리아", desc:"북왕국 수도"},{title:"앗수르", desc:"심판의 도구"},{title:"여로보암의 죄", desc:"멸망의 뿌리"},{title:"호세아", desc:"마지막 왕"},{title:"포로", desc:"흩어짐"}]},
-  "hezekiah-reform": {title:"8. 연결탐험", items:[{title:"히스기야", desc:"개혁의 왕"},{title:"성전", desc:"예배 회복"},{title:"놋뱀", desc:"우상이 된 전통"},{title:"유월절", desc:"언약 기억"},{title:"신뢰", desc:"하나님 의지"}]},
-  "assyria-invasion": {title:"8. 연결탐험", items:[{title:"산헤립", desc:"앗수르 왕"},{title:"랍사게", desc:"조롱의 말"},{title:"히스기야", desc:"기도의 왕"},{title:"이사야", desc:"구원의 말씀"},{title:"예루살렘", desc:"보존된 성"}]},
-  "josiah-reform": {title:"8. 연결탐험", items:[{title:"율법책", desc:"말씀 회복"},{title:"요시야", desc:"말씀 앞의 왕"},{title:"훌다", desc:"말씀 확인"},{title:"언약 갱신", desc:"공동체 회복"},{title:"유월절", desc:"신앙 회복"}]},
-  "jeremiah-tears": {title:"8. 연결탐험", items:[{title:"예레미야", desc:"눈물의 선지자"},{title:"거짓 평안", desc:"멸망 전 착각"},{title:"새 언약", desc:"회복의 소망"},{title:"예레미야애가", desc:"슬픔의 노래"},{title:"바벨론", desc:"심판의 제국"}]},
-  "judah-fall": {title:"8. 연결탐험", items:[{title:"예루살렘", desc:"함락된 성"},{title:"성전 파괴", desc:"심판의 상징"},{title:"시드기야", desc:"마지막 왕"},{title:"바벨론 포로", desc:"새 시대의 시작"},{title:"포로귀환", desc:"회복의 다음 장"}]}
+  "kingdom-divide": {title:"8. 주제탐험", items:[{title:"솔로몬", desc:"분열의 배경"},{title:"르호보암", desc:"어리석은 선택"},{title:"여로보암", desc:"북왕국 시작"},{title:"세겜", desc:"분열의 현장"},{title:"다윗 언약", desc:"남은 약속"}]},
+  "golden-calves": {title:"8. 주제탐험", items:[{title:"벧엘", desc:"거짓 예배 중심"},{title:"단", desc:"북쪽 제단"},{title:"금송아지", desc:"우상숭배"},{title:"예루살렘", desc:"참 예배 중심"},{title:"여로보암의 죄", desc:"반복된 죄"}]},
+  "carmel": {title:"8. 주제탐험", items:[{title:"엘리야", desc:"불의 선지자"},{title:"바알", desc:"거짓 신"},{title:"갈멜산", desc:"결단의 장소"},{title:"제단", desc:"예배 회복"},{title:"기도", desc:"응답의 통로"}]},
+  "naboth": {title:"8. 주제탐험", items:[{title:"나봇", desc:"기업을 지킨 사람"},{title:"아합", desc:"탐욕의 왕"},{title:"이세벨", desc:"불의한 권력"},{title:"포도원", desc:"기업의 상징"},{title:"공의", desc:"하나님의 심판"}]},
+  "elisha-miracles": {title:"8. 주제탐험", items:[{title:"엘리야", desc:"사역의 계승"},{title:"엘리사", desc:"회복의 선지자"},{title:"나아만", desc:"이방인의 치유"},{title:"요단강", desc:"순종과 회복"},{title:"긍휼", desc:"생명의 기적"}]},
+  "jonah-nineveh": {title:"8. 주제탐험", items:[{title:"요나", desc:"도망한 선지자"},{title:"니느웨", desc:"회개한 도시"},{title:"큰 물고기", desc:"구원의 표징"},{title:"회개", desc:"심판을 돌이킴"},{title:"이방 선교", desc:"열방을 향한 긍휼"}]},
+  "north-fall": {title:"8. 주제탐험", items:[{title:"사마리아", desc:"북왕국 수도"},{title:"앗수르", desc:"심판의 도구"},{title:"여로보암의 죄", desc:"멸망의 뿌리"},{title:"호세아", desc:"마지막 왕"},{title:"포로", desc:"흩어짐"}]},
+  "hezekiah-reform": {title:"8. 주제탐험", items:[{title:"히스기야", desc:"개혁의 왕"},{title:"성전", desc:"예배 회복"},{title:"놋뱀", desc:"우상이 된 전통"},{title:"유월절", desc:"언약 기억"},{title:"신뢰", desc:"하나님 의지"}]},
+  "assyria-invasion": {title:"8. 주제탐험", items:[{title:"산헤립", desc:"앗수르 왕"},{title:"랍사게", desc:"조롱의 말"},{title:"히스기야", desc:"기도의 왕"},{title:"이사야", desc:"구원의 말씀"},{title:"예루살렘", desc:"보존된 성"}]},
+  "josiah-reform": {title:"8. 주제탐험", items:[{title:"율법책", desc:"말씀 회복"},{title:"요시야", desc:"말씀 앞의 왕"},{title:"훌다", desc:"말씀 확인"},{title:"언약 갱신", desc:"공동체 회복"},{title:"유월절", desc:"신앙 회복"}]},
+  "jeremiah-tears": {title:"8. 주제탐험", items:[{title:"예레미야", desc:"눈물의 선지자"},{title:"거짓 평안", desc:"멸망 전 착각"},{title:"새 언약", desc:"회복의 소망"},{title:"예레미야애가", desc:"슬픔의 노래"},{title:"바벨론", desc:"심판의 제국"}]},
+  "judah-fall": {title:"8. 주제탐험", items:[{title:"예루살렘", desc:"함락된 성"},{title:"성전 파괴", desc:"심판의 상징"},{title:"시드기야", desc:"마지막 왕"},{title:"바벨론 포로", desc:"새 시대의 시작"},{title:"포로귀환", desc:"회복의 다음 장"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -1801,12 +1801,12 @@ Object.assign(EVENT_ENRICH, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "daniel-friends": {title:"8. 연결탐험", items:[{title:"바벨론 포로", desc:"믿음의 시험"},{title:"정결", desc:"신앙 정체성"},{title:"풀무불", desc:"보호의 경험"},{title:"지혜", desc:"하나님의 선물"},{title:"성찬", desc:"언약 기억"}]},
-  "furnace": {title:"8. 연결탐험", items:[{title:"금신상", desc:"제국의 우상"},{title:"순교적 믿음", desc:"타협 거부"},{title:"임마누엘", desc:"불 속의 동행"},{title:"십자가", desc:"고난 속 구원"},{title:"예배", desc:"하나님께만"}]},
-  "nebuchadnezzar-dream": {title:"8. 연결탐험", items:[{title:"바벨론", desc:"제국의 상징"},{title:"큰 신상", desc:"제국의 흥망"},{title:"뜨인 돌", desc:"하나님의 나라"},{title:"다니엘", desc:"계시의 통로"},{title:"새창조", desc:"완성될 나라"}]},
-  "lion-den": {title:"8. 연결탐험", items:[{title:"기도", desc:"일상의 믿음"},{title:"사자굴", desc:"죽음의 위기"},{title:"다리오", desc:"이방 왕의 고백"},{title:"부활 소망", desc:"구원의 그림자"},{title:"충성", desc:"끝까지 믿음"}]},
-  "ezekiel-vision": {title:"8. 연결탐험", items:[{title:"하나님의 영광", desc:"포로지 임재"},{title:"마른 뼈", desc:"회복의 생명"},{title:"새 마음", desc:"내적 변화"},{title:"새 성전", desc:"임재 회복"},{title:"성령", desc:"살리시는 영"}]},
-  "esther-purim": {title:"8. 연결탐험", items:[{title:"에스더", desc:"결단의 사람"},{title:"모르드개", desc:"사명을 일깨움"},{title:"하만", desc:"악한 음모"},{title:"부림절", desc:"역전의 기쁨"},{title:"섭리", desc:"숨은 손길"}]}
+  "daniel-friends": {title:"8. 주제탐험", items:[{title:"바벨론 포로", desc:"믿음의 시험"},{title:"정결", desc:"신앙 정체성"},{title:"풀무불", desc:"보호의 경험"},{title:"지혜", desc:"하나님의 선물"},{title:"성찬", desc:"언약 기억"}]},
+  "furnace": {title:"8. 주제탐험", items:[{title:"금신상", desc:"제국의 우상"},{title:"순교적 믿음", desc:"타협 거부"},{title:"임마누엘", desc:"불 속의 동행"},{title:"십자가", desc:"고난 속 구원"},{title:"예배", desc:"하나님께만"}]},
+  "nebuchadnezzar-dream": {title:"8. 주제탐험", items:[{title:"바벨론", desc:"제국의 상징"},{title:"큰 신상", desc:"제국의 흥망"},{title:"뜨인 돌", desc:"하나님의 나라"},{title:"다니엘", desc:"계시의 통로"},{title:"새창조", desc:"완성될 나라"}]},
+  "lion-den": {title:"8. 주제탐험", items:[{title:"기도", desc:"일상의 믿음"},{title:"사자굴", desc:"죽음의 위기"},{title:"다리오", desc:"이방 왕의 고백"},{title:"부활 소망", desc:"구원의 그림자"},{title:"충성", desc:"끝까지 믿음"}]},
+  "ezekiel-vision": {title:"8. 주제탐험", items:[{title:"하나님의 영광", desc:"포로지 임재"},{title:"마른 뼈", desc:"회복의 생명"},{title:"새 마음", desc:"내적 변화"},{title:"새 성전", desc:"임재 회복"},{title:"성령", desc:"살리시는 영"}]},
+  "esther-purim": {title:"8. 주제탐험", items:[{title:"에스더", desc:"결단의 사람"},{title:"모르드개", desc:"사명을 일깨움"},{title:"하만", desc:"악한 음모"},{title:"부림절", desc:"역전의 기쁨"},{title:"섭리", desc:"숨은 손길"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -1868,10 +1868,10 @@ Object.assign(EVENT_ENRICH, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "zerubbabel-return": {title:"8. 연결탐험", items:[{title:"유월절", desc:"구원과 귀환의 기억"},{title:"성막·성전", desc:"하나님 임재 회복"},{title:"십자가", desc:"참 성전의 길"},{title:"성찬", desc:"회복 공동체의 예배"},{title:"스가랴", desc:"성전 재건의 격려"}]},
-  "temple-rebuild": {title:"8. 연결탐험", items:[{title:"솔로몬 성전", desc:"이전 성전의 영광"},{title:"스룹바벨 성전", desc:"회복된 예배 중심"},{title:"학개", desc:"재건 촉구"},{title:"스가랴", desc:"하나님의 영으로"},{title:"예수", desc:"참 성전"}]},
-  "ezra-reform": {title:"8. 연결탐험", items:[{title:"율법", desc:"공동체의 기준"},{title:"회개", desc:"개혁의 출발"},{title:"말씀 교육", desc:"정체성 회복"},{title:"언약 갱신", desc:"백성의 응답"},{title:"성경읽기", desc:"신앙 회복의 길"}]},
-  "nehemiah-wall": {title:"8. 연결탐험", items:[{title:"예루살렘", desc:"회복의 중심"},{title:"성벽", desc:"정체성과 보호"},{title:"기도", desc:"실행의 출발"},{title:"공동체", desc:"함께 세움"},{title:"언약 갱신", desc:"말씀으로 재정비"}]}
+  "zerubbabel-return": {title:"8. 주제탐험", items:[{title:"유월절", desc:"구원과 귀환의 기억"},{title:"성막·성전", desc:"하나님 임재 회복"},{title:"십자가", desc:"참 성전의 길"},{title:"성찬", desc:"회복 공동체의 예배"},{title:"스가랴", desc:"성전 재건의 격려"}]},
+  "temple-rebuild": {title:"8. 주제탐험", items:[{title:"솔로몬 성전", desc:"이전 성전의 영광"},{title:"스룹바벨 성전", desc:"회복된 예배 중심"},{title:"학개", desc:"재건 촉구"},{title:"스가랴", desc:"하나님의 영으로"},{title:"예수", desc:"참 성전"}]},
+  "ezra-reform": {title:"8. 주제탐험", items:[{title:"율법", desc:"공동체의 기준"},{title:"회개", desc:"개혁의 출발"},{title:"말씀 교육", desc:"정체성 회복"},{title:"언약 갱신", desc:"백성의 응답"},{title:"성경읽기", desc:"신앙 회복의 길"}]},
+  "nehemiah-wall": {title:"8. 주제탐험", items:[{title:"예루살렘", desc:"회복의 중심"},{title:"성벽", desc:"정체성과 보호"},{title:"기도", desc:"실행의 출발"},{title:"공동체", desc:"함께 세움"},{title:"언약 갱신", desc:"말씀으로 재정비"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -1945,11 +1945,11 @@ Object.assign(EVENT_ENRICH, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "hellenism": {title:"8. 연결탐험", items:[{title:"70인역", desc:"헬라어 성경 번역"},{title:"신약 헬라어", desc:"복음 전파의 언어"},{title:"마카비 혁명", desc:"정체성 보존의 저항"},{title:"로마제국", desc:"신약 무대 준비"},{title:"바울 선교", desc:"헬라 세계를 향한 복음"}]},
-  "alexander": {title:"8. 연결탐험", items:[{title:"다니엘", desc:"제국 환상의 배경"},{title:"헬라제국", desc:"문화권 형성"},{title:"프톨레마이오스", desc:"이집트계 지배"},{title:"셀레우코스", desc:"시리아계 지배"},{title:"신약 세계", desc:"헬라어 문화권"}]},
-  "maccabees": {title:"8. 연결탐험", items:[{title:"성전", desc:"예배 정체성의 중심"},{title:"하누카", desc:"성전 정화 기념"},{title:"안티오코스", desc:"신앙 탄압의 상징"},{title:"유대 독립", desc:"하스몬 왕조 배경"},{title:"예수 시대", desc:"유대 사회 이해"}]},
-  "hanukkah": {title:"8. 연결탐험", items:[{title:"수전절", desc:"요한복음의 배경"},{title:"성전 봉헌", desc:"예배 회복"},{title:"빛", desc:"하누카 상징"},{title:"예루살렘", desc:"성전의 도시"},{title:"참 성전", desc:"그리스도와 연결"}]},
-  "rome": {title:"8. 연결탐험", items:[{title:"헤롯", desc:"예수 탄생기의 왕"},{title:"가이사", desc:"로마 황제 질서"},{title:"베들레헴", desc:"호적령과 탄생"},{title:"십자가", desc:"로마 처형 방식"},{title:"사도행전", desc:"로마까지 간 복음"}]}
+  "hellenism": {title:"8. 주제탐험", items:[{title:"70인역", desc:"헬라어 성경 번역"},{title:"신약 헬라어", desc:"복음 전파의 언어"},{title:"마카비 혁명", desc:"정체성 보존의 저항"},{title:"로마제국", desc:"신약 무대 준비"},{title:"바울 선교", desc:"헬라 세계를 향한 복음"}]},
+  "alexander": {title:"8. 주제탐험", items:[{title:"다니엘", desc:"제국 환상의 배경"},{title:"헬라제국", desc:"문화권 형성"},{title:"프톨레마이오스", desc:"이집트계 지배"},{title:"셀레우코스", desc:"시리아계 지배"},{title:"신약 세계", desc:"헬라어 문화권"}]},
+  "maccabees": {title:"8. 주제탐험", items:[{title:"성전", desc:"예배 정체성의 중심"},{title:"하누카", desc:"성전 정화 기념"},{title:"안티오코스", desc:"신앙 탄압의 상징"},{title:"유대 독립", desc:"하스몬 왕조 배경"},{title:"예수 시대", desc:"유대 사회 이해"}]},
+  "hanukkah": {title:"8. 주제탐험", items:[{title:"수전절", desc:"요한복음의 배경"},{title:"성전 봉헌", desc:"예배 회복"},{title:"빛", desc:"하누카 상징"},{title:"예루살렘", desc:"성전의 도시"},{title:"참 성전", desc:"그리스도와 연결"}]},
+  "rome": {title:"8. 주제탐험", items:[{title:"헤롯", desc:"예수 탄생기의 왕"},{title:"가이사", desc:"로마 황제 질서"},{title:"베들레헴", desc:"호적령과 탄생"},{title:"십자가", desc:"로마 처형 방식"},{title:"사도행전", desc:"로마까지 간 복음"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -2184,24 +2184,24 @@ Object.assign(EVENT_ENRICH, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "jesus-birth": {title:"8. 연결탐험", items:[{"title": "성육신", "desc": "연결 주제"}, {"title": "메시아 약속", "desc": "연결 주제"}, {"title": "베들레헴", "desc": "연결 주제"}, {"title": "다윗 언약", "desc": "연결 주제"}, {"title": "복음서 시작", "desc": "연결 주제"}]},
-  "magi": {title:"8. 연결탐험", items:[{"title": "별", "desc": "연결 주제"}, {"title": "열방 경배", "desc": "연결 주제"}, {"title": "헤롯", "desc": "연결 주제"}, {"title": "베들레헴", "desc": "연결 주제"}, {"title": "메시아 왕", "desc": "연결 주제"}]},
-  "john-baptist": {title:"8. 연결탐험", items:[{"title": "회개", "desc": "연결 주제"}, {"title": "요단강", "desc": "연결 주제"}, {"title": "엘리야의 심령", "desc": "연결 주제"}, {"title": "메시아 증언", "desc": "연결 주제"}, {"title": "예수 세례", "desc": "연결 주제"}]},
-  "jesus-baptism": {title:"8. 연결탐험", items:[{"title": "요단강", "desc": "연결 주제"}, {"title": "성령", "desc": "연결 주제"}, {"title": "하나님의 아들", "desc": "연결 주제"}, {"title": "공생애", "desc": "연결 주제"}, {"title": "삼위일체", "desc": "연결 주제"}]},
-  "temptation": {title:"8. 연결탐험", items:[{"title": "광야 40일", "desc": "연결 주제"}, {"title": "말씀", "desc": "연결 주제"}, {"title": "순종", "desc": "연결 주제"}, {"title": "이스라엘 광야", "desc": "연결 주제"}, {"title": "사탄의 시험", "desc": "연결 주제"}]},
-  "calling-disciples": {title:"8. 연결탐험", items:[{"title": "갈릴리", "desc": "연결 주제"}, {"title": "제자도", "desc": "연결 주제"}, {"title": "베드로", "desc": "연결 주제"}, {"title": "사람 낚는 어부", "desc": "연결 주제"}, {"title": "복음 전파", "desc": "연결 주제"}]},
-  "sermon-mount": {title:"8. 연결탐험", items:[{"title": "팔복", "desc": "연결 주제"}, {"title": "빛과 소금", "desc": "연결 주제"}, {"title": "주기도문", "desc": "연결 주제"}, {"title": "율법의 완성", "desc": "연결 주제"}, {"title": "반석 위의 집", "desc": "연결 주제"}]},
-  "five-loaves": {title:"8. 연결탐험", items:[{"title": "생명의 떡", "desc": "연결 주제"}, {"title": "갈릴리", "desc": "연결 주제"}, {"title": "긍휼", "desc": "연결 주제"}, {"title": "기적", "desc": "연결 주제"}, {"title": "감사", "desc": "연결 주제"}]},
-  "walk-water": {title:"8. 연결탐험", items:[{"title": "풍랑", "desc": "연결 주제"}, {"title": "믿음", "desc": "연결 주제"}, {"title": "베드로", "desc": "연결 주제"}, {"title": "갈릴리 호수", "desc": "연결 주제"}, {"title": "주님의 권세", "desc": "연결 주제"}]},
-  "transfiguration": {title:"8. 연결탐험", items:[{"title": "모세", "desc": "연결 주제"}, {"title": "엘리야", "desc": "연결 주제"}, {"title": "영광", "desc": "연결 주제"}, {"title": "하나님의 아들", "desc": "연결 주제"}, {"title": "십자가 전조", "desc": "연결 주제"}]},
-  "lazarus": {title:"8. 연결탐험", items:[{"title": "부활과 생명", "desc": "연결 주제"}, {"title": "베다니", "desc": "연결 주제"}, {"title": "마르다", "desc": "연결 주제"}, {"title": "마리아", "desc": "연결 주제"}, {"title": "빈 무덤", "desc": "연결 주제"}]},
-  "triumphal-entry": {title:"8. 연결탐험", items:[{"title": "호산나", "desc": "연결 주제"}, {"title": "나귀", "desc": "연결 주제"}, {"title": "예루살렘", "desc": "연결 주제"}, {"title": "종려주일", "desc": "연결 주제"}, {"title": "고난주간", "desc": "연결 주제"}]},
-  "last-supper": {title:"8. 연결탐험", items:[{"title": "유월절", "desc": "연결 주제"}, {"title": "성찬", "desc": "연결 주제"}, {"title": "새 언약", "desc": "연결 주제"}, {"title": "발 씻김", "desc": "연결 주제"}, {"title": "십자가", "desc": "연결 주제"}]},
-  "gethsemane": {title:"8. 연결탐험", items:[{"title": "기도", "desc": "연결 주제"}, {"title": "순종", "desc": "연결 주제"}, {"title": "겟세마네", "desc": "연결 주제"}, {"title": "체포", "desc": "연결 주제"}, {"title": "아버지의 뜻", "desc": "연결 주제"}]},
-  "cross": {title:"8. 연결탐험", items:[{"title": "골고다", "desc": "연결 주제"}, {"title": "대속", "desc": "연결 주제"}, {"title": "다 이루었다", "desc": "연결 주제"}, {"title": "성전 휘장", "desc": "연결 주제"}, {"title": "구원", "desc": "연결 주제"}]},
-  "resurrection": {title:"8. 연결탐험", items:[{"title": "빈 무덤", "desc": "연결 주제"}, {"title": "부활", "desc": "연결 주제"}, {"title": "새 생명", "desc": "연결 주제"}, {"title": "제자들", "desc": "연결 주제"}, {"title": "복음의 확증", "desc": "연결 주제"}]},
-  "pentecost-promise": {title:"8. 연결탐험", items:[{"title": "성령", "desc": "연결 주제"}, {"title": "증인", "desc": "연결 주제"}, {"title": "예루살렘", "desc": "연결 주제"}, {"title": "땅끝", "desc": "연결 주제"}, {"title": "초대교회", "desc": "연결 주제"}]},
-  "ascension": {title:"8. 연결탐험", items:[{"title": "감람산", "desc": "연결 주제"}, {"title": "승천", "desc": "연결 주제"}, {"title": "재림 약속", "desc": "연결 주제"}, {"title": "증인의 사명", "desc": "연결 주제"}, {"title": "하나님 나라", "desc": "연결 주제"}]}
+  "jesus-birth": {title:"8. 주제탐험", items:[{"title": "성육신", "desc": "연결 주제"}, {"title": "메시아 약속", "desc": "연결 주제"}, {"title": "베들레헴", "desc": "연결 주제"}, {"title": "다윗 언약", "desc": "연결 주제"}, {"title": "복음서 시작", "desc": "연결 주제"}]},
+  "magi": {title:"8. 주제탐험", items:[{"title": "별", "desc": "연결 주제"}, {"title": "열방 경배", "desc": "연결 주제"}, {"title": "헤롯", "desc": "연결 주제"}, {"title": "베들레헴", "desc": "연결 주제"}, {"title": "메시아 왕", "desc": "연결 주제"}]},
+  "john-baptist": {title:"8. 주제탐험", items:[{"title": "회개", "desc": "연결 주제"}, {"title": "요단강", "desc": "연결 주제"}, {"title": "엘리야의 심령", "desc": "연결 주제"}, {"title": "메시아 증언", "desc": "연결 주제"}, {"title": "예수 세례", "desc": "연결 주제"}]},
+  "jesus-baptism": {title:"8. 주제탐험", items:[{"title": "요단강", "desc": "연결 주제"}, {"title": "성령", "desc": "연결 주제"}, {"title": "하나님의 아들", "desc": "연결 주제"}, {"title": "공생애", "desc": "연결 주제"}, {"title": "삼위일체", "desc": "연결 주제"}]},
+  "temptation": {title:"8. 주제탐험", items:[{"title": "광야 40일", "desc": "연결 주제"}, {"title": "말씀", "desc": "연결 주제"}, {"title": "순종", "desc": "연결 주제"}, {"title": "이스라엘 광야", "desc": "연결 주제"}, {"title": "사탄의 시험", "desc": "연결 주제"}]},
+  "calling-disciples": {title:"8. 주제탐험", items:[{"title": "갈릴리", "desc": "연결 주제"}, {"title": "제자도", "desc": "연결 주제"}, {"title": "베드로", "desc": "연결 주제"}, {"title": "사람 낚는 어부", "desc": "연결 주제"}, {"title": "복음 전파", "desc": "연결 주제"}]},
+  "sermon-mount": {title:"8. 주제탐험", items:[{"title": "팔복", "desc": "연결 주제"}, {"title": "빛과 소금", "desc": "연결 주제"}, {"title": "주기도문", "desc": "연결 주제"}, {"title": "율법의 완성", "desc": "연결 주제"}, {"title": "반석 위의 집", "desc": "연결 주제"}]},
+  "five-loaves": {title:"8. 주제탐험", items:[{"title": "생명의 떡", "desc": "연결 주제"}, {"title": "갈릴리", "desc": "연결 주제"}, {"title": "긍휼", "desc": "연결 주제"}, {"title": "기적", "desc": "연결 주제"}, {"title": "감사", "desc": "연결 주제"}]},
+  "walk-water": {title:"8. 주제탐험", items:[{"title": "풍랑", "desc": "연결 주제"}, {"title": "믿음", "desc": "연결 주제"}, {"title": "베드로", "desc": "연결 주제"}, {"title": "갈릴리 호수", "desc": "연결 주제"}, {"title": "주님의 권세", "desc": "연결 주제"}]},
+  "transfiguration": {title:"8. 주제탐험", items:[{"title": "모세", "desc": "연결 주제"}, {"title": "엘리야", "desc": "연결 주제"}, {"title": "영광", "desc": "연결 주제"}, {"title": "하나님의 아들", "desc": "연결 주제"}, {"title": "십자가 전조", "desc": "연결 주제"}]},
+  "lazarus": {title:"8. 주제탐험", items:[{"title": "부활과 생명", "desc": "연결 주제"}, {"title": "베다니", "desc": "연결 주제"}, {"title": "마르다", "desc": "연결 주제"}, {"title": "마리아", "desc": "연결 주제"}, {"title": "빈 무덤", "desc": "연결 주제"}]},
+  "triumphal-entry": {title:"8. 주제탐험", items:[{"title": "호산나", "desc": "연결 주제"}, {"title": "나귀", "desc": "연결 주제"}, {"title": "예루살렘", "desc": "연결 주제"}, {"title": "종려주일", "desc": "연결 주제"}, {"title": "고난주간", "desc": "연결 주제"}]},
+  "last-supper": {title:"8. 주제탐험", items:[{"title": "유월절", "desc": "연결 주제"}, {"title": "성찬", "desc": "연결 주제"}, {"title": "새 언약", "desc": "연결 주제"}, {"title": "발 씻김", "desc": "연결 주제"}, {"title": "십자가", "desc": "연결 주제"}]},
+  "gethsemane": {title:"8. 주제탐험", items:[{"title": "기도", "desc": "연결 주제"}, {"title": "순종", "desc": "연결 주제"}, {"title": "겟세마네", "desc": "연결 주제"}, {"title": "체포", "desc": "연결 주제"}, {"title": "아버지의 뜻", "desc": "연결 주제"}]},
+  "cross": {title:"8. 주제탐험", items:[{"title": "골고다", "desc": "연결 주제"}, {"title": "대속", "desc": "연결 주제"}, {"title": "다 이루었다", "desc": "연결 주제"}, {"title": "성전 휘장", "desc": "연결 주제"}, {"title": "구원", "desc": "연결 주제"}]},
+  "resurrection": {title:"8. 주제탐험", items:[{"title": "빈 무덤", "desc": "연결 주제"}, {"title": "부활", "desc": "연결 주제"}, {"title": "새 생명", "desc": "연결 주제"}, {"title": "제자들", "desc": "연결 주제"}, {"title": "복음의 확증", "desc": "연결 주제"}]},
+  "pentecost-promise": {title:"8. 주제탐험", items:[{"title": "성령", "desc": "연결 주제"}, {"title": "증인", "desc": "연결 주제"}, {"title": "예루살렘", "desc": "연결 주제"}, {"title": "땅끝", "desc": "연결 주제"}, {"title": "초대교회", "desc": "연결 주제"}]},
+  "ascension": {title:"8. 주제탐험", items:[{"title": "감람산", "desc": "연결 주제"}, {"title": "승천", "desc": "연결 주제"}, {"title": "재림 약속", "desc": "연결 주제"}, {"title": "증인의 사명", "desc": "연결 주제"}, {"title": "하나님 나라", "desc": "연결 주제"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -2330,15 +2330,15 @@ Object.assign(EVENTS, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "pentecost": {title:"8. 연결탐험", items:[{"title": "성령", "desc": "연결 주제"}, {"title": "오순절", "desc": "연결 주제"}, {"title": "베드로 설교", "desc": "연결 주제"}, {"title": "교회 탄생", "desc": "연결 주제"}, {"title": "땅끝 증인", "desc": "연결 주제"}]},
-  "stephen": {title:"8. 연결탐험", items:[{"title": "순교", "desc": "연결 주제"}, {"title": "증언", "desc": "연결 주제"}, {"title": "박해", "desc": "연결 주제"}, {"title": "사울", "desc": "연결 주제"}, {"title": "복음 확산", "desc": "연결 주제"}]},
-  "paul-conversion": {title:"8. 연결탐험", items:[{"title": "회심", "desc": "연결 주제"}, {"title": "다메섹", "desc": "연결 주제"}, {"title": "아나니아", "desc": "연결 주제"}, {"title": "이방인의 사도", "desc": "연결 주제"}, {"title": "은혜", "desc": "연결 주제"}]},
-  "paul-1st": {title:"8. 연결탐험", items:[{"title": "안디옥", "desc": "연결 주제"}, {"title": "바나바", "desc": "연결 주제"}, {"title": "구브로", "desc": "연결 주제"}, {"title": "이방 선교", "desc": "연결 주제"}, {"title": "지역 교회", "desc": "연결 주제"}]},
-  "jerusalem-council": {title:"8. 연결탐험", items:[{"title": "은혜", "desc": "연결 주제"}, {"title": "할례 논쟁", "desc": "연결 주제"}, {"title": "야고보", "desc": "연결 주제"}, {"title": "이방인 성도", "desc": "연결 주제"}, {"title": "교회 일치", "desc": "연결 주제"}]},
-  "paul-2nd": {title:"8. 연결탐험", items:[{"title": "마게도냐 환상", "desc": "연결 주제"}, {"title": "빌립보", "desc": "연결 주제"}, {"title": "고린도", "desc": "연결 주제"}, {"title": "디모데", "desc": "연결 주제"}, {"title": "유럽 선교", "desc": "연결 주제"}]},
-  "paul-3rd": {title:"8. 연결탐험", items:[{"title": "에베소", "desc": "연결 주제"}, {"title": "두란노 서원", "desc": "연결 주제"}, {"title": "교회 세움", "desc": "연결 주제"}, {"title": "밀레도 고별", "desc": "연결 주제"}, {"title": "예루살렘 행", "desc": "연결 주제"}]},
-  "rome-transfer": {title:"8. 연결탐험", items:[{"title": "로마", "desc": "연결 주제"}, {"title": "재판", "desc": "연결 주제"}, {"title": "항해", "desc": "연결 주제"}, {"title": "난파", "desc": "연결 주제"}, {"title": "땅끝 증인", "desc": "연결 주제"}]},
-  "john-patmos": {title:"8. 연결탐험", items:[{"title": "요한계시록", "desc": "연결 주제"}, {"title": "일곱 교회", "desc": "연결 주제"}, {"title": "밧모섬", "desc": "연결 주제"}, {"title": "재림", "desc": "연결 주제"}, {"title": "새 하늘과 새 땅", "desc": "연결 주제"}]}
+  "pentecost": {title:"8. 주제탐험", items:[{"title": "성령", "desc": "연결 주제"}, {"title": "오순절", "desc": "연결 주제"}, {"title": "베드로 설교", "desc": "연결 주제"}, {"title": "교회 탄생", "desc": "연결 주제"}, {"title": "땅끝 증인", "desc": "연결 주제"}]},
+  "stephen": {title:"8. 주제탐험", items:[{"title": "순교", "desc": "연결 주제"}, {"title": "증언", "desc": "연결 주제"}, {"title": "박해", "desc": "연결 주제"}, {"title": "사울", "desc": "연결 주제"}, {"title": "복음 확산", "desc": "연결 주제"}]},
+  "paul-conversion": {title:"8. 주제탐험", items:[{"title": "회심", "desc": "연결 주제"}, {"title": "다메섹", "desc": "연결 주제"}, {"title": "아나니아", "desc": "연결 주제"}, {"title": "이방인의 사도", "desc": "연결 주제"}, {"title": "은혜", "desc": "연결 주제"}]},
+  "paul-1st": {title:"8. 주제탐험", items:[{"title": "안디옥", "desc": "연결 주제"}, {"title": "바나바", "desc": "연결 주제"}, {"title": "구브로", "desc": "연결 주제"}, {"title": "이방 선교", "desc": "연결 주제"}, {"title": "지역 교회", "desc": "연결 주제"}]},
+  "jerusalem-council": {title:"8. 주제탐험", items:[{"title": "은혜", "desc": "연결 주제"}, {"title": "할례 논쟁", "desc": "연결 주제"}, {"title": "야고보", "desc": "연결 주제"}, {"title": "이방인 성도", "desc": "연결 주제"}, {"title": "교회 일치", "desc": "연결 주제"}]},
+  "paul-2nd": {title:"8. 주제탐험", items:[{"title": "마게도냐 환상", "desc": "연결 주제"}, {"title": "빌립보", "desc": "연결 주제"}, {"title": "고린도", "desc": "연결 주제"}, {"title": "디모데", "desc": "연결 주제"}, {"title": "유럽 선교", "desc": "연결 주제"}]},
+  "paul-3rd": {title:"8. 주제탐험", items:[{"title": "에베소", "desc": "연결 주제"}, {"title": "두란노 서원", "desc": "연결 주제"}, {"title": "교회 세움", "desc": "연결 주제"}, {"title": "밀레도 고별", "desc": "연결 주제"}, {"title": "예루살렘 행", "desc": "연결 주제"}]},
+  "rome-transfer": {title:"8. 주제탐험", items:[{"title": "로마", "desc": "연결 주제"}, {"title": "재판", "desc": "연결 주제"}, {"title": "항해", "desc": "연결 주제"}, {"title": "난파", "desc": "연결 주제"}, {"title": "땅끝 증인", "desc": "연결 주제"}]},
+  "john-patmos": {title:"8. 주제탐험", items:[{"title": "요한계시록", "desc": "연결 주제"}, {"title": "일곱 교회", "desc": "연결 주제"}, {"title": "밧모섬", "desc": "연결 주제"}, {"title": "재림", "desc": "연결 주제"}, {"title": "새 하늘과 새 땅", "desc": "연결 주제"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -2459,12 +2459,12 @@ Object.assign(EVENT_ENRICH, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "seven-churches": {title:"8. 연결탐험", items:[{"title": "일곱 교회", "desc": "연결 주제"}, {"title": "밧모섬", "desc": "연결 주제"}, {"title": "회개", "desc": "연결 주제"}, {"title": "이기는 자", "desc": "연결 주제"}, {"title": "재림 준비", "desc": "연결 주제"}]},
-  "seven-seals": {title:"8. 연결탐험", items:[{"title": "어린양", "desc": "연결 주제"}, {"title": "두루마리", "desc": "연결 주제"}, {"title": "일곱 인", "desc": "연결 주제"}, {"title": "심판", "desc": "연결 주제"}, {"title": "성도의 기도", "desc": "연결 주제"}]},
-  "beast-tribulation": {title:"8. 연결탐험", items:[{"title": "짐승", "desc": "연결 주제"}, {"title": "환난", "desc": "연결 주제"}, {"title": "우상 숭배", "desc": "연결 주제"}, {"title": "성도의 인내", "desc": "연결 주제"}, {"title": "거짓 권세", "desc": "연결 주제"}]},
-  "armageddon": {title:"8. 연결탐험", items:[{"title": "아마겟돈", "desc": "연결 주제"}, {"title": "재림", "desc": "연결 주제"}, {"title": "최후 심판", "desc": "연결 주제"}, {"title": "왕 중의 왕", "desc": "연결 주제"}, {"title": "승리", "desc": "연결 주제"}]},
-  "new-jerusalem": {title:"8. 연결탐험", items:[{"title": "새예루살렘", "desc": "연결 주제"}, {"title": "하나님의 장막", "desc": "연결 주제"}, {"title": "어린양", "desc": "연결 주제"}, {"title": "눈물 없음", "desc": "연결 주제"}, {"title": "영원한 임재", "desc": "연결 주제"}]},
-  "new-heaven-earth": {title:"8. 연결탐험", items:[{"title": "새창조", "desc": "연결 주제"}, {"title": "생명수 강", "desc": "연결 주제"}, {"title": "생명나무", "desc": "연결 주제"}, {"title": "저주 없음", "desc": "연결 주제"}, {"title": "영원한 나라", "desc": "연결 주제"}]}
+  "seven-churches": {title:"8. 주제탐험", items:[{"title": "일곱 교회", "desc": "연결 주제"}, {"title": "밧모섬", "desc": "연결 주제"}, {"title": "회개", "desc": "연결 주제"}, {"title": "이기는 자", "desc": "연결 주제"}, {"title": "재림 준비", "desc": "연결 주제"}]},
+  "seven-seals": {title:"8. 주제탐험", items:[{"title": "어린양", "desc": "연결 주제"}, {"title": "두루마리", "desc": "연결 주제"}, {"title": "일곱 인", "desc": "연결 주제"}, {"title": "심판", "desc": "연결 주제"}, {"title": "성도의 기도", "desc": "연결 주제"}]},
+  "beast-tribulation": {title:"8. 주제탐험", items:[{"title": "짐승", "desc": "연결 주제"}, {"title": "환난", "desc": "연결 주제"}, {"title": "우상 숭배", "desc": "연결 주제"}, {"title": "성도의 인내", "desc": "연결 주제"}, {"title": "거짓 권세", "desc": "연결 주제"}]},
+  "armageddon": {title:"8. 주제탐험", items:[{"title": "아마겟돈", "desc": "연결 주제"}, {"title": "재림", "desc": "연결 주제"}, {"title": "최후 심판", "desc": "연결 주제"}, {"title": "왕 중의 왕", "desc": "연결 주제"}, {"title": "승리", "desc": "연결 주제"}]},
+  "new-jerusalem": {title:"8. 주제탐험", items:[{"title": "새예루살렘", "desc": "연결 주제"}, {"title": "하나님의 장막", "desc": "연결 주제"}, {"title": "어린양", "desc": "연결 주제"}, {"title": "눈물 없음", "desc": "연결 주제"}, {"title": "영원한 임재", "desc": "연결 주제"}]},
+  "new-heaven-earth": {title:"8. 주제탐험", items:[{"title": "새창조", "desc": "연결 주제"}, {"title": "생명수 강", "desc": "연결 주제"}, {"title": "생명나무", "desc": "연결 주제"}, {"title": "저주 없음", "desc": "연결 주제"}, {"title": "영원한 나라", "desc": "연결 주제"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -2684,8 +2684,8 @@ Object.assign(EVENT_ENRICH, {
 });
 
 Object.assign(EVENT_EXPLORE, {
-  "circumcision-gilgal-passover": {title:"8. 연결탐험", items:[{title:"요단강 도하", desc:"약속의 땅 입성"},{title:"할례", desc:"언약 백성의 표"},{title:"유월절", desc:"출애굽 구원 기억"},{title:"만나의 그침", desc:"광야에서 가나안으로"},{title:"여리고 함락", desc:"정복의 시작"}]},
-  "joshua-shechem-covenant": {title:"8. 연결탐험", items:[{title:"세겜", desc:"언약의 장소"},{title:"아브라함 언약", desc:"약속의 땅"},{title:"가나안 분배", desc:"약속의 성취"},{title:"오직 여호와", desc:"신앙의 선택"},{title:"사사기", desc:"언약 망각의 결과"}]}
+  "circumcision-gilgal-passover": {title:"8. 주제탐험", items:[{title:"요단강 도하", desc:"약속의 땅 입성"},{title:"할례", desc:"언약 백성의 표"},{title:"유월절", desc:"출애굽 구원 기억"},{title:"만나의 그침", desc:"광야에서 가나안으로"},{title:"여리고 함락", desc:"정복의 시작"}]},
+  "joshua-shechem-covenant": {title:"8. 주제탐험", items:[{title:"세겜", desc:"언약의 장소"},{title:"아브라함 언약", desc:"약속의 땅"},{title:"가나안 분배", desc:"약속의 성취"},{title:"오직 여호와", desc:"신앙의 선택"},{title:"사사기", desc:"언약 망각의 결과"}]}
 });
 
 Object.assign(EVENT_MAP_CROPS, {
@@ -2820,7 +2820,7 @@ Object.assign(ORIGINAL_INFOGRAPHICS, {
 
 Object.assign(EVENT_EXPLORE, {
   "saul-disobedience":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"순종", desc:"하나님 말씀에 대한 온전한 반응", ref:"삼상 15:22"},
       {title:"제사", desc:"형식보다 순종이 우선", ref:"삼상 15:22"},
@@ -2829,7 +2829,7 @@ Object.assign(EVENT_EXPLORE, {
     ]
   },
   "david-fugitive-life":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"광야", desc:"약속의 사람을 준비하는 장소", ref:"삼상 22장"},
       {title:"요나단", desc:"언약적 우정과 보호", ref:"삼상 20장"},
@@ -2838,7 +2838,7 @@ Object.assign(EVENT_EXPLORE, {
     ]
   },
   "absalom-rebellion":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"죄의 결과", desc:"다윗 집안에 남은 상처", ref:"삼하 12장"},
       {title:"반역", desc:"왕권을 빼앗으려는 욕망", ref:"삼하 15장"},
@@ -2922,7 +2922,7 @@ Object.assign(ORIGINAL_INFOGRAPHICS, {
 
 Object.assign(EVENT_EXPLORE, {
   "ahab-jezebel-idolatry":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"바알 숭배", desc:"하나님을 대체한 거짓 예배", ref:"왕상 16장"},
       {title:"갈멜산", desc:"참 하나님이 드러난 대결", ref:"왕상 18장"},
@@ -2931,7 +2931,7 @@ Object.assign(EVENT_EXPLORE, {
     ]
   },
   "naaman-healing":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"요단강", desc:"겸손한 순종의 자리", ref:"왕하 5장"},
       {title:"이방인 은혜", desc:"하나님의 구원은 국경을 넘음", ref:"눅 4:27"},
@@ -3047,7 +3047,7 @@ Object.assign(ORIGINAL_INFOGRAPHICS,{
 
 Object.assign(EVENT_EXPLORE,{
   "malachi-warning":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"언약",desc:"하나님과 백성의 관계 회복",ref:"말 2:10"},
       {title:"회개",desc:"형식적 신앙에서 돌이킴",ref:"말 3:7"},
@@ -3121,7 +3121,7 @@ Object.assign(ORIGINAL_INFOGRAPHICS,{
 
 Object.assign(EVENT_EXPLORE,{
   "haggai-zechariah-encouragement":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"성전 재건",desc:"예배 회복의 중심",ref:"학 1장"},
       {title:"말씀의 독려",desc:"선지자의 말씀으로 다시 일어남",ref:"스 5:1-2"},
@@ -3235,7 +3235,7 @@ Object.assign(ORIGINAL_INFOGRAPHICS,{
 
 Object.assign(EVENT_EXPLORE,{
   "septuagint-translation":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"헬라어",desc:"신약 시대 공용어",ref:"중간기 배경"},
       {title:"말씀 번역",desc:"언어를 넘어 전해진 성경",ref:"70인역"},
@@ -3244,7 +3244,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "herodian-rule-start":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"로마 제국",desc:"신약 시대 정치 배경",ref:"눅 2:1"},
       {title:"헤롯 왕가",desc:"유대를 통치한 왕가",ref:"마 2장"},
@@ -3370,7 +3370,7 @@ Object.assign(EVENT_MAP_CROPS,{"jesus-1":"assets/maps/jesus-1_map.png","jesus-2"
 Object.assign(ORIGINAL_INFOGRAPHICS,{"jesus-1":"assets/infographics/jesus-1.png","jesus-2":"assets/infographics/jesus-2.png","jesus-3":"assets/infographics/jesus-3.png","jesus-4":"assets/infographics/jesus-4.png","jesus-5":"assets/infographics/jesus-5.png"});
 Object.assign(EVENT_EXPLORE,{
 "jesus-1":{
- title:"8. 연결탐험",
+ title:"8. 주제탐험",
  items:[
   {title:"복음",desc:"예수님의 복음 사역",ref:"복음서"},
   {title:"믿음",desc:"믿음으로 반응함",ref:"복음서"},
@@ -3378,7 +3378,7 @@ Object.assign(EVENT_EXPLORE,{
  ]
 },
 "jesus-2":{
- title:"8. 연결탐험",
+ title:"8. 주제탐험",
  items:[
   {title:"복음",desc:"예수님의 복음 사역",ref:"복음서"},
   {title:"믿음",desc:"믿음으로 반응함",ref:"복음서"},
@@ -3386,7 +3386,7 @@ Object.assign(EVENT_EXPLORE,{
  ]
 },
 "jesus-3":{
- title:"8. 연결탐험",
+ title:"8. 주제탐험",
  items:[
   {title:"복음",desc:"예수님의 복음 사역",ref:"복음서"},
   {title:"믿음",desc:"믿음으로 반응함",ref:"복음서"},
@@ -3394,7 +3394,7 @@ Object.assign(EVENT_EXPLORE,{
  ]
 },
 "jesus-4":{
- title:"8. 연결탐험",
+ title:"8. 주제탐험",
  items:[
   {title:"복음",desc:"예수님의 복음 사역",ref:"복음서"},
   {title:"믿음",desc:"믿음으로 반응함",ref:"복음서"},
@@ -3402,7 +3402,7 @@ Object.assign(EVENT_EXPLORE,{
  ]
 },
 "jesus-5":{
- title:"8. 연결탐험",
+ title:"8. 주제탐험",
  items:[
   {title:"복음",desc:"예수님의 복음 사역",ref:"복음서"},
   {title:"믿음",desc:"믿음으로 반응함",ref:"복음서"},
@@ -3547,7 +3547,7 @@ Object.assign(EVENT_ENRICH,{
 });
 Object.assign(EVENT_EXPLORE,{
   "jesus-1":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"혼인잔치",desc:"핵심 주제 연결",ref:"요한복음 2:1~11"},
       {title:"새 포도주",desc:"구속사적 의미",ref:"복음서"},
@@ -3556,7 +3556,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "jesus-2":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"거듭남",desc:"핵심 주제 연결",ref:"요한복음 3:1~21"},
       {title:"성령",desc:"구속사적 의미",ref:"복음서"},
@@ -3565,7 +3565,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "jesus-3":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"생수",desc:"핵심 주제 연결",ref:"요한복음 4:1~42"},
       {title:"참된 예배",desc:"구속사적 의미",ref:"복음서"},
@@ -3574,7 +3574,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "jesus-4":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"하나님 나라",desc:"핵심 주제 연결",ref:"마태복음·마가복음·누가복음·요한복음"},
       {title:"표적",desc:"구속사적 의미",ref:"복음서"},
@@ -3583,7 +3583,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "jesus-5":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"성전",desc:"핵심 주제 연결",ref:"요한복음 2:13~22 / 마태복음 21:12~17"},
       {title:"유월절",desc:"구속사적 의미",ref:"복음서"},
@@ -3948,7 +3948,7 @@ Object.assign(ORIGINAL_INFOGRAPHICS,{
 Object.assign(EVENT_EXPLORE,{
 
   "ananias-sapphira":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 5장"},
       {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
@@ -3957,7 +3957,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "cornelius-household":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 10장"},
       {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
@@ -3966,7 +3966,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "philip-ethiopian-eunuch":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 8장"},
       {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
@@ -3975,7 +3975,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "seven-deacons":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 6장"},
       {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
@@ -3984,7 +3984,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "areopagus-sermon":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 17장"},
       {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
@@ -3993,7 +3993,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "antioch-church":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 11장"},
       {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
@@ -4002,7 +4002,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "tyrannus-ministry":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"사도행전 19장"},
       {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
@@ -4011,7 +4011,7 @@ Object.assign(EVENT_EXPLORE,{
     ]
   },
   "nero-persecution-martyrdom":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"성령",desc:"초대교회를 인도하시는 하나님의 역사",ref:"디모데후서 4장 / 초대교회 박해 배경"},
       {title:"복음 전파",desc:"예루살렘에서 땅끝까지 확장되는 복음",ref:"사도행전"},
@@ -4072,7 +4072,7 @@ Object.assign(ORIGINAL_INFOGRAPHICS,{
 
 Object.assign(EVENT_EXPLORE,{
   "white-throne-judgment":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"창조",desc:"하나님이 세상을 창조하심",ref:"창 1장"},
       {title:"타락",desc:"죄로 인해 심판의 문제가 시작됨",ref:"창 3장"},
@@ -4134,7 +4134,7 @@ Object.assign(ORIGINAL_INFOGRAPHICS,{
 
 Object.assign(EVENT_EXPLORE,{
   "isaac-sacrifice":{
-    title:"8. 연결탐험",
+    title:"8. 주제탐험",
     items:[
       {title:"하나님의 시험",desc:"하나님은 믿음을 연단하심",ref:"창 22:1"},
       {title:"하나님의 공급",desc:"하나님이 숫양을 준비하심",ref:"창 22:13-14"},
@@ -4147,7 +4147,7 @@ Object.assign(EVENT_EXPLORE,{
 });
 
 
-// v66 연결탐험 허브 1차: 어린양의 흐름
+// v66 주제탐험 허브 1차: 어린양의 흐름
 const EXPLORE_HUBS = {
   "lamb": {
     id: "lamb",

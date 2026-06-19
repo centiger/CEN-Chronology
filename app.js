@@ -26,8 +26,8 @@ function go(page){
   $$(".page").forEach(p=>p.classList.remove("active"));
   $("#" + page).classList.add("active");
   $$(".navbtn").forEach(b=>b.classList.toggle("active", b.dataset.page === page));
-  if(page==="home") setHeader("성경연대기", "창조부터 새창조까지 흐름으로 탐험");
-  if(page==="eras") setHeader("시대별 연대기", "시대 → 사건칩 → 탭카드");
+  if(page==="home") setHeader("성경성경연표", "창조부터 새창조까지 흐름으로 탐험");
+  if(page==="eras") setHeader("성경연표", "시대 → 사건칩 → 탭카드");
   if(page==="detail") setHeader("핵심사건 상세", "탭카드와 원본 인포그래픽");
   if(page==="settings") setHeader("화면설정", "독립 PWA · 통합 대비 구조");
   window.scrollTo({top:0,behavior:"instant"});
@@ -86,7 +86,7 @@ function selectEvent(eventId){
       <div class="small" style="margin-top:6px">시대: ${era.title} · ${era.year}</div>
       <div class="btn-row">
         <button class="cen-btn green" data-detail="${eventId}">${ready}</button>
-        ${(typeof EVENT_HUB_LINKS !== "undefined" && EVENT_HUB_LINKS[eventId] && EVENT_HUB_LINKS[eventId].length) ? `<button class="cen-btn secondary" data-hub="${EVENT_HUB_LINKS[eventId][0]}">연결탐험</button>` : `<button class="cen-btn secondary" data-toast="related">연결탐험</button>`}
+        ${(typeof EVENT_HUB_LINKS !== "undefined" && EVENT_HUB_LINKS[eventId] && EVENT_HUB_LINKS[eventId].length) ? `<button class="cen-btn secondary" data-hub="${EVENT_HUB_LINKS[eventId][0]}">주제탐험</button>` : `<button class="cen-btn secondary" data-toast="related">주제탐험</button>`}
       </div>
     `;
   }
@@ -212,7 +212,7 @@ function renderDetail(eventId){
     </section>
 
     <section class="scroll-section">
-      <div class="section-title">8. 연결탐험</div>
+      <div class="section-title">8. 주제탐험</div>
       ${renderExploreRows(eventId)}
     </section>
 
@@ -257,7 +257,7 @@ function chunkExploreItems(items){
 
 function renderExploreRows(eventId){
   const data = EVENT_EXPLORE[eventId];
-  if(!data) return `<div class="section-card">연결탐험 데이터 준비중</div>`;
+  if(!data) return `<div class="section-card">주제탐험 데이터 준비중</div>`;
   const rows = chunkExploreItems(data.items);
   return `
     ${renderHubEntryRows(eventId)}
@@ -429,7 +429,7 @@ function renderHubOverlay(hubId){
     <div class="hub-panel">
       <div class="hub-panel-head">
         <div>
-          <div class="hub-kicker">연결탐험 허브</div>
+          <div class="hub-kicker">주제탐험 허브</div>
           <h2>${hub.icon || "🔎"} ${hub.title}</h2>
           <p>${hub.description || ""}</p>
         </div>
@@ -610,7 +610,7 @@ function init(){
     }
 
     const explore = e.target.closest("[data-explore]");
-    if(explore) alert(`'${explore.dataset.explore}' 연결탐험은 이후 허브형 흐름으로 단계적으로 전환됩니다.`);
+    if(explore) alert(`'${explore.dataset.explore}' 주제탐험은 이후 허브형 흐름으로 단계적으로 전환됩니다.`);
 
     const toast = e.target.closest("[data-toast]");
     if(toast) alert("이 기능은 다음 단계에서 CEN Bible 본문·지도·성막 메뉴와 연결됩니다.");
@@ -622,7 +622,7 @@ function init(){
     if(e.target.id === "backBtn"){
       if(currentPage === "detail") go("eras");
       else if(currentPage === "eras" || currentPage === "settings") go("home");
-      else alert("성경연대기를 종료하려면 브라우저 뒤로가기를 한 번 더 누르세요.");
+      else alert("성경성경연표를 종료하려면 브라우저 뒤로가기를 한 번 더 누르세요.");
     }
   });
 
@@ -658,7 +658,7 @@ init();
 // 성경연표 직접 진입
 // 기본 주소(https://centiger.github.io/CEN-Chronology/)는 기존 메인/주제탐험 화면을 그대로 둡니다.
 // 성경연표 주소(https://centiger.github.io/CEN-Chronology/?view=timeline)만
-// 하단 두 번째 "연대기" 버튼을 누른 화면과 동일하게 go("eras")로 이동합니다.
+// 하단 두 번째 "성경연표" 버튼을 누른 화면과 동일하게 go("eras")로 이동합니다.
 (function routeChronologyView(){
   const params = new URLSearchParams(window.location.search);
   const view = (params.get("view") || "").toLowerCase();
