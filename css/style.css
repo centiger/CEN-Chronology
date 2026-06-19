@@ -304,7 +304,7 @@ button{font-family:inherit}
 }
 
 
-/* v17: 인포그래픽 8. 연결탐험 원문 기반 UI */
+/* v17: 인포그래픽 8. 주제탐험 원문 기반 UI */
 .explore-title{
   background:#fff8ee;
   border:1px solid #d9bea0;
@@ -379,7 +379,7 @@ button{font-family:inherit}
 }
 
 
-/* v18 compact 연결탐험 */
+/* v18 compact 주제탐험 */
 .compact-explore-box{
   background:#fff8ee;
   border:1px solid #d9bea0;
@@ -424,7 +424,7 @@ button{font-family:inherit}
 }
 
 
-/* v19 연결탐험: 캡슐 버튼만 표시, 박스 안 자동 줄바꿈 */
+/* v19 주제탐험: 캡슐 버튼만 표시, 박스 안 자동 줄바꿈 */
 .compact-explore-wrap{
   display:flex;
   flex-wrap:wrap;
@@ -620,7 +620,7 @@ button[data-detail]:hover{
 }
 
 
-/* v23 핵심사건 + 연결탐험 정리 */
+/* v23 핵심사건 + 주제탐험 정리 */
 
 /* 핵심사건 텍스트 색상 통일 */
 .flow-body,
@@ -630,7 +630,7 @@ button[data-detail]:hover{
   color:#4f3929 !important;
 }
 
-/* 연결탐험 버튼 구조 개선 */
+/* 주제탐험 버튼 구조 개선 */
 .connected-wrap{
   gap:10px 2px !important;
   align-items:center !important;
@@ -707,7 +707,7 @@ button[data-detail]:hover{
   font-weight:800 !important;
 }
 
-/* v24: 연결탐험 버튼에는 제목만, 설명은 버튼 아래로 */
+/* v24: 주제탐험 버튼에는 제목만, 설명은 버튼 아래로 */
 .connected-item{
   display:flex !important;
   align-items:center !important;
@@ -763,7 +763,7 @@ button[data-detail]:hover{
 }
 
 
-/* v25 연결탐험: 긴 연결선 위에 버튼이 놓인 구조 */
+/* v25 주제탐험: 긴 연결선 위에 버튼이 놓인 구조 */
 
 .compact-explore-box{
   padding:8px 6px !important;
@@ -846,9 +846,9 @@ button[data-detail]:hover{
 }
 
 
-/* v26 연결탐험: 긴 굵은 선을 먼저 깔고, 그 위에 버튼을 올리는 구조 */
+/* v26 주제탐험: 긴 굵은 선을 먼저 깔고, 그 위에 버튼을 올리는 구조 */
 
-/* 연결탐험 박스 자체 */
+/* 주제탐험 박스 자체 */
 .compact-explore-box{
   position:relative !important;
   padding:10px 8px 8px !important;
@@ -946,7 +946,7 @@ button[data-detail]:hover{
 }
 
 
-/* v27 연결탐험: 전철 노선도형 단일 레일 구조 */
+/* v27 주제탐험: 전철 노선도형 단일 레일 구조 */
 
 /* 박스는 최대한 compact */
 .compact-explore-box{
@@ -1063,7 +1063,7 @@ button[data-detail]:hover{
 }
 
 
-/* v28 연결탐험: 2줄 노선도 + 균등 배분 + 버튼/선 중앙 정렬 */
+/* v28 주제탐험: 2줄 노선도 + 균등 배분 + 버튼/선 중앙 정렬 */
 
 /* 기존 v27 가로 스크롤 노선도 숨김/무력화 */
 .compact-explore-box{
@@ -1167,7 +1167,7 @@ button[data-detail]:hover{
 }
 
 
-/* v29 연결탐험 최종 조정: 전철 노선도 규칙 통일 */
+/* v29 주제탐험 최종 조정: 전철 노선도 규칙 통일 */
 
 /* 전체 박스 */
 .two-row-explore-box{
@@ -1275,7 +1275,7 @@ button[data-detail]:hover{
 }
 
 
-/* v30: 연결탐험 좌우 여백 규칙 완전 통일 */
+/* v30: 주제탐험 좌우 여백 규칙 완전 통일 */
 
 /* 모든 줄 동일 여백 규칙 */
 .metro-row{
@@ -1625,7 +1625,7 @@ button[data-detail]:hover{
 }
 
 
-/* v66 연결탐험 허브: 어린양의 흐름 */
+/* v66 주제탐험 허브: 어린양의 흐름 */
 .hub-entry-list{display:grid;gap:10px;margin-bottom:10px;}
 .hub-entry-card{width:100%;display:flex;align-items:center;gap:12px;border:1px solid rgba(112,78,46,.18);background:linear-gradient(135deg,#fffdf8,#fff7e8);border-radius:18px;padding:14px;text-align:left;box-shadow:0 8px 18px rgba(88,58,31,.08);color:#3d2a1b;}
 .hub-entry-icon{width:42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#f2dfbf;font-size:24px;flex:0 0 auto;}
@@ -1712,7 +1712,7 @@ button[data-detail]:hover{
 
 
 
-/* v85 다중 연결탐험 선택창 */
+/* v85 다중 주제탐험 선택창 */
 .hub-selector-overlay{
   position:fixed;
   inset:0;
@@ -1785,7 +1785,7 @@ button[data-detail]:hover{
 }
 
 
-/* v87 하단 연결탐험 버튼 강조 */
+/* v87 하단 주제탐험 버튼 강조 */
 .bottomnav .navbtn{
   min-width:0;
 }
@@ -1858,7 +1858,7 @@ h2,
 
 
 
-/* v90 연결탐험 메인 구조화 */
+/* v90 주제탐험 메인 구조화 */
 .hub-menu-modal{
   max-height:88vh;
   overflow:auto;
@@ -2016,7 +2016,7 @@ h2,
 
 
 
-/* v92 연결탐험 모달 상단 X 닫기 버튼 */
+/* v92 주제탐험 모달 상단 X 닫기 버튼 */
 .hub-menu-modal{
   position:relative;
   padding-top:48px !important;
