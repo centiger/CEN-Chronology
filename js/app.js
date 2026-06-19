@@ -26,7 +26,7 @@ function go(page){
   $$(".page").forEach(p=>p.classList.remove("active"));
   $("#" + page).classList.add("active");
   $$(".navbtn").forEach(b=>b.classList.toggle("active", b.dataset.page === page));
-  if(page==="home") setHeader("성경성경연표", "창조부터 새창조까지 흐름으로 탐험");
+  if(page==="home") setHeader("성경연대기", "창조부터 새창조까지 흐름으로 탐험");
   if(page==="eras") setHeader("성경연표", "시대 → 사건칩 → 탭카드");
   if(page==="detail") setHeader("핵심사건 상세", "탭카드와 원본 인포그래픽");
   if(page==="settings") setHeader("화면설정", "독립 PWA · 통합 대비 구조");
@@ -46,14 +46,7 @@ function renderHome(){
   const home = $("#home");
 
   home.innerHTML = `
-    <section class="card hero-home-card">
-      <div class="hero-home-title">주제탐험</div>
-      <div class="hero-home-sub">
-        성경을 시간순이 아니라 주제별로 탐험합니다.
-      </div>
-    </section>
-
-    <section class="hub-home-section axis-section axis-bone">
+<section class="hub-home-section axis-section axis-bone">
       <div class="hub-home-head axis-head">
         <div class="axis-kicker">AXIS 01</div>
         <div class="hub-home-title">📜 성경의 뼈대</div>
@@ -932,7 +925,7 @@ function init(){
     if(e.target.id === "backBtn"){
       if(currentPage === "detail") go("eras");
       else if(currentPage === "eras" || currentPage === "settings") go("home");
-      else alert("성경성경연표를 종료하려면 브라우저 뒤로가기를 한 번 더 누르세요.");
+      else alert("성경연대기를 종료하려면 브라우저 뒤로가기를 한 번 더 누르세요.");
     }
   });
 
@@ -978,7 +971,7 @@ init();
 
 // 성경연표 직접 진입
 // 기본 주소는 주제탐험/주제탐험 메인으로 유지하고,
-// ?view=timeline 으로 들어온 경우만 하단 두 번째 '성경연표' 화면으로 이동합니다.
+// ?view=timeline 으로 들어온 경우만 하단 두 번째 '연대기' 화면으로 이동합니다.
 (function () {
   const params = new URLSearchParams(window.location.search);
 
