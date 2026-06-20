@@ -70,6 +70,16 @@ function scrollToEra(id){
   const el = document.getElementById(id);
   if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
 }
+
+function scrollToPreviewBox(eraId){
+  const box = document.getElementById("preview-" + eraId);
+  if(!box) return;
+  setTimeout(()=>{
+    const fixedOffset = 96;
+    const y = box.getBoundingClientRect().top + window.pageYOffset - fixedOffset;
+    window.scrollTo({top: Math.max(0, y), behavior:"smooth"});
+  }, 80);
+}
 function selectEvent(eventId){
   currentEventId = eventId;
   const era = ERAS.find(e=>e.eventIds.includes(eventId));
@@ -89,6 +99,7 @@ function selectEvent(eventId){
         ${(typeof EVENT_HUB_LINKS !== "undefined" && EVENT_HUB_LINKS[eventId] && EVENT_HUB_LINKS[eventId].length) ? `<button class="cen-btn secondary" data-hub="${EVENT_HUB_LINKS[eventId][0]}">주제탐험</button>` : `<button class="cen-btn secondary" data-toast="related">주제탐험</button>`}
       </div>
     `;
+    scrollToPreviewBox(era.id);
   }
 }
 
