@@ -2170,3 +2170,40 @@ h2,
   background:linear-gradient(180deg,rgba(243,236,255,.95),rgba(255,250,242,.92));
 }
 
+
+/* v84 사건칩 선택 UX 개선: 선택 후 요약/상세보기 영역이 눈에 확 들어오도록 보정 */
+.preview.show{
+  display:block;
+  margin-top:16px;
+  padding:16px;
+  border-width:2px;
+  background:linear-gradient(135deg,#fff8ee,#f3dfc5);
+  box-shadow:0 10px 24px rgba(84,54,25,.12);
+}
+.preview.show::before{
+  content:"선택한 핵심사건";
+  display:inline-flex;
+  margin-bottom:8px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:#5d3f2b;
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+}
+.preview.show .preview-title{
+  font-size:20px;
+  margin-bottom:8px;
+}
+.preview.show .btn-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+.preview.show .btn-row .cen-btn{
+  width:100%;
+  min-height:44px;
+}
+@media (max-width:380px){
+  .preview.show .btn-row{grid-template-columns:1fr;}
+}
