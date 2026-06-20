@@ -165,6 +165,16 @@ function scrollToEra(id){
   if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
 }
 
+function scrollToPreviewBox(eraId){
+  const box = document.getElementById("preview-" + eraId);
+  if(!box) return;
+  setTimeout(()=>{
+    const fixedOffset = 96;
+    const y = box.getBoundingClientRect().top + window.pageYOffset - fixedOffset;
+    window.scrollTo({top: Math.max(0, y), behavior:"smooth"});
+  }, 80);
+}
+
 function getValidHubIds(eventId){
   if(typeof EVENT_HUB_LINKS === "undefined" || typeof EXPLORE_HUBS === "undefined") return [];
   return (EVENT_HUB_LINKS[eventId] || []).filter(id => EXPLORE_HUBS[id]);
@@ -252,6 +262,7 @@ function selectEvent(eventId){
         })()}
       </div>
     `;
+    scrollToPreviewBox(era.id);
   }
 }
 
