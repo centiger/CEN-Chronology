@@ -26,6 +26,27 @@ button{font-family:inherit}
   padding:14px 16px 12px;border-bottom:1px solid rgba(255,255,255,.14);
   backdrop-filter:blur(8px);
 }
+
+.main-nav-row{
+  display:flex;
+  justify-content:flex-start;
+  margin-bottom:8px;
+}
+.main-home-btn{
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.12);
+  color:#fff7eb;
+  border-radius:999px;
+  padding:7px 12px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:-.01em;
+}
+.main-home-btn:active{
+  transform:translateY(1px);
+  background:rgba(255,255,255,.2);
+}
+
 .header-row{display:flex;align-items:center;gap:10px}
 .iconbtn{
   border:0;background:rgba(255,255,255,.12);color:#fff;
