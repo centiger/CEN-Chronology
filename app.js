@@ -1,3 +1,4 @@
+const CEN_BIBLE20_HOME_URL = "https://centiger.github.io/CEN-Bible2.0/";
 
 let currentPage = "home";
 let currentEraId = "era-origin";
@@ -557,6 +558,10 @@ function init(){
   renderEras();
 
   document.addEventListener("click", e=>{
+    if(e.target.closest("#cenBibleHomeBtn")){
+      window.location.href = CEN_BIBLE20_HOME_URL;
+      return;
+    }
     const nav = e.target.closest("[data-page]");
     if(nav) go(nav.dataset.page);
 
